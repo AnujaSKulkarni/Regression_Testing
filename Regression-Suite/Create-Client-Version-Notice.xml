@@ -147,19 +147,7 @@ if (API_Name != TestCaseName){
 }else{
 	testRunner.testCase.testSteps['Create Client Version Notice'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
-}</script></con:config></con:testStep><con:testStep type="restrequest" name="Create Client Version Notice" id="775c6b03-d0bc-4bd3-a8c3-98920da32c94" disabled="true"><con:settings/><con:config service="Create Client Version Notice" resourcePath="/create_client_version_notice" methodName="Create Client Version Notice" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Create Client Version Notice" id="28227d80-65a1-4d0b-919d-bf79591084f8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${API-Connect}</con:endpoint><con:request>{
-    "category": "eol_warneol_warn",
-    "notice": "{loc-title-key:product.eol_warn_title, loc-key:product.eol_warn_message}",
-    "clientVersionId": ${#TestCase#Client_Version_ID},
-    "repeat":true,
-    "startDate": "2017-12-4 11:14:38",
-    "endDate": "3017-12-30 11:14:38"
-}</con:request><con:originalUri>https://api-test.whrcloud.com/api/v1/create_client_version_notice</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="593b886e-cd13-4120-87aa-fdb499be5e2d" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="MessageContentAssertion" id="dd040e47-bf67-4e19-9148-933d6507654a" name="Message Content Assertion"><con:configuration xsi:type="con:MessageContentAssertion"><con:elements><con:xpath>declare namespace ns1='https://api-test.whrcloud.com/api/v1/create_client_version_notice';
-//ns1:Response[1]/ns1:status[1]</con:xpath><con:element>status</con:element><con:type xsi:nil="true"/><con:operator>=</con:operator><con:enabled>true</con:enabled><con:expectedValue>Success</con:expectedValue><con:hasValue>false</con:hasValue><con:numberType>false</con:numberType></con:elements><con:originalMessage><![CDATA[<Response xmlns="https://api-test.whrcloud.com/api/v1/create_client_version_notice">
-   <code/>
-   <message>Client Version Notice Id : 25 Created Successfully</message>
-   <status>Success</status>
-</Response>]]></con:originalMessage></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Report" id="4a9d9b73-7aa4-4139-b40a-c3f3de8be15f" disabled="true"><con:settings/><con:config><script>import java.io.FileInputStream
+}</script></con:config></con:testStep><con:testStep type="groovy" name="Report" id="4a9d9b73-7aa4-4139-b40a-c3f3de8be15f" disabled="true"><con:settings/><con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
