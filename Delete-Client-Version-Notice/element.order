@@ -81,6 +81,5 @@ Refresh_Token
 Get-Client-Version
 Create-Client-Version
 Delete-Client-Version
-Create-Client-Version-Notice
 Get-Client-Version-Notice
 Delete-Client-Version-Notice
