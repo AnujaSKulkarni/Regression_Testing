@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="UpdateUserNestPreference" path="/location/${#Project#Location_ID}/userNestPreference" id="56026566-a735-4117-8037-800c6d1540da" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="56026566-a735-4117-8037-800c6d1540dafileName">UpdateUserNestPreference</con:setting></con:settings><con:parameters/><con:method name="UpdateUserNestPreference" id="f6777575-2078-47a3-a685-692f14ae9683" method="POST"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value>bearer ${</con:value><con:style>HEADER</con:style><con:default>bearer ${</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>wp-client-brand</con:name><con:value>WHIRLPOOL</con:value><con:style>HEADER</con:style><con:default>WHIRLPOOL</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:user="https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/location/723/userNestPreference">user:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="UpdateUserNestPreference" id="11ee7d47-98ed-4164-a8f9-6ec22bc20926" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${API-Connect}</con:endpoint><con:request>[
+	{
+		"said":"WPR333334UCD3",
+		"default_structure_id":"bPTZLfiIunbzS_t8yhoeRCDs8z6lEtQWk2XTZ57BVfsFaBaax9tiSw",
+		"said_preferences":[
+			{
+		        "Key": "AwayOvenWarning",
+		        "Type": "home_away",
+				"value":true
+			},
+			{
+		        "Key": "SmartEnergy",
+		        "Type": "rush_hour_rewards",
+				"value":true
+			}
+		]
+		
+	}
+]</con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><entry key="Authorization" value="bearer ${bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder></con:request></con:method></con:resource>

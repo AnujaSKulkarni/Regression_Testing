@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="UpdateInventoryMobile" path="/updateInventoryMobile" id="9031475e-d2e8-4d6e-97a7-88ad46b70c4e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="9031475e-d2e8-4d6e-97a7-88ad46b70c4efileName">UpdateInventoryMobile</con:setting></con:settings><con:parameters/><con:method name="UpdateInventoryMobile" id="cfafa16b-cbf9-4369-b0ec-76af5d98dd01" method="POST"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value>bearer ${access_token}</con:value><con:style>HEADER</con:style><con:default>bearer ${access_token}</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:upd="https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/updateInventoryMobile">upd:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:upd="https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/updateInventoryMobile">upd:Response</con:element></con:representation><con:request name="updateInventoryMobile" id="44bd631f-5995-478a-809a-604adbd2fb36" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${LAR}</con:endpoint><con:request>{
+    "invId": 24,
+    "lastUpdate": "2014-01-15T20:23:07.644Z",
+    "inventoryItems": [
+        {
+            "invItemId": 12,
+            "invId": 12,
+            "invCategoryId": 5,
+            "stdInvItemId": 1,
+            "description": "new new  egg",
+            "qty": 5,
+            "invuomId": 1,
+            "expireDate": "2013-10-17T00:00:00.000Z",
+            "lastUpdate": "2012-10-17T00:00:00.000Z"
+        },
+        {
+            "invItemId": 5,
+            "invId": 12,
+            "invCategoryId": 5,
+            "stdInvItemId": 1,
+            "description": "old egg",
+            "qty": 5,
+            "invuomId": 1,
+            "expireDate": "2013-10-17T00:00:00.000Z",
+            "lastUpdate": "2013-10-17T00:00:00.000Z"
+        }
+    ]
+}</con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:request><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:method><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:resource>

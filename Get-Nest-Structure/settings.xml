@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="51bdf82c-d6d0-4c7a-bd44-e8d661d97e40" wadlVersion="http://wadl.dev.java.net/2009/02" name="Get Nest Structure" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="51bdf82c-d6d0-4c7a-bd44-e8d661d97e40fileName">Get-Nest-Structure</con:setting></con:settings><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://{{API-Connect}}</con:endpoint></con:endpoints></con:interface>

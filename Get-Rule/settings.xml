@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="2e3b582a-3ae6-43a1-989e-f8440046060a" wadlVersion="http://wadl.dev.java.net/2009/02" name="Get Rule" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="2e3b582a-3ae6-43a1-989e-f8440046060afileName">Get-Rule</con:setting></con:settings><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://location/420/nes</con:endpoint></con:endpoints></con:interface>
