@@ -141,5 +141,6 @@ Get-Rule
 Update-Rule
 Delete-Rule
 DeauthorizeUser
+Create-Client-Version-Notice
 Regression-Suite
 REST-Virt-1
