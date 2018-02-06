@@ -4,6 +4,11 @@
     <con:setting id="soapUIObjectSourceId">4d9b8d24-cdbf-470c-926c-ce1cd761a7a0</con:setting>
     <con:setting id="soapUIObjectSourceType">soapUIObjectSourceType_RestRequest</con:setting>
     <con:setting id="963c8128-a25e-4771-a13e-aeb66751e110fileName">Load-Test-1</con:setting>
+    <con:setting id="IncludeScenarioResults">true</con:setting>
+    <con:setting id="IncludeStatistics">true</con:setting>
+    <con:setting id="IncludeTestStepsHistory">true</con:setting>
+    <con:setting id="IncludeStatisticHistory">true</con:setting>
+    <con:setting id="IncludeHelp">true</con:setting>
   </con:settings>
   <con1:loadui-project id="6a933f62-f48b-409c-81e2-e53d6e5ba5a9" label="Load Test 1" xmlns:con1="http://eviware.com/loadui/config">
     <con1:properties>
@@ -18,10 +23,10 @@
       <con1:property propagates="true" key="ModelItem.remoteMode" type="java.lang.String"/>
     </con1:properties>
     <con1:attributes>
-      <con1:property key="limits">Time=600;</con1:property>
+      <con1:property key="limits">Time=60;</con1:property>
     </con1:attributes>
     <con1:addons/>
-    <con1:scene label="New Scenario" id="17801342-7fa8-4aa1-92c8-9b0d8abee835" version="21">
+    <con1:scene label="New Scenario" id="17801342-7fa8-4aa1-92c8-9b0d8abee835" version="27">
       <con1:properties>
         <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
         <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">true</con1:property>
@@ -30,7 +35,7 @@
         <con1:property propagates="true" key="SceneItem.scenarioRateSpecific" type="java.lang.Long">10</con1:property>
       </con1:properties>
       <con1:attributes>
-        <con1:property key="limits">Time=600;</con1:property>
+        <con1:property key="limits">Time=60;</con1:property>
       </con1:attributes>
       <con1:addons/>
       <con1:component type="com.eviware.loadui.impl.component.IntervalComponent" label="Interval 1" id="d51ecb14-f469-49d3-8e0d-11e1ab9a5ed1" category="Scheduler">
