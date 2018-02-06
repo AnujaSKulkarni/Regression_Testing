@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="bbd6ea6e-ad05-42e3-acf9-1ef167a4ab31" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Create Client Version Notice" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
-    <con:setting id="bbd6ea6e-ad05-42e3-acf9-1ef167a4ab31fileName">Create-Client-Version-Notice</con:setting>
-  </con:settings>
-  <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="df380c22-1331-4681-961a-9da9222ff712">
-    <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream;
+<con:testCase id="bbd6ea6e-ad05-42e3-acf9-1ef167a4ab31" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Create Client Version Notice" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="bbd6ea6e-ad05-42e3-acf9-1ef167a4ab31fileName">Create-Client-Version-Notice</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="DataSource_Setup" id="df380c22-1331-4681-961a-9da9222ff712"><con:settings/><con:config><script>import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -139,121 +131,12 @@ if(RunTimeDataSource_Flag == true){
 		log.info "Adding: " + Cell_Value
 		TestStep.addProperty(Cell_Value)
 	}
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="6bb42691-57a7-4971-85f5-a281082faf98">
-    <con:settings/>
-    <con:config>
-      <script>def Response = context.expand( '${#[Regression Suite#Create Client Version#Create Client Version]#Response#$[\'response\']}' )
+}</script></con:config></con:testStep><con:testStep type="groovy" name="Test_Data_Setup" id="6bb42691-57a7-4971-85f5-a281082faf98"><con:settings/><con:config><script>def Response = context.expand( '${#[Regression Suite#Create Client Version#Create Client Version]#Response#$[\'response\']}' )
 String[] temp_response = Response.split(": ")
 log.info temp_response[1]
 temp_response = temp_response[1].split(" Created")
 log.info temp_response[0]
-testRunner.testCase.setPropertyValue("Client_Version_ID", temp_response[0])</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="68a89a4c-69f8-4450-b134-a81a21b9a330">
-    <con:settings/>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
-      <con:property>TC_Number</con:property>
-      <con:property>Service_Name</con:property>
-      <con:property>Defect_ID</con:property>
-      <con:property>API_Name</con:property>
-      <con:property>Data_Combination</con:property>
-      <con:property>Remark</con:property>
-      <con:property>Comments</con:property>
-      <con:property>Account_Number</con:property>
-      <con:property>Address_1</con:property>
-      <con:property>Address_2</con:property>
-      <con:property>Alert_ID</con:property>
-      <con:property>Alert_Platform_Type</con:property>
-      <con:property>Alternate_Email_ID</con:property>
-      <con:property>Appliance_ID</con:property>
-      <con:property>Appliance_Master_ID</con:property>
-      <con:property>Appliance_Master_Version_ID</con:property>
-      <con:property>Appliance_Name</con:property>
-      <con:property>Attribute_Name</con:property>
-      <con:property>Attribute_Value</con:property>
-      <con:property>Brand</con:property>
-      <con:property>City</con:property>
-      <con:property>Company_ID</con:property>
-      <con:property>Company_Name</con:property>
-      <con:property>Confirm_Password</con:property>
-      <con:property>Country_Name</con:property>
-      <con:property>Country_Code</con:property>
-      <con:property>Country_ID</con:property>
-      <con:property>Customer_Care</con:property>
-      <con:property>DCT</con:property>
-      <con:property>desired_temperature</con:property>
-      <con:property>Device_ID</con:property>
-      <con:property>Device_Notification_ID</con:property>
-      <con:property>Device_Shadow_Name</con:property>
-      <con:property>Edge_Device_ID</con:property>
-      <con:property>Elevation</con:property>
-      <con:property>Email_BodyMessage</con:property>
-      <con:property>Email_From</con:property>
-      <con:property>Email_ID_Data</con:property>
-      <con:property>Email_Subject</con:property>
-      <con:property>Email_To</con:property>
-      <con:property>enable_cloth_spin</con:property>
-      <con:property>First_Name</con:property>
-      <con:property>Group_Number</con:property>
-      <con:property>inv__description</con:property>
-      <con:property>JSON_Body</con:property>
-      <con:property>Key</con:property>
-      <con:property>Language_ID</con:property>
-      <con:property>Last_Name</con:property>
-      <con:property>Lastupdate</con:property>
-      <con:property>Latitude</con:property>
-      <con:property>Locale_ID</con:property>
-      <con:property>Location_Name</con:property>
-      <con:property>Location_Number</con:property>
-      <con:property>Longitude</con:property>
-      <con:property>Loyalty_ID</con:property>
-      <con:property>Nest_Away</con:property>
-      <con:property>Nest_Thermostat_ID</con:property>
-      <con:property>New_Password</con:property>
-      <con:property>Notification_Type</con:property>
-      <con:property>Password</con:property>
-      <con:property>Phone_No.</con:property>
-      <con:property>Platform</con:property>
-      <con:property>Postal_Code</con:property>
-      <con:property>Rate_Plan_Code</con:property>
-      <con:property>Rate_Plan_ID</con:property>
-      <con:property>Region</con:property>
-      <con:property>Role_ID</con:property>
-      <con:property>SAID</con:property>
-      <con:property>Shoppinglist_ID</con:property>
-      <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_Name</con:property>
-      <con:property>Status</con:property>
-      <con:property>Status_ID</con:property>
-      <con:property>Street</con:property>
-      <con:property>trigger_temperature</con:property>
-      <con:property>User_ID</con:property>
-      <con:property>User_Role</con:property>
-      <con:property>Verification_Code</con:property>
-      <con:property>Version</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="a33a0b2d-55e5-4d4a-8870-f97c7af0672c">
-    <con:settings/>
-    <con:config>
-      <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+testRunner.testCase.setPropertyValue("Client_Version_ID", temp_response[0])</script></con:config></con:testStep><con:testStep type="datasource" name="DataSource" id="68a89a4c-69f8-4450-b134-a81a21b9a330"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="groovy" name="Flow Control" id="a33a0b2d-55e5-4d4a-8870-f97c7af0672c"><con:settings/><con:config><script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
@@ -264,13 +147,20 @@ if (API_Name != TestCaseName){
 }else{
 	testRunner.testCase.testSteps['Create Client Version Notice'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Report" id="4a9d9b73-7aa4-4139-b40a-c3f3de8be15f" disabled="true">
-    <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+}</script></con:config></con:testStep><con:testStep type="restrequest" name="Create Client Version Notice" id="e6bd2ab0-5eb0-4885-b93a-6a0cef7b77d2" disabled="true"><con:settings/><con:config service="Create Client Version Notice" resourcePath="/create_client_version_notice" methodName="Create Client Version Notice" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Create Client Version Notice" id="686ba0ee-3f26-4f7d-b254-940346f68ecc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#API-Connect}</con:endpoint><con:request>{
+    "category": "eol_warneol_warn",
+    "notice": "{ loc-title-key:product.eol_warn_title, loc-key:product.eol_warn_message}",
+    "clientVersionId": ${#TestCase#Client_Version_ID},
+    "repeat":true,
+    "startDate": "2017-12-4 11:14:38",
+    "endDate": "3018-12-30 11:14:38"
+}</con:request><con:originalUri>https://api-test.whrcloud.com/api/v1/create_client_version_notice</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="e9c7852c-cdce-45b4-8921-2efa7d0118ee" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="MessageContentAssertion" id="0e9c9679-efca-4f6a-a4ae-5c6f7a84611a" name="Message Content Assertion"><con:configuration xsi:type="con:MessageContentAssertion"><con:elements><con:xpath>declare namespace ns1='https://api-test.whrcloud.com/api/v1/create_client_version_notice';
+//ns1:Response[1]/ns1:status[1]</con:xpath><con:element>status</con:element><con:type xsi:nil="true"/><con:operator>=</con:operator><con:enabled>true</con:enabled><con:expectedValue>Success</con:expectedValue><con:hasValue>false</con:hasValue><con:numberType>false</con:numberType></con:elements><con:elements><con:xpath>declare namespace ns1='https://api-test.whrcloud.com/api/v1/create_client_version_notice';
+//ns1:Response[1]/ns1:code[1]</con:xpath><con:element>code</con:element><con:type xsi:nil="true"/><con:operator>=</con:operator><con:enabled>true</con:enabled><con:expectedValue>200</con:expectedValue><con:hasValue>false</con:hasValue><con:numberType>false</con:numberType></con:elements><con:originalMessage><![CDATA[<Response xmlns="https://api-test.whrcloud.com/api/v1/create_client_version_notice">
+   <code>200</code>
+   <message>Client Version Notice Id : 166 Created Successfully</message>
+   <status>Success</status>
+</Response>]]></con:originalMessage></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Report" id="4a9d9b73-7aa4-4139-b40a-c3f3de8be15f" disabled="true"><con:settings/><con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -388,39 +278,4 @@ Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="13d17c84-3e25-4027-80c4-a97a23ca7478">
-    <con:settings/>
-    <con:config>
-      <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>Flow Control</targetStep>
-    </con:config>
-  </con:testStep>
-  <con:properties>
-    <con:property>
-      <con:name>Client_Version_ID</con:name>
-      <con:value>159</con:value>
-    </con:property>
-  </con:properties>
-  <con:reportParameters/>
-  <con:breakPoints>
-    <con:testStepId>df380c22-1331-4681-961a-9da9222ff712</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>a33a0b2d-55e5-4d4a-8870-f97c7af0672c</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:environmentSpec>
-    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-  </con:environmentSpec>
-</con:testCase>
+out.close()</script></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="13d17c84-3e25-4027-80c4-a97a23ca7478"><con:settings/><con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>Flow Control</targetStep></con:config></con:testStep><con:properties><con:property><con:name>Client_Version_ID</con:name><con:value>165</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>df380c22-1331-4681-961a-9da9222ff712</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>a33a0b2d-55e5-4d4a-8870-f97c7af0672c</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>e6bd2ab0-5eb0-4885-b93a-6a0cef7b77d2</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

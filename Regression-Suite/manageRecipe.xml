@@ -143,7 +143,7 @@ if (API_Name != TestCaseName){
 	testRunner.testCase.testSteps['manageRecipe'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
 }
-</script></con:config></con:testStep><con:testStep type="restrequest" name="manageRecipe" id="6188cb7d-13db-42e0-a141-f560daa4ffb1" disabled="true"><con:settings/><con:config service="manageRecipe" resourcePath="/manageRecipe/WPR4BCKC4R37C" methodName="manageRecipe" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="manageRecipe" id="387d971b-85cf-43fc-995d-fae6cae8ae2d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${API-Connect}</con:endpoint><con:request>{
+</script></con:config></con:testStep><con:testStep type="restrequest" name="manageRecipe" id="6188cb7d-13db-42e0-a141-f560daa4ffb1" disabled="true"><con:settings/><con:config service="manageRecipe" resourcePath="/manageRecipe/WPR4BCKC4R37C" methodName="manageRecipe" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="manageRecipe" id="387d971b-85cf-43fc-995d-fae6cae8ae2d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#API-Connect}</con:endpoint><con:request>{
     "ruleset_result" :    
     {
         "recipeName" : "Kroger, Steak Fries French Fried Potatoes",

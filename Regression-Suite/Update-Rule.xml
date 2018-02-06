@@ -149,7 +149,7 @@ if (API_Name != TestCaseName){
 	
 }
 	
-</script></con:config></con:testStep><con:testStep type="restrequest" name="Update Rule" id="30c7dee6-37f3-4f79-b6eb-823a445c8e4c" disabled="true"><con:settings/><con:config service="Update Rule" resourcePath="/location/${#Project#Location_ID}/nestRule/rule/${#[Regression Suite#Add Rule#Add Rule]#Response#$[0]['RULE_ID']}" methodName="Update Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Update Rule" id="9d93a163-fd68-411d-91f6-242ddd5c34f9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${API-Connect}</con:endpoint><con:request>{
+</script></con:config></con:testStep><con:testStep type="restrequest" name="Update Rule" id="30c7dee6-37f3-4f79-b6eb-823a445c8e4c" disabled="true"><con:settings/><con:config service="Update Rule" resourcePath="/location/${#Project#Location_ID}/nestRule/rule/${#[Regression Suite#Add Rule#Add Rule]#Response#$[0]['RULE_ID']}" methodName="Update Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Update Rule" id="9d93a163-fd68-411d-91f6-242ddd5c34f9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#API-Connect}</con:endpoint><con:request>{
 "said_id":${DataSource#SAID},
 "thermostat_id":${#[Regression Suite#Add Rule]#Thermostate_ID},
 "trigger_temperature":${DataSource#trigger_temperature},
