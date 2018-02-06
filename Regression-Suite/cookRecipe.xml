@@ -143,7 +143,7 @@ if (API_Name != TestCaseName){
 	testRunner.testCase.testSteps['cookRecipe'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
 }
-</script></con:config></con:testStep><con:testStep type="restrequest" name="cookRecipe" id="537c9c27-b964-45f3-82ae-826aa70fdf2b" disabled="true"><con:settings/><con:config service="cookRecipe" resourcePath="/cookRecipe/WPR4BCKC4R37C" methodName="cookRecipe" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="cookRecipe" id="fb4ab90f-3b95-47f8-8238-0e3640181f7d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${API-Connect}</con:endpoint><con:request>{
+</script></con:config></con:testStep><con:testStep type="restrequest" name="cookRecipe" id="537c9c27-b964-45f3-82ae-826aa70fdf2b" disabled="true"><con:settings/><con:config service="cookRecipe" resourcePath="/cookRecipe/WPR4BCKC4R37C" methodName="cookRecipe" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="cookRecipe" id="fb4ab90f-3b95-47f8-8238-0e3640181f7d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#API-Connect}</con:endpoint><con:request>{
   "recipe":{
          "Action":"Start",
          "EntityCycle":{

@@ -149,7 +149,7 @@ if (API_Name != TestCaseName){
 	
 }
 	
-</script></con:config></con:testStep><con:testStep type="restrequest" name="Add Rule" id="0050a59c-c74b-4082-88e0-a006c8e9159b" disabled="true"><con:settings/><con:config service="Add Rule" resourcePath="/location/${#Project#Location_ID}/nestRule" methodName="Add Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Add Rule" id="525d7331-6ab4-4d21-84eb-b5c034392cca" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${API-Connect}</con:endpoint><con:request>{
+</script></con:config></con:testStep><con:testStep type="restrequest" name="Add Rule" id="0050a59c-c74b-4082-88e0-a006c8e9159b" disabled="true"><con:settings/><con:config service="Add Rule" resourcePath="/location/${#Project#Location_ID}/nestRule" methodName="Add Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Add Rule" id="525d7331-6ab4-4d21-84eb-b5c034392cca" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#API-Connect}</con:endpoint><con:request>{
 	"said_id":${DataSource#SAID},
 	"thermostat_id":${#TestCase#Thermostate_ID},
 	"trigger_temperature":${DataSource#trigger_temperature},

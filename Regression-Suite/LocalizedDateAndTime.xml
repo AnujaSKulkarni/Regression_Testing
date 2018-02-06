@@ -160,7 +160,7 @@ if (API_Name != TestCaseName){
 	
 }
 	
-</script></con:config></con:testStep><con:testStep type="restrequest" name="LocalizedDateAndTime" id="1fc105bf-3610-4230-987d-cb99c7deee27" disabled="true"><con:settings/><con:config service="LocalizedDateAndTime" resourcePath="/localizedDateAndTime" methodName="LocalizedDateAndTime" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="LocalizedDateAndTime" id="724171b3-eafa-4adf-89c1-cec63e486ddb" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${API-Connect}</con:endpoint><con:request>{
+</script></con:config></con:testStep><con:testStep type="restrequest" name="LocalizedDateAndTime" id="1fc105bf-3610-4230-987d-cb99c7deee27" disabled="true"><con:settings/><con:config service="LocalizedDateAndTime" resourcePath="/localizedDateAndTime" methodName="LocalizedDateAndTime" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="LocalizedDateAndTime" id="724171b3-eafa-4adf-89c1-cec63e486ddb" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#API-Connect}</con:endpoint><con:request>{
 	"Attributes": 
 	{
 		"DateTimeSetDateTimeSet":${#TestCase#Current_Date},

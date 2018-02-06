@@ -159,7 +159,7 @@ if (API_Name != TestCaseName){
 		testRunner.testCase.testSteps['Get All Accounts'].setDisabled(false)
 		testRunner.testCase.testSteps['Report'].setDisabled(false)
 	}
-}</script></con:config></con:testStep><con:testStep type="restrequest" name="Get All Accounts" id="6bb0d62c-f02c-45c9-9416-419d047255a8" disabled="true"><con:settings/><con:config service="Get All Accounts" resourcePath="/accounts" methodName="Get All Accounts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get All Accounts" id="b8b46a01-298e-4615-8039-eb0f93b0a321" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${API-Connect}</con:endpoint><con:request>{
+}</script></con:config></con:testStep><con:testStep type="restrequest" name="Get All Accounts" id="6bb0d62c-f02c-45c9-9416-419d047255a8" disabled="true"><con:settings/><con:config service="Get All Accounts" resourcePath="/accounts" methodName="Get All Accounts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get All Accounts" id="b8b46a01-298e-4615-8039-eb0f93b0a321" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#API-Connect}</con:endpoint><con:request>{
   "companyId": 0,
   "languageId": 1,
   "statusId": 1,
