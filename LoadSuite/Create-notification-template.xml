@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="694a502a-38f2-4e26-856a-309a1b3f238e" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Create notification template" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="be0217ec-1072-4c82-90bf-7d5f41d3e260fileName">Create-notification-template</con:setting>
+    <con:setting id="694a502a-38f2-4e26-856a-309a1b3f238efileName">Create-notification-template</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Create notification template" id="2131f24d-6422-4038-8909-21d5c11323e8">
+    <con:settings/>
+    <con:config service="Create notification template" resourcePath="/createNotificationTemplate/DEMO_COMMER_LAUNDRY_CYCLE_COMPLETE" methodName="Create notification template" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Create notification template" id="8a23a35b-6018-43e6-a121-96ab19f965ff" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${Notification}</con:endpoint>
+        <con:request>{
+  "_id": "DEMO_COMMER_LAUNDRY_CYCLE_COMPLETE",
+  "_rev": "19-8996b4b1273c055565176a3c9cb41ed7",
+  "name": "Cycle_Complete",
+  "ddmId": "DEMO_COMMER_LAUNDRY",
+  "formatValue": [
+    {
+      "region": "NAR",
+      "brand": "Whirlpool",
+      "language": "french",
+      "type": {
+        "name": "push",
+        "category": "high"
+      },
+      "Alert": {
+        "key": "Notification1",
+        "customPayload": "Test"
+      }
+    },
+    {
+      "region": "NAR",
+      "brand": "Whirlpool",
+      "language": "english",
+      "type": {
+        "name": "push",
+        "category": "default"
+      },
+      "Alert": {
+        "key": "Notification1",
+        "customPayload": "Test"
+      }
+    }
+  ]
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

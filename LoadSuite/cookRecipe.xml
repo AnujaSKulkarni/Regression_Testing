@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="a8d71d2d-d39e-408f-9e09-e125bccc6e4f" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="create-cycle" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="8a77b125-f816-4f18-afbe-ed7c270e5588" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="cookRecipe" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="a8d71d2d-d39e-408f-9e09-e125bccc6e4ffileName">create-cycle</con:setting>
+    <con:setting id="c6c77827-4246-4a64-89a5-eccb80e3aa99fileName">cookRecipe</con:setting>
+    <con:setting id="8a77b125-f816-4f18-afbe-ed7c270e5588fileName">cookRecipe</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="be3e2e00-f1fc-48a9-8a19-837e65e069cc">
+  <con:testStep type="groovy" name="DataSource_Setup" id="6deede0f-9046-408c-ae9a-688d80edec3d">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -142,7 +143,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="84440dcc-a4b4-430c-afea-f54cb583c6c9">
+  <con:testStep type="datasource" name="DataSource" id="71c7b9f9-8bc3-430c-a74d-31b8fe8ebe68">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -154,8 +155,8 @@ if(RunTimeDataSource_Flag == true){
           <evaluateFormulas>false</evaluateFormulas>
         </con:configuration>
       </con:dataSource>
-      <con:shared>false</con:shared>
-      <con:restartShared>false</con:restartShared>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
       <con:property>TC_Number</con:property>
       <con:property>Service_Name</con:property>
       <con:property>Defect_ID</con:property>
@@ -211,7 +212,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -240,84 +240,59 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="421c875c-dac8-4719-930e-2126834a3498">
+  <con:testStep type="groovy" name="Flow Control" id="b4893370-2916-46c5-8318-402d18b86421">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
-log.info dataCombination
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
 if (API_Name != TestCaseName){
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(true)
+	log.info "Skipping"
+	testRunner.testCase.testSteps['cookRecipe'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
-}else{
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(false)
+	}else{
+	testRunner.testCase.testSteps['cookRecipe'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
-	
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="create-cycle" id="36813ce8-d106-47ed-b7e9-64ca94c95919" disabled="true">
+  <con:testStep type="restrequest" name="cookRecipe" id="b97497aa-472d-4467-9ce2-391141142f17" disabled="true">
     <con:settings/>
-    <con:config service="create or update-cycle" resourcePath="/account/favorites/entity/cycle" methodName="create or update-cycle" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="create-cycle" id="6a2d6662-8e8d-440a-bdb1-755700bebec8" mediaType="application/json" postQueryString="false">
+    <con:config service="cookRecipe" resourcePath="/cookRecipe/WPR4BCKC4R37C" methodName="cookRecipe" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="cookRecipe" id="fb4ab90f-3b95-47f8-8238-0e3640181f7d" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${API-Connect}</con:endpoint>
-        <con:request>{  
-    "applianceId":${DataSource#Appliance_ID},
-    "accountId":"24",
-    "locationId":"341",
-    "favoritesList":[  
-        {  
-            "favoriteCycles":[{  
-        "name" :${DataSource#name},
-                "cycleInfo":{  
-                    "cycleMyCreation":{  
-                        "action":"SetOnDisplay",
-                        "entityCycle":{  
-                            "myCreationCycle":[  
-                                {  
-                                    "OvenUpperCavity.CycleSetCommonMode":"CommonModeBake",
-                                    "OvenUpperCavity.CycleSetTargetTemp":1234,
-                                    "OvenUpperCavity.OpSetCookTimeCompleteAction":"Unset"
-                                }
-                            ]
-                        }
-                    }
-                }
-            }
-      ]
-        }
-  ]
-}</con:request>
-        <con:originalUri>https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="fa706bbb-d068-482d-891b-1280b8bdcf18" name="Valid HTTP Status Codes">
+        <con:endpoint>${#Project#API-Connect}</con:endpoint>
+        <con:request>{
+  "recipe":{
+         "Action":"Start",
+         "EntityCycle":{
+           "Name":"Totino's, Pizza Rolls, Combination Pizza Snacks",
+           "Id":1,
+           "MyCreationCycle":[
+             {
+               "Mwo_DisplaySetZonedMessage":"ARRANGE 6 ROLLS."
+             },
+             {
+               "Mwo_ModeSetCook":"Manual",
+               "Mwo_TimeSetCookTimeSet":60,
+               "Mwo_CycleSetCookPower":100
+             },
+             {
+               "Mwo_DisplaySetZonedMessage":"LET STAND 2 MINUTES TO COMPLETE COOKING. FILLING WILL BE VERY HOT. BE CAUTIOUS ON FIRST BITE."
+             }
+           ]
+         }
+}
+  
+  }</con:request>
+        <con:originalUri>https://api-test.whrcloud.com/api/v1/cookRecipe/WPR4BCKC4R37C</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="329c8277-fe18-4ba0-83ce-cabf846cc16d" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="MessageContentAssertion" id="da1dcb57-2af6-41fd-b1cc-3bb4bcf08371" name="Message Content Assertion">
-          <con:configuration xsi:type="con:MessageContentAssertion">
-            <con:elements>
-              <con:xpath>declare namespace ns1='https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle';
-//ns1:Response[1]/ns1:status[1]</con:xpath>
-              <con:element>status</con:element>
-              <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>SUCCESS</con:expectedValue>
-              <con:hasValue>false</con:hasValue>
-              <con:numberType>false</con:numberType>
-            </con:elements>
-            <con:originalMessage><![CDATA[<Response xmlns="https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle">
-   <code/>
-   <message>Favorities data is created or updated succesfully for appliacie id :Refrigerator123</message>
-   <status>SUCCESS</status>
-</Response>]]></con:originalMessage>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -325,14 +300,21 @@ if (API_Name != TestCaseName){
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
+        <con:parameters>
+          <entry key="Authorization" value="Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="cdf61212-005d-42f0-b1e5-51632aa90533" disabled="true">
+  <con:testStep type="groovy" name="Report" id="07900f28-605e-4be4-bc90-0ff418288397" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -361,10 +343,12 @@ import org.apache.poi.xssf.usermodel.XSSFRow
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 
+
 def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
 log.info Final_Path
 def final_path = new File(Final_Path)
 final_path.mkdir()
+
 
 /*Get Test Case Name and Status*/
 def data_combination = context.expand( '${DataSource#Data_Combination}' )
@@ -372,7 +356,6 @@ def data_combination = context.expand( '${DataSource#Data_Combination}' )
 def TCN = context.expand( '${DataSource#TC_Number}' )
 def TestCaseName = testRunner.testCase.getName()
 
-log.info TestCaseName
 
 obj = context.testCase.getTestStepByName(TestCaseName)
 assertions = obj.getAssertionList()
@@ -427,21 +410,18 @@ file1.append("---------------- Request ---------------------------\n")
 
 
 /*Get request and response*/
+myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
 try{
-	myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
-	def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
-	def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
-	file1.append(request + "\n\n\n\n")
-	file1.append("---------------- Response --------------------------\n")
-	file1.append(response)
+def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
+def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+file1.append(request + "\n\n\n\n")
+file1.append("---------------- Response --------------------------\n")
+file1.append(response)
+}catch(Exception e){log.info "Request/Response empty"
 }
-catch (Exception e){
-	log.info("Empty Request Response")
-}
-
-
 
 /* Creating Excel for test result */
+
 def Testresultpath = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
 Testresultpath = Testresultpath + "Test_Run_Results.xls"
 log.info Testresultpath
@@ -456,33 +436,30 @@ log.info Row_count
 Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
+Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
+out.close()
+log.info "Report Generated"</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="4ce29e9a-00d2-4595-8bc5-3090449ed1d4">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="18c2dbba-997b-40d9-88b4-39d8f9591846">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>flow control</targetStep>
+      <targetStep>Flow Control</targetStep>
     </con:config>
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>eccc5407-ef6a-4c5a-866a-6c41825173db</con:testStepId>
+    <con:testStepId>537c9c27-b964-45f3-82ae-826aa70fdf2b</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>f47c7f7e-f0fb-444a-945d-6f96e063e8b1</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>a802946b-fb8a-42c7-a36f-73dcdb84a128</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>

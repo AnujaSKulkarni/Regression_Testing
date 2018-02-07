@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="a8d71d2d-d39e-408f-9e09-e125bccc6e4f" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="create-cycle" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="f7119c8e-be22-4f68-86a9-ef742c737a96" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Device Deregistered Notification" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="a8d71d2d-d39e-408f-9e09-e125bccc6e4ffileName">create-cycle</con:setting>
+    <con:setting id="97413f91-84c0-47b0-8089-ec1e165a6658fileName">Device-Deregistered-Notification</con:setting>
+    <con:setting id="f7119c8e-be22-4f68-86a9-ef742c737a96fileName">Device-Deregistered-Notification</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="be3e2e00-f1fc-48a9-8a19-837e65e069cc">
+  <con:testStep type="groovy" name="DataSource_Setup" id="39c3a756-4f55-459a-bece-0d48c0507ce1">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -122,7 +123,7 @@ if(RunTimeDataSource_Flag == true){
 	def Run_Time_Data = context.expand( '${Run_Time_Data}' )
 	InputStream ExcelFileToRead = new FileInputStream(Run_Time_Data);
 	HSSFWorkbook wb = new HSSFWorkbook(ExcelFileToRead);
-	HSSFSheet sheet = wb.getSheet("Account_Run_Time_Data")
+	HSSFSheet sheet = wb.getSheet("Location_Run_Time_Data")
 	HSSFRow row; 
 	HSSFCell cell;
 	
@@ -142,7 +143,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="84440dcc-a4b4-430c-afea-f54cb583c6c9">
+  <con:testStep type="datasource" name="DataSource" id="3a2e5e86-85e6-4298-ba22-f2fdd20bee39">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -154,8 +155,8 @@ if(RunTimeDataSource_Flag == true){
           <evaluateFormulas>false</evaluateFormulas>
         </con:configuration>
       </con:dataSource>
-      <con:shared>false</con:shared>
-      <con:restartShared>false</con:restartShared>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
       <con:property>TC_Number</con:property>
       <con:property>Service_Name</con:property>
       <con:property>Defect_ID</con:property>
@@ -211,7 +212,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -240,84 +240,79 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="421c875c-dac8-4719-930e-2126834a3498">
+  <con:testStep type="groovy" name="Flow Control" id="b73633b4-fbcc-4c4f-932d-d009d29b3a96">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
-log.info dataCombination
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
 if (API_Name != TestCaseName){
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(true)
+	log.info "Skipping"
+	testRunner.testCase.testSteps['Device Deregistered Notification'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
 }else{
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(false)
-	testRunner.testCase.testSteps['Report'].setDisabled(false)
-	
+	if(dataCombination == "Positive"){
+		testRunner.testCase.testSteps['Device Deregistered Notification'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
+	if(dataCombination == "Negative"){
+		testRunner.testCase.testSteps['Device Deregistered Notification'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
+	if(dataCombination == ""){
+		testRunner.testCase.testSteps['Device Deregistered Notification'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="create-cycle" id="36813ce8-d106-47ed-b7e9-64ca94c95919" disabled="true">
+  <con:testStep type="restrequest" name="Device Deregistered Notification" id="3f104815-f120-484c-8348-960f7f3c3e56" disabled="true">
     <con:settings/>
-    <con:config service="create or update-cycle" resourcePath="/account/favorites/entity/cycle" methodName="create or update-cycle" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="create-cycle" id="6a2d6662-8e8d-440a-bdb1-755700bebec8" mediaType="application/json" postQueryString="false">
+    <con:config service="Device Deregistered Notification" resourcePath="/replenish/notifications" methodName="Device Deregistered Notification" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Device Deregistered Notification" id="b55b7b83-a081-4bab-9ca2-0637def2fe75" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${API-Connect}</con:endpoint>
+        <con:endpoint>https://amazonreplenishmentserviceqa-v2.mybluemix.net</con:endpoint>
         <con:request>{  
-    "applianceId":${DataSource#Appliance_ID},
-    "accountId":"24",
-    "locationId":"341",
-    "favoritesList":[  
-        {  
-            "favoriteCycles":[{  
-        "name" :${DataSource#name},
-                "cycleInfo":{  
-                    "cycleMyCreation":{  
-                        "action":"SetOnDisplay",
-                        "entityCycle":{  
-                            "myCreationCycle":[  
-                                {  
-                                    "OvenUpperCavity.CycleSetCommonMode":"CommonModeBake",
-                                    "OvenUpperCavity.CycleSetTargetTemp":1234,
-                                    "OvenUpperCavity.OpSetCookTimeCompleteAction":"Unset"
-                                }
-                            ]
-                        }
-                    }
-                }
-            }
-      ]
-        }
-  ]
+   "SignatureVersion":"1",
+   "MessageAttributes":{  
+      "version":{  
+         "Type":"String",
+         "Value":"1.0"
+      }
+   },
+   "Type":"Notification",
+   "TopicArn":"arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV",
+   "Message":"{\"notificationInfo\":{\"notificationType\":\"DeviceDeregisteredNotification\",\"lwaClientId\":\"amzn1.application-oa2-client.5d3e65cb51e34155aff669682e248130\",\"notificationTime\":\"2017-09-20T19:51:06.382Z\",\"notificationId\":\"amzn1.dash.notification.v1.545f63d1-28c3-4630-b48e-a18e99233b5a\",\"version\":\"2015-06-05\"},\"deviceInfo\":{\"deviceIdentifier\":{\"serialNumber\":\"12423\"},\"productIdentifier\":{\"modelId\":\"V10KWasher\"}},\"customerInfo\":{\"directedCustomerId\":\"amzn1.account.AHV2UB34C6YHUGKVBKCR2MUHW2BQ\"}}",
+   "UnsubscribeURL":"https://sns.us-west-2.amazonaws.com/?Action=Unsubscribe&amp;SubscriptionArn=arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV:4f6a1f49-8bd9-4051-bfba-ec473d165cad",
+   "Signature":"LD6P3ZMafntmPEYc687PJA74cT25VdMspOThUntO7u244sebqk4s2/FX7t8CoOQh8KIo+aswlSCy5DM6ui8aa/N+WsQhCzqlmJv3UyxcKYjq3ylrOBA+/eG6DW5x18qFIwp+AgqUjA+jAaMjmHtywo7Uc3XT8E/ML/+TxwaH/9hSl28Q3uaXTIsH3pUZ4iTGnHPaJqe4SyXAKHIS496znQTUxNreMkZYLj5+SRn4UvnvcC1Q44a96H6hHRwXWKJwzLc+NZRTtz1wDvHcYVaT72odJAUexHq4xxvtvHx5mYk29wcmoDhrhmryNFx3VzH/9U5HrKZjQUvjdK2VBISE2A==",
+   "Timestamp":"2017-09-20T19:51:06.712Z",
+   "SigningCertURL":"https://sns.us-west-2.amazonaws.com/SimpleNotificationService-433026a4050d206028891664da859041.pem",
+   "Subject":"DRS Notification",
+   "MessageId":"85bbed9a-84e6-5ccb-a0cd-bfa64c0c90a7"
 }</con:request>
-        <con:originalUri>https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="fa706bbb-d068-482d-891b-1280b8bdcf18" name="Valid HTTP Status Codes">
+        <con:originalUri>https://amazonreplenishmentserviceqa-v2.mybluemix.net/replenish/notifications</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="6d6811a1-6e3e-4c77-bd44-f5a067028646" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="MessageContentAssertion" id="da1dcb57-2af6-41fd-b1cc-3bb4bcf08371" name="Message Content Assertion">
+        <con:assertion type="MessageContentAssertion" id="f318516d-c871-4d8a-9823-4a0f237b4306" name="Message Content Assertion">
           <con:configuration xsi:type="con:MessageContentAssertion">
             <con:elements>
-              <con:xpath>declare namespace ns1='https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle';
-//ns1:Response[1]/ns1:status[1]</con:xpath>
-              <con:element>status</con:element>
+              <con:xpath>//data[1]</con:xpath>
+              <con:element>data</con:element>
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>SUCCESS</con:expectedValue>
+              <con:expectedValue>DeviceDeregisteredNotification</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
-            <con:originalMessage><![CDATA[<Response xmlns="https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle">
-   <code/>
-   <message>Favorities data is created or updated succesfully for appliacie id :Refrigerator123</message>
-   <status>SUCCESS</status>
-</Response>]]></con:originalMessage>
+            <con:originalMessage>&lt;data contentType="text/plain;charset=UTF-8" contentLength="30">&lt;![CDATA[DeviceDeregisteredNotification]]&gt;&lt;/data></con:originalMessage>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -327,12 +322,24 @@ if (API_Name != TestCaseName){
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters/>
         <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
+          <con:entry>x-amz-sns-message-type</con:entry>
+          <con:entry>Content-Type</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="cdf61212-005d-42f0-b1e5-51632aa90533" disabled="true">
+  <con:testStep type="groovy" name="Report" id="e890b581-9835-41a1-b7ac-13a7da108108" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -427,18 +434,12 @@ file1.append("---------------- Request ---------------------------\n")
 
 
 /*Get request and response*/
-try{
-	myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
-	def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
-	def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
-	file1.append(request + "\n\n\n\n")
-	file1.append("---------------- Response --------------------------\n")
-	file1.append(response)
-}
-catch (Exception e){
-	log.info("Empty Request Response")
-}
-
+myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
+def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
+def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+file1.append(request + "\n\n\n\n")
+file1.append("---------------- Response --------------------------\n")
+file1.append(response)
 
 
 /* Creating Excel for test result */
@@ -456,33 +457,47 @@ log.info Row_count
 Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
+Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="4ce29e9a-00d2-4595-8bc5-3090449ed1d4">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="711c8d0e-4fbc-4beb-9a77-c7c3fc1502e5">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>flow control</targetStep>
+      <targetStep>Flow Control</targetStep>
     </con:config>
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>eccc5407-ef6a-4c5a-866a-6c41825173db</con:testStepId>
+    <con:testStepId>388c25ec-5dc3-4633-98c5-5039fa64f449</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>f47c7f7e-f0fb-444a-945d-6f96e063e8b1</con:testStepId>
+    <con:testStepId>d488d9a4-fdc8-49e2-b54f-2a1decd19a3a</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>a802946b-fb8a-42c7-a36f-73dcdb84a128</con:testStepId>
+    <con:testStepId>c0aa963d-47c8-4f0a-9222-9ff74e7add5a</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>f778c7d8-bc3b-4990-88d5-60a01c6a9959</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>

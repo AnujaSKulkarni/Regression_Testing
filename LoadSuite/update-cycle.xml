@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="a8d71d2d-d39e-408f-9e09-e125bccc6e4f" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="create-cycle" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="5bd9746e-e6ee-4aa0-a05a-ee1d1f0aab9f" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="update-cycle" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="a8d71d2d-d39e-408f-9e09-e125bccc6e4ffileName">create-cycle</con:setting>
+    <con:setting id="6cfe2d0e-2edc-45f2-89d7-cef347bf2a31fileName">update-cycle</con:setting>
+    <con:setting id="5bd9746e-e6ee-4aa0-a05a-ee1d1f0aab9ffileName">update-cycle</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="be3e2e00-f1fc-48a9-8a19-837e65e069cc">
+  <con:testStep type="groovy" name="Groovy Script" id="12d0674a-e9aa-4c63-95da-5ab2afd53d97">
+    <con:settings/>
+    <con:config>
+      <script>def rawRequest = context.expand( '${#[Regression Suite#create-cycle#create-cycle]#RawRequest#$[\'applianceId\']}' )
+def rawrequest1 = context.expand( '${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$[\'favoritesList\'][0][\'favoriteCycles\'][0][\'id\']}' )
+
+rawRequest = "\"" + rawRequest + "\""
+
+rawrequest1 = "\"" + rawrequest1 + "\""
+testRunner.testCase.setPropertyValue("applianceid", rawRequest)
+
+testRunner.testCase.setPropertyValue("id", rawrequest1)</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="DataSource_Setup" id="dd539d45-789a-441a-bd35-40f24bd67319">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -142,7 +157,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="84440dcc-a4b4-430c-afea-f54cb583c6c9">
+  <con:testStep type="datasource" name="DataSource" id="d6144590-b349-464c-adf0-758ea77be712">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -240,7 +255,7 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="421c875c-dac8-4719-930e-2126834a3498">
+  <con:testStep type="groovy" name="flow control" id="52be5154-2cd5-412a-bbf7-c26fd0b29ae2">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -249,32 +264,33 @@ def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
 if (API_Name != TestCaseName){
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(true)
+	testRunner.testCase.testSteps['update-cycle'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
 }else{
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(false)
+	testRunner.testCase.testSteps['update-cycle'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
 	
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="create-cycle" id="36813ce8-d106-47ed-b7e9-64ca94c95919" disabled="true">
+  <con:testStep type="restrequest" name="update-cycle" id="9b9ae53a-f0e2-401f-b980-d6c31a468d1f" disabled="true">
     <con:settings/>
     <con:config service="create or update-cycle" resourcePath="/account/favorites/entity/cycle" methodName="create or update-cycle" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="create-cycle" id="6a2d6662-8e8d-440a-bdb1-755700bebec8" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="update-cycle" id="6a2d6662-8e8d-440a-bdb1-755700bebec8" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:endpoint>${API-Connect}</con:endpoint>
         <con:request>{  
-    "applianceId":${DataSource#Appliance_ID},
+    "applianceId": ${#TestCase#applianceid},
     "accountId":"24",
     "locationId":"341",
     "favoritesList":[  
         {  
             "favoriteCycles":[{  
-        "name" :${DataSource#name},
-                "cycleInfo":{  
+        "name" : ${DataSource#name},
+        "id":${#TestCase#id} ,
+                "cycleInfo":{ 
                     "cycleMyCreation":{  
                         "action":"SetOnDisplay",
                         "entityCycle":{  
@@ -294,30 +310,10 @@ if (API_Name != TestCaseName){
   ]
 }</con:request>
         <con:originalUri>https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="fa706bbb-d068-482d-891b-1280b8bdcf18" name="Valid HTTP Status Codes">
+        <con:assertion type="Valid HTTP Status Codes" id="91d07ad3-e445-4a57-84e0-e160081c242c" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="MessageContentAssertion" id="da1dcb57-2af6-41fd-b1cc-3bb4bcf08371" name="Message Content Assertion">
-          <con:configuration xsi:type="con:MessageContentAssertion">
-            <con:elements>
-              <con:xpath>declare namespace ns1='https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle';
-//ns1:Response[1]/ns1:status[1]</con:xpath>
-              <con:element>status</con:element>
-              <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>SUCCESS</con:expectedValue>
-              <con:hasValue>false</con:hasValue>
-              <con:numberType>false</con:numberType>
-            </con:elements>
-            <con:originalMessage><![CDATA[<Response xmlns="https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle">
-   <code/>
-   <message>Favorities data is created or updated succesfully for appliacie id :Refrigerator123</message>
-   <status>SUCCESS</status>
-</Response>]]></con:originalMessage>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -325,14 +321,16 @@ if (API_Name != TestCaseName){
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
+        <con:parameters>
+          <entry key="Authorization" value="bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="cdf61212-005d-42f0-b1e5-51632aa90533" disabled="true">
+  <con:testStep type="groovy" name="Report" id="0c2ad7ae-0925-4da3-af19-8f72eb09f651" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -461,27 +459,46 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="4ce29e9a-00d2-4595-8bc5-3090449ed1d4">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="ddb4ee28-5159-463b-bbbb-c1d572dbfc5e">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
       <targetStep>flow control</targetStep>
     </con:config>
   </con:testStep>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>applianceid</con:name>
+      <con:value>"Refrigerator123"</con:value>
+    </con:property>
+    <con:property>
+      <con:name>id</con:name>
+      <con:value>"Refrigerator123-OFZ8"</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>eccc5407-ef6a-4c5a-866a-6c41825173db</con:testStepId>
+    <con:testStepId>c0985eb5-e688-44cb-9248-fee8676fbfa5</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>f47c7f7e-f0fb-444a-945d-6f96e063e8b1</con:testStepId>
+    <con:testStepId>2cd28aa9-c0d6-4918-bd52-26395fb521a7</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>a802946b-fb8a-42c7-a36f-73dcdb84a128</con:testStepId>
+    <con:testStepId>8fde6cbc-f91a-4cac-8c18-da9c71e84a6d</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>f2446c01-4a21-46dc-9113-33e974ba97d7</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>af049cdf-094d-42e7-8224-d07f5995fb50</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

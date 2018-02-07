@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="a8d71d2d-d39e-408f-9e09-e125bccc6e4f" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="create-cycle" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="5c616f76-94d8-452b-a544-303e334986d9" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Set Dct" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="a8d71d2d-d39e-408f-9e09-e125bccc6e4ffileName">create-cycle</con:setting>
+    <con:setting id="b612ca77-c438-4e4b-ac5e-cb02d887a206fileName">Set-Dct</con:setting>
+    <con:setting id="5c616f76-94d8-452b-a544-303e334986d9fileName">Set-Dct</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="be3e2e00-f1fc-48a9-8a19-837e65e069cc">
+  <con:testStep type="groovy" name="DataSource_Setup" id="91a0aaad-1010-40c7-84ae-59212d64ebd4">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -142,7 +143,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="84440dcc-a4b4-430c-afea-f54cb583c6c9">
+  <con:testStep type="datasource" name="DataSource" id="155ffb4e-5059-438f-b44f-a64be5cf1335">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -154,8 +155,6 @@ if(RunTimeDataSource_Flag == true){
           <evaluateFormulas>false</evaluateFormulas>
         </con:configuration>
       </con:dataSource>
-      <con:shared>false</con:shared>
-      <con:restartShared>false</con:restartShared>
       <con:property>TC_Number</con:property>
       <con:property>Service_Name</con:property>
       <con:property>Defect_ID</con:property>
@@ -211,7 +210,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -240,7 +238,7 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="421c875c-dac8-4719-930e-2126834a3498">
+  <con:testStep type="groovy" name="flow control" id="776873f3-6698-483b-9169-cfd82fbca388">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -249,63 +247,48 @@ def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
 if (API_Name != TestCaseName){
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(true)
+	testRunner.testCase.testSteps['Set Dct_Negative'].setDisabled(true)
+	testRunner.testCase.testSteps['Set Dct_Positive'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
 }else{
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(false)
-	testRunner.testCase.testSteps['Report'].setDisabled(false)
-	
+	if(dataCombination == "Positive"){
+		testRunner.testCase.testSteps['Set Dct_Negative'].setDisabled(true)
+		testRunner.testCase.testSteps['Set Dct_Positive'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
+	if(dataCombination == "Negative"){
+		testRunner.testCase.testSteps['Set Dct_Negative'].setDisabled(false)
+		testRunner.testCase.testSteps['Set Dct_Positive'].setDisabled(true)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="create-cycle" id="36813ce8-d106-47ed-b7e9-64ca94c95919" disabled="true">
+  <con:testStep type="restrequest" name="Set Dct_Positive" id="567b8282-6224-452f-b5b3-2fb934f33e9a" disabled="true">
     <con:settings/>
-    <con:config service="create or update-cycle" resourcePath="/account/favorites/entity/cycle" methodName="create or update-cycle" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="create-cycle" id="6a2d6662-8e8d-440a-bdb1-755700bebec8" mediaType="application/json" postQueryString="false">
+    <con:config service="Set Dct" resourcePath="/setDct" methodName="SetDct" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Set Dct_Positive" id="a1ceaf13-cbd6-447c-882a-fe931bf6c135" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${API-Connect}</con:endpoint>
-        <con:request>{  
-    "applianceId":${DataSource#Appliance_ID},
-    "accountId":"24",
-    "locationId":"341",
-    "favoritesList":[  
-        {  
-            "favoriteCycles":[{  
-        "name" :${DataSource#name},
-                "cycleInfo":{  
-                    "cycleMyCreation":{  
-                        "action":"SetOnDisplay",
-                        "entityCycle":{  
-                            "myCreationCycle":[  
-                                {  
-                                    "OvenUpperCavity.CycleSetCommonMode":"CommonModeBake",
-                                    "OvenUpperCavity.CycleSetTargetTemp":1234,
-                                    "OvenUpperCavity.OpSetCookTimeCompleteAction":"Unset"
-                                }
-                            ]
-                        }
-                    }
-                }
-            }
-      ]
-        }
-  ]
+        <con:endpoint>${LAR}</con:endpoint>
+        <con:request>{
+  "said": ${DataSource#SAID},
+  "dct": ${DataSource#DCT}
 }</con:request>
-        <con:originalUri>https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="fa706bbb-d068-482d-891b-1280b8bdcf18" name="Valid HTTP Status Codes">
+        <con:originalUri>https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/setDct</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d0b52b11-2c23-4a31-af58-aaf888a91fd5" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="MessageContentAssertion" id="da1dcb57-2af6-41fd-b1cc-3bb4bcf08371" name="Message Content Assertion">
+        <con:assertion type="MessageContentAssertion" id="5ab0db2b-9318-4a67-8bf4-1df84ba27f3e" name="Message Content Assertion">
           <con:configuration xsi:type="con:MessageContentAssertion">
             <con:elements>
-              <con:xpath>declare namespace ns1='https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle';
-//ns1:Response[1]/ns1:status[1]</con:xpath>
-              <con:element>status</con:element>
+              <con:xpath>declare namespace ns1='https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/setDct';
+//ns1:Response[1]/ns1:message[1]</con:xpath>
+              <con:element>message</con:element>
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>true</con:enabled>
@@ -313,10 +296,20 @@ if (API_Name != TestCaseName){
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
-            <con:originalMessage><![CDATA[<Response xmlns="https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle">
-   <code/>
-   <message>Favorities data is created or updated succesfully for appliacie id :Refrigerator123</message>
-   <status>SUCCESS</status>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/setDct';
+//ns1:Response[1]/ns1:response[1]</con:xpath>
+              <con:element>response</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>DCT Added Sucessfully : ${Set Dct_Positive#RawRequest#$['dct']}</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:originalMessage><![CDATA[<Response xmlns="https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/setDct">
+   <message>SUCCESS</message>
+   <response>DCT Added Sucessfully : 350ad09ad8fa0098ad9d9999pff</response>
 </Response>]]></con:originalMessage>
           </con:configuration>
         </con:assertion>
@@ -329,10 +322,56 @@ if (API_Name != TestCaseName){
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="cdf61212-005d-42f0-b1e5-51632aa90533" disabled="true">
+  <con:testStep type="restrequest" name="Set Dct_Negative" id="c2adb0a5-85ac-44f6-aedb-dfff03bfc82c" disabled="true">
+    <con:settings/>
+    <con:config service="Set Dct" resourcePath="/setDct" methodName="SetDct" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Set Dct_Negative" id="a1ceaf13-cbd6-447c-882a-fe931bf6c135" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${LAR}</con:endpoint>
+        <con:request>{
+  "said": ${DataSource#SAID},
+  "dct": ${DataSource#dct}
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Report" id="1e15cf9b-7cc6-491d-8dda-f31be4030297" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -371,7 +410,12 @@ def data_combination = context.expand( '${DataSource#Data_Combination}' )
 /*Get TC Name*/
 def TCN = context.expand( '${DataSource#TC_Number}' )
 def TestCaseName = testRunner.testCase.getName()
-
+if(data_combination == "Positive"){
+	TestCaseName = TestCaseName + "_Positive"
+}
+if(data_combination == "Negative"){
+	TestCaseName = TestCaseName + "_Negative"
+}
 log.info TestCaseName
 
 obj = context.testCase.getTestStepByName(TestCaseName)
@@ -427,18 +471,12 @@ file1.append("---------------- Request ---------------------------\n")
 
 
 /*Get request and response*/
-try{
-	myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
-	def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
-	def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
-	file1.append(request + "\n\n\n\n")
-	file1.append("---------------- Response --------------------------\n")
-	file1.append(response)
-}
-catch (Exception e){
-	log.info("Empty Request Response")
-}
-
+myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
+def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
+def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+file1.append(request + "\n\n\n\n")
+file1.append("---------------- Response --------------------------\n")
+file1.append(response)
 
 
 /* Creating Excel for test result */
@@ -456,12 +494,13 @@ log.info Row_count
 Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
+Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="4ce29e9a-00d2-4595-8bc5-3090449ed1d4">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="31b5b105-6a7b-423e-b9b0-e0bc5022e4f0">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
@@ -471,18 +510,46 @@ out.close()</script>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>eccc5407-ef6a-4c5a-866a-6c41825173db</con:testStepId>
+    <con:testStepId>a6b1a301-9339-445f-94ae-a9eec1e6519d</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>f47c7f7e-f0fb-444a-945d-6f96e063e8b1</con:testStepId>
+    <con:testStepId>c75a16a2-c31f-46d7-8517-e8b1838622a7</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>a802946b-fb8a-42c7-a36f-73dcdb84a128</con:testStepId>
+    <con:testStepId>82186282-8f68-48a6-ae24-950f7e7dcd01</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>307f164d-7320-4413-9c73-d0db95846c25</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>f90df9b7-93d7-4410-ab49-87c306a4cd23</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>10753ecd-b6c9-4fe2-ac40-94eb0060150a</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>445b3e56-337c-40b4-a0f5-fb26bce7a9fd</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>

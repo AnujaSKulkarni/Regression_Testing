@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="a8d71d2d-d39e-408f-9e09-e125bccc6e4f" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="create-cycle" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="ac738f33-289b-4e0f-80c9-649bf300c093" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Authorize NEST user" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="a8d71d2d-d39e-408f-9e09-e125bccc6e4ffileName">create-cycle</con:setting>
+    <con:setting id="bd011a46-1d1c-43c7-a320-cc3543f68388fileName">Authorize-NEST-user</con:setting>
+    <con:setting id="ac738f33-289b-4e0f-80c9-649bf300c093fileName">Authorize-NEST-user</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="be3e2e00-f1fc-48a9-8a19-837e65e069cc">
+  <con:testStep type="groovy" name="DataSource_Setup" id="899f6031-ba5a-4512-af19-8f0344aaf8dd">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -142,7 +143,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="84440dcc-a4b4-430c-afea-f54cb583c6c9">
+  <con:testStep type="datasource" name="DataSource" id="2fc18d70-596d-4e05-990e-9920ae34e4ef">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -211,7 +212,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -240,7 +240,135 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="421c875c-dac8-4719-930e-2126834a3498">
+  <con:testStep type="groovy" name="Code_Extraction" id="737ede54-fc31-45df-a2c4-106e86ad5689">
+    <con:settings/>
+    <con:config>
+      <script>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+System.setProperty("webdriver.chrome.driver", "D:/Personal Data/Backup_8_March_2017/Selenium Data/chromedriver_win32/chromedriver.exe");
+
+WebDriver driver = new ChromeDriver();
+
+driver.manage().window().maximize();
+
+driver.get("https://home.nest.com/login/oauth2?client_id=fe5c17c7-50de-49ef-8e43-87a4bfd6f2ba&amp;state=STATE");
+
+for(int i = 0; i &lt; 1000 ; i++){
+	try{
+		driver.findElement(By.id("ember651")).isDisplayed();
+		Thread.sleep(2000);
+		log.info("Webpage loaded");
+		break;
+	}catch (Exception e){
+		log.info("Waiting for webpage to load");
+		Thread.sleep(2000);
+	}
+}
+
+// Enter UserName
+driver.findElement(By.id("ember590")).sendKeys("NEST_TESTING@MAILINATOR.COM");
+//Enter Password
+String Password = "Whirlpool123\$"
+driver.findElement(By.id("ember642")).sendKeys(Password);
+//submit button
+driver.findElement(By.id("ember651")).click();
+
+// Wait For Page To Load
+for(int i = 0; i &lt; 1000 ; i++){
+	try{
+		driver.findElement(By.className("spin-button-label")).isDisplayed();
+		Thread.sleep(5000);
+		log.info("Webpage loaded");
+		break;
+	}catch (Exception e){
+		log.info("Waiting for webpage to load");
+		Thread.sleep(2000);
+	}
+}
+//accept button
+String Current_URL_Before = driver.getCurrentUrl();
+driver.findElement(By.className("spin-button-label")).click();
+
+for(int i = 0; i &lt; 1000 ; i++){
+	String Current_URL = driver.getCurrentUrl();
+	if(Current_URL_Before.equals(Current_URL)){
+		log.info("Waiting for webpage to load");
+		Thread.sleep(2000);
+	}else{
+		Thread.sleep(2000);
+		log.info("Webpage loaded");
+		break;
+	}
+}
+
+String Current_URL = driver.getCurrentUrl();
+log.info(Current_URL);
+String[] Code = Current_URL.split("code=");
+log.info(Code[1]);
+driver.close();
+testRunner.testCase.setPropertyValue("code", Code[1])</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GET Member Token" id="9faed2d6-a9cb-4b1d-826b-96324288a6de">
+    <con:settings/>
+    <con:config service="GET Member Token" resourcePath="/oauth/token" methodName="GET Member Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GET Member Token" id="9cb261e4-4179-4e98-87a6-b3a35d79e943" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${Secure_auth}</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/oauth/token</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="52fbac2f-5830-4ac2-b93d-ca0617c07cc3" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="password" value="Whirlpool123$"/>
+          <con:entry key="grant_type" value="password"/>
+          <con:entry key="client_secret" value="syntel123$"/>
+          <con:entry key="client_id" value="syntel"/>
+          <con:entry key="username" value="NEST_TESTING@MAILINATOR.COM"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>grant_type</con:entry>
+          <con:entry>username</con:entry>
+          <con:entry>password</con:entry>
+          <con:entry>client_id</con:entry>
+          <con:entry>client_secret</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="flow control" id="10d0d514-1f59-4299-934e-2b030eb6cd1d">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -249,75 +377,29 @@ def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
 if (API_Name != TestCaseName){
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(true)
+	testRunner.testCase.testSteps['Authorize NEST user'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
 }else{
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(false)
+	testRunner.testCase.testSteps['Authorize NEST user'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
 	
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="create-cycle" id="36813ce8-d106-47ed-b7e9-64ca94c95919" disabled="true">
+  <con:testStep type="restrequest" name="Authorize NEST user" id="3ec782bc-aac4-4347-87ca-f93da5f29850" disabled="true">
     <con:settings/>
-    <con:config service="create or update-cycle" resourcePath="/account/favorites/entity/cycle" methodName="create or update-cycle" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="create-cycle" id="6a2d6662-8e8d-440a-bdb1-755700bebec8" mediaType="application/json" postQueryString="false">
+    <con:config service="Authorize NEST user" resourcePath="/location/${#Project#Location_ID}/authorizeUser/code/${#TestCase#code}" methodName="Authorize NEST user" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Authorize NEST user" id="72e37ea6-ddb9-4dfc-8ce5-a0022a9378db" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${API-Connect}</con:endpoint>
-        <con:request>{  
-    "applianceId":${DataSource#Appliance_ID},
-    "accountId":"24",
-    "locationId":"341",
-    "favoritesList":[  
-        {  
-            "favoriteCycles":[{  
-        "name" :${DataSource#name},
-                "cycleInfo":{  
-                    "cycleMyCreation":{  
-                        "action":"SetOnDisplay",
-                        "entityCycle":{  
-                            "myCreationCycle":[  
-                                {  
-                                    "OvenUpperCavity.CycleSetCommonMode":"CommonModeBake",
-                                    "OvenUpperCavity.CycleSetTargetTemp":1234,
-                                    "OvenUpperCavity.OpSetCookTimeCompleteAction":"Unset"
-                                }
-                            ]
-                        }
-                    }
-                }
-            }
-      ]
-        }
-  ]
-}</con:request>
-        <con:originalUri>https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="fa706bbb-d068-482d-891b-1280b8bdcf18" name="Valid HTTP Status Codes">
+        <con:endpoint>${#Project#API-Connect}</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/location/723/authorizeUser/code/7NP3N3Y27R6VFXSH</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="73823415-f97a-4742-8b4d-42306433ef29" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="MessageContentAssertion" id="da1dcb57-2af6-41fd-b1cc-3bb4bcf08371" name="Message Content Assertion">
-          <con:configuration xsi:type="con:MessageContentAssertion">
-            <con:elements>
-              <con:xpath>declare namespace ns1='https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle';
-//ns1:Response[1]/ns1:status[1]</con:xpath>
-              <con:element>status</con:element>
-              <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>SUCCESS</con:expectedValue>
-              <con:hasValue>false</con:hasValue>
-              <con:numberType>false</con:numberType>
-            </con:elements>
-            <con:originalMessage><![CDATA[<Response xmlns="https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle">
-   <code/>
-   <message>Favorities data is created or updated succesfully for appliacie id :Refrigerator123</message>
-   <status>SUCCESS</status>
-</Response>]]></con:originalMessage>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -325,14 +407,18 @@ if (API_Name != TestCaseName){
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
+        <con:parameters>
+          <con:entry key="Authorization" value="Bearer ${GET Member Token#Response#$['access_token']}"/>
+          <con:entry key="wp-client-brand" value="Whirlpool"/>
+        </con:parameters>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
+          <con:entry>wp-client-brand</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="cdf61212-005d-42f0-b1e5-51632aa90533" disabled="true">
+  <con:testStep type="groovy" name="Report" id="ef77a39e-e777-437a-8d1c-af5bc1080ef8" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -427,18 +513,12 @@ file1.append("---------------- Request ---------------------------\n")
 
 
 /*Get request and response*/
-try{
-	myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
-	def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
-	def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
-	file1.append(request + "\n\n\n\n")
-	file1.append("---------------- Response --------------------------\n")
-	file1.append(response)
-}
-catch (Exception e){
-	log.info("Empty Request Response")
-}
-
+myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
+def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
+def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+file1.append(request + "\n\n\n\n")
+file1.append("---------------- Response --------------------------\n")
+file1.append(response)
 
 
 /* Creating Excel for test result */
@@ -461,27 +541,37 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="4ce29e9a-00d2-4595-8bc5-3090449ed1d4">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="c262eb54-3670-438f-9653-d3a2cc3eaa99">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
       <targetStep>flow control</targetStep>
     </con:config>
   </con:testStep>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>code</con:name>
+      <con:value>BN8YK7SX9T557EN9</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>eccc5407-ef6a-4c5a-866a-6c41825173db</con:testStepId>
+    <con:testStepId>e53bd569-c2e7-4cf4-9869-a8fb3994dec8</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>f47c7f7e-f0fb-444a-945d-6f96e063e8b1</con:testStepId>
+    <con:testStepId>0b267e53-b69c-46f5-8b1f-0bab0e82b83a</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>a802946b-fb8a-42c7-a36f-73dcdb84a128</con:testStepId>
+    <con:testStepId>d80aa596-a8e4-4f58-abc7-7422d2408219</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>977a16e0-1599-48b4-9432-3201a3857d03</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

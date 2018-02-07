@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="a8d71d2d-d39e-408f-9e09-e125bccc6e4f" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="create-cycle" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="105740cf-d811-4a06-8d3f-63f032a7c025" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Subscription Changed Notification" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="a8d71d2d-d39e-408f-9e09-e125bccc6e4ffileName">create-cycle</con:setting>
+    <con:setting id="93731223-a852-431a-9910-b0f097cddce2fileName">Subscription-Changed-Notification</con:setting>
+    <con:setting id="105740cf-d811-4a06-8d3f-63f032a7c025fileName">Subscription-Changed-Notification</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="be3e2e00-f1fc-48a9-8a19-837e65e069cc">
+  <con:testStep type="groovy" name="DataSource_Setup" id="6342638e-7c31-4a9e-a3b6-304a258ff6fc">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -122,7 +123,7 @@ if(RunTimeDataSource_Flag == true){
 	def Run_Time_Data = context.expand( '${Run_Time_Data}' )
 	InputStream ExcelFileToRead = new FileInputStream(Run_Time_Data);
 	HSSFWorkbook wb = new HSSFWorkbook(ExcelFileToRead);
-	HSSFSheet sheet = wb.getSheet("Account_Run_Time_Data")
+	HSSFSheet sheet = wb.getSheet("Location_Run_Time_Data")
 	HSSFRow row; 
 	HSSFCell cell;
 	
@@ -142,7 +143,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="84440dcc-a4b4-430c-afea-f54cb583c6c9">
+  <con:testStep type="datasource" name="DataSource" id="2ffa5324-cd82-49e2-9d8c-6619b49fa994">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -154,8 +155,8 @@ if(RunTimeDataSource_Flag == true){
           <evaluateFormulas>false</evaluateFormulas>
         </con:configuration>
       </con:dataSource>
-      <con:shared>false</con:shared>
-      <con:restartShared>false</con:restartShared>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
       <con:property>TC_Number</con:property>
       <con:property>Service_Name</con:property>
       <con:property>Defect_ID</con:property>
@@ -211,7 +212,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -240,84 +240,82 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="421c875c-dac8-4719-930e-2126834a3498">
+  <con:testStep type="groovy" name="Flow Control" id="1c0e4c5b-1b1f-4df8-b8aa-ededcd5ba829">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
-log.info dataCombination
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
+def appliance_ID = context.expand( '${Appliance_Number}' )
+log.info appliance_ID
+
 if (API_Name != TestCaseName){
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(true)
+	log.info "Skipping"
+	testRunner.testCase.testSteps['Subscription Changed Notification'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
 }else{
-	testRunner.testCase.testSteps['create-cycle'].setDisabled(false)
-	testRunner.testCase.testSteps['Report'].setDisabled(false)
-	
+	if(dataCombination == "Positive"){
+		testRunner.testCase.testSteps['Subscription Changed Notification'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
+	if(dataCombination == "Negative"){
+		testRunner.testCase.testSteps['Subscription Changed Notification'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
+	if(dataCombination == ""){
+		testRunner.testCase.testSteps['Subscription Changed Notification'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="create-cycle" id="36813ce8-d106-47ed-b7e9-64ca94c95919" disabled="true">
+  <con:testStep type="restrequest" name="Subscription Changed Notification" id="d2beb62a-ddd8-4c15-ab7f-d2da5c006f54" disabled="true">
     <con:settings/>
-    <con:config service="create or update-cycle" resourcePath="/account/favorites/entity/cycle" methodName="create or update-cycle" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="create-cycle" id="6a2d6662-8e8d-440a-bdb1-755700bebec8" mediaType="application/json" postQueryString="false">
+    <con:config service="Subscription Changed Notification" resourcePath="/replenish/notifications" methodName="Subscription Changed Notification" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Subscription Changed Notification" id="5ca1ad79-0c3d-4d7d-8015-36972ab86425" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${API-Connect}</con:endpoint>
+        <con:endpoint>https://amazonreplenishmentserviceqa-v2.mybluemix.net</con:endpoint>
         <con:request>{  
-    "applianceId":${DataSource#Appliance_ID},
-    "accountId":"24",
-    "locationId":"341",
-    "favoritesList":[  
-        {  
-            "favoriteCycles":[{  
-        "name" :${DataSource#name},
-                "cycleInfo":{  
-                    "cycleMyCreation":{  
-                        "action":"SetOnDisplay",
-                        "entityCycle":{  
-                            "myCreationCycle":[  
-                                {  
-                                    "OvenUpperCavity.CycleSetCommonMode":"CommonModeBake",
-                                    "OvenUpperCavity.CycleSetTargetTemp":1234,
-                                    "OvenUpperCavity.OpSetCookTimeCompleteAction":"Unset"
-                                }
-                            ]
-                        }
-                    }
-                }
-            }
-      ]
-        }
-  ]
+   "SignatureVersion":"1",
+   "MessageAttributes":{  
+      "version":{  
+         "Type":"String",
+         "Value":"2.0"
+      }
+   },
+   "Type":"Notification",
+   "TopicArn":"arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV",
+   "Message":"{\"notificationInfo\":{\"notificationType\":\"SubscriptionChangedNotification\",\"lwaClientId\":${LWA_Client_ID},\"notificationTime\":\"2017-09-20T20:02:31.473Z\",\"notificationId\":\"amzn1.dash.notification.v1.d8926923-593e-4283-8231-ee3c4932f895\",\"version\":\"2015-06-05\"},\"deviceInfo\":{\"deviceIdentifier\":{\"serialNumber\":${Appliance_Number}},\"productIdentifier\":{\"modelId\":${Device_Model_ID}}},\"subscriptionInfo\":{\"slotsSubscriptionStatus\":{${Slot_1}:{\"subscribed\":false,\"productInfoList\":[]},${Slot_2}:{\"subscribed\":true,\"productInfoList\":[{\"quantity\":6.0,\"unit\":\"Count\",\"asin\":\"B00C91Q86I\"}]}}},\"customerInfo\":{\"directedCustomerId\":\"amzn1.account.AHV2UB34C6YHUGKVBKCR2MUHW2BQ\"}}",
+   "UnsubscribeURL":"https://sns.us-west-2.amazonaws.com/?Action=Unsubscribe&amp;SubscriptionArn=arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV:4f6a1f49-8bd9-4051-bfba-ec473d165cad",
+   "Signature":"gU4WQnuqOhzKPvRmpXH8LLx9u+n3THdymm9BDZE4bCsVDbWveA5XQAdVHbV42dLfhLL2fQnI6rNbbgF72+pepiANwbzKuTN0ZT8m2TpjO2l6xx5GGm3xwKjip+gmeI9WHJY1jWRwMMc40td57X3GZYYhHJ65aFQ3BwBlbXBkXmv91W2G370q5Sas5+VI7WXv6ucC3eQ6qJ8v/ntM+vbb88NyD0hWPOpJ2YwgsKEPUOVR0lwpxyIrWL45NgtT/Dycnx7rDwqIi3t3EM2sVraobaJ95ojZ9uWLkIauf2r9+cdeokxvdOOAv/BlCqmCbkEWyHhi3+O0Ue71/29E7mt7dQ==",
+   "Timestamp":"2017-09-20T20:02:31.785Z",
+   "SigningCertURL":"https://sns.us-west-2.amazonaws.com/SimpleNotificationService-433026a4050d206028891664da859041.pem",
+   "Subject":"DRS Notification",
+   "MessageId":"f39267a3-e0d3-5821-9c75-359f2b44450b"
 }</con:request>
-        <con:originalUri>https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="fa706bbb-d068-482d-891b-1280b8bdcf18" name="Valid HTTP Status Codes">
+        <con:originalUri>https://amazonreplenishmentserviceqa-v2.mybluemix.net/replenish/notifications</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="85822804-c893-46e6-99f9-df87ff9af115" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="MessageContentAssertion" id="da1dcb57-2af6-41fd-b1cc-3bb4bcf08371" name="Message Content Assertion">
+        <con:assertion type="MessageContentAssertion" id="babefca2-c89c-4553-8fb5-8d3d4f70cbdf" name="Message Content Assertion">
           <con:configuration xsi:type="con:MessageContentAssertion">
             <con:elements>
-              <con:xpath>declare namespace ns1='https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle';
-//ns1:Response[1]/ns1:status[1]</con:xpath>
-              <con:element>status</con:element>
+              <con:xpath>//data[1]</con:xpath>
+              <con:element>data</con:element>
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>SUCCESS</con:expectedValue>
+              <con:expectedValue>SubscriptionChangedNotification</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
-            <con:originalMessage><![CDATA[<Response xmlns="https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle">
-   <code/>
-   <message>Favorities data is created or updated succesfully for appliacie id :Refrigerator123</message>
-   <status>SUCCESS</status>
-</Response>]]></con:originalMessage>
+            <con:originalMessage>&lt;data contentType="text/plain;charset=UTF-8" contentLength="31">&lt;![CDATA[SubscriptionChangedNotification]]&gt;&lt;/data></con:originalMessage>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -327,12 +325,23 @@ if (API_Name != TestCaseName){
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters/>
         <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
+          <con:entry>x-amz-sns-message-type</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="cdf61212-005d-42f0-b1e5-51632aa90533" disabled="true">
+  <con:testStep type="groovy" name="Report" id="cbf3cee7-83f5-47ed-9315-eea18f2d497c" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -427,18 +436,12 @@ file1.append("---------------- Request ---------------------------\n")
 
 
 /*Get request and response*/
-try{
-	myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
-	def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
-	def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
-	file1.append(request + "\n\n\n\n")
-	file1.append("---------------- Response --------------------------\n")
-	file1.append(response)
-}
-catch (Exception e){
-	log.info("Empty Request Response")
-}
-
+myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
+def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
+def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+file1.append(request + "\n\n\n\n")
+file1.append("---------------- Response --------------------------\n")
+file1.append(response)
 
 
 /* Creating Excel for test result */
@@ -456,33 +459,52 @@ log.info Row_count
 Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
+Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="4ce29e9a-00d2-4595-8bc5-3090449ed1d4">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="b7835184-6595-474b-ab77-08b44395524b">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>flow control</targetStep>
+      <targetStep>Flow Control</targetStep>
     </con:config>
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>eccc5407-ef6a-4c5a-866a-6c41825173db</con:testStepId>
+    <con:testStepId>e6e68746-5e6c-4c65-ae6e-98688eca3ac5</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>f47c7f7e-f0fb-444a-945d-6f96e063e8b1</con:testStepId>
+    <con:testStepId>233c761f-8761-4dfb-8f4a-e2bd358ec63d</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>a802946b-fb8a-42c7-a36f-73dcdb84a128</con:testStepId>
+    <con:testStepId>ff4b9d76-c2df-473b-9ff7-21cba42b9fb5</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>2730bdf3-7643-4119-af70-cc3f91f6828a</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>23e10b69-0839-4d5a-8515-1b65f1ca0959</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>
