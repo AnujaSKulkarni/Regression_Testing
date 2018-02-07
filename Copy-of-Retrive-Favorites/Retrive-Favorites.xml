@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Retrive Favorites" path="/account/favorites/${#[Favorities#create-setting#create-setting]#RawRequest#$['applianceId']}" id="cff23c31-fa70-4be6-8aeb-e01a3e1548fb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="cff23c31-fa70-4be6-8aeb-e01a3e1548fbfileName">Retrive-Favorites</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Retrive Favorites" id="954bbb8e-677b-4be7-9e7c-b0f775297603" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:element xmlns:ref="https://api-test.whrcloud.com/api/v1/account/favorites/%22Refrigerator123%22">ref:Fault</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/hal+json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:element xmlns:ref="https://api-test.whrcloud.com/api/v1/account/favorites/%22Refrigerator123%22">ref:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ref="https://api-test.whrcloud.com/api/v1/account/favorites/%22Refrigerator123%22">ref:Response</con:element>
+    </con:representation>
+    <con:request name="Retrive Favorites" id="effe7cf4-f260-4b12-bd2b-e0710874bf7b" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${API-Connect}</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

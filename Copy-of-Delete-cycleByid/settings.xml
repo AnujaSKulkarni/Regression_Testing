@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="08e75b72-df33-4751-8d37-8c9a36bfdced" wadlVersion="http://wadl.dev.java.net/2009/02" name="Delete-cycleByid" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="08e75b72-df33-4751-8d37-8c9a36bfdcedfileName">Copy-of-Delete-cycleByid</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://{{Favorites}}</con:endpoint>
+  </con:endpoints>
+</con:interface>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="create or update -setting" path="/account/favorites/entity/setting" id="d9000cee-7e63-425a-a1f3-913cf3de26bd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d9000cee-7e63-425a-a1f3-913cf3de26bdfileName">create-or-update--setting</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="create or update -setting" id="01a8822a-324b-4153-bebb-fd8196b5cdea" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404 500</con:status>
+      <con:params/>
+      <con:element xmlns:set="https://api-test.whrcloud.com/api/v1/api/v1/account/favorites/entity/setting">set:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:set="https://api-test.whrcloud.com/api/v1/api/v1/account/favorites/entity/setting">set:Response</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType xsi:nil="true"/>
+      <con:status>0</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
+    <con:request name="create or update -setting" id="da934dec-504e-4fd7-850a-f8c34330d731" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${API-Connect}</con:endpoint>
+      <con:request>{  
+    "applianceId":"refrigator121212",
+    "accountId":"241",
+    "locationId":"723",
+    "favoritesList":[  
+        {  
+           "favoriteSettings":{  
+                "M2MAttributeName":"NewTempSettingFreezer",
+                "Instance":"",
+                "AttributeName":"NewTempSettingFreezer",
+                "Key":"0xB053",
+                "MappedAttributeName":"NewTempSettingFreezer",
+                "dataType":"IntegerSigned8Bit",
+                "deviceIO":"RW",
+                "isTimeSeries":true,
+                "isTemplate":true,
+                "Default":"0",
+                "favoriteFill1" :"ml",
+                "favoriteFill2" :"cups"
+            }
+        }
+  ]
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

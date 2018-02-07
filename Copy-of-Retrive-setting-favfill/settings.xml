@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="ebf4aa2a-bd16-4047-b845-8b075b206cf4" wadlVersion="http://wadl.dev.java.net/2009/02" name="Retrive-setting-favfill" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ebf4aa2a-bd16-4047-b845-8b075b206cf4fileName">Copy-of-Retrive-setting-favfill</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://{{Favorites}}</con:endpoint>
+  </con:endpoints>
+</con:interface>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Retrive-setting-All" path="/account/favorites/${#[Favorities#Retrive Favorites#Retrive Favorites]#Response#$['applianceId']}/entity/cycle/id/${#[Favorities#Retrive Favorites#Retrive Favorites]#Response#$['favoritesList'][0]['favoriteCycles'][0]['id']}" id="a3c9176b-37cc-4ade-b8d9-164a9879d75a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a3c9176b-37cc-4ade-b8d9-164a9879d75afileName">Retrive-setting-All</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Retrive-CycleById" id="f77f9186-b76f-4fbe-b899-b8de96b6a097" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:oven="https://api-test.whrcloud.com/api/v1/account/favorites/OvenDevjjuguee/entity/cycle/id/OvenDevjjuguee-T37J">oven:Response</con:element>
+    </con:representation>
+    <con:request name="Retrive-CycleById" id="81028d02-3f41-4c5b-abc9-c5ff192f96b8" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${API-Connect}</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="create or update-cycle" path="/account/favorites/entity/cycle" id="24fedfdd-1e7f-46c8-9945-93a00d3392a5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="24fedfdd-1e7f-46c8-9945-93a00d3392a5fileName">create-or-update-cycle</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="create or update-cycle" id="bb73eb79-ce27-4a66-b4c8-389f7ae20b75" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500 401 404</con:status>
+      <con:params/>
+      <con:element xmlns:cyc="https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle">cyc:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:cyc="https://api-test.whrcloud.com/api/v1/account/favorites/entity/cycle">cyc:Response</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType xsi:nil="true"/>
+      <con:status>0</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
+    <con:request name="create or update-cycle" id="13d72c01-2d6a-42d2-8baf-bf51ceebe91d" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${API-Connect}</con:endpoint>
+      <con:request>{  
+    "applianceId":"refrigator",
+    "accountId":"24",
+    "locationId":"341",
+    "favoritesList":[  
+        {  
+            "favoriteCycles":[{  
+        "name" : "ABCD",
+                "cycleInfo":{  
+                    "cycleMyCreation":{  
+                        "action":"SetOnDisplay",
+                        "entityCycle":{  
+                            "myCreationCycle":[  
+                                {  
+                                    "OvenUpperCavity.CycleSetCommonMode":"CommonModeBake",
+                                    "OvenUpperCavity.CycleSetTargetTemp":1234,
+                                    "OvenUpperCavity.OpSetCookTimeCompleteAction":"Unset"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+      ]
+        }
+  ]
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>
