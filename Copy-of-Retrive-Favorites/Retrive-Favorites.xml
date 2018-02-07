@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Retrive Favorites" path="/account/favorites/${#[Favorities#create-setting#create-setting]#RawRequest#$['applianceId']}" id="cff23c31-fa70-4be6-8aeb-e01a3e1548fb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Retrive Favorites" path="/account/favorites/${#[Regression Suite#create-setting#create-setting]#RawRequest#$['applianceId']}" id="cff23c31-fa70-4be6-8aeb-e01a3e1548fb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="cff23c31-fa70-4be6-8aeb-e01a3e1548fbfileName">Retrive-Favorites</con:setting>
   </con:settings>

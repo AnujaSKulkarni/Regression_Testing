@@ -146,7 +146,13 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -205,6 +211,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -220,7 +227,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>SAID</con:property>
       <con:property>Shoppinglist_ID</con:property>
       <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
+      <con:property>State_Name</con:property>
       <con:property>Status</con:property>
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
@@ -229,7 +236,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
       <con:property>Version</con:property>
-      <con:property>name</con:property>
       <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
@@ -254,7 +260,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Retrive-setting-favfill" id="61c62f77-7c04-410d-a835-2480b1656fc1" disabled="true">
     <con:settings/>
-    <con:config service="Retrive-setting-favfill" resourcePath="/account/favorites/${#[Favorities#create-setting#create-setting]#RawRequest#$['applianceId']}/entity/setting/id/favfill" methodName="Retrive-setting-favfill" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Retrive-setting-favfill" resourcePath="/account/favorites/${#[Regression Suite#create-setting#create-setting]#RawRequest#$['applianceId']}/entity/setting/id/favfill" methodName="Retrive-setting-favfill" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Retrive-setting-favfill" id="925b22ef-9428-4436-bbd3-ee4d743b9dc6" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

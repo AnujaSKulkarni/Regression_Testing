@@ -256,7 +256,7 @@ testRunner.testCase.testSuite.setPropertyValue("Location_ID", Location_ID_Number
       <con:property>SAID</con:property>
       <con:property>Shoppinglist_ID</con:property>
       <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
+      <con:property>State_Name</con:property>
       <con:property>Status</con:property>
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
@@ -265,7 +265,6 @@ testRunner.testCase.testSuite.setPropertyValue("Location_ID", Location_ID_Number
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
       <con:property>Version</con:property>
-      <con:property>name</con:property>
       <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
@@ -631,11 +630,11 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value/>
+      <con:value>11195</con:value>
     </con:property>
     <con:property>
       <con:name>Location_ID</con:name>
-      <con:value/>
+      <con:value>2483</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

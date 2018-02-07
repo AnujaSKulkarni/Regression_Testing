@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Delete Favorities" path="/account/favorites/${#[Favorities#Retrive Favorites#Retrive Favorites]#Response#$['applianceId']}" id="91835b79-d5bd-4c2d-836e-69abe3495a53" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Delete Favorities" path="/account/favorites/${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$['applianceId']}" id="91835b79-d5bd-4c2d-836e-69abe3495a53" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="91835b79-d5bd-4c2d-836e-69abe3495a53fileName">Delete-Favorities</con:setting>
   </con:settings>

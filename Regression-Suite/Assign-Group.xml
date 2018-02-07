@@ -262,7 +262,7 @@ testRunner.testCase.testSuite.setPropertyValue("Group_ID", group_ID)</script>
       <con:property>SAID</con:property>
       <con:property>Shoppinglist_ID</con:property>
       <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
+      <con:property>State_Name</con:property>
       <con:property>Status</con:property>
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
@@ -271,7 +271,6 @@ testRunner.testCase.testSuite.setPropertyValue("Group_ID", group_ID)</script>
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
       <con:property>Version</con:property>
-      <con:property>name</con:property>
       <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
@@ -585,7 +584,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11184</con:value>
+      <con:value>11195</con:value>
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
@@ -597,7 +596,7 @@ out.close()</script>
     </con:property>
     <con:property>
       <con:name>Group_ID</con:name>
-      <con:value>3750</con:value>
+      <con:value>3763</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

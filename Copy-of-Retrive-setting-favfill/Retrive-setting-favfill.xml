@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Retrive-setting-favfill" path="/account/favorites/${#[Favorities#create-setting#create-setting]#RawRequest#$['applianceId']}/entity/setting/id/favfill" id="19d8dcd8-6b8d-4072-ab91-a8ef3789bc40" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Retrive-setting-favfill" path="/account/favorites/${#[Regression Suite#create-setting#create-setting]#RawRequest#$['applianceId']}/entity/setting/id/favfill" id="19d8dcd8-6b8d-4072-ab91-a8ef3789bc40" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="19d8dcd8-6b8d-4072-ab91-a8ef3789bc40fileName">Retrive-setting-favfill</con:setting>
   </con:settings>

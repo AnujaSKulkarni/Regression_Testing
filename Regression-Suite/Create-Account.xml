@@ -217,6 +217,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -232,7 +233,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>SAID</con:property>
       <con:property>Shoppinglist_ID</con:property>
       <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
+      <con:property>State_Name</con:property>
       <con:property>Status</con:property>
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
@@ -241,7 +242,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
       <con:property>Version</con:property>
-      <con:property>name</con:property>
       <con:startRow/>
       <con:endRow/>
       <con:recordsPerIteration>1</con:recordsPerIteration>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Delete-SettingByAttribute" path="/account/favorites/${#[Favorities#create-setting#create-setting]#RawRequest#$['applianceId']}/entity/setting/id/M2MAttributeName" id="f806853a-ba64-486f-a6cf-a74c0ef46456" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Delete-SettingByAttribute" path="/account/favorites/${#[Regression Suite#create-setting#create-setting]#RawRequest#$['applianceId']}/entity/setting/id/M2MAttributeName" id="f806853a-ba64-486f-a6cf-a74c0ef46456" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="f806853a-ba64-486f-a6cf-a74c0ef46456fileName">Delete-SettingByAttribute</con:setting>
   </con:settings>
@@ -24,6 +24,12 @@
     <con:representation type="REQUEST">
       <con:mediaType>application/json</con:mediaType>
       <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:m2m="https://api-test.whrcloud.com/api/v1/account/favorites/Refrigerator123/entity/setting/id/M2MAttributeName">m2m:Response</con:element>
     </con:representation>
     <con:request name="Delete-SettingByAttribute" id="a8b5708a-ff79-40a8-9695-373542efa5e5" mediaType="application/json" postQueryString="false">
       <con:settings>

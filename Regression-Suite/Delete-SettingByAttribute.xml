@@ -211,6 +211,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -226,7 +227,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>SAID</con:property>
       <con:property>Shoppinglist_ID</con:property>
       <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
+      <con:property>State_Name</con:property>
       <con:property>Status</con:property>
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
@@ -235,7 +236,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
       <con:property>Version</con:property>
-      <con:property>name</con:property>
       <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
@@ -258,9 +258,9 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete-SettingByAttribute" id="e2ff7beb-09fc-4901-af7a-5222066aebe7">
+  <con:testStep type="restrequest" name="Delete-SettingByAttribute" id="e2ff7beb-09fc-4901-af7a-5222066aebe7" disabled="true">
     <con:settings/>
-    <con:config service="Delete-SettingByAttribute" resourcePath="/account/favorites/${#[Favorities#create-setting#create-setting]#RawRequest#$['applianceId']}/entity/setting/id/M2MAttributeName" methodName="Delete-SettingByAttribute" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Delete-SettingByAttribute" resourcePath="/account/favorites/${#[Regression Suite#create-setting#create-setting]#RawRequest#$['applianceId']}/entity/setting/id/M2MAttributeName" methodName="Delete-SettingByAttribute" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete-SettingByAttribute" id="fc0c0322-3e05-4fa8-af1a-c2a93ed4fa87" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -286,7 +286,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="e6ce8fc5-cfa7-41b9-bfd3-923fbac3566b">
+  <con:testStep type="groovy" name="Report" id="e6ce8fc5-cfa7-41b9-bfd3-923fbac3566b" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

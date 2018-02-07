@@ -271,7 +271,7 @@ testRunner.testCase.setPropertyValue("Email_ID", Email_ID)</script>
       <con:property>SAID</con:property>
       <con:property>Shoppinglist_ID</con:property>
       <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
+      <con:property>State_Name</con:property>
       <con:property>Status</con:property>
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
@@ -280,7 +280,6 @@ testRunner.testCase.setPropertyValue("Email_ID", Email_ID)</script>
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
       <con:property>Version</con:property>
-      <con:property>name</con:property>
       <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
@@ -564,7 +563,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Company_Name</con:name>
-      <con:value>"Company_Wed_Feb_07_13_38_01_IST_2018"</con:value>
+      <con:value>"Company_Wed_Feb_07_15_05_57_IST_2018"</con:value>
     </con:property>
     <con:property>
       <con:name>Country_Code</con:name>
@@ -572,7 +571,7 @@ out.close()</script>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"WED_FEB_07_13_37_55_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"WED_FEB_07_15_05_52_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

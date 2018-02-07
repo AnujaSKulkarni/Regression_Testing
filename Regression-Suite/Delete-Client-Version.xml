@@ -237,7 +237,7 @@ testRunner.testCase.setPropertyValue("Client_Version_ID", tempResponse[0])</scri
       <con:property>SAID</con:property>
       <con:property>Shoppinglist_ID</con:property>
       <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
+      <con:property>State_Name</con:property>
       <con:property>Status</con:property>
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
@@ -246,7 +246,6 @@ testRunner.testCase.setPropertyValue("Client_Version_ID", tempResponse[0])</scri
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
       <con:property>Version</con:property>
-      <con:property>name</con:property>
       <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
@@ -466,7 +465,7 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Client_Version_ID</con:name>
-      <con:value>168</con:value>
+      <con:value>170</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

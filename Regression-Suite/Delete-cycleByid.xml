@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="e1c6adae-8a02-4a43-98e7-1dee5ba0cbef" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Delete-cycleByid" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="e1c6adae-8a02-4a43-98e7-1dee5ba0cbef" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Delete-cycleByid" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="e1c6adae-8a02-4a43-98e7-1dee5ba0cbeffileName">Delete-cycleByid</con:setting>
   </con:settings>
@@ -211,6 +211,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -226,7 +227,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>SAID</con:property>
       <con:property>Shoppinglist_ID</con:property>
       <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
+      <con:property>State_Name</con:property>
       <con:property>Status</con:property>
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
@@ -235,7 +236,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
       <con:property>Version</con:property>
-      <con:property>name</con:property>
       <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
@@ -258,9 +258,9 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete-cycleByid" id="5ed3f1b6-919a-414c-a26a-6145e9531fd9">
+  <con:testStep type="restrequest" name="Delete-cycleByid" id="5ed3f1b6-919a-414c-a26a-6145e9531fd9" disabled="true">
     <con:settings/>
-    <con:config service="Delete-cycleByid" resourcePath="/account/favorites/${#[Favorities#Retrive Favorites#Retrive Favorites]#Response#$['_id']}/entity/cycle/id/${#[Favorities#Retrive Favorites#Retrive Favorites]#Response#$['favoritesList'][0]['favoriteCycles'][0]['id']}" methodName="Delete-cycleByid" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Delete-cycleByid" resourcePath="/account/favorites/${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$['_id']}/entity/cycle/id/${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$['favoritesList'][0]['favoriteCycles'][0]['id']}" methodName="Delete-cycleByid" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete-cycleByid" id="e4e7325b-5994-4abc-8fde-b538623b32af" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -286,7 +286,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="495881a6-dd09-4922-8bc2-8e1a2b6705b6">
+  <con:testStep type="groovy" name="Report" id="495881a6-dd09-4922-8bc2-8e1a2b6705b6" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

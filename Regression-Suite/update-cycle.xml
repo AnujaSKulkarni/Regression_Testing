@@ -7,8 +7,8 @@
   <con:testStep type="groovy" name="Groovy Script" id="f3a50bec-5fb8-4821-9603-63ff7025e336">
     <con:settings/>
     <con:config>
-      <script>def rawRequest = context.expand( '${#[Favorities#create-cycle#create-cycle]#RawRequest#$[\'applianceId\']}' )
-def rawrequest1 = context.expand( '${#[Favorities#Retrive Favorites#Retrive Favorites]#Response#$[\'favoritesList\'][0][\'favoriteCycles\'][0][\'id\']}' )
+      <script>def rawRequest = context.expand( '${#[Regression Suite#create-cycle#create-cycle]#RawRequest#$[\'applianceId\']}' )
+def rawrequest1 = context.expand( '${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$[\'favoritesList\'][0][\'favoriteCycles\'][0][\'id\']}' )
 
 rawRequest = "\"" + rawRequest + "\""
 
@@ -225,6 +225,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -240,7 +241,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>SAID</con:property>
       <con:property>Shoppinglist_ID</con:property>
       <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
+      <con:property>State_Name</con:property>
       <con:property>Status</con:property>
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
@@ -249,7 +250,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
       <con:property>Version</con:property>
-      <con:property>name</con:property>
       <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
@@ -468,11 +468,11 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>applianceid</con:name>
-      <con:value>""</con:value>
+      <con:value>"Refrigerator123"</con:value>
     </con:property>
     <con:property>
       <con:name>id</con:name>
-      <con:value>""</con:value>
+      <con:value>"Refrigerator123-OFZ8"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
