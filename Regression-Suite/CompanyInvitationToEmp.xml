@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="cf58195f-6c8e-4df3-9bf6-7745b0ca33b3" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="CompanyInvitationToEmp" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
-    <con:setting id="cf58195f-6c8e-4df3-9bf6-7745b0ca33b3fileName">CompanyInvitationToEmp</con:setting>
-  </con:settings>
-  <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="473ae7b5-756f-47ff-8766-805072febf6c">
-    <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream;
+<con:testCase id="cf58195f-6c8e-4df3-9bf6-7745b0ca33b3" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="CompanyInvitationToEmp" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="cf58195f-6c8e-4df3-9bf6-7745b0ca33b3fileName">CompanyInvitationToEmp</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="DataSource_Setup" id="473ae7b5-756f-47ff-8766-805072febf6c"><con:settings/><con:config><script>import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -139,111 +131,7 @@ if(RunTimeDataSource_Flag == true){
 		log.info "Adding: " + Cell_Value
 		TestStep.addProperty(Cell_Value)
 	}
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="bc6ca541-f460-48d1-aa40-c2d1453858ac">
-    <con:settings/>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>false</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
-      <con:property>TC_Number</con:property>
-      <con:property>Service_Name</con:property>
-      <con:property>Defect_ID</con:property>
-      <con:property>API_Name</con:property>
-      <con:property>Data_Combination</con:property>
-      <con:property>Remark</con:property>
-      <con:property>Comments</con:property>
-      <con:property>Account_Number</con:property>
-      <con:property>Address_1</con:property>
-      <con:property>Address_2</con:property>
-      <con:property>Alert_ID</con:property>
-      <con:property>Alert_Platform_Type</con:property>
-      <con:property>Alternate_Email_ID</con:property>
-      <con:property>Appliance_ID</con:property>
-      <con:property>Appliance_Master_ID</con:property>
-      <con:property>Appliance_Master_Version_ID</con:property>
-      <con:property>Appliance_Name</con:property>
-      <con:property>Attribute_Name</con:property>
-      <con:property>Attribute_Value</con:property>
-      <con:property>Brand</con:property>
-      <con:property>City</con:property>
-      <con:property>Company_ID</con:property>
-      <con:property>Company_Name</con:property>
-      <con:property>Confirm_Password</con:property>
-      <con:property>Country_Name</con:property>
-      <con:property>Country_Code</con:property>
-      <con:property>Country_ID</con:property>
-      <con:property>Customer_Care</con:property>
-      <con:property>DCT</con:property>
-      <con:property>desired_temperature</con:property>
-      <con:property>Device_ID</con:property>
-      <con:property>Device_Notification_ID</con:property>
-      <con:property>Device_Shadow_Name</con:property>
-      <con:property>Edge_Device_ID</con:property>
-      <con:property>Elevation</con:property>
-      <con:property>Email_BodyMessage</con:property>
-      <con:property>Email_From</con:property>
-      <con:property>Email_ID_Data</con:property>
-      <con:property>Email_Subject</con:property>
-      <con:property>Email_To</con:property>
-      <con:property>enable_cloth_spin</con:property>
-      <con:property>First_Name</con:property>
-      <con:property>Group_Number</con:property>
-      <con:property>inv__description</con:property>
-      <con:property>JSON_Body</con:property>
-      <con:property>Key</con:property>
-      <con:property>Language_ID</con:property>
-      <con:property>Last_Name</con:property>
-      <con:property>Lastupdate</con:property>
-      <con:property>Latitude</con:property>
-      <con:property>Locale_ID</con:property>
-      <con:property>Location_Name</con:property>
-      <con:property>Location_Number</con:property>
-      <con:property>Longitude</con:property>
-      <con:property>Loyalty_ID</con:property>
-      <con:property>Nest_Away</con:property>
-      <con:property>Nest_Thermostat_ID</con:property>
-      <con:property>New_Password</con:property>
-      <con:property>Notification_Type</con:property>
-      <con:property>Password</con:property>
-      <con:property>Phone_No.</con:property>
-      <con:property>Platform</con:property>
-      <con:property>Postal_Code</con:property>
-      <con:property>Rate_Plan_Code</con:property>
-      <con:property>Rate_Plan_ID</con:property>
-      <con:property>Region</con:property>
-      <con:property>Role_ID</con:property>
-      <con:property>SAID</con:property>
-      <con:property>Shoppinglist_ID</con:property>
-      <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
-      <con:property>Status</con:property>
-      <con:property>Status_ID</con:property>
-      <con:property>Street</con:property>
-      <con:property>trigger_temperature</con:property>
-      <con:property>User_ID</con:property>
-      <con:property>User_Role</con:property>
-      <con:property>Verification_Code</con:property>
-      <con:property>Version</con:property>
-      <con:property>name</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="4b47f1b0-8450-482e-88a6-39ecb7e203a0">
-    <con:settings/>
-    <con:config>
-      <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+}</script></con:config></con:testStep><con:testStep type="datasource" name="DataSource" id="bc6ca541-f460-48d1-aa40-c2d1453858ac"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>false</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="groovy" name="Flow Control" id="4b47f1b0-8450-482e-88a6-39ecb7e203a0"><con:settings/><con:config><script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
@@ -271,13 +159,8 @@ if (API_Name != TestCaseName){
 		testRunner.testCase.testSteps['Report'].setDisabled(false)
 		testRunner.testCase.testSteps['Delay'].setDisabled(false)
 	}
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Unique_Email_ID" id="204c3ab0-3846-4263-b69a-4511dcd3a09d" disabled="true">
-    <con:settings/>
-    <con:config>
-      <script>String date = new Date()
+}
+</script></con:config></con:testStep><con:testStep type="groovy" name="Unique_Email_ID" id="204c3ab0-3846-4263-b69a-4511dcd3a09d" disabled="true"><con:settings/><con:config><script>String date = new Date()
 date = date.replaceAll(":","_")
 date = date.replaceAll(" ","_")
 Email_ID = "\"" + "Emp_" + date + "@mailinator.com" + "\""
@@ -291,13 +174,7 @@ def Alternate_Email_ID = "\"" + "EmpAlt_" + date + "@mailinator.com" + "\""
 Alternate_Email_ID = Alternate_Email_ID.toUpperCase()
 def Alternate_Email_ID_String = Alternate_Email_ID.replace("\"", "")
 testRunner.testCase.testSuite.setPropertyValue("Alternate_Email", Alternate_Email_ID)
-testRunner.testCase.testSuite.setPropertyValue("Alternate_Email_String", Alternate_Email_ID_String)</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="772d4099-984f-4780-8f37-b345c117ec83" disabled="true">
-    <con:settings/>
-    <con:config>
-      <script>def Email_ID_Property = context.expand( '${#TestSuite#Email_ID_string}' )
+testRunner.testCase.testSuite.setPropertyValue("Alternate_Email_String", Alternate_Email_ID_String)</script></con:config></con:testStep><con:testStep type="groovy" name="Test_Data_Setup" id="772d4099-984f-4780-8f37-b345c117ec83" disabled="true"><con:settings/><con:config><script>def Email_ID_Property = context.expand( '${#TestSuite#Email_ID_string}' )
 def Email_ID_Sheet = context.expand( '${DataSource#Email_ID_Data}' )
 
 def Alternate_Email_Property = context.expand( '${#TestSuite#Alternate_Email_String}' )
@@ -329,124 +206,8 @@ if(Data_Combination == "Positive"){
 	}else{
 		testRunner.testCase.setPropertyValue("Company_ID", Company_ID_Sheet)
 	}
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="delay" name="Delay" id="02f91ef3-a5db-4ca1-9419-431979a94fe0" disabled="true">
-    <con:settings/>
-    <con:config>
-      <delay>1000</delay>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="CompanyInvitationToEmp_Positive" id="dc3f575f-6b9c-433f-a482-5c110fc1c231" disabled="true">
-    <con:settings/>
-    <con:config service="CompanyInvitationToEmp" resourcePath="/sendCompanyInvitationToEmp/${#TestCase#Email_ID}/${#TestCase#Alternate_Email_ID}/${#TestCase#Company_ID}" methodName="CompanyInvitationToEmp" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="CompanyInvitationToEmp_Positive" id="85d0b916-25f5-499d-a15d-8018b5707f0e" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>${QA_Env}</con:endpoint>
-        <con:request/>
-        <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/api/sendCompanyInvitationToEmp/EMP_SAT_NOV_25_13_52_27_IST_2017@MAILINATOR.COM/305</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="22ae52d1-6dd4-448e-91d4-c1d18183b347" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters>
-          <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
-        </con:parameterOrder>
-        <con:environmentSpec>
-          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
-            <con:authProfile>No Authorization</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="CompanyInvitationToEmp_Negative" id="160bcf73-dba8-47ac-bdb5-dcf7750bd96e" disabled="true">
-    <con:settings/>
-    <con:config service="CompanyInvitationToEmp" resourcePath="/sendCompanyInvitationToEmp/${#TestCase#Email_ID}/${#TestCase#Alternate_Email_ID}/${#TestCase#Company_ID}" methodName="CompanyInvitationToEmp" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="CompanyInvitationToEmp_Negative" id="85d0b916-25f5-499d-a15d-8018b5707f0e" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>${QA_Env}</con:endpoint>
-        <con:request/>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters/>
-        <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
-        </con:parameterOrder>
-        <con:environmentSpec>
-          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
-            <con:authProfile>No Authorization</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Report" id="141252f1-5611-4ab6-9c81-656e0ef037f4" disabled="true">
-    <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+}
+</script></con:config></con:testStep><con:testStep type="delay" name="Delay" id="02f91ef3-a5db-4ca1-9419-431979a94fe0" disabled="true"><con:settings/><con:config><delay>1000</delay></con:config></con:testStep><con:testStep type="restrequest" name="CompanyInvitationToEmp_Positive" id="dc3f575f-6b9c-433f-a482-5c110fc1c231" disabled="true"><con:settings/><con:config service="CompanyInvitationToEmp" resourcePath="/sendCompanyInvitationToEmp/${#TestCase#Email_ID}/${#TestCase#Alternate_Email_ID}/${#TestCase#Company_ID}" methodName="CompanyInvitationToEmp" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CompanyInvitationToEmp_Positive" id="85d0b916-25f5-499d-a15d-8018b5707f0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${QA_Env}</con:endpoint><con:request/><con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/api/sendCompanyInvitationToEmp/EMP_SAT_NOV_25_13_52_27_IST_2017@MAILINATOR.COM/305</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="22ae52d1-6dd4-448e-91d4-c1d18183b347" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="CompanyInvitationToEmp_Negative" id="160bcf73-dba8-47ac-bdb5-dcf7750bd96e" disabled="true"><con:settings/><con:config service="CompanyInvitationToEmp" resourcePath="/sendCompanyInvitationToEmp/${#TestCase#Email_ID}/${#TestCase#Alternate_Email_ID}/${#TestCase#Company_ID}" methodName="CompanyInvitationToEmp" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CompanyInvitationToEmp_Negative" id="85d0b916-25f5-499d-a15d-8018b5707f0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${QA_Env}</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Report" id="141252f1-5611-4ab6-9c81-656e0ef037f4" disabled="true"><con:settings/><con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -569,81 +330,4 @@ Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="2b6cc11b-aec0-49f2-a458-a1a988e428ab">
-    <con:settings/>
-    <con:config>
-      <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>Flow Control</targetStep>
-    </con:config>
-  </con:testStep>
-  <con:properties>
-    <con:property>
-      <con:name>Email_ID</con:name>
-      <con:value>EMP_WED_FEB_07_13_19_48_IST_2018@MAILINATOR.COM</con:value>
-    </con:property>
-    <con:property>
-      <con:name>Email_ID_string</con:name>
-      <con:value>EMP_SAT_NOV_25_13_52_27_IST_2017@MAILINATOR.COM</con:value>
-    </con:property>
-    <con:property>
-      <con:name>Alternate_Email_ID</con:name>
-      <con:value>EMPALT_WED_FEB_07_13_19_48_IST_2018@MAILINATOR.COM</con:value>
-    </con:property>
-    <con:property>
-      <con:name>Company_ID</con:name>
-      <con:value>612</con:value>
-    </con:property>
-  </con:properties>
-  <con:reportParameters/>
-  <con:breakPoints>
-    <con:testStepId>dc3f575f-6b9c-433f-a482-5c110fc1c231</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>473ae7b5-756f-47ff-8766-805072febf6c</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>160bcf73-dba8-47ac-bdb5-dcf7750bd96e</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>772d4099-984f-4780-8f37-b345c117ec83</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>141252f1-5611-4ab6-9c81-656e0ef037f4</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:environmentSpec>
-    <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-  </con:environmentSpec>
-</con:testCase>
+out.close()</script></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="2b6cc11b-aec0-49f2-a458-a1a988e428ab"><con:settings/><con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>Flow Control</targetStep></con:config></con:testStep><con:properties><con:property><con:name>Email_ID</con:name><con:value>EMP_TUE_FEB_06_19_13_06_IST_2018@MAILINATOR.COM</con:value></con:property><con:property><con:name>Email_ID_string</con:name><con:value>EMP_SAT_NOV_25_13_52_27_IST_2017@MAILINATOR.COM</con:value></con:property><con:property><con:name>Alternate_Email_ID</con:name><con:value>EMPALT_TUE_FEB_06_19_13_06_IST_2018@MAILINATOR.COM</con:value></con:property><con:property><con:name>Company_ID</con:name><con:value>610</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>dc3f575f-6b9c-433f-a482-5c110fc1c231</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>473ae7b5-756f-47ff-8766-805072febf6c</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>160bcf73-dba8-47ac-bdb5-dcf7750bd96e</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>772d4099-984f-4780-8f37-b345c117ec83</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>141252f1-5611-4ab6-9c81-656e0ef037f4</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

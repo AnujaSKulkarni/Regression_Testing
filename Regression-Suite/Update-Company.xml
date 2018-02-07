@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="56b80110-5a78-429e-809b-6be46a98721f" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update Company" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
-    <con:setting id="56b80110-5a78-429e-809b-6be46a98721ffileName">Update-Company</con:setting>
-  </con:settings>
-  <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="datasource" name="JDBC" id="360849a9-41c5-47b6-b060-0c3b5164a6b7">
-    <con:settings>
-      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
-    </con:settings>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="JDBC">
-        <con:configuration>
-          <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
-          <pass>Syntel@mb5027676</pass>
-          <Connection>DataBase( QA_Env )</Connection>
-          <query>Select BLUADMIN.STATE.STATE_ID as BLUADMIN_STATE_STATE_ID
+<con:testCase id="56b80110-5a78-429e-809b-6be46a98721f" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update Company" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="56b80110-5a78-429e-809b-6be46a98721ffileName">Update-Company</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="datasource" name="JDBC" id="360849a9-41c5-47b6-b060-0c3b5164a6b7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting></con:settings><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="JDBC"><con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( QA_Env )</Connection><query>Select BLUADMIN.STATE.STATE_ID as BLUADMIN_STATE_STATE_ID
 From BLUADMIN.STATE
-Where BLUADMIN.STATE.STATE_CODE = 'US'</query>
-          <fetchSize/>
-          <stored-procedure>false</stored-procedure>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
-      <con:property>BLUADMIN_STATE_STATE_ID</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="DataSource_Setup" id="74e1cb2e-627b-4797-8ea0-820c03bf310f">
-    <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream;
+Where BLUADMIN.STATE.STATE_CODE = 'US'</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>BLUADMIN_STATE_STATE_ID</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="groovy" name="DataSource_Setup" id="74e1cb2e-627b-4797-8ea0-820c03bf310f"><con:settings/><con:config><script>import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -164,111 +133,7 @@ if(RunTimeDataSource_Flag == true){
 		log.info "Adding: " + Cell_Value
 		TestStep.addProperty(Cell_Value)
 	}
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="74098cdb-644a-42e6-9843-98d9a6c2a17c">
-    <con:settings/>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
-      <con:property>TC_Number</con:property>
-      <con:property>Service_Name</con:property>
-      <con:property>Defect_ID</con:property>
-      <con:property>API_Name</con:property>
-      <con:property>Data_Combination</con:property>
-      <con:property>Remark</con:property>
-      <con:property>Comments</con:property>
-      <con:property>Account_Number</con:property>
-      <con:property>Address_1</con:property>
-      <con:property>Address_2</con:property>
-      <con:property>Alert_ID</con:property>
-      <con:property>Alert_Platform_Type</con:property>
-      <con:property>Alternate_Email_ID</con:property>
-      <con:property>Appliance_ID</con:property>
-      <con:property>Appliance_Master_ID</con:property>
-      <con:property>Appliance_Master_Version_ID</con:property>
-      <con:property>Appliance_Name</con:property>
-      <con:property>Attribute_Name</con:property>
-      <con:property>Attribute_Value</con:property>
-      <con:property>Brand</con:property>
-      <con:property>City</con:property>
-      <con:property>Company_ID</con:property>
-      <con:property>Company_Name</con:property>
-      <con:property>Confirm_Password</con:property>
-      <con:property>Country_Name</con:property>
-      <con:property>Country_Code</con:property>
-      <con:property>Country_ID</con:property>
-      <con:property>Customer_Care</con:property>
-      <con:property>DCT</con:property>
-      <con:property>desired_temperature</con:property>
-      <con:property>Device_ID</con:property>
-      <con:property>Device_Notification_ID</con:property>
-      <con:property>Device_Shadow_Name</con:property>
-      <con:property>Edge_Device_ID</con:property>
-      <con:property>Elevation</con:property>
-      <con:property>Email_BodyMessage</con:property>
-      <con:property>Email_From</con:property>
-      <con:property>Email_ID_Data</con:property>
-      <con:property>Email_Subject</con:property>
-      <con:property>Email_To</con:property>
-      <con:property>enable_cloth_spin</con:property>
-      <con:property>First_Name</con:property>
-      <con:property>Group_Number</con:property>
-      <con:property>inv__description</con:property>
-      <con:property>JSON_Body</con:property>
-      <con:property>Key</con:property>
-      <con:property>Language_ID</con:property>
-      <con:property>Last_Name</con:property>
-      <con:property>Lastupdate</con:property>
-      <con:property>Latitude</con:property>
-      <con:property>Locale_ID</con:property>
-      <con:property>Location_Name</con:property>
-      <con:property>Location_Number</con:property>
-      <con:property>Longitude</con:property>
-      <con:property>Loyalty_ID</con:property>
-      <con:property>Nest_Away</con:property>
-      <con:property>Nest_Thermostat_ID</con:property>
-      <con:property>New_Password</con:property>
-      <con:property>Notification_Type</con:property>
-      <con:property>Password</con:property>
-      <con:property>Phone_No.</con:property>
-      <con:property>Platform</con:property>
-      <con:property>Postal_Code</con:property>
-      <con:property>Rate_Plan_Code</con:property>
-      <con:property>Rate_Plan_ID</con:property>
-      <con:property>Region</con:property>
-      <con:property>Role_ID</con:property>
-      <con:property>SAID</con:property>
-      <con:property>Shoppinglist_ID</con:property>
-      <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
-      <con:property>Status</con:property>
-      <con:property>Status_ID</con:property>
-      <con:property>Street</con:property>
-      <con:property>trigger_temperature</con:property>
-      <con:property>User_ID</con:property>
-      <con:property>User_Role</con:property>
-      <con:property>Verification_Code</con:property>
-      <con:property>Version</con:property>
-      <con:property>name</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="b9d96285-f922-4e77-9f9c-136935502e30">
-    <con:settings/>
-    <con:config>
-      <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+}</script></con:config></con:testStep><con:testStep type="datasource" name="DataSource" id="74098cdb-644a-42e6-9843-98d9a6c2a17c"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="groovy" name="Flow Control" id="b9d96285-f922-4e77-9f9c-136935502e30"><con:settings/><con:config><script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
@@ -291,13 +156,7 @@ if (API_Name != TestCaseName){
 		testRunner.testCase.testSteps['Update Company_Negative'].setDisabled(false)
 		testRunner.testCase.testSteps['Report'].setDisabled(false)
 	}
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="58be60c7-af69-4b54-a34b-ae0e6d5d6429" disabled="true">
-    <con:settings/>
-    <con:config>
-      <script>def Company_Name = context.expand( '${DataSource#Company_Name}' )
+}</script></con:config></con:testStep><con:testStep type="groovy" name="Test_Data_Setup" id="58be60c7-af69-4b54-a34b-ae0e6d5d6429" disabled="true"><con:settings/><con:config><script>def Company_Name = context.expand( '${DataSource#Company_Name}' )
 log.info Company_Name
 Company_Name = Company_Name.replace("\"", "")
 String date = new Date()
@@ -308,18 +167,7 @@ Company_Name = date + "_" + Company_Name
 Company_Name = "\"" + Company_Name + "\""
 //Company_Name = Company_Name + "Update Company"
 log.info Company_Name
-testRunner.testCase.setPropertyValue("Company_Name", Company_Name)</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Update Company_Positive" id="57c80a62-ce22-48b5-a54a-b331b6279e98" disabled="true">
-    <con:settings/>
-    <con:config service="Update Company" resourcePath="/updateCompany" methodName="Update Company" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Update Company_Positive" id="e7ee279a-1ce6-4066-bf8b-f0f1baae2aff" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>${QA_Env}</con:endpoint>
-        <con:request>{  
+testRunner.testCase.setPropertyValue("Company_Name", Company_Name)</script></con:config></con:testStep><con:testStep type="restrequest" name="Update Company_Positive" id="57c80a62-ce22-48b5-a54a-b331b6279e98" disabled="true"><con:settings/><con:config service="Update Company" resourcePath="/updateCompany" methodName="Update Company" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Update Company_Positive" id="e7ee279a-1ce6-4066-bf8b-f0f1baae2aff" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${QA_Env}</con:endpoint><con:request>{  
   "companyName": ${#TestCase#Company_Name},
   "companyId":${#[Regression Suite#Register Company#JDBC]#BLUADMIN_COMPANY_COMPANY_ID},
   "address": ${DataSource#Address_1},
@@ -333,62 +181,7 @@ testRunner.testCase.setPropertyValue("Company_Name", Company_Name)</script>
   "stateId": ${JDBC#BLUADMIN_STATE_STATE_ID},
   "postalCode": ${DataSource#Postal_Code},
   "secretCode": "500"
-}</con:request>
-        <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/updateCompany</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="979eeb14-98f4-45ad-afae-7534d2a9ed1a" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters/>
-        <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
-        </con:parameterOrder>
-        <con:environmentSpec>
-          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
-            <con:authProfile>No Authorization</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Update Company_Negative" id="d89d2cd8-8ad7-43cb-b447-a5544511077f" disabled="true">
-    <con:settings/>
-    <con:config service="Update Company" resourcePath="/updateCompany" methodName="Update Company" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Update Company_Negative" id="e7ee279a-1ce6-4066-bf8b-f0f1baae2aff" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>${QA_Env}</con:endpoint>
-        <con:request>{  
+}</con:request><con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/updateCompany</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="979eeb14-98f4-45ad-afae-7534d2a9ed1a" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Update Company_Negative" id="d89d2cd8-8ad7-43cb-b447-a5544511077f" disabled="true"><con:settings/><con:config service="Update Company" resourcePath="/updateCompany" methodName="Update Company" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Update Company_Negative" id="e7ee279a-1ce6-4066-bf8b-f0f1baae2aff" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${QA_Env}</con:endpoint><con:request>{  
   "companyName": ${DataSource#Company_Name},
   "companyId":${#[Regression Suite#Register Company#JDBC]#BLUADMIN_COMPANY_COMPANY_ID},
   "address": ${DataSource#Address_1},
@@ -402,50 +195,7 @@ testRunner.testCase.setPropertyValue("Company_Name", Company_Name)</script>
   "stateId": ${JDBC#BLUADMIN_STATE_STATE_ID},
   "postalCode": ${DataSource#Postal_Code},
   "secretCode": "500"
-}</con:request>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters/>
-        <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
-        </con:parameterOrder>
-        <con:environmentSpec>
-          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
-            <con:authProfile>No Authorization</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Report" id="f3a05781-14fa-44b3-af6b-064e6819af31" disabled="true">
-    <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+}</con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Report" id="f3a05781-14fa-44b3-af6b-064e6819af31" disabled="true"><con:settings/><con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -568,59 +318,4 @@ Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="a74f3abf-78f2-4844-8417-6e729823c084">
-    <con:settings/>
-    <con:config>
-      <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>Flow Control</targetStep>
-    </con:config>
-  </con:testStep>
-  <con:properties>
-    <con:property>
-      <con:name>Company_Name</con:name>
-      <con:value>"Wed_Feb_07_13_20_07_IST_2018_Update Company"</con:value>
-    </con:property>
-  </con:properties>
-  <con:reportParameters/>
-  <con:breakPoints>
-    <con:testStepId>74e1cb2e-627b-4797-8ea0-820c03bf310f</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>b9d96285-f922-4e77-9f9c-136935502e30</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>58be60c7-af69-4b54-a34b-ae0e6d5d6429</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:environmentSpec>
-    <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-  </con:environmentSpec>
-</con:testCase>
+out.close()</script></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="a74f3abf-78f2-4844-8417-6e729823c084"><con:settings/><con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>Flow Control</targetStep></con:config></con:testStep><con:properties><con:property><con:name>Company_Name</con:name><con:value>"Tue_Feb_06_19_13_30_IST_2018_Update Company"</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>74e1cb2e-627b-4797-8ea0-820c03bf310f</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>b9d96285-f922-4e77-9f9c-136935502e30</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>58be60c7-af69-4b54-a34b-ae0e6d5d6429</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

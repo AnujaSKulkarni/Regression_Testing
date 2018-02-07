@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="bd011a46-1d1c-43c7-a320-cc3543f68388" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Authorize NEST user" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
-    <con:setting id="bd011a46-1d1c-43c7-a320-cc3543f68388fileName">Authorize-NEST-user</con:setting>
-  </con:settings>
-  <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="2a37d82b-6692-47ea-9107-817f6176a0fd">
-    <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream;
+<con:testCase id="bd011a46-1d1c-43c7-a320-cc3543f68388" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Authorize NEST user" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="bd011a46-1d1c-43c7-a320-cc3543f68388fileName">Authorize-NEST-user</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="DataSource_Setup" id="2a37d82b-6692-47ea-9107-817f6176a0fd"><con:settings/><con:config><script>import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -139,111 +131,7 @@ if(RunTimeDataSource_Flag == true){
 		log.info "Adding: " + Cell_Value
 		TestStep.addProperty(Cell_Value)
 	}
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="a1ffeb7e-ffdc-4c3d-9a7a-97075e6a63fc">
-    <con:settings/>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>false</con:shared>
-      <con:restartShared>false</con:restartShared>
-      <con:property>TC_Number</con:property>
-      <con:property>Service_Name</con:property>
-      <con:property>Defect_ID</con:property>
-      <con:property>API_Name</con:property>
-      <con:property>Data_Combination</con:property>
-      <con:property>Remark</con:property>
-      <con:property>Comments</con:property>
-      <con:property>Account_Number</con:property>
-      <con:property>Address_1</con:property>
-      <con:property>Address_2</con:property>
-      <con:property>Alert_ID</con:property>
-      <con:property>Alert_Platform_Type</con:property>
-      <con:property>Alternate_Email_ID</con:property>
-      <con:property>Appliance_ID</con:property>
-      <con:property>Appliance_Master_ID</con:property>
-      <con:property>Appliance_Master_Version_ID</con:property>
-      <con:property>Appliance_Name</con:property>
-      <con:property>Attribute_Name</con:property>
-      <con:property>Attribute_Value</con:property>
-      <con:property>Brand</con:property>
-      <con:property>City</con:property>
-      <con:property>Company_ID</con:property>
-      <con:property>Company_Name</con:property>
-      <con:property>Confirm_Password</con:property>
-      <con:property>Country_Name</con:property>
-      <con:property>Country_Code</con:property>
-      <con:property>Country_ID</con:property>
-      <con:property>Customer_Care</con:property>
-      <con:property>DCT</con:property>
-      <con:property>desired_temperature</con:property>
-      <con:property>Device_ID</con:property>
-      <con:property>Device_Notification_ID</con:property>
-      <con:property>Device_Shadow_Name</con:property>
-      <con:property>Edge_Device_ID</con:property>
-      <con:property>Elevation</con:property>
-      <con:property>Email_BodyMessage</con:property>
-      <con:property>Email_From</con:property>
-      <con:property>Email_ID_Data</con:property>
-      <con:property>Email_Subject</con:property>
-      <con:property>Email_To</con:property>
-      <con:property>enable_cloth_spin</con:property>
-      <con:property>First_Name</con:property>
-      <con:property>Group_Number</con:property>
-      <con:property>inv__description</con:property>
-      <con:property>JSON_Body</con:property>
-      <con:property>Key</con:property>
-      <con:property>Language_ID</con:property>
-      <con:property>Last_Name</con:property>
-      <con:property>Lastupdate</con:property>
-      <con:property>Latitude</con:property>
-      <con:property>Locale_ID</con:property>
-      <con:property>Location_Name</con:property>
-      <con:property>Location_Number</con:property>
-      <con:property>Longitude</con:property>
-      <con:property>Loyalty_ID</con:property>
-      <con:property>Nest_Away</con:property>
-      <con:property>Nest_Thermostat_ID</con:property>
-      <con:property>New_Password</con:property>
-      <con:property>Notification_Type</con:property>
-      <con:property>Password</con:property>
-      <con:property>Phone_No.</con:property>
-      <con:property>Platform</con:property>
-      <con:property>Postal_Code</con:property>
-      <con:property>Rate_Plan_Code</con:property>
-      <con:property>Rate_Plan_ID</con:property>
-      <con:property>Region</con:property>
-      <con:property>Role_ID</con:property>
-      <con:property>SAID</con:property>
-      <con:property>Shoppinglist_ID</con:property>
-      <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_ID</con:property>
-      <con:property>Status</con:property>
-      <con:property>Status_ID</con:property>
-      <con:property>Street</con:property>
-      <con:property>trigger_temperature</con:property>
-      <con:property>User_ID</con:property>
-      <con:property>User_Role</con:property>
-      <con:property>Verification_Code</con:property>
-      <con:property>Version</con:property>
-      <con:property>name</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Code_Extraction" id="5a89f148-30c9-46fe-aba2-7a1627713d55">
-    <con:settings/>
-    <con:config>
-      <script>import org.openqa.selenium.By;
+}</script></con:config></con:testStep><con:testStep type="datasource" name="DataSource" id="a1ffeb7e-ffdc-4c3d-9a7a-97075e6a63fc"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSource><con:shared>false</con:shared><con:restartShared>false</con:restartShared><con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="groovy" name="Code_Extraction" id="5a89f148-30c9-46fe-aba2-7a1627713d55"><con:settings/><con:config><script>import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -309,69 +197,13 @@ log.info(Current_URL);
 String[] Code = Current_URL.split("code=");
 log.info(Code[1]);
 driver.close();
-testRunner.testCase.setPropertyValue("code", Code[1])</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="GET Member Token" id="7eff3d4d-3090-4ad0-9758-8f6294a0a340">
-    <con:settings/>
-    <con:config service="GET Member Token" resourcePath="/oauth/token" methodName="GET Member Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="GET Member Token" id="9cb261e4-4179-4e98-87a6-b3a35d79e943" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>${Secure_auth}</con:endpoint>
-        <con:request/>
-        <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/oauth/token</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="52fbac2f-5830-4ac2-b93d-ca0617c07cc3" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters>
-          <con:entry key="password" value="Whirlpool123$"/>
-          <con:entry key="grant_type" value="password"/>
-          <con:entry key="client_secret" value="syntel123$"/>
-          <con:entry key="client_id" value="syntel"/>
-          <con:entry key="username" value="NEST_TESTING@MAILINATOR.COM"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>grant_type</con:entry>
-          <con:entry>username</con:entry>
-          <con:entry>password</con:entry>
-          <con:entry>client_id</con:entry>
-          <con:entry>client_secret</con:entry>
-        </con:parameterOrder>
-        <con:environmentSpec>
-          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
-            <con:authProfile>No Authorization</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="bcc548da-e065-401c-8fd0-dc602de17a4b">
-    <con:settings/>
-    <con:config>
-      <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+testRunner.testCase.setPropertyValue("code", Code[1])</script></con:config></con:testStep><con:testStep type="restrequest" name="GET Member Token" id="7eff3d4d-3090-4ad0-9758-8f6294a0a340"><con:settings/><con:config service="GET Member Token" resourcePath="/oauth/token" methodName="GET Member Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET Member Token" id="9cb261e4-4179-4e98-87a6-b3a35d79e943" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${Secure_auth}</con:endpoint><con:request/><con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/oauth/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="52fbac2f-5830-4ac2-b93d-ca0617c07cc3" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="password" value="Whirlpool123$"/>
+  <con:entry key="grant_type" value="password"/>
+  <con:entry key="client_secret" value="syntel123$"/>
+  <con:entry key="client_id" value="syntel"/>
+  <con:entry key="username" value="NEST_TESTING@MAILINATOR.COM"/>
+</con:parameters><con:parameterOrder><con:entry>grant_type</con:entry><con:entry>username</con:entry><con:entry>password</con:entry><con:entry>client_id</con:entry><con:entry>client_secret</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="flow control" id="bcc548da-e065-401c-8fd0-dc602de17a4b"><con:settings/><con:config><script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
 log.info dataCombination
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
@@ -383,45 +215,12 @@ if (API_Name != TestCaseName){
 	testRunner.testCase.testSteps['Authorize NEST user'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
 	
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Authorize NEST user" id="06c51d91-f707-47d8-b213-26095b03e72b" disabled="true">
-    <con:settings/>
-    <con:config service="Authorize NEST user" resourcePath="/location/${#Project#Location_ID}/authorizeUser/code/${#TestCase#code}" methodName="Authorize NEST user" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Authorize NEST user" id="72e37ea6-ddb9-4dfc-8ce5-a0022a9378db" mediaType="application/json">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>${#Project#API-Connect}</con:endpoint>
-        <con:request/>
-        <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/location/723/authorizeUser/code/7NP3N3Y27R6VFXSH</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="73823415-f97a-4742-8b4d-42306433ef29" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-          <con:entry key="Authorization" value="Bearer ${GET Member Token#Response#$['access_token']}"/>
-          <con:entry key="wp-client-brand" value="Whirlpool"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
-          <con:entry>wp-client-brand</con:entry>
-        </con:parameterOrder>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Report" id="1c646068-e980-49f7-ad51-5c81c523ab45" disabled="true">
-    <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+}
+	
+</script></con:config></con:testStep><con:testStep type="restrequest" name="Authorize NEST user" id="06c51d91-f707-47d8-b213-26095b03e72b" disabled="true"><con:settings/><con:config service="Authorize NEST user" resourcePath="/location/${#Project#Location_ID}/authorizeUser/code/${#TestCase#code}" methodName="Authorize NEST user" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Authorize NEST user" id="72e37ea6-ddb9-4dfc-8ce5-a0022a9378db" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#API-Connect}</con:endpoint><con:request/><con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/location/723/authorizeUser/code/7NP3N3Y27R6VFXSH</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="73823415-f97a-4742-8b4d-42306433ef29" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters>
+  <con:entry key="Authorization" value="Bearer ${GET Member Token#Response#$['access_token']}"/>
+  <con:entry key="wp-client-brand" value="Whirlpool"/>
+</con:parameters><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Report" id="1c646068-e980-49f7-ad51-5c81c523ab45" disabled="true"><con:settings/><con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -538,41 +337,4 @@ Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="9fdd6141-9b02-415e-8c91-4c2cae0584ec">
-    <con:settings/>
-    <con:config>
-      <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>flow control</targetStep>
-    </con:config>
-  </con:testStep>
-  <con:properties>
-    <con:property>
-      <con:name>code</con:name>
-      <con:value>BN8YK7SX9T557EN9</con:value>
-    </con:property>
-  </con:properties>
-  <con:reportParameters/>
-  <con:breakPoints>
-    <con:testStepId>e53bd569-c2e7-4cf4-9869-a8fb3994dec8</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>0b267e53-b69c-46f5-8b1f-0bab0e82b83a</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>d80aa596-a8e4-4f58-abc7-7422d2408219</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>977a16e0-1599-48b4-9432-3201a3857d03</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-</con:testCase>
+out.close()</script></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="9fdd6141-9b02-415e-8c91-4c2cae0584ec"><con:settings/><con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>flow control</targetStep></con:config></con:testStep><con:properties><con:property><con:name>code</con:name><con:value>BN8YK7SX9T557EN9</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>e53bd569-c2e7-4cf4-9869-a8fb3994dec8</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0b267e53-b69c-46f5-8b1f-0bab0e82b83a</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>d80aa596-a8e4-4f58-abc7-7422d2408219</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>977a16e0-1599-48b4-9432-3201a3857d03</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>
