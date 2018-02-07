@@ -258,7 +258,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete-cycleByid" id="5ed3f1b6-919a-414c-a26a-6145e9531fd9" disabled="true">
+  <con:testStep type="restrequest" name="Delete-cycleByid" id="5ed3f1b6-919a-414c-a26a-6145e9531fd9">
     <con:settings/>
     <con:config service="Delete-cycleByid" resourcePath="/account/favorites/${#[Favorities#Retrive Favorites#Retrive Favorites]#Response#$['_id']}/entity/cycle/id/${#[Favorities#Retrive Favorites#Retrive Favorites]#Response#$['favoritesList'][0]['favoriteCycles'][0]['id']}" methodName="Delete-cycleByid" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete-cycleByid" id="e4e7325b-5994-4abc-8fde-b538623b32af" mediaType="application/json" postQueryString="false">
@@ -286,7 +286,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="495881a6-dd09-4922-8bc2-8e1a2b6705b6" disabled="true">
+  <con:testStep type="groovy" name="Report" id="495881a6-dd09-4922-8bc2-8e1a2b6705b6">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
