@@ -83,6 +83,17 @@ Get-Rule.xml
 Update-Rule.xml
 Delete-Rule.xml
 DeauthorizeUser.xml
+create-cycle.xml
+create-setting.xml
+Retrive-Favorites.xml
+update-cycle.xml
+update--setting.xml
+Retrive-setting-All.xml
+Retrive-CycleById.xml
+Retrive-setting-favfill.xml
+Delete-cycleByid.xml
+Delete-SettingByAttribute.xml
+Delete-Favorities.xml
 Delete-Account.xml
 Test_Run_Summary.xml
 Delete-Location.xml
