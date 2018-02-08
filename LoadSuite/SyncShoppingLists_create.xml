@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f2bcc9a1-6259-485d-8b00-96401c6c4448" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="SyncShoppingLists_create" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="dda84182-844e-44d9-b963-7c0a281c9a2ffileName">SyncShoppingLists_create</con:setting>
+    <con:setting id="f2bcc9a1-6259-485d-8b00-96401c6c4448fileName">SyncShoppingLists_create</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="groovy" name="timestamp" id="d7ca23cd-6701-4014-8397-2f230b59f8bc">
+    <con:settings/>
+    <con:config>
+      <script>long unixTime = System.currentTimeMillis() / 1000L
+def TimeStamp = unixTime.toString()
+log.info TimeStamp
+testRunner.testCase.setPropertyValue("TimeStamp", TimeStamp)</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="DataSource_Setup" id="0c9316db-3196-482f-8d61-3831e85b4ec3">
+    <con:settings/>
+    <con:config>
+      <script>import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Iterator;
+import java.lang.String
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
+def TestStep_Count = testRunner.testCase.getTestStepCount()
+def DataSource_Flag
+def RunTimeDataSource_Flag
+log.info TestStep_Count
+def TestStep_Name
+//******************Finding DataSource***************
+for(i = 0;i &lt; TestStep_Count;i++){
+	TestStep_Name = testRunner.testCase.getTestStepAt(i).name
+	log.info TestStep_Name
+	if(TestStep_Name == "DataSource"){
+		log.info("Data Source present")
+		DataSource_Flag = true
+		break
+	}else{
+		DataSource_Flag = false
+	}
+}
+
+for(i = 0; i &lt; TestStep_Count; i++){
+	TestStep_Name = testRunner.testCase.getTestStepAt(i).name
+	if(TestStep_Name == "DataSource_RunTime"){
+		log.info("RunTime Data Source present")
+		RunTimeDataSource_Flag = true
+		break
+	}
+	else{
+		RunTimeDataSource_Flag = false
+		log.info("RunTime Data Source not present")
+	}
+}
+log.info "Data Source: " + DataSource_Flag
+log.info "Run Time Data Source: " + RunTimeDataSource_Flag
+
+
+//******************Deleting Properties from DataSource****************
+if(DataSource_Flag == true){
+	log.info "Deleting DataSource Properties"
+	def TestStep = testRunner.testCase.getTestStepByName("DataSource")
+	def Property_Count = TestStep.propertyCount
+	log.info Property_Count
+	def Property_Name
+	for(i = Property_Count - 1; i >= 0; i--)
+	{
+		Property_Name = TestStep.getPropertyAt(i).name
+		log.info "Deleting: " + Property_Name
+		TestStep.removeProperty(Property_Name)
+	}
+}else{
+	log.info("Data Source not present")
+}
+
+//******************Deleting Properties from Run Time DataSource****************
+if(RunTimeDataSource_Flag == true){
+	log.info "Deleting RunTime DataSource Properties"
+	def TestStep = testRunner.testCase.getTestStepByName("DataSource_RunTime")
+	def Property_Count = TestStep.propertyCount
+	log.info Property_Count
+	def Property_Name
+	for(i = Property_Count - 1; i >= 0; i--)
+	{
+		Property_Name = TestStep.getPropertyAt(i).name
+		log.info "Deleting: " + Property_Name
+		TestStep.removeProperty(Property_Name)
+	}
+}else{
+	log.info("RunTime Data Source not present")
+}
+
+//*********Reading Excel and adding Property to DataSource*****************
+
+if(DataSource_Flag == true){
+	def Test_Data_Path = context.expand( '${Test_Data_Path}' )
+	InputStream ExcelFileToRead = new FileInputStream(Test_Data_Path);
+	XSSFWorkbook wb = new XSSFWorkbook(ExcelFileToRead);
+	XSSFSheet sheet = wb.getSheet("Data")
+	XSSFRow row; 
+	XSSFCell cell;
+	
+	row = sheet.getRow(0)
+	def Col_count = row.getLastCellNum()
+	log.info Col_count
+
+	log.info "Adding DataSource Properties"
+	def TestStep = testRunner.testCase.getTestStepByName("DataSource")
+	def Property_Name
+	for(i = 0; i &lt; Col_count; i++){
+		cell = row.getCell(i)
+		def Cell_Value = String.valueOf(cell)
+		log.info "Adding: " + Cell_Value
+		TestStep.addProperty(Cell_Value)
+	}
+}
+
+
+//**************Reading Excel and adding Property to RunTime DataSource***********
+if(RunTimeDataSource_Flag == true){
+	def Run_Time_Data = context.expand( '${Run_Time_Data}' )
+	InputStream ExcelFileToRead = new FileInputStream(Run_Time_Data);
+	HSSFWorkbook wb = new HSSFWorkbook(ExcelFileToRead);
+	HSSFSheet sheet = wb.getSheet("Account_Run_Time_Data")
+	HSSFRow row; 
+	HSSFCell cell;
+	
+	row = sheet.getRow(0)
+	def Col_count = row.getLastCellNum()
+	log.info Col_count
+
+	log.info "Adding DataSource Properties"
+	def TestStep = testRunner.testCase.getTestStepByName("DataSource_RunTime")
+	def Property_Name
+	for(i = 0; i &lt; Col_count; i++){
+		cell = row.getCell(i)
+		def Cell_Value = String.valueOf(cell)
+		log.info "Adding: " + Cell_Value
+		TestStep.addProperty(Cell_Value)
+	}
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="JDBC" id="0ab8a83c-2f0b-4523-a0c9-4011bff51a41">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="JDBC">
+        <con:configuration>
+          <driver>com.ibm.db2.jcc.DB2Driver</driver>
+          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
+          <pass>Syntel@mb5027676</pass>
+          <Connection>DataBase( QA_Env )</Connection>
+          <query>Select BLUADMIN.SLS_USER.USER_ID as BLUADMIN_SLS_USER_USER_ID
+From BLUADMIN.SLS_USER
+Where BLUADMIN.SLS_USER.ACCOUNT_ID = ${#[Regression Suite#GET Member Token#DataSource_RunTime]#Account_ID_Number}</query>
+          <fetchSize/>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>BLUADMIN_SLS_USER_USER_ID</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="DataSource" id="c46dfa05-0155-4ccd-9414-5184d51339ae">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:property>TC_Number</con:property>
+      <con:property>Service_Name</con:property>
+      <con:property>Defect_ID</con:property>
+      <con:property>API_Name</con:property>
+      <con:property>Data_Combination</con:property>
+      <con:property>Remark</con:property>
+      <con:property>Comments</con:property>
+      <con:property>Account_Number</con:property>
+      <con:property>Address_1</con:property>
+      <con:property>Address_2</con:property>
+      <con:property>Alert_ID</con:property>
+      <con:property>Alert_Platform_Type</con:property>
+      <con:property>Alternate_Email_ID</con:property>
+      <con:property>Appliance_ID</con:property>
+      <con:property>Appliance_Master_ID</con:property>
+      <con:property>Appliance_Master_Version_ID</con:property>
+      <con:property>Appliance_Name</con:property>
+      <con:property>Attribute_Name</con:property>
+      <con:property>Attribute_Value</con:property>
+      <con:property>Brand</con:property>
+      <con:property>City</con:property>
+      <con:property>Company_ID</con:property>
+      <con:property>Company_Name</con:property>
+      <con:property>Confirm_Password</con:property>
+      <con:property>Country_Name</con:property>
+      <con:property>Country_Code</con:property>
+      <con:property>Country_ID</con:property>
+      <con:property>Customer_Care</con:property>
+      <con:property>DCT</con:property>
+      <con:property>desired_temperature</con:property>
+      <con:property>Device_ID</con:property>
+      <con:property>Device_Notification_ID</con:property>
+      <con:property>Device_Shadow_Name</con:property>
+      <con:property>Edge_Device_ID</con:property>
+      <con:property>Elevation</con:property>
+      <con:property>Email_BodyMessage</con:property>
+      <con:property>Email_From</con:property>
+      <con:property>Email_ID_Data</con:property>
+      <con:property>Email_Subject</con:property>
+      <con:property>Email_To</con:property>
+      <con:property>enable_cloth_spin</con:property>
+      <con:property>First_Name</con:property>
+      <con:property>Group_Number</con:property>
+      <con:property>inv__description</con:property>
+      <con:property>JSON_Body</con:property>
+      <con:property>Key</con:property>
+      <con:property>Language_ID</con:property>
+      <con:property>Last_Name</con:property>
+      <con:property>Lastupdate</con:property>
+      <con:property>Latitude</con:property>
+      <con:property>Locale_ID</con:property>
+      <con:property>Location_Name</con:property>
+      <con:property>Location_Number</con:property>
+      <con:property>Longitude</con:property>
+      <con:property>Loyalty_ID</con:property>
+      <con:property>Nest_Away</con:property>
+      <con:property>Nest_Thermostat_ID</con:property>
+      <con:property>New_Password</con:property>
+      <con:property>Notification_Type</con:property>
+      <con:property>Password</con:property>
+      <con:property>Phone_No.</con:property>
+      <con:property>Platform</con:property>
+      <con:property>Postal_Code</con:property>
+      <con:property>Rate_Plan_Code</con:property>
+      <con:property>Rate_Plan_ID</con:property>
+      <con:property>Region</con:property>
+      <con:property>Role_ID</con:property>
+      <con:property>SAID</con:property>
+      <con:property>Shoppinglist_ID</con:property>
+      <con:property>Shoppinglist_Name</con:property>
+      <con:property>State_Name</con:property>
+      <con:property>Status</con:property>
+      <con:property>Status_ID</con:property>
+      <con:property>Street</con:property>
+      <con:property>trigger_temperature</con:property>
+      <con:property>User_ID</con:property>
+      <con:property>User_Role</con:property>
+      <con:property>Verification_Code</con:property>
+      <con:property>Version</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="flow control" id="aabe65df-ec5e-40fb-bddb-95ef517a04c4">
+    <con:settings/>
+    <con:config>
+      <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+log.info dataCombination
+def API_Name = context.expand( '${DataSource#API_Name}' )
+def TestCaseName = testRunner.testCase.getName()
+
+if (API_Name != TestCaseName){
+	testRunner.testCase.testSteps['SyncShoppingLists_create_Negative'].setDisabled(true)
+	testRunner.testCase.testSteps['SyncShoppingLists_create_Positive'].setDisabled(true)
+	testRunner.testCase.testSteps['Report'].setDisabled(true)
+}else{
+	if(dataCombination == "Positive"){
+		testRunner.testCase.testSteps['SyncShoppingLists_create_Negative'].setDisabled(true)
+		testRunner.testCase.testSteps['SyncShoppingLists_create_Positive'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
+	if(dataCombination == "Negative"){
+		testRunner.testCase.testSteps['SyncShoppingLists_create_Negative'].setDisabled(false)
+		testRunner.testCase.testSteps['SyncShoppingLists_create_Positive'].setDisabled(true)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="SyncShoppingLists_create_Positive" id="ade41e44-f2b6-4b18-b5c7-deb755d8d84f" disabled="true">
+    <con:settings/>
+    <con:config service="SyncShoppingLists" resourcePath="/syncShoppingLists" methodName="SyncShoppingLists" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="SyncShoppingLists_create_Positive" id="cb783b4e-430d-454d-b87a-61a1c56fed72" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${LAR}</con:endpoint>
+        <con:request>{
+    "_id": "30ad09ad8fa0098ad9d9999eeeeea",
+    "slsAuthToken": "1f4ccef1-32db-4778-8605-c872f535e3e9",
+    "deviceGuid": "30ad09ad8fa0098ad9d9999eeeeea",
+    "cleanLists": [
+        {
+        }
+    ],
+    "dirtyLists": [
+        
+    ],
+    "newLists": [
+        {
+          
+            "userId":${JDBC#BLUADMIN_SLS_USER_USER_ID},
+            "userFirstName": ${DataSource#First_Name},
+            "userLastName": ${DataSource#Last_Name},
+            "name":${DataSource#Shoppinglist_Name} ,
+            "lastUpdate": "2014-01-14T21:17:51.835Z",
+            "lastUpdateId": 1,
+             "lastUpdateFirstName":"Ved",
+      "lastUpdateLastName":"Vyas",
+      "lastUpdateBy":"Mobile",
+            "removed": false,
+            "shoppingItems": [
+              {
+                "shoppingListItemId": 65,
+          
+          "invcategoryId": 8,
+          "stdinvitemId": 1,
+          "description": "ingredient 1",
+          "qty": 1,
+          "invuomId": 2,
+          "bought": false,
+          "lastUpdate": "2014-01-14T21:17:51.835Z"
+              },
+              
+              {
+                "shoppingListItemId": 65,
+          "shoppinglistId": ${DataSource#Shoppinglist_ID},
+          "invcategoryId": 8,
+          "stdinvitemId": 1,
+          "description": "ingredient 1",
+          "qty": 1,
+          "invuomId": 2,
+          "bought": false,
+          "lastUpdate": "2014-01-14T21:17:51.835Z"
+              }]
+        }
+    ]
+}</con:request>
+        <con:originalUri>https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/syncShoppingLists</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d5aa87aa-15a0-49b7-881e-83ea55e10e9b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="MessageContentAssertion" id="52db3528-4fe4-477d-9054-32b98f306b5d" name="Message Content Assertion">
+          <con:configuration xsi:type="con:MessageContentAssertion">
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/syncShoppingLists';
+//ns1:Response[1]/ns1:message[1]</con:xpath>
+              <con:element>message</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>SUCCESS</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:originalMessage><![CDATA[<Response xmlns="https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/syncShoppingLists">
+   <message>SUCCESS</message>
+   <response>
+      <cleanLists>
+         <e>0</e>
+      </cleanLists>
+      <dirtyLists/>
+      <newLists>
+         <e>
+            <_id>112</_id>
+            <_rev>1-04eb72c03a2a4166538574fb64f09537</_rev>
+            <lastUpdate>2014-01-14T21:17:51.835Z</lastUpdate>
+            <lastUpdateBy>Mobile</lastUpdateBy>
+            <lastUpdateFirstName>Ved</lastUpdateFirstName>
+            <lastUpdateId>1</lastUpdateId>
+            <lastUpdateLastName>Vyas</lastUpdateLastName>
+            <name>Mike's Ingredient List 6</name>
+            <removed>false</removed>
+            <shoppingItems>
+               <e>
+                  <bought>false</bought>
+                  <description>ingredient 1</description>
+                  <invcategoryId>8</invcategoryId>
+                  <invuomId>2</invuomId>
+                  <lastUpdate>2014-01-14T21:17:51.835Z</lastUpdate>
+                  <qty>1</qty>
+                  <shoppingListItemId>65</shoppingListItemId>
+                  <shoppinglistId>0</shoppinglistId>
+                  <stdinvitemId>1</stdinvitemId>
+               </e>
+               <e>
+                  <bought>false</bought>
+                  <description>ingredient 1</description>
+                  <invcategoryId>8</invcategoryId>
+                  <invuomId>2</invuomId>
+                  <lastUpdate>2014-01-14T21:17:51.835Z</lastUpdate>
+                  <qty>1</qty>
+                  <shoppingListItemId>65</shoppingListItemId>
+                  <shoppinglistId>22</shoppinglistId>
+                  <stdinvitemId>1</stdinvitemId>
+               </e>
+            </shoppingItems>
+            <shoppinglistId>112</shoppinglistId>
+            <userFirstName>SoapUI</userFirstName>
+            <userId>5634</userId>
+            <userLastName>Regression</userLastName>
+         </e>
+      </newLists>
+   </response>
+</Response>]]></con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="SyncShoppingLists_create_Negative" id="bdea84a9-8000-4449-897a-e202c4e6cda0" disabled="true">
+    <con:settings/>
+    <con:config service="SyncShoppingLists" resourcePath="/syncShoppingLists" methodName="SyncShoppingLists" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="SyncShoppingLists_create_Negative" id="cb783b4e-430d-454d-b87a-61a1c56fed72" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${LAR}</con:endpoint>
+        <con:request>{
+    "_id": "30ad09ad8fa0098ad9d9999eeeeea",
+    "slsAuthToken": "1f4ccef1-32db-4778-8605-c872f535e3e9",
+    "deviceGuid": "30ad09ad8fa0098ad9d9999eeeeea",
+    "cleanLists": [
+        {
+        }
+    ],
+    "dirtyLists": [
+        
+    ],
+    "newLists": [
+        {
+          
+            "userId":${DataSource#User_ID},
+            "userFirstName": ${DataSource#First_Name},
+            "userLastName": ${DataSource#Last_Name},
+            "name": ${DataSource#Shoppinglist_Name},
+            "lastUpdate": "2014-01-14T21:17:51.835Z",
+            "lastUpdateId": 1,
+             "lastUpdateFirstName":"Ved",
+      "lastUpdateLastName":"Vyas",
+      "lastUpdateBy":"Mobile",
+            "removed": false,
+            "shoppingItems": [
+              {
+                "shoppingListItemId": 65,
+          
+          "invcategoryId": 8,
+          "stdinvitemId": 1,
+          "description": "ingredient 1",
+          "qty": 1,
+          "invuomId": 2,
+          "bought": false,
+          "lastUpdate": "2014-01-14T21:17:51.835Z"
+              },
+              
+              {
+                "shoppingListItemId": 65,
+          "shoppinglistId": ${DataSource#Shoppinglist_ID},
+          "invcategoryId": 8,
+          "stdinvitemId": 1,
+          "description": "ingredient 1",
+          "qty": 1,
+          "invuomId": 2,
+          "bought": false,
+          "lastUpdate": "2014-01-14T21:17:51.835Z"
+              }]
+        }
+    ]
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Report" id="8b984167-6081-4985-9272-aba35287f466" disabled="true">
+    <con:settings/>
+    <con:config>
+      <script>import java.io.FileInputStream
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
+import java.util.Iterator
+import java.io.InputStream
+import java.lang.String
+import java.text.SimpleDateFormat
+import org.apache.poi.EncryptedDocumentException
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException
+import org.apache.poi.ss.util.CellReference
+import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.DateUtil
+import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.ss.usermodel.Sheet
+import org.apache.poi.ss.usermodel.Workbook
+import org.apache.poi.ss.usermodel.WorkbookFactory
+import org.apache.poi.hssf.usermodel.HSSFWorkbook
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import org.apache.poi.xssf.streaming.SXSSFWorkbook
+import org.apache.poi.xssf.usermodel.XSSFCell
+import org.apache.poi.xssf.usermodel.XSSFRow
+import org.apache.poi.xssf.usermodel.XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
+
+def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
+log.info Final_Path
+def final_path = new File(Final_Path)
+final_path.mkdir()
+
+/*Get Test Case Name and Status*/
+def data_combination = context.expand( '${DataSource#Data_Combination}' )
+/*Get TC Name*/
+def TCN = context.expand( '${DataSource#TC_Number}' )
+def TestCaseName = testRunner.testCase.getName()
+if(data_combination == "Positive"){
+	TestCaseName = TestCaseName + "_Positive"
+}
+if(data_combination == "Negative"){
+	TestCaseName = TestCaseName + "_Negative"
+}
+log.info TestCaseName
+
+obj = context.testCase.getTestStepByName(TestCaseName)
+assertions = obj.getAssertionList()
+def Status
+assertions.each{
+	def stat = (it.status).toString()
+	if(stat == "VALID"){
+		Status = "Pass"
+	}
+	if(stat == "FAILED"){
+		Status = "Fail"
+	}
+}
+log.info(Status)
+testRunner.testCase.testSuite.setPropertyValue("Status", Status)
+
+/*Creating Txt File*/
+
+String date = new Date()
+String date_now = new Date()
+date = date.replaceAll(":","_")
+date = date.replaceAll(" ","_")
+def TCName = TestCaseName.replaceAll(" ","_")
+report_file = Final_Path + TCN + "_" + TCName + "_" + date + "_" + Status + ".txt"
+/* Writing to file */
+def file1 = new File(report_file)
+
+
+/*Get Time Taken for request*/
+
+obj = context.testCase.getTestStepByName(TestCaseName)
+assertions = obj.getAssertionList()
+def Time_Taken
+assertions.each{
+	Time_Taken = testRunner.testCase.testSteps[TestCaseName].testRequest.response.timeTaken
+	log.info(Time_Taken)
+}
+
+
+
+/*Get Status Code*/
+Header = testRunner.testCase.testSteps[TestCaseName].testRequest.response.getResponseHeaders()
+Status_Code = Header["#status#"]
+log.info Status_Code
+file1.write("Status:  " + Status + "\n")
+file1.append("Time Taken:  " + Time_Taken + " ms\n")
+file1.append("TimeStamp:  " + date_now + "\n")
+file1.append("Test Step:  " + TestCaseName + "\n\n\n\n")
+file1.append("----------------- Http Status ------------------------------\n")
+file1.append("Http Status Code:  " + Status_Code + "\n\n\n\n")
+file1.append("---------------- Request ---------------------------\n")
+
+
+/*Get request and response*/
+myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
+def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
+def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+file1.append(request + "\n\n\n\n")
+file1.append("---------------- Response --------------------------\n")
+file1.append(response)
+
+
+/* Creating Excel for test result */
+def Testresultpath = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
+Testresultpath = Testresultpath + "Test_Run_Results.xls"
+log.info Testresultpath
+
+FileInputStream fis = new FileInputStream(new File(Testresultpath))
+Workbook wb = WorkbookFactory.create(fis)
+Sheet sh = wb.getSheet("Test_Run_Results")
+def Row_count = sh.getLastRowNum()
+Row_count = Row_count.toInteger()
+Row_count++
+log.info Row_count
+Row row = sh.createRow(Row_count)
+Cell cell = row.createCell(0).setCellValue(TCN)
+Cell cell_1 = row.createCell(1).setCellValue(Status)
+Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
+FileOutputStream out = new FileOutputStream(Testresultpath,false)
+wb.write(out)
+out.close()</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="01cf73f1-ccb3-4e2b-aaa2-5dbd8ceca7b4">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>flow control</targetStep>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>TimeStamp</con:name>
+      <con:value>1517996254</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>a8dbb634-360a-4697-b5f3-254e66693a74</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>81a5a601-0c82-4551-9566-1d388f131a0e</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>98afeba5-5a65-4666-8a72-96bc0ae68184</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

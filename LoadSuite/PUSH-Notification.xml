@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="34b9ea32-bfb7-48bd-8d7c-61b408fd4254" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="PUSH Notification" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e184490b-9fb7-4be5-b2be-b275ac353f0cfileName">PUSH-Notification</con:setting>
+    <con:setting id="34b9ea32-bfb7-48bd-8d7c-61b408fd4254fileName">PUSH-Notification</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="85c7316d-4bcc-4298-9f85-073e4b6c4e61">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>../../Automation/SoapUI/Test_Data.xlsx</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>TC_Number</con:property>
+      <con:property>API_Name</con:property>
+      <con:property>Data_Combination</con:property>
+      <con:property>Company_ID</con:property>
+      <con:property>Language_ID</con:property>
+      <con:property>Status_ID</con:property>
+      <con:property>First_Name</con:property>
+      <con:property>Last_Name</con:property>
+      <con:property>Phone_No.</con:property>
+      <con:property>Password</con:property>
+      <con:property>User_Role</con:property>
+      <con:property>Verification_Code</con:property>
+      <con:property>Email_ID_Data</con:property>
+      <con:property>New_Password</con:property>
+      <con:property>Confirm_Password</con:property>
+      <con:property>Role_ID</con:property>
+      <con:property>Group_Number</con:property>
+      <con:property>Account_Number</con:property>
+      <con:property>Location_Name</con:property>
+      <con:property>Location_Number</con:property>
+      <con:property>State_ID</con:property>
+      <con:property>City</con:property>
+      <con:property>Postal_Code</con:property>
+      <con:property>Country_ID</con:property>
+      <con:property>Street</con:property>
+      <con:property>Rate_Plan_ID</con:property>
+      <con:property>Rate_Plan_Code</con:property>
+      <con:property>Locale_ID</con:property>
+      <con:property>Loyalty_ID</con:property>
+      <con:property>Latitude</con:property>
+      <con:property>Longitude</con:property>
+      <con:property>Elevation</con:property>
+      <con:property>enable_cloth_spin</con:property>
+      <con:property>Device_Notification_ID</con:property>
+      <con:property>Appliance_Master_ID</con:property>
+      <con:property>Alert_ID</con:property>
+      <con:property>Appliance_ID</con:property>
+      <con:property>Edge_Device_ID</con:property>
+      <con:property>Notification_Type</con:property>
+      <con:property>Status</con:property>
+      <con:property>Device_Shadow_Name</con:property>
+      <con:property>Platform</con:property>
+      <con:property>Device_Shadow_Attribute_Name</con:property>
+      <con:property>Device_Shadow_Attribute_Value</con:property>
+      <con:property>SAID</con:property>
+      <con:property>Appliance_Master_Version_ID</con:property>
+      <con:property>Appliance_Name</con:property>
+      <con:property>Nest_Away</con:property>
+      <con:property>Nest_Thermostat_ID</con:property>
+      <con:property>Company_Name</con:property>
+      <con:property>Device_ID</con:property>
+      <con:property>Brand</con:property>
+      <con:property>Email_To</con:property>
+      <con:property>Email_From</con:property>
+      <con:property>Email_Subject</con:property>
+      <con:property>Email_BodyMessage</con:property>
+      <con:property>Alert_Platform_Type</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Flow Control" id="90ab9ec1-a36d-4abe-b9b9-4e3603585de7">
+    <con:settings/>
+    <con:config>
+      <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+def API_Name = context.expand( '${DataSource#API_Name}' )
+def TestCaseName = testRunner.testCase.getName()
+
+if (API_Name != TestCaseName){
+	testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(true)
+	testRunner.testCase.testSteps['PUSH Notification_Positive'].setDisabled(true)
+	testRunner.testCase.testSteps['PUSH Notification_Negative'].setDisabled(true)
+	testRunner.testCase.testSteps['Report'].setDisabled(true)
+}else{
+	if(dataCombination == "Positive"){
+		testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(false)
+		testRunner.testCase.testSteps['PUSH Notification_Positive'].setDisabled(false)
+		testRunner.testCase.testSteps['PUSH Notification_Negative'].setDisabled(true)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
+	if(dataCombination == "Negative"){
+		testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(false)
+		testRunner.testCase.testSteps['PUSH Notification_Positive'].setDisabled(true)
+		testRunner.testCase.testSteps['PUSH Notification_Negative'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Test_Data_Setup" id="4e96519a-c0c2-4dd0-84b7-5148c0875df4">
+    <con:settings/>
+    <con:config>
+      <script>def device_Shadow_Attribute_Name = context.expand( '${DataSource#Device_Shadow_Attribute_Name}' )
+def device_Shadow_Attribute_Value = context.expand( '${DataSource#Device_Shadow_Attribute_Value}' )
+String[] Attribute_Name = device_Shadow_Attribute_Name.tokenize(',')
+String[] Attribute_Value = device_Shadow_Attribute_Value.tokenize(',')
+def string_length = Attribute_Name.length
+log.info string_length
+def json_body
+for(i = 0;i &lt; string_length; i++){
+	if(i == 0){
+		json_body = Attribute_Name[i] + ":" + Attribute_Value[i] + ",\n"
+	}else{
+		if(i == string_length-1){
+			json_body = json_body + Attribute_Name[i] + ":" + Attribute_Value[i] + "\n"
+		}else{
+			json_body = json_body + Attribute_Name[i] + ":" + Attribute_Value[i] + ",\n"
+		}
+	}
+}
+log.info json_body
+testRunner.testCase.setPropertyValue("json_body", json_body)</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="PUSH Notification_Positive" id="531845f4-1c8f-4100-9dba-a98b12141fa6">
+    <con:settings/>
+    <con:config service="PUSH Notification" resourcePath="/notifications/" methodName="PUSH Notification" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="PUSH Notification_Positive" id="f3a77ebd-36ac-4ee2-b694-fe5281db2966" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${Notification}</con:endpoint>
+        <con:request>{              
+   "said":${DataSource#SAID},
+   "alertdef":{
+     "alertPlatformType":${DataSource#Alert_Platform_Type}  
+     },
+    "applianceAttributes":
+        {
+         ${#TestCase#json_body}
+        }
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="PUSH Notification_Negative" id="98a89bcb-6530-43c4-9cbe-36601f578923">
+    <con:settings/>
+    <con:config service="PUSH Notification" resourcePath="/notifications/" methodName="PUSH Notification" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="PUSH Notification_Negative" id="f3a77ebd-36ac-4ee2-b694-fe5281db2966" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${Notification}</con:endpoint>
+        <con:request>{              
+   "said":${DataSource#SAID},
+   "alertdef":{
+     "alertPlatformType":${DataSource#Alert_Platform_Type}  
+     },
+    "applianceAttributes":
+        {
+         ${#TestCase#json_body}
+        }
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Report" id="de889cca-fb10-4473-96ac-55278cdf2376">
+    <con:settings/>
+    <con:config>
+      <script>import java.io.FileInputStream
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
+import java.util.Iterator
+import java.io.InputStream
+import java.lang.String
+import java.text.SimpleDateFormat
+import org.apache.poi.EncryptedDocumentException
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException
+import org.apache.poi.ss.util.CellReference
+import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.DateUtil
+import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.ss.usermodel.Sheet
+import org.apache.poi.ss.usermodel.Workbook
+import org.apache.poi.ss.usermodel.WorkbookFactory
+import org.apache.poi.hssf.usermodel.HSSFWorkbook
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import org.apache.poi.xssf.streaming.SXSSFWorkbook
+import org.apache.poi.xssf.usermodel.XSSFCell
+import org.apache.poi.xssf.usermodel.XSSFRow
+import org.apache.poi.xssf.usermodel.XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
+
+def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
+log.info Final_Path
+def final_path = new File(Final_Path)
+final_path.mkdir()
+
+/*Get Test Case Name and Status*/
+def data_combination = context.expand( '${DataSource#Data_Combination}' )
+/*Get TC Name*/
+def TCN = context.expand( '${DataSource#TC_Number}' )
+def TestCaseName = testRunner.testCase.getName()
+if(data_combination == "Positive"){
+	TestCaseName = TestCaseName + "_Positive"
+}
+if(data_combination == "Negative"){
+	TestCaseName = TestCaseName + "_Negative"
+}
+log.info TestCaseName
+
+obj = context.testCase.getTestStepByName(TestCaseName)
+assertions = obj.getAssertionList()
+def Status
+assertions.each{
+	def stat = (it.status).toString()
+	if(stat == "VALID"){
+		Status = "Pass"
+	}
+	if(stat == "FAILED"){
+		Status = "Fail"
+	}
+}
+log.info(Status)
+testRunner.testCase.testSuite.setPropertyValue("Status", Status)
+
+/*Creating Txt File*/
+
+String date = new Date()
+String date_now = new Date()
+date = date.replaceAll(":","_")
+date = date.replaceAll(" ","_")
+def TCName = TestCaseName.replaceAll(" ","_")
+report_file = Final_Path + TCN + "_" + TCName + "_" + date + "_" + Status + ".txt"
+/* Writing to file */
+def file1 = new File(report_file)
+
+
+/*Get Time Taken for request*/
+
+obj = context.testCase.getTestStepByName(TestCaseName)
+assertions = obj.getAssertionList()
+def Time_Taken
+assertions.each{
+	Time_Taken = testRunner.testCase.testSteps[TestCaseName].testRequest.response.timeTaken
+	log.info(Time_Taken)
+}
+
+
+
+/*Get Status Code*/
+Header = testRunner.testCase.testSteps[TestCaseName].testRequest.response.getResponseHeaders()
+Status_Code = Header["#status#"]
+log.info Status_Code
+file1.write("Status:  " + Status + "\n")
+file1.append("Time Taken:  " + Time_Taken + " ms\n")
+file1.append("TimeStamp:  " + date_now + "\n")
+file1.append("Test Step:  " + TestCaseName + "\n\n\n\n")
+file1.append("----------------- Http Status ------------------------------\n")
+file1.append("Http Status Code:  " + Status_Code + "\n\n\n\n")
+file1.append("---------------- Request ---------------------------\n")
+
+
+/*Get request and response*/
+myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
+def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
+def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+file1.append(request + "\n\n\n\n")
+file1.append("---------------- Response --------------------------\n")
+file1.append(response)
+
+
+/* Creating Excel for test result */
+def Testresultpath = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
+Testresultpath = Testresultpath + "Test_Run_Results.xls"
+log.info Testresultpath
+
+FileInputStream fis = new FileInputStream(new File(Testresultpath))
+Workbook wb = WorkbookFactory.create(fis)
+Sheet sh = wb.getSheet("Test_Run_Results")
+def Row_count = sh.getLastRowNum()
+Row_count = Row_count.toInteger()
+Row_count++
+log.info Row_count
+Row row = sh.createRow(Row_count)
+Cell cell = row.createCell(0).setCellValue(TCN)
+Cell cell_1 = row.createCell(1).setCellValue(Status)
+FileOutputStream out = new FileOutputStream(Testresultpath,false)
+wb.write(out)
+out.close()</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="e3d549d3-29a7-43a2-a546-cb71d8f80b51">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Flow Control</targetStep>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>json_body</con:name>
+      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

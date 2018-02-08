@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="4b473c33-475f-4c8e-956a-99dbe9abc816" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="HistoryWithoutTimeRange" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="24dae3e1-c655-4da1-920d-b977a72c4b14" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Send Invitation" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="a3794688-1241-4f15-a1df-cf30f457e622fileName">HistoryWithTimeRange</con:setting>
-    <con:setting id="4b473c33-475f-4c8e-956a-99dbe9abc816fileName">HistoryWithoutTimeRange</con:setting>
+    <con:setting id="ef308af9-ed74-4841-8232-002078478a6cfileName">Send-Invitation</con:setting>
+    <con:setting id="24dae3e1-c655-4da1-920d-b977a72c4b14fileName">Send-Invitation</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="4afb20ac-ad41-465d-b835-fe05c5fa4b21">
+  <con:testStep type="groovy" name="DataSource_Setup" id="388c9f34-2373-4dcb-9a59-d93c3fa94b89">
     <con:settings/>
     <con:config>
-      <script>import java.io.FileInputStream;
+      <script><![CDATA[import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,7 +30,7 @@ def RunTimeDataSource_Flag
 log.info TestStep_Count
 def TestStep_Name
 //******************Finding DataSource***************
-for(i = 0;i &lt; TestStep_Count;i++){
+for(i = 0;i < TestStep_Count;i++){
 	TestStep_Name = testRunner.testCase.getTestStepAt(i).name
 	log.info TestStep_Name
 	if(TestStep_Name == "DataSource"){
@@ -42,7 +42,7 @@ for(i = 0;i &lt; TestStep_Count;i++){
 	}
 }
 
-for(i = 0; i &lt; TestStep_Count; i++){
+for(i = 0; i < TestStep_Count; i++){
 	TestStep_Name = testRunner.testCase.getTestStepAt(i).name
 	if(TestStep_Name == "DataSource_RunTime"){
 		log.info("RunTime Data Source present")
@@ -51,6 +51,19 @@ for(i = 0; i &lt; TestStep_Count; i++){
 	}
 	else{
 		RunTimeDataSource_Flag = false
+		log.info("RunTime Data Source not present")
+	}
+}
+
+for(i = 0; i < TestStep_Count; i++){
+	TestStep_Name = testRunner.testCase.getTestStepAt(i).name
+	if(TestStep_Name == "DataSource_RunTime_Account"){
+		log.info("RunTime Data Source present")
+		RunTimeDataSource_Account_Flag = true
+		break
+	}
+	else{
+		RunTimeDataSource_Account_Flag = false
 		log.info("RunTime Data Source not present")
 	}
 }
@@ -92,6 +105,22 @@ if(RunTimeDataSource_Flag == true){
 	log.info("RunTime Data Source not present")
 }
 
+if(RunTimeDataSource_Account_Flag == true){
+	log.info "Deleting RunTime DataSource Properties"
+	def TestStep = testRunner.testCase.getTestStepByName("DataSource_RunTime_Account")
+	def Property_Count = TestStep.propertyCount
+	log.info Property_Count
+	def Property_Name
+	for(i = Property_Count - 1; i >= 0; i--)
+	{
+		Property_Name = TestStep.getPropertyAt(i).name
+		log.info "Deleting: " + Property_Name
+		TestStep.removeProperty(Property_Name)
+	}
+}else{
+	log.info("RunTime Data Source not present")
+}
+
 //*********Reading Excel and adding Property to DataSource*****************
 
 if(DataSource_Flag == true){
@@ -109,7 +138,7 @@ if(DataSource_Flag == true){
 	log.info "Adding DataSource Properties"
 	def TestStep = testRunner.testCase.getTestStepByName("DataSource")
 	def Property_Name
-	for(i = 0; i &lt; Col_count; i++){
+	for(i = 0; i < Col_count; i++){
 		cell = row.getCell(i)
 		def Cell_Value = String.valueOf(cell)
 		log.info "Adding: " + Cell_Value
@@ -119,7 +148,7 @@ if(DataSource_Flag == true){
 
 
 //**************Reading Excel and adding Property to RunTime DataSource***********
-if(RunTimeDataSource_Flag == true){
+if(RunTimeDataSource_Account_Flag == true){
 	def Run_Time_Data = context.expand( '${Run_Time_Data}' )
 	InputStream ExcelFileToRead = new FileInputStream(Run_Time_Data);
 	HSSFWorkbook wb = new HSSFWorkbook(ExcelFileToRead);
@@ -132,18 +161,97 @@ if(RunTimeDataSource_Flag == true){
 	log.info Col_count
 
 	log.info "Adding DataSource Properties"
-	def TestStep = testRunner.testCase.getTestStepByName("DataSource_RunTime")
+	def TestStep = testRunner.testCase.getTestStepByName("DataSource_RunTime_Account")
 	def Property_Name
-	for(i = 0; i &lt; Col_count; i++){
+	for(i = 0; i < Col_count; i++){
 		cell = row.getCell(i)
 		def Cell_Value = String.valueOf(cell)
 		log.info "Adding: " + Cell_Value
 		TestStep.addProperty(Cell_Value)
 	}
-}</script>
+}
+
+if(RunTimeDataSource_Flag == true){
+	def Run_Time_Data = context.expand( '${Run_Time_Data}' )
+	InputStream ExcelFileToRead = new FileInputStream(Run_Time_Data);
+	HSSFWorkbook wb = new HSSFWorkbook(ExcelFileToRead);
+	HSSFSheet sheet = wb.getSheet("Location_Run_Time_Data")
+	HSSFRow row; 
+	HSSFCell cell;
+	
+	row = sheet.getRow(0)
+	def Col_count = row.getLastCellNum()
+	log.info Col_count
+
+	log.info "Adding DataSource Properties"
+	def TestStep = testRunner.testCase.getTestStepByName("DataSource_RunTime")
+	def Property_Name
+	for(i = 0; i < Col_count; i++){
+		cell = row.getCell(i)
+		def Cell_Value = String.valueOf(cell)
+		log.info "Adding: " + Cell_Value
+		TestStep.addProperty(Cell_Value)
+	}
+}]]></script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="29b17023-0625-443f-a0b2-59e6549fd9bc">
+  <con:testStep type="datasource" name="DataSource_RunTime" id="d442d6d9-f5b5-4fac-b93f-47c7b360ea8c">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>${Run_Time_Data}</file>
+          <worksheet>Location_Run_Time_Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Location_ID_Number</con:property>
+      <con:property>Account_ID_Number</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="DataSource_RunTime_Account" id="ee925db2-f830-4dde-b7f8-7ff44a61949d">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>${Run_Time_Data}</file>
+          <worksheet>Account_Run_Time_Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Account_ID_Number</con:property>
+      <con:property>Verification_Code</con:property>
+      <con:property>Email_ID</con:property>
+      <con:property>Group_ID</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Before_Run_Time_Data_Transfer" id="14f2c788-49a5-4048-a6cd-a13fa3141aaf">
+    <con:settings/>
+    <con:config>
+      <script>String date = new Date()
+date = date.replaceAll(":","_")
+date = date.replaceAll(" ","_")
+Email_ID = "\"" + date + "@mailinator.com" + "\""
+Email_ID = Email_ID.toUpperCase()
+Email_ID_string = date + "@mailinator.com"
+Email_ID_string = Email_ID_string.toUpperCase()
+testRunner.testCase.setPropertyValue("Email_ID", Email_ID)
+testRunner.testCase.setPropertyValue("Email_ID_string", Email_ID_string)</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="DataSource" id="06d5edfb-e0b1-4c9e-8b94-32c0d128f96c">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -155,8 +263,8 @@ if(RunTimeDataSource_Flag == true){
           <evaluateFormulas>false</evaluateFormulas>
         </con:configuration>
       </con:dataSource>
-      <con:shared>false</con:shared>
-      <con:restartShared>false</con:restartShared>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
       <con:property>TC_Number</con:property>
       <con:property>Service_Name</con:property>
       <con:property>Defect_ID</con:property>
@@ -212,7 +320,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -241,49 +348,44 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="35faf69c-88e3-4442-b86c-dd6f56561cc5">
+  <con:testStep type="groovy" name="Flow Control" id="6872eb32-f64b-4d59-a79b-6ac8935ca510">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
-log.info dataCombination
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
 if (API_Name != TestCaseName){
-	testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(true)
-	testRunner.testCase.testSteps['Get device shadow for id'].setDisabled(true)
-	testRunner.testCase.testSteps['attribute_name'].setDisabled(true)
-	testRunner.testCase.testSteps['HistoryWithoutTimeRange'].setDisabled(true)
+	testRunner.testCase.testSteps['Send Invitation'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
 }else{
-	testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(false)
-	testRunner.testCase.testSteps['Get device shadow for id'].setDisabled(false)
-	testRunner.testCase.testSteps['attribute_name'].setDisabled(false)
-	testRunner.testCase.testSteps['HistoryWithoutTimeRange'].setDisabled(false)
-	testRunner.testCase.testSteps['Report'].setDisabled(false)
-	
+	if(dataCombination == "Positive"){
+		testRunner.testCase.testSteps['Send Invitation'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
+	if(dataCombination == "Negative"){
+		testRunner.testCase.testSteps['Send Invitation'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+	}
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="6286f5a3-9663-4111-a055-ea13d3cdcb3d">
+  <con:testStep type="restrequest" name="Send Invitation" id="9066586c-b0dc-4e22-9951-06a40405a3c6" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>def Device_Shadow = context.expand( '${DataSource#Device_Shadow_Name}' )
-def Device_Shadow_Name = Device_Shadow.replace("\"", "")
-testRunner.testCase.setPropertyValue("Device_Shadow_Name", Device_Shadow_Name)</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Get device shadow for id" id="ae44664c-e7fa-4e42-92d8-7786d68c80c9">
-    <con:settings/>
-    <con:config service="Get device shadow for id" resourcePath="/deviceshadow/${#TestCase#Device_Shadow_Name}" methodName="Get device shadow for id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Get device shadow for id" id="29790405-256a-42ec-aa9d-8127214b09f7" mediaType="application/json">
+    <con:config service="Send Invitation" resourcePath="/invitation" methodName="Send Invitation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Send Invitation" id="998055dd-af0d-42e1-a884-d37b7d3871ef" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${API-Connect}</con:endpoint>
-        <con:request/>
-        <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/deviceshadow/WPR1000101123</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="4560e4c4-8470-482f-a044-8f931bfc20ea" name="Valid HTTP Status Codes">
+        <con:endpoint>${QA_Env}</con:endpoint>
+        <con:request>{
+  "accountId":${DataSource_RunTime_Account#Account_ID_Number},
+  "locationId":${DataSource_RunTime#Location_ID_Number},
+  "groupId":${DataSource_RunTime_Account#Group_ID},
+  "emailId": ${#TestCase#Email_ID}
+}</con:request>
+        <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-dev/api/v1/api/invitation</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a5008a1e-e967-4d4d-99f6-7ffe9686992f" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
@@ -295,9 +397,7 @@ testRunner.testCase.setPropertyValue("Device_Shadow_Name", Device_Shadow_Name)</
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
-        <con:parameters>
-          <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
-        </con:parameters>
+        <con:parameters/>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
         </con:parameterOrder>
@@ -330,53 +430,7 @@ testRunner.testCase.setPropertyValue("Device_Shadow_Name", Device_Shadow_Name)</
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="attribute_name" id="ceb00751-a42d-43f5-994a-e77ca63e0396">
-    <con:settings/>
-    <con:config>
-      <script>def response = context.expand( '${Get device shadow for id#Response#$[\'attributes\']}' )
-//log.info response
-response1 = response.split(":")
-//log.info response1[0]
-response = response1[0]
-response = response.replace("{", "")
-log.info response
-testRunner.testCase.setPropertyValue("attributeNames", response)</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="HistoryWithoutTimeRange" id="2929be71-e327-4973-9d2d-ae66657ead35">
-    <con:settings/>
-    <con:config service="HistoryWithTimeRange" resourcePath="/appliances/history" methodName="HistoryWithTimeRange" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="HistoryWithoutTimeRange" id="449fa843-e446-4513-8ef5-ca9290e749f9" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>${API-Connect}</con:endpoint>
-        <con:request>{
-	"applianceId":${DataSource#Device_Shadow_Name},
-	"attributeNames":${#TestCase#attributeNames},
-	"startTime": "",
-	"endTime": ""
-}</con:request>
-        <con:originalUri>https://api-test.whrcloud.com/api/v1/appliances/history</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="812c96e3-fd5b-4ade-863b-923768cba724" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-        <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
-        </con:parameterOrder>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Report" id="a2f0c3d5-1318-4877-b3f2-fa8da7ec7e44">
+  <con:testStep type="groovy" name="Report" id="8e2dc3f4-5db6-4b4c-a219-cc8cba5d2f79" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -405,10 +459,12 @@ import org.apache.poi.xssf.usermodel.XSSFRow
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 
+
 def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
 log.info Final_Path
 def final_path = new File(Final_Path)
 final_path.mkdir()
+
 
 /*Get Test Case Name and Status*/
 def data_combination = context.expand( '${DataSource#Data_Combination}' )
@@ -416,7 +472,6 @@ def data_combination = context.expand( '${DataSource#Data_Combination}' )
 def TCN = context.expand( '${DataSource#TC_Number}' )
 def TestCaseName = testRunner.testCase.getName()
 
-log.info TestCaseName
 
 obj = context.testCase.getTestStepByName(TestCaseName)
 assertions = obj.getAssertionList()
@@ -471,21 +526,18 @@ file1.append("---------------- Request ---------------------------\n")
 
 
 /*Get request and response*/
+myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
 try{
-	myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
-	def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
-	def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
-	file1.append(request + "\n\n\n\n")
-	file1.append("---------------- Response --------------------------\n")
-	file1.append(response)
+def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
+def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+file1.append(request + "\n\n\n\n")
+file1.append("---------------- Response --------------------------\n")
+file1.append(response)
+}catch(Exception e){log.info "Request/Response empty"
 }
-catch (Exception e){
-	log.info("Empty Request Response")
-}
-
-
 
 /* Creating Excel for test result */
+
 def Testresultpath = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
 Testresultpath = Testresultpath + "Test_Run_Results.xls"
 log.info Testresultpath
@@ -500,52 +552,70 @@ log.info Row_count
 Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
+Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
+out.close()
+log.info "Report Generated"</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="d32c3b18-525b-4219-b6ab-5eff81a1fc55">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="11cfa4b1-a819-4680-89f4-3ce634ee090e">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>flow control</targetStep>
+      <targetStep>Flow Control</targetStep>
     </con:config>
   </con:testStep>
   <con:properties>
     <con:property>
-      <con:name>Device_Shadow_Name</con:name>
-      <con:value>WPR33337CH4H6</con:value>
+      <con:name>Account_ID</con:name>
+      <con:value>2000</con:value>
     </con:property>
     <con:property>
-      <con:name>attributeNames</con:name>
-      <con:value>"Online"</con:value>
+      <con:name>Location_ID</con:name>
+      <con:value>795</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Email_ID</con:name>
+      <con:value>"WED_FEB_07_15_05_31_IST_2018@MAILINATOR.COM"</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Email_ID_string</con:name>
+      <con:value>WED_FEB_07_15_05_31_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>5eb5c2d9-6619-4c13-a457-09325e1f4b6d</con:testStepId>
+    <con:testStepId>f8939f60-6783-42ae-b46b-d460b507fde7</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>1a8b2630-8b14-46ce-9fcc-e0261a9c4dca</con:testStepId>
+    <con:testStepId>c31c937f-0f80-49da-b097-8f6ab6ef1e77</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>1d7de30d-2072-4691-a831-43a15cb2498f</con:testStepId>
+    <con:testStepId>fde60bb1-7c5a-4981-aadb-4a1869f7ecd7</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>1189d96a-f5b0-4fc2-b1b0-cfd6b4410346</con:testStepId>
+    <con:testStepId>b4d1f183-7fa3-4a86-a58e-7db40be000b8</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>e317cc08-5adc-40a6-a5ee-24b442c0d60f</con:testStepId>
+    <con:testStepId>87efac9b-a4ba-4b76-ae3c-285f8fdd1fc8</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>
