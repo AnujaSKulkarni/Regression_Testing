@@ -51,7 +51,6 @@ PUSH-Notification
 SMS-Notification
 Email-Notification
 search-notification-by-machine
-subscribe-notification
 GET-Client-Token
 GET-Member-Token
 Logout
@@ -152,6 +151,8 @@ Copy-of-Delete-cycleByid
 Copy-of-Delete-SettingByAttribute
 Delete-Favorities
 HistoryWithTimeRange
+UnClaim-Appliance
+Appliance_Wraper
 Regression-Suite
 LoadSuite
 REST-Virt-1

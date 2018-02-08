@@ -51,5 +51,4 @@ PUSH-Notification
 SMS-Notification
 Email-Notification
 search-notification-by-machine
-subscribe-notification
 GET-Client-Token

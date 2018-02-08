@@ -593,6 +593,12 @@
     <con:service type="REST" name="HistoryWithTimeRange">
       <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
+    <con:service type="REST" name="UnClaim Appliance">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Appliance_Wraper">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
     <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationserviceqa-v2.mybluemix.net/api/v1</con:value>
@@ -1158,6 +1164,12 @@
     <con:service type="REST" name="HistoryWithTimeRange">
       <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
+    <con:service type="REST" name="UnClaim Appliance">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="Appliance_Wraper">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
     <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicedev-v2.mybluemix.net/api/v1</con:value>
@@ -1721,6 +1733,12 @@
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="HistoryWithTimeRange">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="UnClaim Appliance">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="Appliance_Wraper">
       <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:property>
