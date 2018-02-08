@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="241932e4-30cb-4e20-898f-59c649e9d131" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="HistoryWithTimeRange" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="241932e4-30cb-4e20-898f-59c649e9d131" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="HistoryWithTimeRange" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="241932e4-30cb-4e20-898f-59c649e9d131fileName">HistoryWithTimeRange</con:setting>
   </con:settings>
@@ -263,7 +263,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="596d0860-6623-41c3-b75f-9be62db07eb8">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="596d0860-6623-41c3-b75f-9be62db07eb8" disabled="true">
     <con:settings/>
     <con:config>
       <script>def Device_Shadow = context.expand( '${DataSource#Device_Shadow_Name}' )
@@ -271,7 +271,7 @@ def Device_Shadow_Name = Device_Shadow.replace("\"", "")
 testRunner.testCase.setPropertyValue("Device_Shadow_Name", Device_Shadow_Name)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Get device shadow for id" id="c501b1b8-a6fe-4121-8961-27cecc8b9a08">
+  <con:testStep type="restrequest" name="Get device shadow for id" id="c501b1b8-a6fe-4121-8961-27cecc8b9a08" disabled="true">
     <con:settings/>
     <con:config service="Get device shadow for id" resourcePath="/deviceshadow/${#TestCase#Device_Shadow_Name}" methodName="Get device shadow for id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Get device shadow for id" id="29790405-256a-42ec-aa9d-8127214b09f7" mediaType="application/json">
@@ -328,7 +328,7 @@ testRunner.testCase.setPropertyValue("Device_Shadow_Name", Device_Shadow_Name)</
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Attribute_name" id="2dca1db3-d5ab-4aaf-b220-691bdc9eb408">
+  <con:testStep type="groovy" name="Attribute_name" id="2dca1db3-d5ab-4aaf-b220-691bdc9eb408" disabled="true">
     <con:settings/>
     <con:config>
       <script>def response = context.expand( '${Get device shadow for id#Response#$[\'attributes\']}' )
@@ -338,7 +338,7 @@ response = response.replace("{", "")
 testRunner.testCase.setPropertyValue("attribute_name", response)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="HistoryWithTimeRange" id="57085da5-3430-42ba-84e2-46066e4dd3fb">
+  <con:testStep type="restrequest" name="HistoryWithTimeRange" id="57085da5-3430-42ba-84e2-46066e4dd3fb" disabled="true">
     <con:settings/>
     <con:config service="HistoryWithTimeRange" resourcePath="/appliances/history" methodName="HistoryWithTimeRange" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="HistoryWithTimeRange" id="e40d0058-7e55-4add-b618-be7db2b39838" mediaType="application/json" postQueryString="false">
@@ -353,6 +353,12 @@ testRunner.testCase.setPropertyValue("attribute_name", response)</script>
 	"endTime": "1517129040000"
 }</con:request>
         <con:originalUri>https://api-test.whrcloud.com/api/v1/appliances/history</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="63d4a846-0676-4c82-8d10-bd5b44d21de2" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -365,7 +371,7 @@ testRunner.testCase.setPropertyValue("attribute_name", response)</script>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="0a721d3c-d772-43f4-be6b-9fb46c8c0ae4">
+  <con:testStep type="groovy" name="Report" id="0a721d3c-d772-43f4-be6b-9fb46c8c0ae4" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
