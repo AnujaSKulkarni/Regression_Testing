@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="HistoryWithTimeRange" path="/appliances/history" id="4c1a4d28-9bda-4229-98cc-c95f0db8d757" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="HistoryWithTimeRange" path="/appliances/history" id="4c1a4d28-9bda-4229-98cc-c95f0db8d757" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="4c1a4d28-9bda-4229-98cc-c95f0db8d757fileName">HistoryWithTimeRange</con:setting>
   </con:settings>
@@ -12,7 +12,7 @@
         <con:value>bearer ${access_token}</con:value>
         <con:style>HEADER</con:style>
         <con:default>bearer ${access_token}</con:default>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
     <con:representation type="REQUEST">
@@ -38,6 +38,7 @@
       <con:endpoint>${API-Connect}</con:endpoint>
       <con:request/>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>

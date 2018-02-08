@@ -346,7 +346,7 @@ testRunner.testCase.setPropertyValue("attributeNames", response)</script>
   <con:testStep type="restrequest" name="HistoryWithoutTimeRange" id="2929be71-e327-4973-9d2d-ae66657ead35">
     <con:settings/>
     <con:config service="HistoryWithTimeRange" resourcePath="/appliances/history" methodName="HistoryWithTimeRange" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="HistoryWithTimeRange" id="449fa843-e446-4513-8ef5-ca9290e749f9" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="HistoryWithoutTimeRange" id="449fa843-e446-4513-8ef5-ca9290e749f9" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
