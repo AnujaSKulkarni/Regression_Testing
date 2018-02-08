@@ -115,3 +115,5 @@ Create-notification-template.xml
 Get-Privacy-Content.xml
 LocalizedDateAndTime.xml
 Logout.xml
+HistoryWithTimeRange.xml
+HistoryWithoutTimeRange.xml
