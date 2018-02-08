@@ -247,6 +247,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -350,12 +351,14 @@ log.info tC_Number</script>
         <con:parameters>
           <con:entry key="wp-client-country" value="US"/>
           <con:entry key="wp-client-brand" value="Whirlpool"/>
+          <con:entry key="timestamp" value="${#TestCase#timemillis}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>access_token</con:entry>
           <con:entry>wp-client-brand</con:entry>
           <con:entry>wp-client-country</con:entry>
           <con:entry>wp-client-region</con:entry>
+          <con:entry>timestamp</con:entry>
         </con:parameterOrder>
         <con:environmentSpec>
           <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
@@ -413,12 +416,14 @@ log.info tC_Number</script>
           <con:entry key="wp-client-country" value="US"/>
           <con:entry key="wp-client-brand" value="Whirlpool"/>
           <con:entry key="wp-client-region" value="NAR"/>
+          <con:entry key="timestamp" value=""/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>access_token</con:entry>
           <con:entry>wp-client-brand</con:entry>
           <con:entry>wp-client-country</con:entry>
           <con:entry>wp-client-region</con:entry>
+          <con:entry>timestamp</con:entry>
         </con:parameterOrder>
         <con:environmentSpec>
           <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
@@ -588,11 +593,11 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11195</con:value>
+      <con:value/>
     </con:property>
     <con:property>
       <con:name>timemillis</con:name>
-      <con:value>1517996075421</con:value>
+      <con:value>1518001140996</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

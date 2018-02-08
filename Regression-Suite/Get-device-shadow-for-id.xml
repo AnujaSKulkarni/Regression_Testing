@@ -211,6 +211,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -282,7 +283,7 @@ testRunner.testCase.setPropertyValue("Device_Shadow_Name", Device_Shadow_Name)</
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${#Project#API-Connect}</con:endpoint>
+        <con:endpoint>${API-Connect}</con:endpoint>
         <con:request/>
         <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/deviceshadow/WPR1000101123</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="4560e4c4-8470-482f-a044-8f931bfc20ea" name="Valid HTTP Status Codes">
