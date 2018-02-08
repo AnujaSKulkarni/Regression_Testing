@@ -261,7 +261,7 @@ if (API_Name != TestCaseName){
   <con:testStep type="restrequest" name="UnClaim Appliance" id="bf32b177-3f14-48c1-b921-f41ba496e4a2">
     <con:settings/>
     <con:config service="UnClaim Appliance" resourcePath="/appliances/unclaim/WPR333334RA96" methodName="UnClaim Appliance" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Un Claim Appliance" id="135cd097-5a9b-40c3-9057-0ecdfad9a199" mediaType="application/json">
+      <con:restRequest name="UnClaim Appliance" id="135cd097-5a9b-40c3-9057-0ecdfad9a199" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>

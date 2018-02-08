@@ -153,6 +153,7 @@ Delete-Favorities
 HistoryWithTimeRange
 UnClaim-Appliance
 Appliance_Wraper
+subscribe-notification
 Regression-Suite
 LoadSuite
 REST-Virt-1
