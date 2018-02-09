@@ -258,7 +258,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Favorities" id="0bea2983-28ed-4a65-bc40-68b100b64293">
+  <con:testStep type="restrequest" name="Delete Favorities" id="0bea2983-28ed-4a65-bc40-68b100b64293" disabled="true">
     <con:settings/>
     <con:config service="Delete Favorities" resourcePath="/account/favorites/${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$['applianceId']}" methodName="Delete Favorities" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete Favorities" id="17184110-64b4-49d3-b574-c2ac0d3c6e5e" mediaType="application/json" postQueryString="false">
@@ -286,7 +286,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="3ad9a318-c968-4ebe-a456-c64b11e82ebd">
+  <con:testStep type="groovy" name="Report" id="3ad9a318-c968-4ebe-a456-c64b11e82ebd" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

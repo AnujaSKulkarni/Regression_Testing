@@ -240,6 +240,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_ID", Account_ID)</script
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -566,7 +567,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11195</con:value>
+      <con:value/>
     </con:property>
   </con:properties>
   <con:reportParameters/>

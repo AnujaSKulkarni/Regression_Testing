@@ -243,6 +243,7 @@ Where BLUADMIN.SLS_USER.ACCOUNT_ID = ${#[Regression Suite#GET Member Token#DataS
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -672,7 +673,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>TimeStamp</con:name>
-      <con:value>1517996254</con:value>
+      <con:value>1518176614</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

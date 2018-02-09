@@ -319,6 +319,7 @@ testRunner.testCase.setPropertyValue("Email_ID_string", Email_ID_string)</script
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -576,11 +577,11 @@ log.info "Report Generated"</script>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"WED_FEB_07_15_05_31_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"FRI_FEB_09_17_11_12_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>WED_FEB_07_15_05_31_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>FRI_FEB_09_17_11_12_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

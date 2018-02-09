@@ -4,6 +4,11 @@
     <con:setting id="soapUIObjectSourceId">4d9b8d24-cdbf-470c-926c-ce1cd761a7a0</con:setting>
     <con:setting id="soapUIObjectSourceType">soapUIObjectSourceType_RestRequest</con:setting>
     <con:setting id="67fd4ba8-f7ac-4ec5-907a-313c9cc489a0fileName">Load-Test-1</con:setting>
+    <con:setting id="IncludeScenarioResults">true</con:setting>
+    <con:setting id="IncludeStatistics">true</con:setting>
+    <con:setting id="IncludeTestStepsHistory">false</con:setting>
+    <con:setting id="IncludeStatisticHistory">false</con:setting>
+    <con:setting id="IncludeHelp">true</con:setting>
   </con:settings>
   <con1:loadui-project id="93b3ae85-dab9-45d8-9556-6cf2d06a294b" label="Load Test 1" xmlns:con1="http://eviware.com/loadui/config">
     <con1:properties>
@@ -13,49 +18,24 @@
       <con1:property propagates="true" key="ModelItem.reportFolder" type="java.lang.String"/>
       <con1:property propagates="true" key="ModelItem.reportFormat" type="java.lang.String"/>
       <con1:property propagates="true" key="Temporary project" type="java.lang.String"/>
-      <con1:property propagates="true" key="ModelItem.rate" type="java.lang.Long">20</con1:property>
+      <con1:property propagates="true" key="ModelItem.rate" type="java.lang.Long">4</con1:property>
       <con1:property propagates="true" key="ModelItem.loadDistributionType" type="com.smartbear.load.facade.LoadDistributionType">Relative</con1:property>
       <con1:property propagates="true" key="ModelItem.remoteMode" type="java.lang.String"/>
     </con1:properties>
     <con1:attributes>
-      <con1:property key="limits">Time=600;</con1:property>
+      <con1:property key="limits">Time=60;</con1:property>
     </con1:attributes>
-    <con1:addons>
-      <con1:addon type="com.eviware.loadui.api.assertion.AssertionAddon" id="9045aba1-79cc-414a-8715-7a15e3b0f713">
-        <con1:attributes>
-          <con1:property key="parentId">93b3ae85-dab9-45d8-9556-6cf2d06a294b</con1:property>
-          <con1:property key="valueReference">rO0ABXNyADdjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5zZXJpYWxpemF0aW9uLlN0YXRpc3RpY1Jlc29sdmVyJwTr+w+xV3ECAARMAA1ob2xkZXJBZGRyZXNzdAASTGphdmEvbGFuZy9TdHJpbmc7TAAGc291cmNlcQB+AAFMAA1zdGF0aXN0aWNOYW1lcQB+AAFMAAx2YXJpYWJsZU5hbWVxAH4AAXhwdAAkOTNiM2FlODUtZGFiOS00NWQ4LTk1NTYtNmNmMmQwNmEyOTRidAAEbWFpbnQAB0FWRVJBR0V0AApUaW1lIFRha2Vu</con1:property>
-          <con1:property key="Labeled@label">Time Taken - average</con1:property>
-          <con1:property key="constraint">rO0ABXNyADFjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5hc3NlcnRpb24uUmFuZ2VDb25zdHJhaW50Y94NW62dOawCAAJEAANtYXhEAANtaW54cECJAAAAAAAAAAAAAAAAAAA=</con1:property>
-          <con1:property key="tolerancePeriod">0</con1:property>
-          <con1:property key="toleranceAllowedOccurrences">0</con1:property>
-          <con1:property key="stopTestOnFailure">false</con1:property>
-        </con1:attributes>
-        <con1:addons/>
-      </con1:addon>
-      <con1:addon type="com.eviware.loadui.api.assertion.AssertionAddon" id="67cfbd82-6049-4ae9-a06e-2131a4c4078b">
-        <con1:attributes>
-          <con1:property key="parentId">93b3ae85-dab9-45d8-9556-6cf2d06a294b</con1:property>
-          <con1:property key="valueReference">rO0ABXNyADdjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5zZXJpYWxpemF0aW9uLlN0YXRpc3RpY1Jlc29sdmVyJwTr+w+xV3ECAARMAA1ob2xkZXJBZGRyZXNzdAASTGphdmEvbGFuZy9TdHJpbmc7TAAGc291cmNlcQB+AAFMAA1zdGF0aXN0aWNOYW1lcQB+AAFMAAx2YXJpYWJsZU5hbWVxAH4AAXhwdAAkOTNiM2FlODUtZGFiOS00NWQ4LTk1NTYtNmNmMmQwNmEyOTRidAAEbWFpbnQAA01BWHQAClRpbWUgVGFrZW4=</con1:property>
-          <con1:property key="Labeled@label">Time Taken - max</con1:property>
-          <con1:property key="constraint">rO0ABXNyADFjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5hc3NlcnRpb24uUmFuZ2VDb25zdHJhaW50Y94NW62dOawCAAJEAANtYXhEAANtaW54cECJAAAAAAAAAAAAAAAAAAA=</con1:property>
-          <con1:property key="tolerancePeriod">0</con1:property>
-          <con1:property key="toleranceAllowedOccurrences">0</con1:property>
-          <con1:property key="stopTestOnFailure">false</con1:property>
-        </con1:attributes>
-        <con1:addons/>
-      </con1:addon>
-    </con1:addons>
-    <con1:scene label="New Scenario" id="9b0cc878-640f-40bf-9e6e-0a509ff14ea9" version="21">
+    <con1:addons/>
+    <con1:scene label="New Scenario" id="9b0cc878-640f-40bf-9e6e-0a509ff14ea9" version="45">
       <con1:properties>
         <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
-        <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">false</con1:property>
+        <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">true</con1:property>
         <con1:property propagates="true" key="SceneItem.followProject" type="java.lang.Boolean">true</con1:property>
         <con1:property propagates="true" key="SceneItem.scenarioRatePercentage" type="java.lang.Long">100</con1:property>
         <con1:property propagates="true" key="SceneItem.scenarioRateSpecific" type="java.lang.Long">10</con1:property>
       </con1:properties>
       <con1:attributes>
-        <con1:property key="limits">Time=600;</con1:property>
+        <con1:property key="limits">Time=60;</con1:property>
       </con1:attributes>
       <con1:addons/>
       <con1:component type="com.eviware.loadui.impl.component.IntervalComponent" label="Interval 1" id="0663aa83-463b-4a75-9661-7e8b1fd67b09" category="Scheduler">
@@ -98,9 +78,9 @@
       <con1:component type="com.eviware.loadui.impl.component.generators.FixedVU" label="Fixed Load 2" id="84d3f189-ec81-4b7c-bb15-b8693c84ea45" category="Generators">
         <con1:properties>
           <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
-          <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">false</con1:property>
           <con1:property propagates="true" key="limitVU" type="java.lang.Long">9223372036854775807</con1:property>
-          <con1:property propagates="true" key="load" type="java.lang.Long">20</con1:property>
+          <con1:property propagates="true" key="load" type="java.lang.Long">4</con1:property>
           <con1:property propagates="true" key="interval" type="java.lang.Long">1000</con1:property>
         </con1:properties>
         <con1:attributes>
@@ -136,7 +116,7 @@
         </con1:chartGroup>
       </con1:page>
     </con1:statistics>
-    <con1:heatUpTime>15</con1:heatUpTime>
+    <con1:heatUpTime>5</con1:heatUpTime>
   </con1:loadui-project>
   <con:loadUITestScenario projectId="93b3ae85-dab9-45d8-9556-6cf2d06a294b" scenarioId="9b0cc878-640f-40bf-9e6e-0a509ff14ea9" name="New Scenario" id="0ac1e0b0-70a7-41e9-a259-192ac16e316c">
     <con:settings/>

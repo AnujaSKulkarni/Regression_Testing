@@ -249,6 +249,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -776,11 +777,11 @@ out.close()</script>
       <con:name>Location_ID_Transfer</con:name>
       <con:value>HTTP/1.1 200 OK
 Server: nginx/1.4.6 (Ubuntu)
-Date: Wed, 07 Feb 2018 09:35:30 GMT
+Date: Thu, 08 Feb 2018 14:49:57 GMT
 Content-Type: application/json
 Connection: keep-alive
 X-Backside-Transport: OK OK,OK OK
-X-Global-Transaction-ID: 8698857
+X-Global-Transaction-ID: 9309595
 User-Agent: IBM-APIConnect/201
 Access-Control-Allow-Headers: X-PINGOTHER,Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization
 Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
@@ -792,18 +793,18 @@ Expires: 0
 Pragma: no-cache
 X-Application-Context: wcloud-location-service (QA):test
 X-B3-Sampled: 1
-X-B3-Spanid: 1fcfb103d70ba8d2
-X-B3-Traceid: ce3d238813dbcfc8
+X-B3-Spanid: 1fef6ecf45a49fd6
+X-B3-Traceid: 439b26288e51def1
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 X-Xss-Protection: 1; mode=block
 Strict-Transport-Security: max-age=15768000
 
-{"LOCATION_ID":2483,"CITY":"Pune","ACCOUNT_ID":11195,"STATE_ID":1452,"POSTAL_CODE":"123456","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":72,"SMART_ENERGY_PROFILE":0,"NAME":"Regression Location","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"Asia/Calcutta"}</con:value>
+{"LOCATION_ID":2496,"CITY":"Pune","ACCOUNT_ID":11292,"STATE_ID":1452,"POSTAL_CODE":"123456","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":72,"SMART_ENERGY_PROFILE":0,"NAME":"Regression Location","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"Asia/Calcutta"}</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11195</con:value>
+      <con:value/>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>

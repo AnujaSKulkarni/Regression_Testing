@@ -211,6 +211,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -454,7 +455,7 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Application</con:name>
-      <con:value>"Wed_Feb_07_15_06_35_IST_2018"</con:value>
+      <con:value>"Fri_Feb_09_17_12_35_IST_2018"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

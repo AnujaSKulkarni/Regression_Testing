@@ -236,6 +236,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -580,7 +581,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Company_Name</con:name>
-      <con:value>"Wed_Feb_07_15_06_29_IST_2018_Update Company"</con:value>
+      <con:value>"Fri_Feb_09_17_12_30_IST_2018_Update Company"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

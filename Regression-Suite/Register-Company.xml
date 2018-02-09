@@ -292,6 +292,7 @@ Where BLUADMIN.COMPANY.COMPANY_NAME = ${#TestCase#Company_Name_JDBC}</query>
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -631,19 +632,19 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Company_Name</con:name>
-      <con:value>"Company_Wed_Feb_07_15_05_57_IST_2018"</con:value>
+      <con:value>"Company_Fri_Feb_09_17_12_11_IST_2018"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"WED_FEB_07_15_05_52_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"FRI_FEB_09_17_11_38_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Company_Name_JDBC</con:name>
-      <con:value>'Company_Wed_Feb_07_15_05_57_IST_2018'</con:value>
+      <con:value>'Company_Fri_Feb_09_17_12_11_IST_2018'</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11195</con:value>
+      <con:value/>
     </con:property>
   </con:properties>
   <con:reportParameters/>

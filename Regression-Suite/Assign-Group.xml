@@ -247,6 +247,7 @@ testRunner.testCase.testSuite.setPropertyValue("Group_ID", group_ID)</script>
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -584,7 +585,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11195</con:value>
+      <con:value/>
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
@@ -596,7 +597,7 @@ out.close()</script>
     </con:property>
     <con:property>
       <con:name>Group_ID</con:name>
-      <con:value>3763</con:value>
+      <con:value/>
     </con:property>
   </con:properties>
   <con:reportParameters/>

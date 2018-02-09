@@ -65,7 +65,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="b84b3a8e-19cb-464f-b654-3cd1415b95c9">
+  <con:testStep type="groovy" name="Report" id="b84b3a8e-19cb-464f-b654-3cd1415b95c9" disabled="true">
     <con:settings/>
     <con:config>
       <script>def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
