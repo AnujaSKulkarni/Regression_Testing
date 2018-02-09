@@ -15,35 +15,23 @@
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
-<<<<<<< HEAD
-      <con:value>"EMP_FRI_FEB_09_15_25_13_IST_2018@MAILINATOR.COM"</con:value>
-=======
       <con:value>"FRI_FEB_09_15_18_35_IST_2018@MAILINATOR.COM"</con:value>
->>>>>>> branch 'master' of https://github.com/MohitBhanawat/SoapUI
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-<<<<<<< HEAD
-      <con:value>EMP_FRI_FEB_09_15_25_13_IST_2018@MAILINATOR.COM</con:value>
-=======
       <con:value>FRI_FEB_09_15_18_35_IST_2018@MAILINATOR.COM</con:value>
->>>>>>> branch 'master' of https://github.com/MohitBhanawat/SoapUI
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-<<<<<<< HEAD
-      <con:value/>
-=======
       <con:value>undefined</con:value>
->>>>>>> branch 'master' of https://github.com/MohitBhanawat/SoapUI
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
-      <con:value/>
+      <con:value>4517</con:value>
     </con:property>
     <con:property>
       <con:name>Account_Email</con:name>
-      <con:value/>
+      <con:value>FRI_FEB_09_11_13_33_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
     <con:property>
       <con:name>Location_ID</con:name>
@@ -51,11 +39,11 @@
     </con:property>
     <con:property>
       <con:name>Group_Name</con:name>
-      <con:value>"SANITY_GROUP_FRI_FEB_09_15_24_03_IST_2018"</con:value>
+      <con:value>"SANITY_GROUP_FRI_FEB_09_11_14_12_IST_2018"</con:value>
     </con:property>
     <con:property>
       <con:name>Group_Name_string</con:name>
-      <con:value>SANITY_GROUP_FRI_FEB_09_15_24_03_IST_2018</con:value>
+      <con:value>SANITY_GROUP_FRI_FEB_09_11_14_12_IST_2018</con:value>
     </con:property>
     <con:property>
       <con:name>Template_ID</con:name>
@@ -75,19 +63,11 @@
     </con:property>
     <con:property>
       <con:name>Status</con:name>
-<<<<<<< HEAD
-      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Fail</con:value>
-=======
       <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
->>>>>>> branch 'master' of https://github.com/MohitBhanawat/SoapUI
     </con:property>
     <con:property>
       <con:name>Run_count</con:name>
-<<<<<<< HEAD
-      <con:value>5</con:value>
-=======
       <con:value>6</con:value>
->>>>>>> branch 'master' of https://github.com/MohitBhanawat/SoapUI
     </con:property>
     <con:property>
       <con:name>Email_cnf</con:name>
@@ -103,7 +83,7 @@
     </con:property>
     <con:property>
       <con:name>Group_ID</con:name>
-      <con:value/>
+      <con:value>3861</con:value>
     </con:property>
     <con:property>
       <con:name>Location_Number</con:name>
@@ -111,19 +91,19 @@
     </con:property>
     <con:property>
       <con:name>Alternate_Email</con:name>
-      <con:value>"EMPALT_FRI_FEB_09_15_25_13_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"EMPALT_FRI_FEB_09_11_15_15_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Alternate_Email_String</con:name>
-      <con:value>EMPALT_FRI_FEB_09_15_25_13_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>EMPALT_FRI_FEB_09_11_15_15_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
     <con:property>
       <con:name>Company_Email_ID</con:name>
-      <con:value>"FRI_FEB_09_15_24_58_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"FRI_FEB_09_11_14_58_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Company_Email_ID_string</con:name>
-      <con:value>FRI_FEB_09_15_24_58_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>FRI_FEB_09_11_14_58_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:setupScript/>
