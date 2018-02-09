@@ -270,7 +270,7 @@ if (API_Name != TestCaseName){
           <driver>com.ibm.db2.jcc.DB2Driver</driver>
           <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
           <pass>Syntel@mb5027676</pass>
-          <Connection>DataBase</Connection>
+          <Connection>DataBase( QA_Env )</Connection>
           <query>Select BLUADMIN.APPLIANCE.APPLIANCE_ID As BLUADMIN_APPLIANCE_APPLIANCE_ID
 From BLUADMIN.APPLIANCE
 Where BLUADMIN.APPLIANCE.SAID = 'WPR333334RA96'</query>
@@ -295,7 +295,7 @@ Where BLUADMIN.APPLIANCE.SAID = 'WPR333334RA96'</query>
           <driver>com.ibm.db2.jcc.DB2Driver</driver>
           <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
           <pass>Syntel@mb5027676</pass>
-          <Connection>DataBase( Default environment )</Connection>
+          <Connection>DataBase</Connection>
           <query/>
           <fetchSize/>
           <stored-procedure>false</stored-procedure>

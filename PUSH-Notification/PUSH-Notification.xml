@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="PUSH Notification" path="/notifications" id="bf7e8fc1-7004-40f2-b587-8f113399a023" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="PUSH Notification" path="/notifications" id="bf7e8fc1-7004-40f2-b587-8f113399a023" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="bf7e8fc1-7004-40f2-b587-8f113399a023fileName">PUSH-Notification</con:setting>
   </con:settings>
@@ -12,28 +12,28 @@
         <con:value>bearer ${access_token}</con:value>
         <con:style>HEADER</con:style>
         <con:default>bearer ${access_token}</con:default>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
       <con:parameter>
         <con:name>wp-client-region</con:name>
         <con:value>NAR</con:value>
         <con:style>HEADER</con:style>
         <con:default>NAR</con:default>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
       <con:parameter>
         <con:name>wp-client-country</con:name>
         <con:value>US</con:value>
         <con:style>HEADER</con:style>
         <con:default>US</con:default>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
       <con:parameter>
         <con:name>wp-client-brand</con:name>
         <con:value>Whirlpool</con:value>
         <con:style>HEADER</con:style>
         <con:default>Whirlpool</con:default>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
     <con:request name="PUSH Notification" id="9c141b9f-5149-4521-a092-8b0f23586bd2" mediaType="application/json" postQueryString="false">
@@ -43,6 +43,7 @@
       <con:endpoint>${API_Connect}</con:endpoint>
       <con:request/>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>

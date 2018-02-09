@@ -245,7 +245,7 @@ testRunner.testCase.setPropertyValue("Region", Region)</script>
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${#Project#API-Connect}</con:endpoint>
+        <con:endpoint>${API-Connect}</con:endpoint>
         <con:request>{
   "companyId": ${DataSource#Company_ID},
   "languageId": ${DataSource#Language_ID},
