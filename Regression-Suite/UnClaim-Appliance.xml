@@ -265,7 +265,7 @@ if (API_Name != TestCaseName){
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${QA_Env}</con:endpoint>
+        <con:endpoint>${API-Connect}</con:endpoint>
         <con:request/>
         <con:originalUri>https://api-test.whrcloud.com/api/v1/appliances/unclaim/WPR333334RA96</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="06cd3496-4da6-462d-a7b2-6d646188a894" name="Valid HTTP Status Codes">

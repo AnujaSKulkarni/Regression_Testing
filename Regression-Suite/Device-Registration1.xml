@@ -265,7 +265,7 @@ if (API_Name != TestCaseName){
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${Notification}</con:endpoint>
+        <con:endpoint>${API-Connect}</con:endpoint>
         <con:request>{
   "deviceId": "D5A17B98-2136-4D2A-B3CC-9FF67E34EC96",
   "platform": "A",
