@@ -15,15 +15,27 @@
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
+<<<<<<< HEAD
       <con:value>"EMP_FRI_FEB_09_15_25_13_IST_2018@MAILINATOR.COM"</con:value>
+=======
+      <con:value>"FRI_FEB_09_15_18_35_IST_2018@MAILINATOR.COM"</con:value>
+>>>>>>> branch 'master' of https://github.com/MohitBhanawat/SoapUI
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
+<<<<<<< HEAD
       <con:value>EMP_FRI_FEB_09_15_25_13_IST_2018@MAILINATOR.COM</con:value>
+=======
+      <con:value>FRI_FEB_09_15_18_35_IST_2018@MAILINATOR.COM</con:value>
+>>>>>>> branch 'master' of https://github.com/MohitBhanawat/SoapUI
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
+<<<<<<< HEAD
       <con:value/>
+=======
+      <con:value>undefined</con:value>
+>>>>>>> branch 'master' of https://github.com/MohitBhanawat/SoapUI
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
@@ -63,11 +75,19 @@
     </con:property>
     <con:property>
       <con:name>Status</con:name>
+<<<<<<< HEAD
       <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Fail</con:value>
+=======
+      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+>>>>>>> branch 'master' of https://github.com/MohitBhanawat/SoapUI
     </con:property>
     <con:property>
       <con:name>Run_count</con:name>
+<<<<<<< HEAD
       <con:value>5</con:value>
+=======
+      <con:value>6</con:value>
+>>>>>>> branch 'master' of https://github.com/MohitBhanawat/SoapUI
     </con:property>
     <con:property>
       <con:name>Email_cnf</con:name>
