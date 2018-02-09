@@ -783,7 +783,7 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11313</con:value>
+      <con:value/>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
@@ -791,7 +791,7 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>COUNTRY_CODE</con:name>
-      <con:value>"IN"</con:value>
+      <con:value>"US"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
