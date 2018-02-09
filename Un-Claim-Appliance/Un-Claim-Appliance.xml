@@ -14,12 +14,32 @@
         <con:default>Bearer {access_token}</con:default>
         <con:description xsi:nil="true"/>
       </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-region</con:name>
+        <con:value>NAR</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>NAR</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-brand</con:name>
+        <con:value>Whirlpool</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Whirlpool</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
     </con:parameters>
     <con:representation type="FAULT">
       <con:mediaType>application/json</con:mediaType>
       <con:status>401 500</con:status>
       <con:params/>
       <con:element xmlns:wpr="https://api-test.whrcloud.com/api/v1/appliances/unclaim/WPR333334RA96">wpr:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:wpr="https://api-test.whrcloud.com/api/v1/appliances/unclaim/WPR333334RA96">wpr:Response</con:element>
     </con:representation>
     <con:request name="Un Claim Appliance" id="f78b6801-e42a-491d-99be-be4ecbb829e8" mediaType="application/json">
       <con:settings>
@@ -35,6 +55,8 @@
       <con:parameters/>
       <con:parameterOrder>
         <con:entry>Authorization</con:entry>
+        <con:entry>wp-client-region</con:entry>
+        <con:entry>wp-client-brand</con:entry>
       </con:parameterOrder>
       <con:environmentSpec>
         <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
