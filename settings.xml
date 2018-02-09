@@ -165,7 +165,7 @@
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="get all appliances dashDB">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${Appliance}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Delete Appliance">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
@@ -234,7 +234,7 @@
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="GetRolesList">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${Account}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Get Groups">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
@@ -285,7 +285,7 @@
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="GET Client Token">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${Secure_auth}</con:endpoint>
     </con:service>
     <con:service type="REST" name="GET Member Token">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${Secure_auth}</con:endpoint>

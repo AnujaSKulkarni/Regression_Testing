@@ -15,23 +15,23 @@
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"FRI_FEB_09_15_18_35_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"FRI_FEB_09_18_58_22_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>FRI_FEB_09_15_18_35_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>FRI_FEB_09_18_58_22_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value/>
+      <con:value>undefined</con:value>
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
-      <con:value/>
+      <con:value>4517</con:value>
     </con:property>
     <con:property>
       <con:name>Account_Email</con:name>
-      <con:value/>
+      <con:value>FRI_FEB_09_11_13_33_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
     <con:property>
       <con:name>Location_ID</con:name>
@@ -63,7 +63,7 @@
     </con:property>
     <con:property>
       <con:name>Status</con:name>
-      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Pass</con:value>
     </con:property>
     <con:property>
       <con:name>Run_count</con:name>
@@ -83,7 +83,7 @@
     </con:property>
     <con:property>
       <con:name>Group_ID</con:name>
-      <con:value/>
+      <con:value>3861</con:value>
     </con:property>
     <con:property>
       <con:name>Location_Number</con:name>
