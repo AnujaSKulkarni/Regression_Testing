@@ -300,7 +300,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="275deee6-eddd-4d7d-a54d-42989a6eb45f" disabled="true">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="275deee6-eddd-4d7d-a54d-42989a6eb45f">
     <con:settings/>
     <con:config>
       <script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
@@ -319,7 +319,7 @@ def tC_Number = context.expand( '${DataSource#TC_Number}' )
 log.info tC_Number</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Create_Group_Name" id="10a588dd-f86d-415b-b77b-05d16b47730e" disabled="true">
+  <con:testStep type="groovy" name="Create_Group_Name" id="10a588dd-f86d-415b-b77b-05d16b47730e">
     <con:settings/>
     <con:config>
       <script>String date = new Date()
@@ -333,7 +333,7 @@ testRunner.testCase.testSuite.setPropertyValue("Group_Name", Email_ID)
 testRunner.testCase.testSuite.setPropertyValue("Group_Name_string", Email_ID_string)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Create Group_Positive" id="78e1437a-0797-4f62-901a-7af0c9dd6e76" disabled="true">
+  <con:testStep type="restrequest" name="Create Group_Positive" id="78e1437a-0797-4f62-901a-7af0c9dd6e76">
     <con:settings/>
     <con:config service="Create Group" resourcePath="/account/create_group" methodName="Create Group" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Create Group_Positive" id="93151322-6bb7-4ae4-8774-4341e25f8a4c" mediaType="application/json" postQueryString="false">
@@ -451,7 +451,7 @@ testRunner.testCase.testSuite.setPropertyValue("Group_Name_string", Email_ID_str
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="14457311-3574-4362-a788-5f447bca7b37" disabled="true">
+  <con:testStep type="groovy" name="Report" id="14457311-3574-4362-a788-5f447bca7b37">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -580,10 +580,9 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Data_Sink_Flow_Control" id="148cd184-6ccd-4996-806c-5c68afd95bbb" disabled="true">
+  <con:testStep type="groovy" name="Data_Sink_Flow_Control" id="148cd184-6ccd-4996-806c-5c68afd95bbb">
     <con:settings/>
-    <con:config>
-      <script>/*Get Test Case Name and Status*/
+    <con:config><script>/*Get Test Case Name and Status*/
 def data_combination = context.expand( '${DataSource#Data_Combination}' )
 /*Get TC Name*/
 def TCN = context.expand( '${DataSource#TC_Number}' )
@@ -599,14 +598,14 @@ if(data_combination == "Negative"){
 Header = testRunner.testCase.testSteps[TestCaseName].testRequest.response.getResponseHeaders()
 def Status_Code = Header["#status#"]
 log.info Status_Code[0]
-if(Status_Code[0] == "HTTP/1.1 200 OK"){
+Status_Code = Status_Code[0]
+if(Status_Code.contains("200")){
 	testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(false)
 }else{
 	testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(true)
-}</script>
-    </con:config>
+}</script></con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="1b56683f-135b-4639-adaa-22db275b5dd3" disabled="true">
+  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="1b56683f-135b-4639-adaa-22db275b5dd3">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -702,7 +701,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11313</con:value>
+      <con:value>11353</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
