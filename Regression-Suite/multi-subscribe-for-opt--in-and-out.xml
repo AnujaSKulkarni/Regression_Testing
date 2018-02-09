@@ -148,7 +148,13 @@ if(RunTimeDataSource_Flag == true){
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -260,9 +266,17 @@ if (API_Name != TestCaseName){
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase</Connection><query>Select BLUADMIN.APPLIANCE.APPLIANCE_ID As BLUADMIN_APPLIANCE_APPLIANCE_ID
+        <con:configuration>
+          <driver>com.ibm.db2.jcc.DB2Driver</driver>
+          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
+          <pass>Syntel@mb5027676</pass>
+          <Connection>DataBase</Connection>
+          <query>Select BLUADMIN.APPLIANCE.APPLIANCE_ID As BLUADMIN_APPLIANCE_APPLIANCE_ID
 From BLUADMIN.APPLIANCE
-Where BLUADMIN.APPLIANCE.SAID = 'WPR333334RA96'</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
+Where BLUADMIN.APPLIANCE.SAID = 'WPR333334RA96'</query>
+          <fetchSize/>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -277,7 +291,15 @@ Where BLUADMIN.APPLIANCE.SAID = 'WPR333334RA96'</query><fetchSize/><stored-proce
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( Default environment )</Connection><query/><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
+        <con:configuration>
+          <driver>com.ibm.db2.jcc.DB2Driver</driver>
+          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
+          <pass>Syntel@mb5027676</pass>
+          <Connection>DataBase( Default environment )</Connection>
+          <query/>
+          <fetchSize/>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -286,7 +308,7 @@ Where BLUADMIN.APPLIANCE.SAID = 'WPR333334RA96'</query><fetchSize/><stored-proce
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="multi subscribe for opt  in and out" id="cd70758d-1ccd-4464-a202-b83095c9e249">
+  <con:testStep type="restrequest" name="multi subscribe for opt  in and out" id="cd70758d-1ccd-4464-a202-b83095c9e249" disabled="true">
     <con:settings/>
     <con:config service="multi subscribe for opt  in and out" resourcePath="/notifications/subscriptions/multi" methodName="multi subscribe for opt  in and out" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="multi subscribe for opt  in and out" id="941c0ead-0aa8-40a0-bc30-96b0fdfbf90b" mediaType="application/json" postQueryString="false">
@@ -317,7 +339,7 @@ Where BLUADMIN.APPLIANCE.SAID = 'WPR333334RA96'</query><fetchSize/><stored-proce
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="9bc5e43b-f904-481b-ba81-e74d7a9aca36">
+  <con:testStep type="groovy" name="Report" id="9bc5e43b-f904-481b-ba81-e74d7a9aca36" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
