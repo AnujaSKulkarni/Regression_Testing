@@ -326,7 +326,7 @@ if (data_Combination == "Negative"){
         </con:settings>
         <con:endpoint>${Location}</con:endpoint>
         <con:request>{
-  "locationId":${#TestCase#Location_ID},
+  "locationId":${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']},
   "locationName":${DataSource#Location_Name},
   "street": ${DataSource#Street},
   "stateId": ${#[Regression Suite#Create Location#JDBC]#st_STATE_ID},
