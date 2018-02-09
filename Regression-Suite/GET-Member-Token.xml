@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="7026bea1-9c34-446c-8319-d9c3af471c0e" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GET Member Token" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
-    <con:setting id="7026bea1-9c34-446c-8319-d9c3af471c0efileName">GET-Member-Token</con:setting>
-  </con:settings>
-  <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="0401e430-2634-44be-a1d9-991e7c6aca20">
-    <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream;
+<con:testCase id="7026bea1-9c34-446c-8319-d9c3af471c0e" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GET Member Token" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="7026bea1-9c34-446c-8319-d9c3af471c0efileName">GET-Member-Token</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="DataSource_Setup" id="0401e430-2634-44be-a1d9-991e7c6aca20"><con:settings/><con:config><script>import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -139,100 +131,14 @@ if(RunTimeDataSource_Flag == true){
 		log.info "Adding: " + Cell_Value
 		TestStep.addProperty(Cell_Value)
 	}
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasource" name="DataSource_RunTime" id="352d69d0-0221-438c-a94f-541885c255eb">
-    <con:settings/>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Run_Time_Data}</file>
-          <worksheet>Account_Run_Time_Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
-      <con:property>Account_ID_Number</con:property>
-      <con:property>Verification_Code</con:property>
-      <con:property>Email_ID</con:property>
-      <con:property>Group_ID</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="GET Member Token" id="df760567-0724-4947-9398-3235ab9c0d35">
-    <con:settings/>
-    <con:config service="GET Member Token" resourcePath="/oauth/token" methodName="GET Member Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="GET Member Token" id="dbba64c0-256c-4cda-a935-104acc1c460c" mediaType="application/x-www-form-urlencoded" postQueryString="true">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>${Secure_auth}</con:endpoint>
-        <con:request></con:request>
-        <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/oauth/token</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="05adf71d-3d44-4548-8932-d57a07592325" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters>
-          <con:entry key="password" value="Whirlpool123"/>
-          <con:entry key="grant_type" value="password"/>
-          <con:entry key="client_secret" value="syntel123$"/>
-          <con:entry key="client_id" value="syntel"/>
-          <con:entry key="username" value="${DataSource_RunTime#Email_ID}"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>grant_type</con:entry>
-          <con:entry>username</con:entry>
-          <con:entry>password</con:entry>
-          <con:entry>client_id</con:entry>
-          <con:entry>client_secret</con:entry>
-        </con:parameterOrder>
-        <con:environmentSpec>
-          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
-            <con:authProfile>No Authorization</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Report" id="5615ccd4-92a5-4f69-a3be-35571835387e">
-    <con:settings/>
-    <con:config>
-      <script>def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
+}</script></con:config></con:testStep><con:testStep type="datasource" name="DataSource_RunTime" id="352d69d0-0221-438c-a94f-541885c255eb"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>${Run_Time_Data}</file><worksheet>Account_Run_Time_Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>Account_ID_Number</con:property><con:property>Verification_Code</con:property><con:property>Email_ID</con:property><con:property>Group_ID</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="restrequest" name="GET Member Token" id="df760567-0724-4947-9398-3235ab9c0d35"><con:settings/><con:config service="GET Member Token" resourcePath="/oauth/token" methodName="GET Member Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET Member Token" id="dbba64c0-256c-4cda-a935-104acc1c460c" mediaType="application/x-www-form-urlencoded" postQueryString="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${Secure_auth}</con:endpoint><con:request>
+</con:request><con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/oauth/token</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="05adf71d-3d44-4548-8932-d57a07592325" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="password" value="Whirlpool123"/>
+  <con:entry key="grant_type" value="password"/>
+  <con:entry key="client_secret" value="syntel123$"/>
+  <con:entry key="client_id" value="syntel"/>
+  <con:entry key="username" value="${DataSource_RunTime#Email_ID}"/>
+</con:parameters><con:parameterOrder><con:entry>grant_type</con:entry><con:entry>username</con:entry><con:entry>password</con:entry><con:entry>client_id</con:entry><con:entry>client_secret</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Report" id="5615ccd4-92a5-4f69-a3be-35571835387e"><con:settings/><con:config><script>def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
 log.info Final_Path
 def final_path = new File(Final_Path)
 final_path.mkdir()
@@ -299,13 +205,7 @@ def request = new String(myRequestStep.testRequest.messageExchange.rawRequestDat
 def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
 file1.append(request + "\n\n\n\n")
 file1.append("---------------- Response --------------------------\n")
-file1.append(response)</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Skip on failure" id="3e639b64-0915-44ce-a8d5-aee7d1c6dc1a">
-    <con:settings/>
-    <con:config>
-      <script>def TestCaseName = testRunner.testCase.getName()
+file1.append(response)</script></con:config></con:testStep><con:testStep type="groovy" name="Skip on failure" id="3e639b64-0915-44ce-a8d5-aee7d1c6dc1a"><con:settings/><con:config><script>def TestCaseName = testRunner.testCase.getName()
 obj = context.testCase.getTestStepByName(TestCaseName)
 assertions = obj.getAssertionList()
 def Status
@@ -325,80 +225,12 @@ com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("access_token","unde
 if(Status == "Fail"){
 testRunner.testCase.testSteps.each{k, v ->    
 testRunner.cancel(k)}
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Member Token - Global Variable" id="9e0feb52-1aa8-4d26-9733-0622687c3ef0">
-    <con:settings/>
-    <con:config>
-      <script>def token = context.expand( '${GET Member Token#Response#$[\'access_token\']}' )
+}
+</script></con:config></con:testStep><con:testStep type="groovy" name="Member Token - Global Variable" id="9e0feb52-1aa8-4d26-9733-0622687c3ef0"><con:settings/><con:config><script>def token = context.expand( '${GET Member Token#Response#$[\'access_token\']}' )
 def Refresh_Token = context.expand( '${GET Member Token#Response#$[\'refresh_token\']}' )
 
 log.info(token)
 com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("access_token", token)
 
 log.info "token: " + Refresh_Token
-com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Refresh_Token", Refresh_Token)</script>
-    </con:config>
-  </con:testStep>
-  <con:properties>
-    <con:property>
-      <con:name>Member_Token_response</con:name>
-      <con:value>{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJNT0hJVC5CSEFOQVdBVEBZTUFJTC5DT00iLCJzY29wZSI6WyJ0cnVzdCIsInJlYWQiLCJ3cml0ZSJdLCJvcmdhbml6YXRpb24iOiJXaGlybHBvb2wgT3JnYW5pemF0aW9uIiwiZXhwIjoxNTEwMjI1MDg5LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9XQ0xPVURfQURNSU4iXSwianRpIjoiYmM4ZjA1MjQtOWQ0Yi00YTM0LThkMDItYTQ3OTVkNmFhN2ZmIiwiY2xpZW50X2lkIjoic3ludGVsIn0.9UvcVSJ-LMDNy-2Et-TwHUblafd_jZ_tUlsDtSxLIQY","token_type":"bearer","refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJNT0hJVC5CSEFOQVdBVEBZTUFJTC5DT00iLCJzY29wZSI6WyJ0cnVzdCIsInJlYWQiLCJ3cml0ZSJdLCJvcmdhbml6YXRpb24iOiJXaGlybHBvb2wgT3JnYW5pemF0aW9uIiwiZXhwIjoxNTExMjYxODg5LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9XQ0xPVURfQURNSU4iXSwianRpIjoiNzEyMTZhOGYtNmNhNy00YWY5LTlmNjktNDIzODQ1ZTJjZmIxIiwiY2xpZW50X2lkIjoic3ludGVsIn0.oqdt3OYGauc83zCZbqjLlZkqEXI1tWSv3mzu6la3nQ0","expires_in":259199,"scope":"trust read write","organization":"Whirlpool Organization","jti":"bc8f0524-9d4b-4a34-8d02-a4795d6aa7ff"}</con:value>
-    </con:property>
-  </con:properties>
-  <con:reportParameters/>
-  <con:breakPoints>
-    <con:testStepId>0401e430-2634-44be-a1d9-991e7c6aca20</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>352d69d0-0221-438c-a94f-541885c255eb</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>df760567-0724-4947-9398-3235ab9c0d35</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>5615ccd4-92a5-4f69-a3be-35571835387e</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>3e639b64-0915-44ce-a8d5-aee7d1c6dc1a</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>9e0feb52-1aa8-4d26-9733-0622687c3ef0</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:environmentSpec>
-    <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-  </con:environmentSpec>
-</con:testCase>
+com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Refresh_Token", Refresh_Token)</script></con:config></con:testStep><con:properties><con:property><con:name>Member_Token_response</con:name><con:value>{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJNT0hJVC5CSEFOQVdBVEBZTUFJTC5DT00iLCJzY29wZSI6WyJ0cnVzdCIsInJlYWQiLCJ3cml0ZSJdLCJvcmdhbml6YXRpb24iOiJXaGlybHBvb2wgT3JnYW5pemF0aW9uIiwiZXhwIjoxNTEwMjI1MDg5LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9XQ0xPVURfQURNSU4iXSwianRpIjoiYmM4ZjA1MjQtOWQ0Yi00YTM0LThkMDItYTQ3OTVkNmFhN2ZmIiwiY2xpZW50X2lkIjoic3ludGVsIn0.9UvcVSJ-LMDNy-2Et-TwHUblafd_jZ_tUlsDtSxLIQY","token_type":"bearer","refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJNT0hJVC5CSEFOQVdBVEBZTUFJTC5DT00iLCJzY29wZSI6WyJ0cnVzdCIsInJlYWQiLCJ3cml0ZSJdLCJvcmdhbml6YXRpb24iOiJXaGlybHBvb2wgT3JnYW5pemF0aW9uIiwiZXhwIjoxNTExMjYxODg5LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9XQ0xPVURfQURNSU4iXSwianRpIjoiNzEyMTZhOGYtNmNhNy00YWY5LTlmNjktNDIzODQ1ZTJjZmIxIiwiY2xpZW50X2lkIjoic3ludGVsIn0.oqdt3OYGauc83zCZbqjLlZkqEXI1tWSv3mzu6la3nQ0","expires_in":259199,"scope":"trust read write","organization":"Whirlpool Organization","jti":"bc8f0524-9d4b-4a34-8d02-a4795d6aa7ff"}</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>0401e430-2634-44be-a1d9-991e7c6aca20</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

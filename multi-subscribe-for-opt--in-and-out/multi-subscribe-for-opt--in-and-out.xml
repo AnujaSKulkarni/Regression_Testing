@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="multi subscribe for opt  in and out" path="/notifications/subscriptions/multi" id="e6374e25-649a-4303-bfd4-d6baeae8bc41" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e6374e25-649a-4303-bfd4-d6baeae8bc41fileName">multi-subscribe-for-opt--in-and-out</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="multi subscribe for opt  in and out" id="3b233f74-1508-498d-8ab7-44f0b15da87b" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-region</con:name>
+        <con:value>NAR</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>NAR</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-country</con:name>
+        <con:value>US</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>US</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-brand</con:name>
+        <con:value>Whirlpool</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Whirlpool</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="multi subscribe for opt  in and out" id="941c0ead-0aa8-40a0-bc30-96b0fdfbf90b" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${API-Connect}</con:endpoint>
+      <con:request>[
+{
+"alertId":43,
+"applianceId":304,
+"notificationType":"PUSH",
+"accountId":3523,
+"status":"Enable"
+}]</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>wp-client-region</con:entry>
+        <con:entry>wp-client-country</con:entry>
+        <con:entry>wp-client-brand</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

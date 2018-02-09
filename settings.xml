@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="ec445c4d-ef8c-457f-9db2-3990f3163ec2" activeEnvironment="demo env" name="Regression Pro" resourceRoot="${projectDir}" defaultScriptLanguage="Groovy" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" updated="2.2.0 20171026-0943" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="ec445c4d-ef8c-457f-9db2-3990f3163ec2" activeEnvironment="QA_Env" name="Regression Pro" resourceRoot="${projectDir}" defaultScriptLanguage="Groovy" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" updated="2.2.0 20171026-0943" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
   <con:entry key="Environment" value="Default"/>
@@ -42,7 +42,7 @@
   </con:settings>
   <con:vcsConfiguration>
     <con:vcsName>Git</con:vcsName>
-    <con:repositoryIdentifier>https://github.com/MohitBhanawat/SoapUI</con:repositoryIdentifier>
+    <con:repositoryIdentifier>https://github.com/MohitBhanawat/SoapUI/</con:repositoryIdentifier>
   </con:vcsConfiguration>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:requirements/>
@@ -276,15 +276,6 @@
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Send Email Notification">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="PUSH Notification">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="SMS Notification">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="Email Notification">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="search notification by machine">
@@ -590,6 +581,24 @@
     <con:service type="REST" name="Delete Favorities">
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
+    <con:service type="REST" name="HistoryWithTimeRange">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Energy_providers">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Rate Revealer">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Smart_energy">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="multi subscribe for opt  in and out">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="PUSH Notification">
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
     <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationserviceqa-v2.mybluemix.net/api/v1</con:value>
@@ -840,15 +849,6 @@
     <con:service type="REST" name="Send Email Notification">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="PUSH Notification">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="SMS Notification">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="Email Notification">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
     <con:service type="REST" name="search notification by machine">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
@@ -1072,28 +1072,28 @@
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="manageRecipe">
-      <con:endpoint authProfile="Inherit From Parent">${#Project#API-Connect}</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:service type="REST" name="cookRecipe">
-      <con:endpoint authProfile="Inherit From Parent">${#Project#API-Connect}</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:service type="REST" name="searchRecipe">
-      <con:endpoint authProfile="Inherit From Parent">${#Project#API-Connect}</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:service type="REST" name="SetOptOutStatus">
-      <con:endpoint authProfile="Inherit From Parent">${#Project#API-Connect}</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:service type="REST" name="GetOptOutStatus">
-      <con:endpoint authProfile="Inherit From Parent">${#Project#API-Connect}</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:service type="REST" name="SetggsOptOutStatus">
-      <con:endpoint authProfile="Inherit From Parent">${#Project#API-Connect}</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:service type="REST" name="GetggsOptOutStatus">
-      <con:endpoint authProfile="Inherit From Parent">${#Project#API-Connect}</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:service type="REST" name="Get Privacy Content">
-      <con:endpoint authProfile="Inherit From Parent">${#Project#API-Connect}</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:service type="REST" name="Authorize NEST user">
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">https://{{API-Connect}}</con:endpoint>
@@ -1108,7 +1108,7 @@
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">http://location/420/use</con:endpoint>
     </con:service>
     <con:service type="REST" name="Add Rule">
-      <con:endpoint authProfile="No Authorization">${#Project#API-Connect}</con:endpoint>
+      <con:endpoint authProfile="No Authorization"/>
     </con:service>
     <con:service type="REST" name="Get Rule">
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">http://location/420/nes</con:endpoint>
@@ -1123,7 +1123,7 @@
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">http://location/420/dea</con:endpoint>
     </con:service>
     <con:service type="REST" name="Create Client Version Notice">
-      <con:endpoint authProfile="No Authorization">${#Project#API-Connect}</con:endpoint>
+      <con:endpoint authProfile="No Authorization"/>
     </con:service>
     <con:service type="REST" name="create or update-cycle">
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">https://{{Favorites}}</con:endpoint>
@@ -1151,6 +1151,24 @@
     </con:service>
     <con:service type="REST" name="Delete Favorities">
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">https://{{API-Connect}}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="HistoryWithTimeRange">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="Energy_providers">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="Rate Revealer">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="Smart_energy">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="multi subscribe for opt  in and out">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="PUSH Notification">
+      <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:property>
       <con:name>Location</con:name>
@@ -1402,15 +1420,6 @@
     <con:service type="REST" name="Send Email Notification">
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="PUSH Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="SMS Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="Email Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
     <con:service type="REST" name="search notification by machine">
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
@@ -1713,6 +1722,24 @@
     </con:service>
     <con:service type="REST" name="Delete Favorities">
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="HistoryWithTimeRange">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="Energy_providers">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="Rate Revealer">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="Smart_energy">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="multi subscribe for opt  in and out">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="PUSH Notification">
+      <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:property>
       <con:name>Location</con:name>

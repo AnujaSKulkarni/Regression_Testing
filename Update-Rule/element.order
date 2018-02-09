@@ -47,9 +47,6 @@ Get-location-by-locationId
 search-location-by-name-city-and-phone-number
 Update-alert-status-by-locationId
 Send-Email-Notification
-PUSH-Notification
-SMS-Notification
-Email-Notification
 search-notification-by-machine
 subscribe-notification
 GET-Client-Token

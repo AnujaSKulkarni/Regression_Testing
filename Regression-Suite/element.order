@@ -94,6 +94,8 @@ Retrive-setting-favfill.xml
 Delete-cycleByid.xml
 Delete-SettingByAttribute.xml
 Delete-Favorities.xml
+HistoryWithTimeRange.xml
+HistoryWithoutTimeRange.xml
 Delete-Account.xml
 Test_Run_Summary.xml
 Delete-Location.xml
@@ -115,3 +117,10 @@ Create-notification-template.xml
 Get-Privacy-Content.xml
 LocalizedDateAndTime.xml
 Logout.xml
+Energy_providers.xml
+Rate-Revealer.xml
+Smart_energy.xml
+UnClaim-Appliance.xml
+Appliance-Wraper.xml
+Device-Registration1.xml
+multi-subscribe-for-opt--in-and-out.xml
