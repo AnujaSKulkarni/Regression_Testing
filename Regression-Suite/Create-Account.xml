@@ -210,8 +210,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="groovy" name="Unique_Email_ID" id="594ffe77-042a-46c6-b8d5-4834c8533fcf" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>String date = new Date()
+    <con:config><script>String date = new Date()
 date = date.replaceAll(":","_")
 date = date.replaceAll(" ","_")
 Email_ID = "\"" + date + "@mailinator.com" + "\""
@@ -229,8 +228,7 @@ Country_Name = Country_Name.replace("\"", "")
 testRunner.testCase.setPropertyValue("Country_Name", Country_Name)
 def Region = context.expand( '${DataSource#Region}' )
 Region = Region.replace("\"", "")
-testRunner.testCase.setPropertyValue("Region", Region)</script>
-    </con:config>
+testRunner.testCase.setPropertyValue("Region", Region)</script></con:config>
   </con:testStep>
   <con:testStep type="restrequest" name="Create Account_Positive" id="b6227ae6-fa73-4b70-bd83-0c59fdff7af8" disabled="true">
     <con:settings/>

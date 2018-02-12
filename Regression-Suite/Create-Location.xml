@@ -273,8 +273,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
   </con:testStep>
   <con:testStep type="groovy" name="Flow Control" id="dc39227d-8882-40d4-93f9-29c58c31ec3d">
     <con:settings/>
-    <con:config>
-      <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+    <con:config><script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
@@ -291,6 +290,11 @@ if (API_Name != TestCaseName){
 	testRunner.testCase.testSteps['Data_Sink_Flow_Control'].setDisabled(true)
 	testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(true)
 }else{
+	String date = new Date()
+	date = date.replaceAll(":","_")
+	date = date.replaceAll(" ","_")
+	date = Regression_Location_ + date
+	testRunner.testCase.setPropertyValue("Location", date)
 	if(dataCombination == "Positive"){
 		testRunner.testCase.testSteps['JDBC'].setDisabled(false)
 		testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(false)
@@ -309,8 +313,7 @@ if (API_Name != TestCaseName){
 		testRunner.testCase.testSteps['Data_Sink_Flow_Control'].setDisabled(false)
 		testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(false)
 	}
-}</script>
-    </con:config>
+}</script></con:config>
   </con:testStep>
   <con:testStep type="datasource" name="JDBC" id="f5bad6a2-116f-4d38-b6c5-9d08c855489e" disabled="true">
     <con:settings>
@@ -663,8 +666,7 @@ out.close()</script>
   </con:testStep>
   <con:testStep type="groovy" name="Data_Sink_Flow_Control" id="f678df91-127f-4bed-a7fa-b7bc515becc5" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>/*Get Test Case Name and Status*/
+    <con:config><script>/*Get Test Case Name and Status*/
 def data_combination = context.expand( '${DataSource#Data_Combination}' )
 /*Get TC Name*/
 def TCN = context.expand( '${DataSource#TC_Number}' )
@@ -680,15 +682,15 @@ if(data_combination == "Negative"){
 Header = testRunner.testCase.testSteps[TestCaseName].testRequest.response.getResponseHeaders()
 def Status_Code = Header["#status#"]
 log.info Status_Code[0]
-if(Status_Code[0] == "HTTP/1.1 200 OK"){
+Status_Code = Status_Code[0]
+if(Status_Code.contains("200")){
 	testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(false)
 	myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
 	def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
 	testRunner.testCase.setPropertyValue("Location_ID_Transfer", response)
 }else{
 	testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(true)
-}</script>
-    </con:config>
+}</script></con:config>
   </con:testStep>
   <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="4a31b7e1-496d-49ad-94ed-aea1b9b4eb45" disabled="true">
     <con:settings/>
@@ -783,7 +785,7 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11415</con:value>
+      <con:value>11421</con:value>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
