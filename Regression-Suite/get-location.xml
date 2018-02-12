@@ -557,11 +557,11 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Location_ID</con:name>
-      <con:value/>
+      <con:value>2526</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value/>
+      <con:value>2526</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
