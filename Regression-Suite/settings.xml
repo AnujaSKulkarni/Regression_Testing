@@ -63,7 +63,7 @@
     </con:property>
     <con:property>
       <con:name>Status</con:name>
-      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Pass</con:value>
     </con:property>
     <con:property>
       <con:name>Run_count</con:name>
