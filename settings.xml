@@ -1724,7 +1724,7 @@
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="HistoryWithTimeRange">
-      <con:endpoint authProfile="Inherit From Parent"/>
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Energy_providers">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
@@ -1736,7 +1736,7 @@
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="multi subscribe for opt  in and out">
-      <con:endpoint authProfile="No Authorization"/>
+      <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="PUSH Notification">
       <con:endpoint authProfile="Inherit From Parent"/>
