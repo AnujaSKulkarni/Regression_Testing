@@ -270,40 +270,21 @@ if (API_Name != TestCaseName){
           <driver>com.ibm.db2.jcc.DB2Driver</driver>
           <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
           <pass>Syntel@mb5027676</pass>
-          <Connection>DataBase</Connection>
-          <query>Select BLUADMIN.APPLIANCE.APPLIANCE_ID As BLUADMIN_APPLIANCE_APPLIANCE_ID
-From BLUADMIN.APPLIANCE
-Where BLUADMIN.APPLIANCE.SAID = 'WPR333334RA96'</query>
+          <Connection>DataBase( QA_Env )</Connection>
+          <query>Select A.appliance_id as A_appliance_id, B.alert_id as B_alert_id
+From (Select app.appliance_id
+    From appliance app
+    Where upper(app.said) = upper('WPR333334RA96')) A, (Select ad.alert_id
+    From alert_definition ad
+    Where upper(alert_name) = upper('ClothesClean')) B</query>
           <fetchSize/>
           <stored-procedure>false</stored-procedure>
         </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
-      <con:property>BLUADMIN_APPLIANCE_APPLIANCE_ID</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasource" name="JDBC2" id="9270bd8f-3ab5-4751-abf4-700ecb7d41e9">
-    <con:settings>
-      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
-    </con:settings>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="JDBC">
-        <con:configuration>
-          <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
-          <pass>Syntel@mb5027676</pass>
-          <Connection>DataBase( Default environment )</Connection>
-          <query/>
-          <fetchSize/>
-          <stored-procedure>false</stored-procedure>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
-      <con:property>BLUADMIN_APPLIANCE_APPLIANCE_ID</con:property>
+      <con:property>A_appliance_id</con:property>
+      <con:property>B_alert_id</con:property>
       <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
@@ -479,11 +460,6 @@ out.close()</script>
   <con:reportParameters/>
   <con:breakPoints>
     <con:testStepId>cd70758d-1ccd-4464-a202-b83095c9e249</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>9270bd8f-3ab5-4751-abf4-700ecb7d41e9</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

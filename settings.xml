@@ -1736,7 +1736,7 @@
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="multi subscribe for opt  in and out">
-      <con:endpoint authProfile="No Authorization"/>
+      <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="PUSH Notification">
       <con:endpoint authProfile="Inherit From Parent"/>
