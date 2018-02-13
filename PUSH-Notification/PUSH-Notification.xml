@@ -41,9 +41,19 @@
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
       <con:endpoint>${API_Connect}</con:endpoint>
-      <con:request/>
+      <con:request>{              
+"said":"WPR333334UCD3",
+"alertdef":{
+  "alertPlatformType":"FabricCare"  
+  },
+ "applianceAttributes":
+     {
+      "Compartment_CycleState":1
+     }
+}</con:request>
       <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
