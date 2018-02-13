@@ -36,7 +36,7 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
-    <con:request name="Appliance Wraper" id="02d3df6f-10cd-4cc3-aed7-ba657cb3edac" mediaType="application/json" postQueryString="false">
+    <con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>409</con:status><con:params/><con:element xmlns:cla="https://api-test.whrcloud.com/api/v1/appliances/claim/">cla:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:cla="https://api-test.whrcloud.com/api/v1/appliances/claim/">cla:Response</con:element></con:representation><con:request name="Appliance Wraper" id="02d3df6f-10cd-4cc3-aed7-ba657cb3edac" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>

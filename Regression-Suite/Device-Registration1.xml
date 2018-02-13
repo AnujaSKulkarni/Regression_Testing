@@ -252,7 +252,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Device Registration" id="8bb16b8e-150b-49e7-9903-b56865f2c57e" disabled="true">
+  <con:testStep type="restrequest" name="Device Registration" id="8bb16b8e-150b-49e7-9903-b56865f2c57e">
     <con:settings/>
     <con:config service="Device Registration" resourcePath="/registerDeviceIDForPush" methodName="Device Registration" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Device Registration" id="3077c5d7-a9c5-4776-845f-6609c18ab956" mediaType="application/json" postQueryString="false">
@@ -266,7 +266,7 @@ if (API_Name != TestCaseName){
   "token": "ffbb6ec32f0fdf728064ac62c3df1dc6195c9e9366c5fc364b12e94b3cfbf2c6"
 }</con:request>
         <con:originalUri>https://api-test.whrcloud.com/api/v1/registerDeviceIDForPush</con:originalUri>
-        <con:credentials>
+        <con:assertion type="Valid HTTP Status Codes" id="3f5c289e-860b-486e-9041-daa5467af4d5" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>201</codes></con:configuration></con:assertion><con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
@@ -307,7 +307,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="66e1373c-e42d-48c9-84e9-c9f3b2034f7f" disabled="true">
+  <con:testStep type="groovy" name="Report" id="66e1373c-e42d-48c9-84e9-c9f3b2034f7f">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

@@ -334,11 +334,12 @@ log.info tC_Number</script>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters>
-          <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
-        </con:parameterOrder>
+  <con:entry key="Authorization" value="Bearer ${access_token}"/>
+  <con:entry key="wp-client-country" value="US"/>
+  <con:entry key="wp-client-brand" value="Whirlpool"/>
+  <con:entry key="wp-client-region" value="NAR"/>
+</con:parameters>
+        <con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-brand</con:entry><con:entry>wp-client-country</con:entry></con:parameterOrder>
         <con:environmentSpec>
           <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
             <con:authProfile>No Authorization</con:authProfile>
@@ -390,10 +391,12 @@ log.info tC_Number</script>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
-        <con:parameters/>
-        <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
-        </con:parameterOrder>
+        <con:parameters>
+  <con:entry key="wp-client-country" value="US"/>
+  <con:entry key="wp-client-brand" value="Whirlpool"/>
+  <con:entry key="wp-client-region" value="NAR"/>
+</con:parameters>
+        <con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-brand</con:entry><con:entry>wp-client-country</con:entry></con:parameterOrder>
         <con:environmentSpec>
           <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
             <con:authProfile>No Authorization</con:authProfile>
@@ -562,7 +565,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11486</con:value>
+      <con:value>11502</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

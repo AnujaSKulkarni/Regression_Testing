@@ -252,7 +252,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Appliance Wraper" id="f454330f-1b87-40ea-a32c-65e70634b06a" disabled="true">
+  <con:testStep type="restrequest" name="Appliance Wraper" id="f454330f-1b87-40ea-a32c-65e70634b06a">
     <con:settings/>
     <con:config service="Appliance Wraper" resourcePath="/appliances/claim/" methodName="Appliance Wraper" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Appliance Wraper" id="02d3df6f-10cd-4cc3-aed7-ba657cb3edac" mediaType="application/json" postQueryString="false">
@@ -262,11 +262,11 @@ if (API_Name != TestCaseName){
         <con:endpoint>${API-Connect}</con:endpoint>
         <con:request>{
         "applianceName": "dryer",
-        "said":"WPR333334UCD3",
-        "locationId":
+        "said":"WPR333334RA96",
+        "locationId":${#[Regression Suite#Update Location#Update Location_Positive]#RawRequest#$['locationId']}
         }</con:request>
         <con:originalUri>https://api-test.whrcloud.com/api/v1/appliances/claim/</con:originalUri>
-        <con:credentials>
+        <con:assertion type="Valid HTTP Status Codes" id="0e77ed37-4299-44fb-a89c-c508e6353888" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
@@ -309,7 +309,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="0c55cd62-1445-49d0-acb2-53c7101de6eb" disabled="true">
+  <con:testStep type="groovy" name="Report" id="0c55cd62-1445-49d0-acb2-53c7101de6eb">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

@@ -252,7 +252,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Get Appliance by Location ID" id="b6b52af3-3002-4127-a475-5b6096fa5ff3" disabled="true">
     <con:settings/>
-    <con:config service="Get Appliance by Location ID" resourcePath="/appliancesForLoc/303" methodName="Get Appliance by Location ID" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Get Appliance by Location ID" resourcePath="/appliancesForLoc/${#[Regression Suite#Update Location#Update Location_Positive]#RawRequest#$['locationId']}" methodName="Get Appliance by Location ID" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Get Appliance by Location ID" id="1a43b838-e11c-405c-b8b9-8496981e456a" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

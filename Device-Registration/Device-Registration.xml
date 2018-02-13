@@ -52,7 +52,7 @@
       <con:params/>
       <con:element>data</con:element>
     </con:representation>
-    <con:request name="Device Registration" id="3077c5d7-a9c5-4776-845f-6609c18ab956" mediaType="application/json" postQueryString="false">
+    <con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>201</con:status><con:params/><con:element xmlns:reg="https://api-test.whrcloud.com/api/v1/registerDeviceIDForPush">reg:Response</con:element></con:representation><con:request name="Device Registration" id="3077c5d7-a9c5-4776-845f-6609c18ab956" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
