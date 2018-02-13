@@ -251,7 +251,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Rule" id="7366905f-030e-403e-89f2-62fda4cc8309" disabled="true">
+  <con:testStep type="restrequest" name="Delete Rule" id="7366905f-030e-403e-89f2-62fda4cc8309">
     <con:settings/>
     <con:config service="Delete Rule" resourcePath="/location/${#Project#Location_ID}/nestRule/rule/${#[Regression Suite#Add Rule#Add Rule]#Response#$[0]['RULE_ID']}" methodName="Delete Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete Rule" id="68596280-f1de-4b03-81bb-5cb3dc70bbc9" mediaType="application/json" postQueryString="false">
@@ -283,7 +283,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="bc1e8165-5e79-43ee-9c97-4c4286994bc6" disabled="true">
+  <con:testStep type="groovy" name="Report" id="bc1e8165-5e79-43ee-9c97-4c4286994bc6">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
