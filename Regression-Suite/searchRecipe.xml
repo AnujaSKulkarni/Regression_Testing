@@ -319,7 +319,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="cd37d26f-4d72-425f-9ac5-e645207f082c" disabled="true">
+  <con:testStep type="groovy" name="Report" id="cd37d26f-4d72-425f-9ac5-e645207f082c">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
