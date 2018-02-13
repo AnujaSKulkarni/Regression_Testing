@@ -235,13 +235,12 @@ if(RunTimeDataSource_Flag == true){
   </con:testStep>
   <con:testStep type="groovy" name="Code_Extraction" id="5a89f148-30c9-46fe-aba2-7a1627713d55">
     <con:settings/>
-    <con:config>
-      <script>import org.openqa.selenium.By;
+    <con:config><script>import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-System.setProperty("webdriver.chrome.driver", "D:/Personal Data/Backup_8_March_2017/Selenium Data/chromedriver_win32/chromedriver.exe");
+System.setProperty("webdriver.chrome.driver", "C:\Automation\SoapUI\chromedriver.exe");
 
 WebDriver driver = new ChromeDriver();
 
@@ -302,8 +301,7 @@ log.info(Current_URL);
 String[] Code = Current_URL.split("code=");
 log.info(Code[1]);
 driver.close();
-testRunner.testCase.setPropertyValue("code", Code[1])</script>
-    </con:config>
+testRunner.testCase.setPropertyValue("code", Code[1])</script></con:config>
   </con:testStep>
   <con:testStep type="restrequest" name="GET Member Token" id="7eff3d4d-3090-4ad0-9758-8f6294a0a340">
     <con:settings/>
@@ -544,7 +542,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>code</con:name>
-      <con:value>CMNJZKYKA2DKF52P</con:value>
+      <con:value>GHPBQZEHA67QRR4H</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

@@ -1,7 +1,6 @@
 GET-Client-Token.xml
 Create-Account.xml
 GET-Member-Token.xml
-Account-Email-confirmation.xml
 Account-Phone-Number-confirmation.xml
 forgotPwd.xml
 Get-All-Accounts.xml
