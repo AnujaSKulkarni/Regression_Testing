@@ -240,7 +240,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-System.setProperty("webdriver.chrome.driver", "C:\Automation\SoapUI\chromedriver.exe");
+System.setProperty("webdriver.chrome.driver", "C:/Automation/SoapUI/chromedriver.exe");
 
 WebDriver driver = new ChromeDriver();
 
