@@ -146,7 +146,13 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Run_Time_Data}</file><worksheet>Account_Run_Time_Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Run_Time_Data}</file>
+          <worksheet>Account_Run_Time_Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -178,7 +184,13 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -324,11 +336,19 @@ if (API_Name != TestCaseName){
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( QA_Env )</Connection><query>Select st.STATE_ID As st_STATE_ID, st.COUNTRY_ID As st_COUNTRY_ID,
+        <con:configuration>
+          <driver>com.ibm.db2.jcc.DB2Driver</driver>
+          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
+          <pass>Syntel@mb5027676</pass>
+          <Connection>DataBase( QA_Env )</Connection>
+          <query>Select st.STATE_ID As st_STATE_ID, st.COUNTRY_ID As st_COUNTRY_ID,
   con.COUNTRY_ID As con_COUNTRY_ID, con.COUNTRY_CODE As con_COUNTRY_CODE
 From BLUADMIN.STATE st Inner Join
   BLUADMIN.COUNTRY con On st.COUNTRY_ID = con.COUNTRY_ID
-Where upper(st.STATE_NAME) = upper(${#TestCase#State_Name})</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
+Where upper(st.STATE_NAME) = upper(${#TestCase#State_Name})</query>
+          <fetchSize/>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -763,15 +783,15 @@ out.close()</script>
       <con:name>Location_ID_Transfer</con:name>
       <con:value>HTTP/1.1 200 undefined
 Server: nginx/1.4.6 (Ubuntu)
-Date: Tue, 13 Feb 2018 10:04:36 GMT
+Date: Tue, 13 Feb 2018 15:22:55 GMT
 Content-Type: application/json
 Connection: keep-alive
 X-Backside-Transport: OK OK
-X-Global-Transaction-ID: 48562405
+X-Global-Transaction-ID: 39108349
 User-Agent: IBM-APIConnect/201
 X-B3-Sampled: 1
-X-B3-SpanId: 938171aa0a0a22b9
-X-B3-TraceId: 938171aa0a0a22b9
+X-B3-SpanId: a04e9b046dac74a3
+X-B3-TraceId: a04e9b046dac74a3
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
 Access-Control-Max-Age: 3600
@@ -786,11 +806,11 @@ Expires: 0
 X-Frame-Options: DENY
 Strict-Transport-Security: max-age=15768000
 
-{"LOCATION_ID":2554,"CITY":"Pune","ACCOUNT_ID":11520,"STATE_ID":1452,"POSTAL_CODE":"123456","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":72,"SMART_ENERGY_PROFILE":0,"NAME":"Regression Location","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"Asia/Calcutta"}</con:value>
+{"LOCATION_ID":2569,"CITY":"Pune","ACCOUNT_ID":11541,"STATE_ID":1452,"POSTAL_CODE":"123456","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":72,"SMART_ENERGY_PROFILE":0,"NAME":"Regression Location","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"Asia/Calcutta"}</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11520</con:value>
+      <con:value>11541</con:value>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
@@ -802,7 +822,7 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>Location</con:name>
-      <con:value>Regression_Location_Tue_Feb_13_15_34_32_IST_2018</con:value>
+      <con:value>Regression_Location_Tue_Feb_13_20_52_51_IST_2018</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
