@@ -1,16 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:restMockAction name="/client_auth/accounts" method="POST" resourcePath="/client_auth/accounts" id="5cf70acf-a1cb-4533-833c-75d3c3ffdb8f" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
-    <con:setting id="5cf70acf-a1cb-4533-833c-75d3c3ffdb8ffileName">%2Fclient_auth%2Faccounts</con:setting>
-  </con:settings>
-  <con:defaultResponse>Response 1</con:defaultResponse>
-  <con:dispatchStyle>PARAMETER</con:dispatchStyle>
-  <con:dispatchConfig/>
-  <con:dispatchXPath/>
-  <con:parameterDispatcherRuleContainer/>
-  <con:routeEnabled>false</con:routeEnabled>
-  <con:routeScript/>
-  <con:response name="Response 1" id="446473b2-27c9-4f88-a80e-293d253a21c5" httpResponseStatus="200" dataSource="">
-    <con:settings/>
-  </con:response>
-</con:restMockAction>
+<con:restMockAction name="/client_auth/accounts" method="POST" resourcePath="/client_auth/accounts" id="5cf70acf-a1cb-4533-833c-75d3c3ffdb8f" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="5cf70acf-a1cb-4533-833c-75d3c3ffdb8ffileName">%2Fclient_auth%2Faccounts</con:setting></con:settings><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchConfig/><con:dispatchXPath/><con:routeScript/><con:response name="Response 1" id="446473b2-27c9-4f88-a80e-293d253a21c5" httpResponseStatus="200" dataSource=""><con:settings/></con:response></con:restMockAction>
