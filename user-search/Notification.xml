@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Notification" path="/api/v1/user/notification" id="e2388db6-ae22-41c7-bb4d-52bb1b68bc3f" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e2388db6-ae22-41c7-bb4d-52bb1b68bc3ffileName">Notification</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Notification" id="3c62f1e9-d5ed-4140-94d7-6340c1aa6200" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="c9eeadc2-e9a3-4593-937d-14e51c9e6851" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://{{API-Connect}}</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

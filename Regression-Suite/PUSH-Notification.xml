@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="6b18a7ff-5db8-4810-95b4-e162b6ee2a10" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="multi subscribe for opt  in and out" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="2f2048de-d803-4bcd-b68e-2db51adfba50" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="PUSH Notification" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="6b18a7ff-5db8-4810-95b4-e162b6ee2a10fileName">multi-subscribe-for-opt--in-and-out</con:setting>
+    <con:setting id="2f2048de-d803-4bcd-b68e-2db51adfba50fileName">PUSH-Notification</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="c4391f83-eaad-4401-aef5-bd81cdb46de1">
+  <con:testStep type="groovy" name="DataSource_Setup" id="b01d7fbb-feb1-455b-9499-bd9c960d051e">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -142,10 +142,8 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="9c57410d-ba28-4f49-bdf3-521623ff1152">
-    <con:settings>
-      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
-    </con:settings>
+  <con:testStep type="datasource" name="DataSource" id="374e6b26-99ae-4cb6-9271-a08ec70657ad">
+    <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
         <con:configuration>
@@ -242,7 +240,7 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="12f95fd0-4fde-4054-b130-f49f05fb1a06">
+  <con:testStep type="groovy" name="flow control" id="dcc64792-16f5-4430-a7eb-632d42082cce">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -251,64 +249,35 @@ def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
 if (API_Name != TestCaseName){
-	testRunner.testCase.testSteps['multi subscribe for opt  in and out'].setDisabled(true)
-	testRunner.testCase.testSteps['JDBC'].setDisabled(true)
+	testRunner.testCase.testSteps['PUSH Notification'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
 }else{
-	testRunner.testCase.testSteps['multi subscribe for opt  in and out'].setDisabled(false)
-	testRunner.testCase.testSteps['JDBC'].setDisabled(false)
+	testRunner.testCase.testSteps['PUSH Notification'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
 	
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="JDBC" id="9d7a37ab-b898-4de1-aa86-390c521ed857">
-    <con:settings>
-      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
-    </con:settings>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="JDBC">
-        <con:configuration>
-          <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
-          <pass>Syntel@mb5027676</pass>
-          <Connection>DataBase( QA_Env )</Connection>
-          <query>Select A.appliance_id as A_appliance_id, B.alert_id as B_alert_id
-From (Select app.appliance_id
-    From BLUADMIN.appliance app
-    Where upper(app.said) = upper('WPR333334RA96')) A, (Select ad.alert_id
-    From BLUADMIN.alert_definition ad
-    Where upper(alert_name) = upper('ClothesClean')) B</query>
-          <fetchSize/>
-          <stored-procedure>false</stored-procedure>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
-      <con:property>A_appliance_id</con:property>
-      <con:property>B_alert_id</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="multi subscribe for opt  in and out" id="cd70758d-1ccd-4464-a202-b83095c9e249">
+  <con:testStep type="restrequest" name="PUSH Notification" id="e366e6ea-ba6d-4cf0-bccb-df82f441a44b">
     <con:settings/>
-    <con:config service="multi subscribe for opt  in and out" resourcePath="/notifications/subscriptions/multi" methodName="multi subscribe for opt  in and out" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="multi subscribe for opt  in and out" id="941c0ead-0aa8-40a0-bc30-96b0fdfbf90b" mediaType="application/json" postQueryString="false">
+    <con:config service="PUSH Notification" resourcePath="/notifications" methodName="PUSH Notification" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="PUSH Notification" id="9c141b9f-5149-4521-a092-8b0f23586bd2" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${API-Connect}</con:endpoint>
-        <con:request>[
-{
-"alertId":${JDBC#B_alert_id},
-"applianceId":${JDBC#A_appliance_id},
-"notificationType":"PUSH",
-"accountId":${#[Regression Suite#Create Location]#Account_ID},
-"status":"Enable"
-}]</con:request>
-        <con:originalUri>https://api-test.whrcloud.com/api/v1/notifications/subscriptions/multi</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="b57708e5-ac4f-4b3b-a854-ef136c1a5a59" name="Valid HTTP Status Codes">
+        <con:endpoint>${API_Connect}</con:endpoint>
+        <con:request>{              
+"said":"WPR333334RA96",
+"alertdef":{
+  "alertPlatformType":"FabricCare"  
+  },
+ "applianceAttributes":
+     {
+      "Compartment_CycleState":1
+     }
+}</con:request>
+        <con:originalUri>https://api-test.whrcloud.com/api/v1/notifications</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="444cb523-b655-4488-af56-16975361b400" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
@@ -329,7 +298,7 @@ From (Select app.appliance_id
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="9bc5e43b-f904-481b-ba81-e74d7a9aca36">
+  <con:testStep type="groovy" name="Report" id="b32ce4a9-d11b-47f5-8c1e-94657738437e">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -458,7 +427,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="df311857-9eff-48bd-b7b5-1dce582f58ff">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="997e0b9a-e06a-4704-8d7a-e6f2902ebfff">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
@@ -468,7 +437,7 @@ out.close()</script>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>cd70758d-1ccd-4464-a202-b83095c9e249</con:testStepId>
+    <con:testStepId>e366e6ea-ba6d-4cf0-bccb-df82f441a44b</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

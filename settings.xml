@@ -39,7 +39,7 @@
     <con:setting id="ErrorDetails">true</con:setting>
     <con:setting id="IncludeCoverage">true</con:setting>
     <con:setting id="ec445c4d-ef8c-457f-9db2-3990f3163ec2fileName">Regression-Pro</con:setting>
-  <con:setting id="ProjectSettings@hermesConfig">C:\Users\MB5027676/.hermes</con:setting></con:settings>
+  </con:settings>
   <con:vcsConfiguration>
     <con:vcsName>Git</con:vcsName>
     <con:repositoryIdentifier>https://github.com/MohitBhanawat/SoapUI/</con:repositoryIdentifier>
@@ -598,6 +598,9 @@
     </con:service>
     <con:service type="REST" name="PUSH Notification">
       <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="user search">
+      <con:endpoint authProfile="No Authorization">https://{{API-Connect}}</con:endpoint>
     </con:service>
     <con:property>
       <con:name>Location</con:name>
@@ -1170,6 +1173,9 @@
     <con:service type="REST" name="PUSH Notification">
       <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
+    <con:service type="REST" name="user search">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
     <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicedev-v2.mybluemix.net/api/v1</con:value>
@@ -1740,6 +1746,9 @@
     </con:service>
     <con:service type="REST" name="PUSH Notification">
       <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="user search">
+      <con:endpoint authProfile="No Authorization"/>
     </con:service>
     <con:property>
       <con:name>Location</con:name>

@@ -36,14 +36,35 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:element xmlns:not="https://api-test.whrcloud.com/api/v1/notifications">not:Fault</con:element>
+    </con:representation>
     <con:request name="PUSH Notification" id="9c141b9f-5149-4521-a092-8b0f23586bd2" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
       <con:endpoint>${API_Connect}</con:endpoint>
-      <con:request/>
+      <con:request>{              
+"said":"WPR333334RA96",
+"alertdef":{
+  "alertPlatformType":"FabricCare"  
+  },
+ "applianceAttributes":
+     {
+      "Compartment_CycleState":1
+     }
+}</con:request>
+      <con:originalUri>https://api-test.whrcloud.com/api/v1/notifications</con:originalUri>
       <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
