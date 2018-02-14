@@ -259,35 +259,6 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="JDBC" id="9d7a37ab-b898-4de1-aa86-390c521ed857">
-    <con:settings>
-      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
-    </con:settings>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="JDBC">
-        <con:configuration>
-          <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
-          <pass>Syntel@mb5027676</pass>
-          <Connection>DataBase( QA_Env )</Connection>
-          <query>Select A.appliance_id as A_appliance_id, B.alert_id as B_alert_id
-From (Select app.appliance_id
-    From appliance app
-    Where Upper(app.said) = Upper('WPR333334RA96')) A, (Select ad.alert_id
-    From alert_definition ad
-    Where Upper(alert_name) = Upper('clothesclean')) B</query>
-          <fetchSize/>
-          <stored-procedure>false</stored-procedure>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
-      <con:property>A_appliance_id</con:property>
-      <con:property>B_alert_id</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
-  </con:testStep>
   <con:testStep type="restrequest" name="multi subscribe for opt  in and out" id="cd70758d-1ccd-4464-a202-b83095c9e249" disabled="true">
     <con:settings/>
     <con:config service="multi subscribe for opt  in and out" resourcePath="/notifications/subscriptions/multi" methodName="multi subscribe for opt  in and out" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -453,6 +424,29 @@ out.close()</script>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
       <targetStep>flow control</targetStep>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="jdbc" id="4b666538-337b-4fc5-a7c5-e1dbcd1834a2">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="JDBC">
+        <con:configuration>
+          <driver>com.ibm.db2.jcc.DB2Driver</driver>
+          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
+          <pass>Syntel@mb5027676</pass>
+          <Connection>DataBase</Connection>
+          <query>Select *
+From</query>
+          <fetchSize/>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
   <con:properties/>
