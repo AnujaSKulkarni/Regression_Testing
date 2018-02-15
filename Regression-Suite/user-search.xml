@@ -258,7 +258,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="user search" id="71a2c35f-e7aa-44d9-9e62-5a139bbb66e5">
+  <con:testStep type="restrequest" name="user search" id="71a2c35f-e7aa-44d9-9e62-5a139bbb66e5" disabled="true">
     <con:settings/>
     <con:config service="user search" resourcePath="/user/notification" methodName="user search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="user search" id="c9eeadc2-e9a3-4593-937d-14e51c9e6851" mediaType="application/json">
