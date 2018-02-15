@@ -146,15 +146,21 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Run_Time_Data}</file><worksheet>Account_Run_Time_Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Run_Time_Data}</file>
+          <worksheet>Account_Run_Time_Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
-      
-      
-      
-      
-      <con:property>Account_ID_Number</con:property><con:property>Verification_Code</con:property><con:property>Email_ID</con:property><con:property>Group_ID</con:property><con:completeLastOperation>true</con:completeLastOperation>
+      <con:property>Account_ID_Number</con:property>
+      <con:property>Verification_Code</con:property>
+      <con:property>Email_ID</con:property>
+      <con:property>Group_ID</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
@@ -178,91 +184,97 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>name</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:startRow/>
+      <con:property>TC_Number</con:property>
+      <con:property>Service_Name</con:property>
+      <con:property>Defect_ID</con:property>
+      <con:property>API_Name</con:property>
+      <con:property>Data_Combination</con:property>
+      <con:property>Remark</con:property>
+      <con:property>Comments</con:property>
+      <con:property>Account_Number</con:property>
+      <con:property>Address_1</con:property>
+      <con:property>Address_2</con:property>
+      <con:property>Alert_ID</con:property>
+      <con:property>Alert_Platform_Type</con:property>
+      <con:property>Alternate_Email_ID</con:property>
+      <con:property>Appliance_ID</con:property>
+      <con:property>Appliance_Master_ID</con:property>
+      <con:property>Appliance_Master_Version_ID</con:property>
+      <con:property>Appliance_Name</con:property>
+      <con:property>Attribute_Name</con:property>
+      <con:property>Attribute_Value</con:property>
+      <con:property>Brand</con:property>
+      <con:property>City</con:property>
+      <con:property>Company_ID</con:property>
+      <con:property>Company_Name</con:property>
+      <con:property>Confirm_Password</con:property>
+      <con:property>Country_Name</con:property>
+      <con:property>Country_Code</con:property>
+      <con:property>Country_ID</con:property>
+      <con:property>Customer_Care</con:property>
+      <con:property>DCT</con:property>
+      <con:property>desired_temperature</con:property>
+      <con:property>Device_ID</con:property>
+      <con:property>Device_Notification_ID</con:property>
+      <con:property>Device_Shadow_Name</con:property>
+      <con:property>Edge_Device_ID</con:property>
+      <con:property>Elevation</con:property>
+      <con:property>Email_BodyMessage</con:property>
+      <con:property>Email_From</con:property>
+      <con:property>Email_ID_Data</con:property>
+      <con:property>Email_Subject</con:property>
+      <con:property>Email_To</con:property>
+      <con:property>enable_cloth_spin</con:property>
+      <con:property>First_Name</con:property>
+      <con:property>Group_Number</con:property>
+      <con:property>inv__description</con:property>
+      <con:property>JSON_Body</con:property>
+      <con:property>Key</con:property>
+      <con:property>Language_ID</con:property>
+      <con:property>Last_Name</con:property>
+      <con:property>Lastupdate</con:property>
+      <con:property>Latitude</con:property>
+      <con:property>Locale_ID</con:property>
+      <con:property>Location_Name</con:property>
+      <con:property>Location_Number</con:property>
+      <con:property>Longitude</con:property>
+      <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
+      <con:property>Nest_Away</con:property>
+      <con:property>Nest_Thermostat_ID</con:property>
+      <con:property>New_Password</con:property>
+      <con:property>Notification_Type</con:property>
+      <con:property>Password</con:property>
+      <con:property>Phone_No.</con:property>
+      <con:property>Platform</con:property>
+      <con:property>Postal_Code</con:property>
+      <con:property>Rate_Plan_Code</con:property>
+      <con:property>Rate_Plan_ID</con:property>
+      <con:property>Region</con:property>
+      <con:property>Role_ID</con:property>
+      <con:property>SAID</con:property>
+      <con:property>Shoppinglist_ID</con:property>
+      <con:property>Shoppinglist_Name</con:property>
+      <con:property>State_Name</con:property>
+      <con:property>Status</con:property>
+      <con:property>Status_ID</con:property>
+      <con:property>Street</con:property>
+      <con:property>trigger_temperature</con:property>
+      <con:property>User_ID</con:property>
+      <con:property>User_Role</con:property>
+      <con:property>Verification_Code</con:property>
+      <con:property>Version</con:property>
+      <con:startRow/>
       <con:endRow/>
       <con:recordsPerIteration>1</con:recordsPerIteration>
       <con:completeLastOperation>true</con:completeLastOperation>
@@ -324,11 +336,19 @@ if (API_Name != TestCaseName){
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( QA_Env )</Connection><query>Select st.STATE_ID As st_STATE_ID, st.COUNTRY_ID As st_COUNTRY_ID,
+        <con:configuration>
+          <driver>com.ibm.db2.jcc.DB2Driver</driver>
+          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
+          <pass>Syntel@mb5027676</pass>
+          <Connection>DataBase( QA_Env )</Connection>
+          <query>Select st.STATE_ID As st_STATE_ID, st.COUNTRY_ID As st_COUNTRY_ID,
   con.COUNTRY_ID As con_COUNTRY_ID, con.COUNTRY_CODE As con_COUNTRY_CODE
 From BLUADMIN.STATE st Inner Join
   BLUADMIN.COUNTRY con On st.COUNTRY_ID = con.COUNTRY_ID
-Where upper(st.STATE_NAME) = upper(${#TestCase#State_Name})</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
+Where upper(st.STATE_NAME) = upper(${#TestCase#State_Name})</query>
+          <fetchSize/>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -342,7 +362,8 @@ Where upper(st.STATE_NAME) = upper(${#TestCase#State_Name})</query><fetchSize/><
   </con:testStep>
   <con:testStep type="groovy" name="Test_Data_Setup" id="2f9ba70a-5101-4e83-9c40-99a0cd617b70" disabled="true">
     <con:settings/>
-    <con:config><script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
+    <con:config>
+      <script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
 def Account_ID_Sheet = context.expand( '${DataSource#Account_Number}' )
 def con_COUNTRY_CODE = context.expand( '${JDBC#con_COUNTRY_CODE}' )
 def COUNTRY_CODE = "\"" + con_COUNTRY_CODE + "\""
@@ -365,13 +386,8 @@ if (data_Combination == "Negative"){
 	}
 }
 def tC_Number = context.expand( '${DataSource#TC_Number}' )
-log.info tC_Number
-
-String date = new Date()
-date = date.replaceAll(":","_")
-date = date.replaceAll(" ","_")
-date = "\"" + "Regression_Location_" + date + "\""
-testRunner.testCase.setPropertyValue("Location_Name", date)</script></con:config>
+log.info tC_Number</script>
+    </con:config>
   </con:testStep>
   <con:testStep type="restrequest" name="Create Location_Positive" id="63e72d55-0340-4dd8-927a-46ed2b309583" disabled="true">
     <con:settings/>
@@ -382,7 +398,7 @@ testRunner.testCase.setPropertyValue("Location_Name", date)</script></con:config
         </con:settings>
         <con:endpoint>${Location}</con:endpoint>
         <con:request>{
- "locationName":${#TestCase#Location_Name},
+ "locationName":${DataSource#Location_Name},
   "street": ${DataSource#Street},
   "stateId":${JDBC#st_STATE_ID},
   "city": ${DataSource#City},
@@ -392,8 +408,7 @@ testRunner.testCase.setPropertyValue("Location_Name", date)</script></con:config
   "utilityProviderName": "",
   "ratePlanId": ${DataSource#Rate_Plan_ID},
   "ratePlanCode": ${DataSource#Rate_Plan_Code},
-  "smart_energy_profile":1,
-  "smartEnergy":1,
+  "smartEnergy":0,
   "localeId": ${DataSource#Locale_ID},
   "loyaltyId": ${DataSource#Loyalty_ID},
   "status": "1",
@@ -467,9 +482,9 @@ testRunner.testCase.setPropertyValue("Location_Name", date)</script></con:config
         </con:settings>
         <con:endpoint>${Location}</con:endpoint>
         <con:request>{
- "locationName":${#TestCase#Location_Name},
+ "locationName":${DataSource#Location_Name},
   "street": ${DataSource#Street},
-  "stateId":${JDBC#st_STATE_ID},
+  "stateId":${JDBC#BLUADMIN_STATE_STATE_ID},
   "city": ${DataSource#City},
   "postalCode": ${DataSource#Postal_Code},
   "secondLineAddress": "Home",
@@ -477,8 +492,7 @@ testRunner.testCase.setPropertyValue("Location_Name", date)</script></con:config
   "utilityProviderName": "",
   "ratePlanId": ${DataSource#Rate_Plan_ID},
   "ratePlanCode": ${DataSource#Rate_Plan_Code},
-  "smart_energy_profile":1,
-  "smartEnergy":1,
+  "smartEnergy":0,
   "localeId": ${DataSource#Locale_ID},
   "loyaltyId": ${DataSource#Loyalty_ID},
   "status": "1",
@@ -491,8 +505,8 @@ testRunner.testCase.setPropertyValue("Location_Name", date)</script></con:config
   "longitude": ${DataSource#Longitude},
   "elevation": ${DataSource#Elevation},
   "enableClothspin":${DataSource#enable_cloth_spin},
-  "countryId": ${JDBC#st_COUNTRY_ID},
-  "countryCode": ${#TestCase#COUNTRY_CODE},
+  "countryId": ${JDBC#BLUADMIN_STATE_COUNTRY_ID},
+  "countryCode": ${DataSource#Country_Code},
   "accountId":${#TestCase#Account_ID}
 }</con:request>
         <con:originalUri>http://locationserviceqa.mybluemix.net/api/location</con:originalUri>
@@ -769,15 +783,15 @@ out.close()</script>
       <con:name>Location_ID_Transfer</con:name>
       <con:value>HTTP/1.1 200 undefined
 Server: nginx/1.4.6 (Ubuntu)
-Date: Thu, 15 Feb 2018 09:18:31 GMT
+Date: Wed, 14 Feb 2018 13:11:21 GMT
 Content-Type: application/json
 Connection: keep-alive
 X-Backside-Transport: OK OK
-X-Global-Transaction-ID: 17564789
+X-Global-Transaction-ID: 17693317
 User-Agent: IBM-APIConnect/201
 X-B3-Sampled: 1
-X-B3-SpanId: 2d9dee795a84874b
-X-B3-TraceId: 2d9dee795a84874b
+X-B3-SpanId: f25251aaa8ce9d36
+X-B3-TraceId: f25251aaa8ce9d36
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
 Access-Control-Max-Age: 3600
@@ -792,11 +806,11 @@ Expires: 0
 X-Frame-Options: DENY
 Strict-Transport-Security: max-age=15768000
 
-{"LOCATION_ID":2612,"CITY":"New York","ACCOUNT_ID":11681,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Regression_Location_Thu_Feb_15_14_48_29_IST_2018","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York"}</con:value>
+{"LOCATION_ID":2591,"CITY":"Pune","ACCOUNT_ID":11611,"STATE_ID":1452,"POSTAL_CODE":"123456","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":72,"SMART_ENERGY_PROFILE":0,"NAME":"Regression Location","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"Asia/Calcutta"}</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value/>
+      <con:value>11611</con:value>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
@@ -804,13 +818,13 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>COUNTRY_CODE</con:name>
-      <con:value>"US"</con:value>
+      <con:value>"IN"</con:value>
     </con:property>
     <con:property>
       <con:name>Location</con:name>
-      <con:value>Regression_Location_Thu_Feb_15_17_09_55_IST_2018</con:value>
+      <con:value>Regression_Location_Wed_Feb_14_18_41_18_IST_2018</con:value>
     </con:property>
-  <con:property><con:name>Location_Name</con:name><con:value>"Regression_Location_Thu_Feb_15_17_10_33_IST_2018"</con:value></con:property></con:properties>
+  </con:properties>
   <con:reportParameters/>
   <con:breakPoints>
     <con:testStepId>2ae81ba5-3442-4c6e-900e-e4deecac385a</con:testStepId>

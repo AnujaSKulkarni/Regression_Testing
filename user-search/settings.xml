@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="6be5e719-3d03-4ac9-814c-1d552e943550fileName">user-search</con:setting>
   </con:settings>
-  
-  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
 </con:interface>
