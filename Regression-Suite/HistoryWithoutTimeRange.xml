@@ -346,7 +346,8 @@ testRunner.testCase.setPropertyValue("attribute_name", response)</script>
 	"attributeNames":${#TestCase#attribute_name},
 	"startTime": "",
 	"endTime": ""
-}</con:request>
+}
+</con:request>
         <con:originalUri>https://api-test.whrcloud.com/api/v1/appliances/history</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="e5839b0b-de88-4a9e-9330-c51fa9835433" name="Valid HTTP Status Codes">
           <con:settings/>

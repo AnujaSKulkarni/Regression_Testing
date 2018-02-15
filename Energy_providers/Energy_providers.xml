@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Energy_providers" path="/energy_providers/49022" id="b7799fe0-84f7-4c91-82d6-10e835e8be23" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Energy_providers" path="/energy_providers/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['POSTAL_CODE']}" id="b7799fe0-84f7-4c91-82d6-10e835e8be23" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="b7799fe0-84f7-4c91-82d6-10e835e8be23fileName">Energy_providers</con:setting>
   </con:settings>
@@ -14,24 +14,20 @@
         <con:default/>
         <con:description xsi:nil="true"/>
       </con:parameter>
-    </con:parameters>
-    <con:request name="Energy_providers" id="ce4e5181-9a1e-4397-b182-e001b1a363e7" mediaType="application/json">
+    <con:parameter><con:name>wp-client-region</con:name><con:value>NAR</con:value><con:style>HEADER</con:style><con:default>NAR</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>wp-client-country</con:name><con:value>US</con:value><con:style>HEADER</con:style><con:default>US</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>wp-client-brand</con:name><con:value>Whirlpool</con:value><con:style>HEADER</con:style><con:default>Whirlpool</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters>
+    <con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Energy_providers" id="ce4e5181-9a1e-4397-b182-e001b1a363e7" mediaType="application/json">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
       <con:endpoint>${API-Connect}</con:endpoint>
       <con:request/>
-      <con:credentials>
+      <con:originalUri>https://api-test.whrcloud.com/api/v1/energy_providers/123456</con:originalUri><con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-      <con:parameters>
-        <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
-      </con:parameters>
-      <con:parameterOrder>
-        <con:entry>Authorization</con:entry>
-      </con:parameterOrder>
+      <con:parameters><entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/></con:parameters>
+      <con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-country</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder>
     </con:request>
   </con:method>
 </con:resource>

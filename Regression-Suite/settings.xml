@@ -15,35 +15,35 @@
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"WED_FEB_14_18_39_45_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"THU_FEB_15_13_48_26_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>WED_FEB_14_18_39_45_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>THU_FEB_15_13_48_26_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11611</con:value>
+      <con:value>11663</con:value>
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
-      <con:value>5524</con:value>
+      <con:value>4234</con:value>
     </con:property>
     <con:property>
       <con:name>Account_Email</con:name>
-      <con:value>WED_FEB_14_18_39_33_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>THU_FEB_15_13_48_16_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
     <con:property>
       <con:name>Location_ID</con:name>
-      <con:value>2587</con:value>
+      <con:value>2606</con:value>
     </con:property>
     <con:property>
       <con:name>Group_Name</con:name>
-      <con:value>"SANITY_GROUP_WED_FEB_14_15_35_55_IST_2018"</con:value>
+      <con:value>"SANITY_GROUP_THU_FEB_15_12_10_01_IST_2018"</con:value>
     </con:property>
     <con:property>
       <con:name>Group_Name_string</con:name>
-      <con:value>SANITY_GROUP_WED_FEB_14_15_35_55_IST_2018</con:value>
+      <con:value>SANITY_GROUP_THU_FEB_15_12_10_01_IST_2018</con:value>
     </con:property>
     <con:property>
       <con:name>Template_ID</con:name>
@@ -63,11 +63,11 @@
     </con:property>
     <con:property>
       <con:name>Status</con:name>
-      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Pass</con:value>
     </con:property>
     <con:property>
       <con:name>Run_count</con:name>
-      <con:value>5</con:value>
+      <con:value>13</con:value>
     </con:property>
     <con:property>
       <con:name>Email_cnf</con:name>
@@ -83,27 +83,27 @@
     </con:property>
     <con:property>
       <con:name>Group_ID</con:name>
-      <con:value>4140</con:value>
+      <con:value>4166</con:value>
     </con:property>
     <con:property>
       <con:name>Location_Number</con:name>
-      <con:value>2591</con:value>
+      <con:value>2607</con:value>
     </con:property>
     <con:property>
       <con:name>Alternate_Email</con:name>
-      <con:value>"EMPALT_WED_FEB_14_15_37_14_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"EMPALT_THU_FEB_15_12_11_23_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Alternate_Email_String</con:name>
-      <con:value>EMPALT_WED_FEB_14_15_37_14_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>EMPALT_THU_FEB_15_12_11_23_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
     <con:property>
       <con:name>Company_Email_ID</con:name>
-      <con:value>"WED_FEB_14_15_36_52_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"THU_FEB_15_12_11_00_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Company_Email_ID_string</con:name>
-      <con:value>WED_FEB_14_15_36_52_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>THU_FEB_15_12_11_00_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:setupScript/>
