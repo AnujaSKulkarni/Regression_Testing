@@ -275,12 +275,12 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Update User Consent" id="f6094451-24ef-4db5-8a06-84b94f22c4ff" disabled="true">
     <con:settings/>
-    <con:config service="Update User Consent" resourcePath="/api/v1/userConsent/${Appliance_Number}" methodName="Update User Consent" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Update User Consent" resourcePath="/userConsent/${#[Regression Suite#Update User Consent]#Appliance_ID}" methodName="Update User Consent" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Update User Consent" id="426ed017-6f65-46cb-8dc5-8892bd5a502c" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>http://amazonreplenishmentservicestg-v2.mybluemix.net</con:endpoint>
+        <con:endpoint>${API-Connect}</con:endpoint>
         <con:request/>
         <con:originalUri>http://amazonreplenishmentservicestg-v2.mybluemix.net/api/v1/userConsent/246</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="cc4b6e16-4094-485d-883f-cf0648e1df19" name="Valid HTTP Status Codes">
@@ -452,7 +452,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Appliance_ID</con:name>
-      <con:value>199</con:value>
+      <con:value>488</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

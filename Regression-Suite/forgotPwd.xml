@@ -587,7 +587,7 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>FRI_FEB_16_10_41_53_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>FRI_FEB_16_12_13_02_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
