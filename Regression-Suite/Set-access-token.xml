@@ -273,7 +273,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Set access token" id="99d6fad5-3a0b-48ea-9963-fe43f72bb9f3" disabled="true">
     <con:settings/>
-    <con:config service="Set access token" methodName="Set access token" resourcePath="/api/v1/amazonTokens" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Set access token" methodName="Set access token" resourcePath="/amazonTokens" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Set access token" id="e9b2bc02-38fb-416d-a711-72f91e6705d9" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -300,7 +300,7 @@ if (API_Name != TestCaseName){
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}"/>
+          <con:entry key="Authorization" value="bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}"/>
           <con:entry key="wp-client-platform" value="ANDROID"/>
           <con:entry key="wp-client-brand" value="Whirlpool"/>
           <con:entry key="Content-Type" value="application/json"/>
@@ -459,7 +459,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>LWA_Client_ID</con:name>
-      <con:value>"amzn1.application-oa2-client.086aef6518504b8c93232888877fcdcf"</con:value>
+      <con:value>"amzn1.application-oa2-client.ecde09fea05c48caa917a4890367f57f"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
