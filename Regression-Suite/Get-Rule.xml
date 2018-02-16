@@ -258,7 +258,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Get Rule" id="b877be91-004e-4e27-9166-35895aec503d" disabled="true">
+  <con:testStep type="restrequest" name="Get Rule" id="b877be91-004e-4e27-9166-35895aec503d">
     <con:settings/>
     <con:config service="Get Rule" resourcePath="/location/${#Project#Location_ID}/nestRules" methodName="Get Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Get Rule" id="ebc9d0d5-adfd-4143-9558-861b081421d1" mediaType="application/json">
@@ -290,7 +290,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="26cebeb1-ca2a-4f85-ba81-32e7e9967482" disabled="true">
+  <con:testStep type="groovy" name="Report" id="26cebeb1-ca2a-4f85-ba81-32e7e9967482">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

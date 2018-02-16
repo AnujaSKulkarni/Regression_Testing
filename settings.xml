@@ -122,7 +122,7 @@
     <con:databaseConnection>
       <con:name>DataBase</con:name>
       <con:driver>com.ibm.db2.jcc.DB2Driver</con:driver>
-      <con:connectionString>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
+      <con:connectionString>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
       <con:password>Syntel@mb5027676</con:password>
     </con:databaseConnection>
   </con:databaseConnectionContainer>
