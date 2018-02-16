@@ -325,6 +325,9 @@ testRunner.testCase.setPropertyValue("Device_Shadow_Name", Device_Shadow_Name)</
           <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
@@ -369,6 +372,11 @@ testRunner.testCase.setPropertyValue("attribute_name", response)</script>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -544,4 +552,9 @@ log.info "Report Generated"</script>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>

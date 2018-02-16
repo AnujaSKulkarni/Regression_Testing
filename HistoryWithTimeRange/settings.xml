@@ -3,8 +3,13 @@
   <con:settings>
     <con:setting id="8d38d15d-f71e-43b9-ab2c-d6a482d34002fileName">HistoryWithTimeRange</con:setting>
   </con:settings>
-  
-  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
+  <con:environmentSpec>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:interface>

@@ -147,7 +147,13 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Run_Time_Data}</file><worksheet>Account_Run_Time_Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Run_Time_Data}</file>
+          <worksheet>Account_Run_Time_Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -177,7 +183,13 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -335,12 +347,17 @@ log.info tC_Number</script>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters>
-  <con:entry key="Authorization" value="Bearer ${access_token}"/>
-  <con:entry key="wp-client-country" value="US"/>
-  <con:entry key="wp-client-brand" value="Whirlpool"/>
-  <con:entry key="wp-client-region" value="NAR"/>
-</con:parameters>
-        <con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-country</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder>
+          <con:entry key="Authorization" value="Bearer ${access_token}"/>
+          <con:entry key="wp-client-country" value="US"/>
+          <con:entry key="wp-client-brand" value="Whirlpool"/>
+          <con:entry key="wp-client-region" value="NAR"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>wp-client-region</con:entry>
+          <con:entry>wp-client-country</con:entry>
+          <con:entry>wp-client-brand</con:entry>
+        </con:parameterOrder>
         <con:environmentSpec>
           <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
             <con:authProfile>No Authorization</con:authProfile>
@@ -364,6 +381,9 @@ log.info tC_Number</script>
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>
@@ -393,11 +413,16 @@ log.info tC_Number</script>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters>
-  <con:entry key="wp-client-country" value="US"/>
-  <con:entry key="wp-client-brand" value="Whirlpool"/>
-  <con:entry key="wp-client-region" value="NAR"/>
-</con:parameters>
-        <con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-country</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder>
+          <con:entry key="wp-client-country" value="US"/>
+          <con:entry key="wp-client-brand" value="Whirlpool"/>
+          <con:entry key="wp-client-region" value="NAR"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>wp-client-region</con:entry>
+          <con:entry>wp-client-country</con:entry>
+          <con:entry>wp-client-brand</con:entry>
+        </con:parameterOrder>
         <con:environmentSpec>
           <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
             <con:authProfile>No Authorization</con:authProfile>
@@ -421,6 +446,9 @@ log.info tC_Number</script>
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>
@@ -615,6 +643,9 @@ out.close()</script>
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>

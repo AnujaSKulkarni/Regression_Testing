@@ -1,2 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Soft Delete UserList" path="/deleteSlsUser/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" id="9b5e787f-3621-4cec-92d4-6be0f0b5b388" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="9b5e787f-3621-4cec-92d4-6be0f0b5b388fileName">Soft-Delete-UserList</con:setting></con:settings><con:parameters/><con:method name="Soft Delete UserList" id="be3f1104-0c80-4af9-a747-ba34ecfd552f" method="POST"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value>Bearer ${access_token}</con:value><con:style>HEADER</con:style><con:default>Bearer ${access_token}</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:del="https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/deleteSlsUser/">del:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:del="https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/deleteSlsUser/">del:Response</con:element></con:representation><con:request name="Soft Delete UserList" id="e85a639c-3f49-4732-8917-d5dd4288d287" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${LAR}</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:request><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:method><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:resource>
+<con:resource name="Soft Delete UserList" path="/deleteSlsUser/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" id="9b5e787f-3621-4cec-92d4-6be0f0b5b388" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9b5e787f-3621-4cec-92d4-6be0f0b5b388fileName">Soft-Delete-UserList</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Soft Delete UserList" id="be3f1104-0c80-4af9-a747-ba34ecfd552f" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:del="https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/deleteSlsUser/">del:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:del="https://larshoppinglistserviceqa-v2.mybluemix.net/api/v1/deleteSlsUser/">del:Response</con:element>
+    </con:representation>
+    <con:request name="Soft Delete UserList" id="e85a639c-3f49-4732-8917-d5dd4288d287" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${LAR}</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

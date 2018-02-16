@@ -364,6 +364,9 @@ testRunner.testCase.setPropertyValue("code", Code[1])</script>
           <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
@@ -415,6 +418,11 @@ if (API_Name != TestCaseName){
           <con:entry>Authorization</con:entry>
           <con:entry>wp-client-brand</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -552,7 +560,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>code</con:name>
-      <con:value>GJ6DJWMFL3BTMRQT</con:value>
+      <con:value>L7NCKM6KEUVTEC5L</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
@@ -576,4 +584,9 @@ out.close()</script>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>

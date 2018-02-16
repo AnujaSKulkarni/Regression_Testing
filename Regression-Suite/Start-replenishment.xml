@@ -243,12 +243,14 @@ if(RunTimeDataSource_Flag == true){
   <con:testStep type="groovy" name="Flow Control" id="ffe4cb4a-a761-4a26-b102-5e3db44abe26">
     <con:settings/>
     <con:config>
-      <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+      <script>def slot_1 = context.expand( '${#TestCase#Slot_1}' )
+def dataCombination = context.expand( '${DataSource#Data_Combination}' )
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 def Slot_1 = context.expand( '${#Project#Slot_1}' )
 Slot_1 = Slot_1.replace("\\", "")
 testRunner.testCase.setPropertyValue("Slot_1", Slot_1)
+log.info Slot_1
 
 
 if (API_Name != TestCaseName){
@@ -273,7 +275,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Start replenishment" id="40b26365-c582-46f3-8ca7-d7da5b1c25eb" disabled="true">
     <con:settings/>
-    <con:config service="Start replenishment" resourcePath="/api/v1/appliances/${#[Regression Suite#Update User Consent]#Appliance_ID}/replenishment/start" methodName="Start replenishment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Start replenishment" resourcePath="/appliances/${#[Regression Suite#Update User Consent]#Appliance_ID}/replenishment/start" methodName="Start replenishment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Start replenishment" id="20dbf251-50a4-4244-a39d-2f86af8644b4" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -314,6 +316,9 @@ if (API_Name != TestCaseName){
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>
@@ -454,7 +459,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Slot_1</con:name>
-      <con:value>"8b6b0d10-0292-40e6-a6db-77d6accb7a90"</con:value>
+      <con:value>"153fd300-679f-4570-8edc-57895d2db5f1"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
@@ -473,6 +478,9 @@ out.close()</script>
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>

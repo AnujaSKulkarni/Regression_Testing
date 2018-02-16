@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:RestService" id="e9d193a0-1a81-4c35-b9aa-897db39d2ce6" wadlVersion="http://wadl.dev.java.net/2009/02" name="Authorize NEST user" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="e9d193a0-1a81-4c35-b9aa-897db39d2ce6fileName">Authorize-NEST-user</con:setting></con:settings><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://{{API-Connect}}</con:endpoint></con:endpoints></con:interface>
+<con:interface xsi:type="con:RestService" id="e9d193a0-1a81-4c35-b9aa-897db39d2ce6" wadlVersion="http://wadl.dev.java.net/2009/02" name="Authorize NEST user" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e9d193a0-1a81-4c35-b9aa-897db39d2ce6fileName">Authorize-NEST-user</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://{{API-Connect}}</con:endpoint>
+  </con:endpoints>
+  <con:environmentSpec>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:interface>

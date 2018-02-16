@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="ec445c4d-ef8c-457f-9db2-3990f3163ec2" activeEnvironment="QA_Env" name="Regression Pro" resourceRoot="${projectDir}" defaultScriptLanguage="Groovy" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" updated="2.2.0 20171026-0943" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="ec445c4d-ef8c-457f-9db2-3990f3163ec2" activeEnvironment="Stage_Env" name="Regression Pro" resourceRoot="${projectDir}" defaultScriptLanguage="Groovy" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" updated="2.2.0 20171026-0943" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
   <con:entry key="Environment" value="Default"/>
@@ -495,7 +495,7 @@
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Update replenishment - update pods usage">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="LocalizedDateAndTime">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
@@ -671,7 +671,7 @@
     </con:property>
     <con:property>
       <con:name>Appliance_Number</con:name>
-      <con:value>\"412\"</con:value>
+      <con:value>\"488\"</con:value>
     </con:property>
     <con:property>
       <con:name>Device_Model_ID</con:name>
@@ -679,7 +679,7 @@
     </con:property>
     <con:property>
       <con:name>Slot_1</con:name>
-      <con:value>\"8b6b0d10-0292-40e6-a6db-77d6accb7a90\"</con:value>
+      <con:value>\"153fd300-679f-4570-8edc-57895d2db5f1\"</con:value>
     </con:property>
     <con:property>
       <con:name>Slot_2</con:name>
@@ -1604,52 +1604,52 @@
       <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Device Registered Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Device Deregistered Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Subscription Changed Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Order Placed Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Local Amazon - user Refresh Token">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://api.amazon.com</con:endpoint>
     </con:service>
     <con:service type="REST" name="Item Shipped Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Order Cancelled Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Get replenishment">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Start replenishment">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Update User Consent">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Discontinue ADRS">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Set access token">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Get access token">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Update replenishment - update current qty">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Update replenishment - update start date">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Update replenishment - update pods usage">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${ADRS}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="LocalizedDateAndTime">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
@@ -1825,15 +1825,15 @@
     </con:property>
     <con:property>
       <con:name>Appliance_Number</con:name>
-      <con:value>\"199\"</con:value>
+      <con:value>\"545\"</con:value>
     </con:property>
     <con:property>
       <con:name>Device_Model_ID</con:name>
-      <con:value>\"TopLoadDryerE8700-EBLCUFT\"</con:value>
+      <con:value>\"DishwasherFID2017-EBLCUFT\"</con:value>
     </con:property>
     <con:property>
       <con:name>Slot_1</con:name>
-      <con:value>\"237b8d4a-37f8-46e1-af04-264b54a01cee\"</con:value>
+      <con:value>\"153fd300-679f-4570-8edc-57895d2db5f1\"</con:value>
     </con:property>
     <con:property>
       <con:name>Slot_2</con:name>
@@ -1882,6 +1882,9 @@
       <con:authProfile>No Authorization</con:authProfile>
     </con:entry>
     <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>No Authorization</con:authProfile>
     </con:entry>
   </con:environmentSpec>

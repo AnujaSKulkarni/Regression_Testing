@@ -43,6 +43,12 @@
       <con:params/>
       <con:element xmlns:not="https://amazonreplenishmentserviceqa-v2.mybluemix.net/replenish/notifications">not:Fault</con:element>
     </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType xsi:nil="true"/>
+      <con:status>0</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
     <con:request name="Subscription Changed Notification" id="79710a30-85d5-44f6-8811-153ab9a78c6c" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -86,6 +92,9 @@
         <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
+        <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
       </con:environmentSpec>
     </con:request>
     <con:environmentSpec>
@@ -95,6 +104,9 @@
       <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
         <con:authProfile>Inherit From Parent</con:authProfile>
       </con:entry>
+      <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
     </con:environmentSpec>
   </con:method>
   <con:environmentSpec>
@@ -102,6 +114,9 @@
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>

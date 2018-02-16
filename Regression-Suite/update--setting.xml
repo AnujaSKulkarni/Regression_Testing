@@ -320,6 +320,11 @@ if (API_Name != TestCaseName){
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -466,7 +471,7 @@ out.close()</script>
     </con:property>
     <con:property>
       <con:name>id</con:name>
-      <con:value>"Refrigerator123-9Y1R"</con:value>
+      <con:value>"Refrigerator123-ATN8"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
@@ -490,4 +495,9 @@ out.close()</script>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>
