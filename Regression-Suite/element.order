@@ -95,6 +95,8 @@ Delete-SettingByAttribute.xml
 Delete-Favorities.xml
 HistoryWithTimeRange.xml
 HistoryWithoutTimeRange.xml
+Delete-Account.xml
+Test_Run_Summary.xml
 Delete-Location.xml
 Update-Email.xml
 free-vend.xml
@@ -110,7 +112,5 @@ Device-Registration1.xml
 multi-subscribe-for-opt--in-and-out.xml
 PUSH-Notification.xml
 user-search.xml
-Search-Appliance.xml
 UnClaim-Appliance1.xml
-Delete-Account.xml
-Test_Run_Summary.xml
+Search-Appliance.xml

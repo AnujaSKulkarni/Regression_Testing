@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="WPR333334UCD3" path="/api/v1/appliances/search/WPR333334UCD3" id="ccdc7d6b-3cc1-4761-846a-da9146da0c86" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="WPR333334UCD3" path="/api/v1/appliances/search/WPR333334UCD3" id="ccdc7d6b-3cc1-4761-846a-da9146da0c86" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="ccdc7d6b-3cc1-4761-846a-da9146da0c86fileName">WPR333334UCD3</con:setting>
   </con:settings>
@@ -11,9 +11,9 @@
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
-      <con:request/>
+      <con:endpoint>https://{{API-Connect}}</con:endpoint><con:request/>
       <con:credentials>
-        <con:authType>No Authorization</con:authType>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>

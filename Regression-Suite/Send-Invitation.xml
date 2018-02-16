@@ -361,9 +361,10 @@ if (API_Name != TestCaseName){
         </con:settings>
         <con:endpoint>${QA_Env}</con:endpoint>
         <con:request>{
+  "firstName":${DataSource#First_Name},
+  "lastName" :${DataSource#Last_Name},
   "accountId":${DataSource_RunTime_Account#Account_ID_Number},
   "locationId":${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']},
-  "groupId":${DataSource_RunTime_Account#Group_ID},
   "emailId": ${#TestCase#Email_ID}
 }</con:request>
         <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-dev/api/v1/api/invitation</con:originalUri>
@@ -561,11 +562,11 @@ log.info "Report Generated"</script>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"WED_FEB_14_15_36_25_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"FRI_FEB_16_10_51_36_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>WED_FEB_14_15_36_25_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>FRI_FEB_16_10_51_36_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
