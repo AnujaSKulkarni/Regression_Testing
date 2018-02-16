@@ -253,7 +253,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Get Appliance by Location ID" id="b6e4f9be-ece8-402b-ac19-3b3ea1a5bdc3" disabled="true">
     <con:settings/>
-    <con:config service="Get Appliance by Location ID" resourcePath="/appliancesForLoc/${#[Regression Suite#Appliance Wraper#Appliance Wraper]#Response#$['appliance']['locationId']}" methodName="Get Appliance by Location ID" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Get Appliance by Location ID" resourcePath="/appliancesForLoc/303" methodName="Get Appliance by Location ID" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Get Appliance by Location ID" id="1a43b838-e11c-405c-b8b9-8496981e456a" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -272,12 +272,10 @@ if (API_Name != TestCaseName){
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-  <con:entry key="wp-client-country" value="US"/>
-  <con:entry key="wp-client-brand" value="Whirlpool"/>
-  <con:entry key="wp-client-region" value="NAR"/>
-</con:parameters>
-        <con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-country</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
         <con:environmentSpec>
           <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
             <con:authProfile>Inherit From Parent</con:authProfile>

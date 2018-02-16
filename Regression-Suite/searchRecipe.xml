@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="ff033a49-9cdd-4fc9-a904-c9496ffb96a2" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="searchRecipe" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="ff033a49-9cdd-4fc9-a904-c9496ffb96a2" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="searchRecipe" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="ff033a49-9cdd-4fc9-a904-c9496ffb96a2fileName">searchRecipe</con:setting>
   </con:settings>
@@ -440,7 +440,7 @@ out.close()
 log.info "Report Generated"</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="delay" name="Delay" id="1a892705-4dae-460f-8fd8-280ef6bef2d7">
+  <con:testStep type="delay" name="Delay" id="1a892705-4dae-460f-8fd8-280ef6bef2d7" disabled="true">
     <con:settings/>
     <con:config>
       <delay>1000</delay>

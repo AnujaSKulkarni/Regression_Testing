@@ -255,7 +255,7 @@ if (API_Name != TestCaseName){
   <con:testStep type="restrequest" name="Appliance Wraper" id="f454330f-1b87-40ea-a32c-65e70634b06a" disabled="true">
     <con:settings/>
     <con:config service="Appliance Wraper" resourcePath="/appliances/claim/" methodName="Appliance Wraper" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Appliance Wraper" id="02d3df6f-10cd-4cc3-aed7-ba657cb3edac" mediaType="application/x-www-form-urlencoded" postQueryString="true">
+      <con:restRequest name="Appliance Wraper" id="02d3df6f-10cd-4cc3-aed7-ba657cb3edac" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
