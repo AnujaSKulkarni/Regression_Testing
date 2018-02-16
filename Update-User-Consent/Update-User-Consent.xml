@@ -3,15 +3,7 @@
   <con:settings>
     <con:setting id="5032fdf1-dd49-4256-9705-b5fc805bd4e9fileName">Update-User-Consent</con:setting>
   </con:settings>
-  <con:parameters>
-    <con:parameter>
-      <con:name>wp-client-brand</con:name>
-      <con:value/>
-      <con:style>HEADER</con:style>
-      <con:default/>
-      <con:description xsi:nil="true"/>
-    </con:parameter>
-  </con:parameters>
+  <con:parameters></con:parameters>
   <con:method name="Update User Consent" id="733aec8f-ce19-4265-b1bc-ccf9e949d51d" method="GET">
     <con:settings/>
     <con:parameters>
@@ -34,6 +26,13 @@
         <con:value>ANDROID</con:value>
         <con:style>HEADER</con:style>
         <con:default>ANDROID</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-brand</con:name>
+        <con:value>Whirlpool</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Whirlpool</con:default>
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
@@ -96,8 +95,7 @@
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters>
-        <con:entry key="wp-client-platform" value="ANDROID"/>
-        <con:entry key="wp-client-brand" value="Whirlpool"/>
+        <entry key="wp-client-platform" value="ANDROID" xmlns="http://eviware.com/soapui/config"/>
       </con:parameters>
       <con:parameterOrder>
         <con:entry>Authorization</con:entry>
