@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="f9da315a-04ea-4433-a5f3-379b4138e117fileName">Delete-Rule</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://location/420/nes</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="86cfc7cd-80d5-4aa7-987c-03834415363bfileName">Get-Client-Version</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

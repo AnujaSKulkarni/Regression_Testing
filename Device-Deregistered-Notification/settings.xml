@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="dc4c6539-d321-40ec-a105-68bde39174cefileName">Device-Deregistered-Notification</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://amazonreplenishmentserviceqa-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

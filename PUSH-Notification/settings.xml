@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="5069fc6d-5527-4aef-820c-801da24d8770fileName">PUSH-Notification</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

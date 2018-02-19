@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="e2dcf447-c7c0-441d-be59-216932c249adfileName">Get-Value-of-attribute-for-particular-entity</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/WPR10</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

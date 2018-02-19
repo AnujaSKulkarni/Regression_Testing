@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="b8311bac-df75-45ae-8f13-f5ddc78e6e40fileName">qualifiedAppliane</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

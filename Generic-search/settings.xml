@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="05927d2c-3f8a-4eda-ad1a-7fe18fa4f09dfileName">Generic-search</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/appli</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

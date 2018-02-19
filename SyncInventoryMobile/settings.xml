@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="bdc269fc-fe7c-47dc-a05e-709ee99b9f65fileName">SyncInventoryMobile</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://larshoppinglistserviceqa-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

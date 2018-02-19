@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="492896f3-e865-4eb8-879c-2e2d93124e6bfileName">GetRolesList</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/get_r</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

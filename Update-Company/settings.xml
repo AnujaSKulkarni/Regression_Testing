@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="25fb55b8-11bd-47ac-8bb5-2a0685020a95fileName">Update-Company</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/updat</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

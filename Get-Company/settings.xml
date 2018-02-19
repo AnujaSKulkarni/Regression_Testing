@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="a15e578f-ce94-4363-b56d-025d23af7180fileName">Get-Company</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/getCo</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

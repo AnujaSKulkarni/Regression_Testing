@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="af41fa7b-0529-4221-8c65-25a5b8b7e9c9fileName">get-particular-device-info</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

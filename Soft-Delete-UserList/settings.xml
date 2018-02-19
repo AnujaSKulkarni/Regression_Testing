@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="0d10a87e-bf91-48d9-a236-914ad4f39faefileName">Soft-Delete-UserList</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://larshoppinglistserviceqa-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

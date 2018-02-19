@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="0d5b38d1-c64d-48fa-856c-bb3d7f2e46f6fileName">Update-User-Consent</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://amazonreplenishmentservicestg-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

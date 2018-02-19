@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="755532f6-2024-459d-a189-0e439498424efileName">Update-location</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/locatio</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

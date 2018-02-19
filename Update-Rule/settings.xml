@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="c5c99a13-cd32-4aa3-a6c8-d8c901e1955efileName">Update-Rule</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://location/420/nes</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

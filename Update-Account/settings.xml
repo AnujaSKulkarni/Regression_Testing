@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="c97df1a3-e7da-4cfb-9548-12486eab650dfileName">Update-Account</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/accou</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="3a082238-d41d-419d-a168-2c7021f351c1fileName">subscribe-notification</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/subscribeNo</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

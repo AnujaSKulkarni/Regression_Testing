@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="59c4a161-5321-422c-80ff-6cc2242f4ca0fileName">Get-Company-by-Name</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>${API-Connect}/company/WhirlPool</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

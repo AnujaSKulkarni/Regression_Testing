@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="e8e89be4-237b-4073-ae5c-c0be82e54332fileName">Get-Groups</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/get_g</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

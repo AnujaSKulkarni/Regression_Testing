@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="51044ff7-937b-434b-991f-89d1dbed2358fileName">Get-Location-by-AccountId</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/locatio</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

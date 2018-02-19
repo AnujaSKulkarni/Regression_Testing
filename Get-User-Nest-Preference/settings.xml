@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="5b714689-3644-44cc-9eb1-29e6614d994bfileName">Get-User-Nest-Preference</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://location/420/use</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

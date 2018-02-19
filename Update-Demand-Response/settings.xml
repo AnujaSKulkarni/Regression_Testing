@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="c9a3044b-12da-47e5-9424-3bfe008029cafileName">Update-Demand-Response</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

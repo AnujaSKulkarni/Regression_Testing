@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="8d8dccee-d435-4ffd-ba15-34aef196de30fileName">Local-Amazon---user-Refresh-Token</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://api.amazon.com</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>
