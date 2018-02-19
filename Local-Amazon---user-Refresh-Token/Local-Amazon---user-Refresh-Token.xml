@@ -1,2 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Local Amazon - user Refresh Token" path="/auth/o2/token" id="63c4734c-9cc3-4959-91de-f981f9771a99" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="63c4734c-9cc3-4959-91de-f981f9771a99fileName">Local-Amazon---user-Refresh-Token</con:setting></con:settings><con:parameters/><con:method name="Local Amazon - user Refresh Token" id="b188f419-4ee2-4d5e-b5eb-96f4b0243d08" method="POST"><con:settings/><con:parameters><con:parameter><con:name>grant_type</con:name><con:value>refresh_token</con:value><con:style>HEADER</con:style><con:default>refresh_token</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>refresh_token</con:name><con:value>Atzr|IwEBIDqMk9EmJRfYjqSI6ISFhhYprQkXU6NbykAuEPJyRZVp136BgdRsr7CYy1UonSkt8gO2iLc67DSL3t1s9N_fq8JNGD5FGyN3K3voRiMMHuEKtWxXqEi-9Jbo6nUcqdh4HH9mpPTv0NUrS1EPxTeuSqezSJ6P01UxbBJ-c3zK9qBj39lxzLwHiRKGQoaKu_ceJZR2ComsgBDKaQlOBCX2WBIgB0dcyjUPG2KQzS8WV15z3_h2UzU-23PHZBkZelHpWT8O398D7TqA4pgpFCITTekzxpHde0v9Zq-Z25TRaX9nLhZQKo4uzB9ai6flSw-e1yJ4k8rAWtwjoC8ufuw063V15DE8hCbCkfQgpLwIGZOHxvqJzmGw6iloh99ISh02eyPXc2VdN0pIDQY_h8YlbBEq5C43pDlMVOOnP3NfI5igEg</con:value><con:style>HEADER</con:style><con:default>Atzr|IwEBIDqMk9EmJRfYjqSI6ISFhhYprQkXU6NbykAuEPJyRZVp136BgdRsr7CYy1UonSkt8gO2iLc67DSL3t1s9N_fq8JNGD5FGyN3K3voRiMMHuEKtWxXqEi-9Jbo6nUcqdh4HH9mpPTv0NUrS1EPxTeuSqezSJ6P01UxbBJ-c3zK9qBj39lxzLwHiRKGQoaKu_ceJZR2ComsgBDKaQlOBCX2WBIgB0dcyjUPG2KQzS8WV15z3_h2UzU-23PHZBkZelHpWT8O398D7TqA4pgpFCITTekzxpHde0v9Zq-Z25TRaX9nLhZQKo4uzB9ai6flSw-e1yJ4k8rAWtwjoC8ufuw063V15DE8hCbCkfQgpLwIGZOHxvqJzmGw6iloh99ISh02eyPXc2VdN0pIDQY_h8YlbBEq5C43pDlMVOOnP3NfI5igEg</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>client_id</con:name><con:value>amzn1.application-oa2-client.5d3e65cb51e34155aff669682e248130</con:value><con:style>HEADER</con:style><con:default>amzn1.application-oa2-client.5d3e65cb51e34155aff669682e248130</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>client_secret</con:name><con:value>c1a5a6b6cc10b3a5cfa605fd80a41a41efeca9576e4dc0b93a7639bbb6f041c9</con:value><con:style>HEADER</con:style><con:default>c1a5a6b6cc10b3a5cfa605fd80a41a41efeca9576e4dc0b93a7639bbb6f041c9</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>redirect_uri</con:name><con:value>http://localhost:8091/AuthCode.html</con:value><con:style>HEADER</con:style><con:default>http://localhost:8091/AuthCode.html</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:tok="https://api.amazon.com/auth/o2/token">tok:Fault</con:element></con:representation><con:request name="Local Amazon - user Refresh Token" id="bbaf7fd1-8984-4a13-987e-e28666aba4a3" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.amazon.com</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/><con:parameterOrder><con:entry>grant_type</con:entry><con:entry>refresh_token</con:entry><con:entry>client_id</con:entry><con:entry>client_secret</con:entry><con:entry>redirect_uri</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:request><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:method><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:resource>
+<con:resource name="Local Amazon - user Refresh Token" path="/auth/o2/token" id="63c4734c-9cc3-4959-91de-f981f9771a99" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="63c4734c-9cc3-4959-91de-f981f9771a99fileName">Local-Amazon---user-Refresh-Token</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Local Amazon - user Refresh Token" id="b188f419-4ee2-4d5e-b5eb-96f4b0243d08" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>grant_type</con:name>
+        <con:value>refresh_token</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>refresh_token</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>refresh_token</con:name>
+        <con:value>Atzr|IwEBIDqMk9EmJRfYjqSI6ISFhhYprQkXU6NbykAuEPJyRZVp136BgdRsr7CYy1UonSkt8gO2iLc67DSL3t1s9N_fq8JNGD5FGyN3K3voRiMMHuEKtWxXqEi-9Jbo6nUcqdh4HH9mpPTv0NUrS1EPxTeuSqezSJ6P01UxbBJ-c3zK9qBj39lxzLwHiRKGQoaKu_ceJZR2ComsgBDKaQlOBCX2WBIgB0dcyjUPG2KQzS8WV15z3_h2UzU-23PHZBkZelHpWT8O398D7TqA4pgpFCITTekzxpHde0v9Zq-Z25TRaX9nLhZQKo4uzB9ai6flSw-e1yJ4k8rAWtwjoC8ufuw063V15DE8hCbCkfQgpLwIGZOHxvqJzmGw6iloh99ISh02eyPXc2VdN0pIDQY_h8YlbBEq5C43pDlMVOOnP3NfI5igEg</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Atzr|IwEBIDqMk9EmJRfYjqSI6ISFhhYprQkXU6NbykAuEPJyRZVp136BgdRsr7CYy1UonSkt8gO2iLc67DSL3t1s9N_fq8JNGD5FGyN3K3voRiMMHuEKtWxXqEi-9Jbo6nUcqdh4HH9mpPTv0NUrS1EPxTeuSqezSJ6P01UxbBJ-c3zK9qBj39lxzLwHiRKGQoaKu_ceJZR2ComsgBDKaQlOBCX2WBIgB0dcyjUPG2KQzS8WV15z3_h2UzU-23PHZBkZelHpWT8O398D7TqA4pgpFCITTekzxpHde0v9Zq-Z25TRaX9nLhZQKo4uzB9ai6flSw-e1yJ4k8rAWtwjoC8ufuw063V15DE8hCbCkfQgpLwIGZOHxvqJzmGw6iloh99ISh02eyPXc2VdN0pIDQY_h8YlbBEq5C43pDlMVOOnP3NfI5igEg</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>client_id</con:name>
+        <con:value>amzn1.application-oa2-client.5d3e65cb51e34155aff669682e248130</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>amzn1.application-oa2-client.5d3e65cb51e34155aff669682e248130</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>client_secret</con:name>
+        <con:value>c1a5a6b6cc10b3a5cfa605fd80a41a41efeca9576e4dc0b93a7639bbb6f041c9</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>c1a5a6b6cc10b3a5cfa605fd80a41a41efeca9576e4dc0b93a7639bbb6f041c9</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>redirect_uri</con:name>
+        <con:value>http://localhost:8091/AuthCode.html</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>http://localhost:8091/AuthCode.html</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:element xmlns:tok="https://api.amazon.com/auth/o2/token">tok:Fault</con:element>
+    </con:representation>
+    <con:request name="Local Amazon - user Refresh Token" id="bbaf7fd1-8984-4a13-987e-e28666aba4a3" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.amazon.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>grant_type</con:entry>
+        <con:entry>refresh_token</con:entry>
+        <con:entry>client_id</con:entry>
+        <con:entry>client_secret</con:entry>
+        <con:entry>redirect_uri</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

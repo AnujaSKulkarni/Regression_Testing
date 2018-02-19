@@ -1,2 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="GetggsOptOutStatus" path="/ggsOptOutStatus" id="d78bd6e3-4cbc-4018-acc6-1c8c629442d2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="d78bd6e3-4cbc-4018-acc6-1c8c629442d2fileName">GetggsOptOutStatus</con:setting></con:settings><con:parameters/><con:method name="GetggsOptOutStatus" id="1610355a-5ec5-4c0e-92c4-3f35e9c1ad14" method="GET"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value>Bearer ${access_token}</con:value><con:style>HEADER</con:style><con:default>Bearer ${access_token}</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ggs="https://api-test.whrcloud.com/api/v1/ggsOptOutStatus">ggs:Response</con:element></con:representation><con:request name="GetggsOptOutStatus" id="c2ea6f02-bb90-4b2c-af2c-e52b02acb858" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#API-Connect}</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:request><con:environmentSpec><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:method><con:environmentSpec><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:resource>
+<con:resource name="GetggsOptOutStatus" path="/ggsOptOutStatus" id="d78bd6e3-4cbc-4018-acc6-1c8c629442d2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d78bd6e3-4cbc-4018-acc6-1c8c629442d2fileName">GetggsOptOutStatus</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GetggsOptOutStatus" id="1610355a-5ec5-4c0e-92c4-3f35e9c1ad14" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ggs="https://api-test.whrcloud.com/api/v1/ggsOptOutStatus">ggs:Response</con:element>
+    </con:representation>
+    <con:request name="GetggsOptOutStatus" id="c2ea6f02-bb90-4b2c-af2c-e52b02acb858" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${#Project#API-Connect}</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

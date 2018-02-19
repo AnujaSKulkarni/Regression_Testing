@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="manageRecipe" path="/manageRecipe/WPR4BCKC4R37C" id="a5a2d770-812d-4659-a475-64a1612dbeac" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="a5a2d770-812d-4659-a475-64a1612dbeacfileName">manageRecipe</con:setting></con:settings><con:parameters/><con:method name="manageRecipe" id="3574a36c-9cab-48a2-af91-32061beebe0b" method="POST"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value>Bearer ${access_token}</con:value><con:style>HEADER</con:style><con:default>Bearer ${access_token}</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters><con:request name="manageRecipe" id="387d971b-85cf-43fc-995d-fae6cae8ae2d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#API-Connect}</con:endpoint><con:request>{
+<con:resource name="manageRecipe" path="/manageRecipe/WPR4BCKC4R37C" id="a5a2d770-812d-4659-a475-64a1612dbeac" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a5a2d770-812d-4659-a475-64a1612dbeacfileName">manageRecipe</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="manageRecipe" id="3574a36c-9cab-48a2-af91-32061beebe0b" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="manageRecipe" id="387d971b-85cf-43fc-995d-fae6cae8ae2d" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${#Project#API-Connect}</con:endpoint>
+      <con:request>{
     "ruleset_result" :    
     {
         "recipeName" : "Kroger, Steak Fries French Fried Potatoes",
@@ -66,4 +87,40 @@
             }
         ]
     }
-}</con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:request><con:environmentSpec><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:method><con:environmentSpec><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:resource>
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

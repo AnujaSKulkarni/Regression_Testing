@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="4e33ef7d-7efd-4286-92b3-1be3d319e143" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test_Run_Summary" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="4e33ef7d-7efd-4286-92b3-1be3d319e143fileName">Test_Run_Summary</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="Test_Run_Summary" id="875301a4-3472-4d26-b64b-8d9d823ca1a8"><con:settings/><con:config><script>import groovy.io.FileType
+<con:testCase id="4e33ef7d-7efd-4286-92b3-1be3d319e143" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test_Run_Summary" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="4e33ef7d-7efd-4286-92b3-1be3d319e143fileName">Test_Run_Summary</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="groovy" name="Test_Run_Summary" id="875301a4-3472-4d26-b64b-8d9d823ca1a8">
+    <con:settings/>
+    <con:config>
+      <script>import groovy.io.FileType
 
 def list = []
 def Test_Result_Path = context.expand( '${Test_Result_Path}' )
@@ -59,4 +67,20 @@ list.each {
 		Result_Summary_File.append lastline
 		Result_Summary_File.append "\n\n"
 	}
-}</script></con:config></con:testStep><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

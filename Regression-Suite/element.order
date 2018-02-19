@@ -74,9 +74,9 @@ GetOptOutStatus.xml
 SetggsOptOutStatus.xml
 GetggsOptOutStatus.xml
 Authorize-NEST-user.xml
-Get-Nest-Structure.xml
 UpdateUserNestPreference.xml
 Get-User-Nest-Preference.xml
+Get-Nest-Structure.xml
 Add-Rule.xml
 Get-Rule.xml
 Update-Rule.xml
