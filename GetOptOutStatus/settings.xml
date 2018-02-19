@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:RestService" id="2928f202-6d2b-4bb3-8dee-d18e93939b79" wadlVersion="http://wadl.dev.java.net/2009/02" name="GetOptOutStatus" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="2928f202-6d2b-4bb3-8dee-d18e93939b79fileName">GetOptOutStatus</con:setting></con:settings><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://{{API-Connect}}</con:endpoint></con:endpoints><con:environmentSpec><con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:interface>
+<con:interface xsi:type="con:RestService" id="2928f202-6d2b-4bb3-8dee-d18e93939b79" wadlVersion="http://wadl.dev.java.net/2009/02" name="GetOptOutStatus" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2928f202-6d2b-4bb3-8dee-d18e93939b79fileName">GetOptOutStatus</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://{{API-Connect}}</con:endpoint>
+  </con:endpoints>
+  <con:environmentSpec>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:interface>

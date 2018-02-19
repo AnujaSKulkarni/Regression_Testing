@@ -419,6 +419,9 @@ if (API_Name != TestCaseName){
           <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
@@ -487,6 +490,9 @@ if (API_Name != TestCaseName){
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>
@@ -632,19 +638,19 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Company_Name</con:name>
-      <con:value>"Company_Fri_Feb_16_17_25_54_IST_2018"</con:value>
+      <con:value>"Company_Fri_Feb_16_17_55_14_IST_2018"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"FRI_FEB_16_17_25_46_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"FRI_FEB_16_17_55_08_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Company_Name_JDBC</con:name>
-      <con:value>'Company_Fri_Feb_16_17_25_54_IST_2018'</con:value>
+      <con:value>'Company_Fri_Feb_16_17_55_14_IST_2018'</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11801</con:value>
+      <con:value>3978</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
@@ -693,6 +699,9 @@ out.close()</script>
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>

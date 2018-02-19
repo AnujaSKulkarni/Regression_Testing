@@ -1,8 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Add Rule" path="/location/${#Project#Location_ID}/nestRule" id="0e90882a-f1a4-43be-b2b6-3296cc802141" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="0e90882a-f1a4-43be-b2b6-3296cc802141fileName">Add-Rule</con:setting></con:settings><con:parameters/><con:method name="Add Rule" id="ba3d0425-cf92-4611-8e2e-bc38c4a52445" method="POST"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value>Bearer {access_token}</con:value><con:style>HEADER</con:style><con:default>Bearer {access_token}</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>wp-client-brand</con:name><con:value>WHIRLPOOL</con:value><con:style>HEADER</con:style><con:default>WHIRLPOOL</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:nes="https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/location/723/nestRule">nes:Fault</con:element></con:representation><con:request name="Add Rule" id="35250283-8069-49d9-80e2-57f70810003e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#API-Connect}</con:endpoint><con:request>{
+<con:resource name="Add Rule" path="/location/${#Project#Location_ID}/nestRule" id="0e90882a-f1a4-43be-b2b6-3296cc802141" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0e90882a-f1a4-43be-b2b6-3296cc802141fileName">Add-Rule</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Add Rule" id="ba3d0425-cf92-4611-8e2e-bc38c4a52445" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer {access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Bearer {access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-brand</con:name>
+        <con:value>WHIRLPOOL</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>WHIRLPOOL</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500 400</con:status>
+      <con:params/>
+      <con:element xmlns:nes="https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/location/723/nestRule">nes:Fault</con:element>
+    </con:representation>
+    <con:request name="Add Rule" id="35250283-8069-49d9-80e2-57f70810003e" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${#Project#API-Connect}</con:endpoint>
+      <con:request>{
 	"said_id":"WPR333334UCD3",
 	"thermostat_id":"9JsjDSBf6Ay5VYpVmEwtDRzQ87diJQC5",
 	"trigger_temperature":350,
 	"desired_temperature":62,
 	"restore_when_done":0
-}</con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder></con:request></con:method></con:resource>
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>wp-client-brand</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

@@ -315,7 +315,7 @@ testRunner.testCase.setPropertyValue("code", Code[1])</script>
   <con:testStep type="restrequest" name="GET Member Token" id="7eff3d4d-3090-4ad0-9758-8f6294a0a340">
     <con:settings/>
     <con:config service="GET Member Token" resourcePath="/oauth/token" methodName="GET Member Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="GET Member Token" id="9cb261e4-4179-4e98-87a6-b3a35d79e943" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="GET Member Token" id="9cb261e4-4179-4e98-87a6-b3a35d79e943" mediaType="application/x-www-form-urlencoded" postQueryString="true">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -362,6 +362,9 @@ testRunner.testCase.setPropertyValue("code", Code[1])</script>
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>
@@ -415,6 +418,11 @@ if (API_Name != TestCaseName){
           <con:entry>Authorization</con:entry>
           <con:entry>wp-client-brand</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -552,7 +560,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>code</con:name>
-      <con:value>CKGTJ5TJU497YBD4</con:value>
+      <con:value>L7NCKM6KEUVTEC5L</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
@@ -576,4 +584,9 @@ out.close()</script>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>

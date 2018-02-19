@@ -294,7 +294,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Unique_Email_ID" id="594ffe77-042a-46c6-b8d5-4834c8533fcf">
+  <con:testStep type="groovy" name="Unique_Email_ID" id="594ffe77-042a-46c6-b8d5-4834c8533fcf" disabled="true">
     <con:settings/>
     <con:config>
       <script>String date = new Date()
@@ -318,7 +318,7 @@ Region = Region.replace("\"", "")
 testRunner.testCase.setPropertyValue("Region", Region)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Create Account_Positive" id="b6227ae6-fa73-4b70-bd83-0c59fdff7af8">
+  <con:testStep type="restrequest" name="Create Account_Positive" id="b6227ae6-fa73-4b70-bd83-0c59fdff7af8" disabled="true">
     <con:settings/>
     <con:config service="Create Account" resourcePath="/client_auth/accounts" methodName="Create Account" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Create Account_Positive" id="ca9f4001-c1e6-4520-a84d-0a8f310353ef" mediaType="application/json" postQueryString="false">
@@ -464,6 +464,9 @@ testRunner.testCase.setPropertyValue("Region", Region)</script>
           <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
@@ -554,11 +557,14 @@ testRunner.testCase.setPropertyValue("Region", Region)</script>
           <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="864e4cac-5657-43de-923a-36bb57d875c6">
+  <con:testStep type="groovy" name="Report" id="864e4cac-5657-43de-923a-36bb57d875c6" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -692,7 +698,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Skip on failure" id="570c1df7-5894-4ca3-a7c4-ce2719758e45">
+  <con:testStep type="groovy" name="Skip on failure" id="570c1df7-5894-4ca3-a7c4-ce2719758e45" disabled="true">
     <con:settings/>
     <con:config>
       <script>/*def TestCaseName = testRunner.testCase.getName()
@@ -720,7 +726,7 @@ if(Status == "Fail"){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Data_Sink_Flow_Control" id="25f56c56-21da-4ff0-b080-ab75098fbb47">
+  <con:testStep type="groovy" name="Data_Sink_Flow_Control" id="25f56c56-21da-4ff0-b080-ab75098fbb47" disabled="true">
     <con:settings/>
     <con:config>
       <script>/*Get Test Case Name and Status*/
@@ -750,7 +756,7 @@ if(Status_Code.contains("200")){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="22aed820-ea0b-4513-a2a8-0c5170fab946">
+  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="22aed820-ea0b-4513-a2a8-0c5170fab946" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -824,7 +830,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="Positive_Data_Loop" id="9fbbf17f-d19c-43ef-80ca-a62f7557802f" disabled="true">
+  <con:testStep type="datasourceloop" name="Positive_Data_Loop" id="9fbbf17f-d19c-43ef-80ca-a62f7557802f">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
@@ -954,6 +960,9 @@ Connection: keep-alive
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>

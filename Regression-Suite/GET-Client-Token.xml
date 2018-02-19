@@ -7,7 +7,7 @@
   <con:testStep type="restrequest" name="GET Client Token" id="c810a02f-cf50-48a2-aef1-81284de01dde">
     <con:settings/>
     <con:config service="GET Client Token" resourcePath="/oauth/token" methodName="GET Client Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="GET Client Token" id="3d9e8eef-6b94-46de-8b7d-21a4174f9b47" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="GET Client Token" id="3d9e8eef-6b94-46de-8b7d-21a4174f9b47" mediaType="application/x-www-form-urlencoded" postQueryString="true">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -61,11 +61,14 @@
           <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="b84b3a8e-19cb-464f-b654-3cd1415b95c9" disabled="true">
+  <con:testStep type="groovy" name="Report" id="b84b3a8e-19cb-464f-b654-3cd1415b95c9">
     <con:settings/>
     <con:config>
       <script>def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
@@ -423,6 +426,9 @@ out1.close();</con:setupScript>
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>
