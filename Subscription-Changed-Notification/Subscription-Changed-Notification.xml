@@ -43,7 +43,7 @@
       <con:params/>
       <con:element xmlns:not="https://amazonreplenishmentserviceqa-v2.mybluemix.net/replenish/notifications">not:Fault</con:element>
     </con:representation>
-    <con:request name="Subscription Changed Notification" id="79710a30-85d5-44f6-8811-153ab9a78c6c" mediaType="application/json" postQueryString="false">
+    <con:representation type="FAULT"><con:mediaType>text/plain; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Subscription Changed Notification" id="79710a30-85d5-44f6-8811-153ab9a78c6c" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
