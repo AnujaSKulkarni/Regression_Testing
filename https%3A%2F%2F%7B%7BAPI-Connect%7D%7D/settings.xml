@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="a2b2c166-a46f-48bd-9bb4-2d2a96412986fileName">https%3A%2F%2F%7B%7BAPI-Connect%7D%7D</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>
