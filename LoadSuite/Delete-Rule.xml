@@ -147,7 +147,13 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -206,6 +212,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -252,7 +259,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Rule" id="b0a23330-336b-45be-ab87-fe016197cafa" disabled="true">
+  <con:testStep type="restrequest" name="Delete Rule" id="b0a23330-336b-45be-ab87-fe016197cafa">
     <con:settings/>
     <con:config service="Delete Rule" resourcePath="/location/${#Project#Location_ID}/nestRule/rule/${#[Regression Suite#Add Rule#Add Rule]#Response#$[0]['RULE_ID']}" methodName="Delete Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete Rule" id="68596280-f1de-4b03-81bb-5cb3dc70bbc9" mediaType="application/json" postQueryString="false">
@@ -289,7 +296,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="2e1cdb0e-135f-438d-a0c0-9b315c9904a6" disabled="true">
+  <con:testStep type="groovy" name="Report" id="2e1cdb0e-135f-438d-a0c0-9b315c9904a6">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

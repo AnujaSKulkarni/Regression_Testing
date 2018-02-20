@@ -158,7 +158,13 @@ testRunner.testCase.setPropertyValue("Client_Version_ID", tempResponse[0])</scri
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -217,6 +223,7 @@ testRunner.testCase.setPropertyValue("Client_Version_ID", tempResponse[0])</scri
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -463,7 +470,7 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Client_Version_ID</con:name>
-      <con:value>170</con:value>
+      <con:value>329</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
