@@ -102,6 +102,7 @@ LocalizedDateAndTime.xml
 Logout.xml
 Energy_providers.xml
 Rate-Revealer.xml
+Retrieve-DDM-Literals.xml
 UnClaim-Appliance.xml
 Appliance-Wraper.xml
 Get-Appliance-by-Location-ID.xml

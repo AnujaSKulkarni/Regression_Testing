@@ -582,7 +582,7 @@
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="HistoryWithTimeRange">
-      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Energy_providers">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
@@ -600,10 +600,8 @@
     <con:service type="REST" name="user search">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="https://{{API-Connect}}">
-      <con:endpoint authProfile="No Authorization">https://{{API-Connect}}</con:endpoint>
-    </con:service>
-    <con:property>
+    
+    <con:service type="REST" name="Retrieve DDM Literals"><con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint></con:service><con:property>
       <con:name>Location</con:name>
       <con:value>http://locationserviceqa-v2.mybluemix.net/api/v1</con:value>
     </con:property>
@@ -1175,10 +1173,8 @@
     <con:service type="REST" name="user search">
       <con:endpoint authProfile="No Authorization"/>
     </con:service>
-    <con:service type="REST" name="https://{{API-Connect}}">
-      <con:endpoint authProfile="No Authorization"/>
-    </con:service>
-    <con:property>
+    
+    <con:service type="REST" name="Retrieve DDM Literals"><con:endpoint authProfile="No Authorization"/></con:service><con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicedev-v2.mybluemix.net/api/v1</con:value>
     </con:property>
@@ -1750,10 +1746,8 @@
     <con:service type="REST" name="user search">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="https://{{API-Connect}}">
-      <con:endpoint authProfile="No Authorization" xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-    </con:service>
-    <con:property>
+    
+    <con:service type="REST" name="Retrieve DDM Literals"><con:endpoint authProfile="No Authorization"/></con:service><con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicestg-v2.mybluemix.net/api/v1</con:value>
     </con:property>

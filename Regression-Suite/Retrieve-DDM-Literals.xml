@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="e1c6adae-8a02-4a43-98e7-1dee5ba0cbef" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Delete-cycleByid" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
-    <con:setting id="e1c6adae-8a02-4a43-98e7-1dee5ba0cbeffileName">Delete-cycleByid</con:setting>
-  </con:settings>
-  <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="b4711cf4-1131-4b73-9fb2-94e8c8841e12">
+<con:testCase id="855b1ed1-801a-46a6-b3f1-2115e978673c" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Retrieve DDM Literals" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="855b1ed1-801a-46a6-b3f1-2115e978673cfileName">Retrieve-DDM-Literals</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="DataSource_Setup" id="06531826-50f6-44e6-a469-30d83364f89c">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -141,8 +136,7 @@ if(RunTimeDataSource_Flag == true){
 	}
 }</script>
     </con:config>
-  </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="2a1e4b8d-f731-4967-bfc8-d305f382f1d5">
+  </con:testStep><con:testStep type="datasource" name="DataSource" id="c4232281-811c-42f9-aced-34fc1b6c8b55">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -230,62 +224,27 @@ if(RunTimeDataSource_Flag == true){
       
       
       
-      <con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>DDM_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>languageCode</con:property><con:property>name</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>Utility_Name</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:completeLastOperation>true</con:completeLastOperation>
+      <con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>languageCode</con:property><con:property>name</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>Utility_Name</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="76c0e96f-60ad-458b-94e6-3c0ad5d490ce">
+  </con:testStep><con:testStep type="groovy" name="flow control" id="b118d09a-1ffb-4ad4-af43-3831ec12ba2f">
     <con:settings/>
-    <con:config>
-      <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+    <con:config><script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
 log.info dataCombination
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
 if (API_Name != TestCaseName){
-	testRunner.testCase.testSteps['Delete-cycleByid'].setDisabled(true)
+	testRunner.testCase.testSteps['Retrieve DDM Literals'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
 }else{
-	testRunner.testCase.testSteps['Delete-cycleByid'].setDisabled(false)
+	testRunner.testCase.testSteps['Retrieve DDM Literals'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
 	
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Delete-cycleByid" id="5ed3f1b6-919a-414c-a26a-6145e9531fd9" disabled="true">
-    <con:settings/>
-    <con:config service="Delete-cycleByid" resourcePath="/account/favorites/${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$['_id']}/entity/cycle/id/${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$['favoritesList'][0]['favoriteCycles'][0]['id']}" methodName="Delete-cycleByid" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Delete-cycleByid" id="e4e7325b-5994-4abc-8fde-b538623b32af" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>${API-Connect}</con:endpoint>
-        <con:request/>
-        <con:originalUri>https://api-test.whrcloud.com/api/v1/account/favorites/refrigator/Refrigerator123/cycle/id/Refrigerator123-H77B</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="caca8359-019e-497e-8fce-23ee11c0a13a" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-        <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
-        </con:parameterOrder>
-        <con:environmentSpec>
-          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Report" id="495881a6-dd09-4922-8bc2-8e1a2b6705b6" disabled="true">
+}</script></con:config>
+  </con:testStep><con:testStep type="restrequest" name="Retrieve DDM Literals" id="57ff0023-5f57-4d7b-9a41-36117768d734"><con:settings/><con:config service="Retrieve DDM Literals" resourcePath="/contents/ddmLiterals/DDM_V10K_Washer" methodName="Retrieve DDM Literals" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Retrieve DDM Literals" id="23eab518-4b20-4861-9fa8-bbedf8f89ee8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:request>{
+"languageCode":${DataSource#languageCode}
+}</con:request><con:originalUri>https://api-test.whrcloud.com/api/v1/contents/ddmLiterals/DDM_V10K_Washer</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="ee4c5fd5-06e1-4f52-afad-d74c8c5046f1" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Report" id="42cdf3af-ebe5-42cf-bc26-504162dc4b6c">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -413,29 +372,10 @@ FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
 out.close()</script>
     </con:config>
-  </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="28fd6900-470c-4e8c-ad03-ed081bdce200">
+  </con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="e4ea32d9-8f28-4307-afac-e5434fc96799">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
       <targetStep>flow control</targetStep>
     </con:config>
-  </con:testStep>
-  <con:properties/>
-  <con:reportParameters/>
-  <con:breakPoints>
-    <con:testStepId>9fc4cb4c-f513-4ddc-8b09-6e586566a09e</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>92b6fc21-bfd4-483e-8f5b-410c3b9f4006</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:environmentSpec>
-    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-  </con:environmentSpec>
-</con:testCase>
+  </con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>57ff0023-5f57-4d7b-9a41-36117768d734</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>
