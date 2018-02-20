@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="92f70dd3-3dd5-42f9-ac47-8449f7b60b84fileName">Create-notification-template</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints/>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints/>
   <con:environmentSpec>
     <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
       <con:authProfile>Inherit From Parent</con:authProfile>

@@ -147,13 +147,7 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -259,7 +253,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="create-setting" id="f827669b-c5f5-4974-a990-de40fd82fbf7">
+  <con:testStep type="restrequest" name="create-setting" id="f827669b-c5f5-4974-a990-de40fd82fbf7" disabled="true">
     <con:settings/>
     <con:config service="create or update -setting" resourcePath="/account/favorites/entity/setting" methodName="create or update -setting" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="create-setting" id="23ea0bad-8486-423e-82c4-136c4acb6b00" mediaType="application/json" postQueryString="false">
@@ -314,7 +308,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="34acc3e1-cbc1-46fe-bb72-69af51b212d2">
+  <con:testStep type="groovy" name="Report" id="34acc3e1-cbc1-46fe-bb72-69af51b212d2" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

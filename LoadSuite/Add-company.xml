@@ -11,17 +11,9 @@
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration>
-          <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr>
-          <pass>Syntel@mb5027676</pass>
-          <Connection>DataBase( Default environment )</Connection>
-          <query>Select BLUADMIN.COUNTRY.COUNTRY_ID as BLUADMIN_COUNTRY_COUNTRY_ID
+        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( Default environment )</Connection><query>Select BLUADMIN.COUNTRY.COUNTRY_ID as BLUADMIN_COUNTRY_COUNTRY_ID
 From BLUADMIN.COUNTRY
-Where BLUADMIN.COUNTRY.COUNTRY_CODE = 'US'</query>
-          <fetchSize/>
-          <stored-procedure>false</stored-procedure>
-        </con:configuration>
+Where BLUADMIN.COUNTRY.COUNTRY_CODE = 'US'</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -192,13 +184,7 @@ testRunner.testCase.setPropertyValue("Email_ID", Email_ID)</script>
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -257,7 +243,6 @@ testRunner.testCase.setPropertyValue("Email_ID", Email_ID)</script>
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -571,7 +556,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Company_Name</con:name>
-      <con:value>"Company_Tue_Feb_20_16_14_28_IST_2018"</con:value>
+      <con:value>"Company_Wed_Feb_07_15_05_57_IST_2018"</con:value>
     </con:property>
     <con:property>
       <con:name>Country_Code</con:name>
@@ -579,7 +564,7 @@ out.close()</script>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"TUE_FEB_20_16_06_59_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"WED_FEB_07_15_05_52_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

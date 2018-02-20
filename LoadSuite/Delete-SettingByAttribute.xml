@@ -147,13 +147,7 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -259,7 +253,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete-SettingByAttribute" id="96ea2a6e-67d0-4744-a577-9950b8003ffc">
+  <con:testStep type="restrequest" name="Delete-SettingByAttribute" id="96ea2a6e-67d0-4744-a577-9950b8003ffc" disabled="true">
     <con:settings/>
     <con:config service="Delete-SettingByAttribute" resourcePath="/account/favorites/${#[Regression Suite#create-setting#create-setting]#RawRequest#$['applianceId']}/entity/setting/id/M2MAttributeName" methodName="Delete-SettingByAttribute" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete-SettingByAttribute" id="fc0c0322-3e05-4fa8-af1a-c2a93ed4fa87" mediaType="application/json" postQueryString="false">
@@ -292,7 +286,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="66e43b1d-c207-456f-af16-1fd795481b9d">
+  <con:testStep type="groovy" name="Report" id="66e43b1d-c207-456f-af16-1fd795481b9d" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
