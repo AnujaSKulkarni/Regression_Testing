@@ -261,7 +261,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Update Rule" id="30c7dee6-37f3-4f79-b6eb-823a445c8e4c">
+  <con:testStep type="restrequest" name="Update Rule" id="30c7dee6-37f3-4f79-b6eb-823a445c8e4c" disabled="true">
     <con:settings/>
     <con:config service="Update Rule" resourcePath="/location/${#Project#Location_ID}/nestRule/rule/${#[Regression Suite#Add Rule#Add Rule]#Response#$[0]['RULE_ID']}" methodName="Update Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Update Rule" id="9d93a163-fd68-411d-91f6-242ddd5c34f9" mediaType="application/json" postQueryString="false">
@@ -303,7 +303,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="6cb8c439-5d1e-42ef-9993-23cdc93937c0">
+  <con:testStep type="groovy" name="Report" id="6cb8c439-5d1e-42ef-9993-23cdc93937c0" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

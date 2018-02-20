@@ -352,7 +352,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Send Invitation" id="d2805acd-ecf1-4dea-a920-46c71646c25d">
+  <con:testStep type="restrequest" name="Send Invitation" id="d2805acd-ecf1-4dea-a920-46c71646c25d" disabled="true">
     <con:settings/>
     <con:config service="Send Invitation" resourcePath="/invitation" methodName="Send Invitation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Send Invitation" id="998055dd-af0d-42e1-a884-d37b7d3871ef" mediaType="application/json" postQueryString="false">
@@ -361,9 +361,10 @@ if (API_Name != TestCaseName){
         </con:settings>
         <con:endpoint>${QA_Env}</con:endpoint>
         <con:request>{
+  "firstName":${DataSource#First_Name},
+  "lastName" :${DataSource#Last_Name},
   "accountId":${DataSource_RunTime_Account#Account_ID_Number},
   "locationId":${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']},
-  "groupId":${DataSource_RunTime_Account#Group_ID},
   "emailId": ${#TestCase#Email_ID}
 }</con:request>
         <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-dev/api/v1/api/invitation</con:originalUri>
@@ -422,7 +423,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="b99e5bb1-aba9-463a-82d9-e6b17ab99c15">
+  <con:testStep type="groovy" name="Report" id="b99e5bb1-aba9-463a-82d9-e6b17ab99c15" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -569,11 +570,11 @@ log.info "Report Generated"</script>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"MON_FEB_19_13_32_32_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"TUE_FEB_20_11_47_43_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>MON_FEB_19_13_32_32_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>TUE_FEB_20_11_47_43_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

@@ -516,7 +516,7 @@ log.info "Report Generated"</script>
     </con:property>
     <con:property>
       <con:name>attribute_name</con:name>
-      <con:value>"Sys_OpStatusState"</con:value>
+      <con:value>"Online"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
