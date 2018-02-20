@@ -258,7 +258,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="PUSH Notification" id="e366e6ea-ba6d-4cf0-bccb-df82f441a44b">
+  <con:testStep type="restrequest" name="PUSH Notification" id="e366e6ea-ba6d-4cf0-bccb-df82f441a44b" disabled="true">
     <con:settings/>
     <con:config service="PUSH Notification" resourcePath="/notifications" methodName="PUSH Notification" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="PUSH Notification" id="9c141b9f-5149-4521-a092-8b0f23586bd2" mediaType="application/json" postQueryString="false">
@@ -303,7 +303,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="b32ce4a9-d11b-47f5-8c1e-94657738437e">
+  <con:testStep type="groovy" name="Report" id="b32ce4a9-d11b-47f5-8c1e-94657738437e" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
