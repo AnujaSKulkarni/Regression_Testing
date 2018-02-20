@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="a8ad8dff-e81d-4928-97dd-cb205b7a9237fileName">Subscription-Changed-Notification</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://amazonreplenishmentserviceqa-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

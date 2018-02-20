@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="50601bd2-ff5a-4b37-8354-cf0b6ed0335cfileName">Get-replenishment</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://amazonreplenishmentservicedev-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

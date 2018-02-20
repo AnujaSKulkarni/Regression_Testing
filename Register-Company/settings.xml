@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="482da69b-1489-4abd-b1ff-f9a7a7303d7ffileName">Register-Company</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/regis</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="cdaf96ec-684e-48d3-8dab-2009ff607810fileName">allSubscribedAppliane</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

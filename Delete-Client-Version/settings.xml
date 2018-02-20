@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="7e49f047-c1fe-4923-b76d-f98041ea69cdfileName">Delete-Client-Version</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{Account}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

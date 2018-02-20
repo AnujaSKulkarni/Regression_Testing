@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="47c6784e-5ea2-464e-90a1-3475b84ab5f1fileName">Create-Location</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints/>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints/>
   <con:environmentSpec>
     <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
       <con:authProfile>Inherit From Parent</con:authProfile>

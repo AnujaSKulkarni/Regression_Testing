@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="dc903755-196b-4aac-b2f4-eadc5c62e4defileName">get-location</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/locatio</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

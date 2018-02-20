@@ -158,6 +158,4 @@ user-search
 https%3A%2F%2F%7B%7BAPI-Connect%7D%7D
 Regression-Suite
 LoadSuite
-Single-Request-Test-Cases
-Test-cases-based-on-single-requests
 REST-Virt-1

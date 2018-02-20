@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="c9238d3b-bc1b-426b-8c40-6ba1de6994a6fileName">search-notification-by-machine</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/searchNotif</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

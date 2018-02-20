@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="d32b3302-111a-45df-a0bd-c9993254f921fileName">SetggsOptOutStatus</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

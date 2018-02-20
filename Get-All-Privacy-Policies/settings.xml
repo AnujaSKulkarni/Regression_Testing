@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="fcf662a6-6b48-4437-9f76-87a035a46cf1fileName">Get-All-Privacy-Policies</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/priva</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="681a6ddc-92fd-4961-bf5e-94ddf4549b45fileName">Delete-Appliance</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/appli</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="5edbdfa5-52ef-42b9-8537-06a44cb47be4fileName">Get-Template-Implementation</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://templates/t</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

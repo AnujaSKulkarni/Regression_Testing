@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="14dd74ad-91c6-4f7e-af27-3bd70a640949fileName">Get-access-token</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://amazonreplenishmentserviceqa-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>
