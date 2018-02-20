@@ -467,11 +467,11 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>applianceid</con:name>
-      <con:value>"Refrigerator123"</con:value>
+      <con:value>""</con:value>
     </con:property>
     <con:property>
       <con:name>id</con:name>
-      <con:value>"Refrigerator123-C12U"</con:value>
+      <con:value>""</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

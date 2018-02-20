@@ -252,7 +252,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="create-setting" id="607d22cc-5613-456a-bcf1-fc90f0d25b0e" disabled="true">
+  <con:testStep type="restrequest" name="create-setting" id="607d22cc-5613-456a-bcf1-fc90f0d25b0e">
     <con:settings/>
     <con:config service="create or update -setting" resourcePath="/account/favorites/entity/setting" methodName="create or update -setting" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="create-setting" id="23ea0bad-8486-423e-82c4-136c4acb6b00" mediaType="application/json" postQueryString="false">
@@ -307,7 +307,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="201afb48-a68a-4a52-ad9e-32803bcf668a" disabled="true">
+  <con:testStep type="groovy" name="Report" id="201afb48-a68a-4a52-ad9e-32803bcf668a">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
