@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="8aee41bf-36d7-4ba1-9d8c-0a6dd1b0d271" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 96" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="8aee41bf-36d7-4ba1-9d8c-0a6dd1b0d271fileName">Test-case-based-on-single-requests-96</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="set demand response in dashdb" id="03a12cd8-ecc8-4267-9b01-8ddf57584fb6">
+    <con:settings/>
+    <con:config service="set demand response in dashdb" resourcePath="/energy/setDemandResponse" methodName="set demand response in dashdb" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="set demand response in dashdb" id="1a07c3b7-5896-4ab9-9505-d26f396ae7d3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#API-Connect}</con:endpoint>
+        <con:request>{
+ "deviceId": "WPR5032400DD123",
+ "deviceModelNumber": "WPR5032400DD",
+"demandResponseStartTime":"2017-08-01T 17:05:53Z",
+"demandResponseEndTime":"2017-08-02T 17:05:53Z",
+ "demandResponseActive": 1,
+ "demandResponseMode": "delay",
+ "demandResponseConfirmation": "pending",
+ "demandResponseConfirmationTime": "2017-08-02T 17:05:53Z"
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -483,7 +483,7 @@ log.info "Report Generated"</script>
       <targetStep>GET Member Token</targetStep>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="64b37392-ca7d-4324-96e5-df0d86d7df84">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="64b37392-ca7d-4324-96e5-df0d86d7df84" disabled="true">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="0b63d818-2a8f-4f36-bb19-bb09a2bcd6b3" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 119" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0b63d818-2a8f-4f36-bb19-bb09a2bcd6b3fileName">Test-case-based-on-single-requests-119</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Order Placed Notification" id="c56d40b6-fba5-4ddd-9edb-4590f7286924">
+    <con:settings/>
+    <con:config service="Order Placed Notification" resourcePath="/replenish/notifications" methodName="Order Placed Notification" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Order Placed Notification" id="be0a1273-ccfb-4756-9ce6-c2f91aa2c62e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://amazonreplenishmentserviceqa-v2.mybluemix.net</con:endpoint>
+        <con:request>{
+  "SignatureVersion": "1",
+  "MessageAttributes": {
+    "version": {
+      "Type": "String",
+      "Value": "1.0"
+    }
+  },
+  "Type": "Notification",
+  "TopicArn": "arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV",
+  "Message": "{\"notificationInfo\": {      \"notificationType\": \"OrderPlacedNotification\",      \"lwaClientId\": \"amzn1.application-oa2-client.5d3e65cb51e34155aff669682e248130\",      \"notificationTime\": \"2016-12-02T21:09:58.689Z\",      \"notificationId\": \"amzn1.dash.notification.v1.545f63d1-28c3-4630-b48e-a18e99233b5a\",      \"version\": \"2015-06-05\"    },\"deviceInfo\": {      \"deviceIdentifier\": {        \"serialNumber\": \"12423\"      },  \"productIdentifier\": {        \"modelId\": \"V10KWasher\"      }    },\"customerInfo\": {      \"directedCustomerId\": \"amzn1.account.AHV2UB34C6YHUGKVBKCR2MUHW2BQ\"    },\"orderInfo\": {      \"instanceId\": \"amzn1.dash.v2.o.ci45xxxxxxxxxxx\",      \"slotId\": \"myProduct\",      \"productInfo\": [{        \"quantity\": 1.0,        \"unit\": \"count\",        \"asin\": \"myAsinNumber\",        \"estimatedDeliveryDate\": \"2016-12-09T07:59:59Z\"      }]    }  }",
+  "UnsubscribeURL": "https://sns.us-west-2.amazonaws.com/?Action=Unsubscribe&amp;SubscriptionArn=arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV:4f6a1f49-8bd9-4051-bfba-ec473d165cad",
+  "Signature": "Kp0z6h9hw6tA65a5eb+hnZUqn4ARcz5vfWlaa4fIAqce81ONTrrzEcLqIn59KLG7v8rA7yR6FFMwggjf2TwXvMOVM8uLB4LbI3O+/DKca526ledNRlz3JWNfzw3HYxoIjGl+fFbWgoALvEZ8ytuz5is5KnCpuFL2TETO9xPr3exfJW9K2UQ9aAnoSY9t8QlMQqeX4Yzov0kJSA5DI+Va/cAcWIjBxwJ1sN2VmSXAsOOkkwOy4SZLjnBNQWK3s6HjinsEb2ni0Fe/f6RT3lMYlm0q4LzZwThyGMaYDlhw6/KHCY0duc/x2BYZ5fnNNVc8/vm9+qRbT4jVjIHEHxi5TQ==",
+  "Timestamp": "2017-09-20T20:02:30.954Z",
+  "SigningCertURL": "https://sns.us-west-2.amazonaws.com/SimpleNotificationService-433026a4050d206028891664da859041.pem",
+  "Subject": "DRS Notification",
+  "MessageId": "3112c63e-8be2-5f7d-a874-940240745d2c"
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>x-amz-sns-message-type</con:entry>
+          <con:entry>Content-Type</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

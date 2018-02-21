@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="dd0431ee-dfbe-45fc-80a8-039f99cbaad2" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 90" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="dd0431ee-dfbe-45fc-80a8-039f99cbaad2fileName">Test-case-based-on-single-requests-90</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Update Client Version" id="da0cf92a-14ad-426d-9492-f385cadf22f0">
+    <con:settings/>
+    <con:config service="Update Client Version" resourcePath="/updateClientVersion" methodName="Update Client Version" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Update Client Version" id="01f313e1-b4f0-49d3-863b-ef2ba24e6bda" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#API-Connect}</con:endpoint>
+        <con:request>{
+ "clientVersionsId":1,
+ "application":"Wcloud",
+ "platform": "IOS",
+ "version":"3.0.1",
+ "createdAt": 1506978760000,
+ "updatedAt":1506982360000,
+ "clientVersionNoticeList":[{
+  "clientVersionNoticesId":1,
+  "category":"Wcloud whirlpool",
+  "notice": "IOS TEST",
+  "repeat":0,
+  "startDate": 1506978760000,
+  "endDate":1507065160000,
+  "createdAt":1506978760000,
+  "updatedAt": 1506978760000,
+  "clientVersionId":1
+ }]
+ }</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -832,7 +832,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="Positive_Data_Loop" id="9fbbf17f-d19c-43ef-80ca-a62f7557802f">
+  <con:testStep type="datasourceloop" name="Positive_Data_Loop" id="9fbbf17f-d19c-43ef-80ca-a62f7557802f" disabled="true">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>

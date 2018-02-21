@@ -552,7 +552,7 @@ out.close()
 log.info "Report Generated"</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="fee9e18f-32f8-4158-a202-6abb17bd86a4">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="fee9e18f-32f8-4158-a202-6abb17bd86a4" disabled="true">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>

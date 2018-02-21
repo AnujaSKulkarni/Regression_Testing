@@ -147,7 +147,13 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -206,6 +212,8 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>languageCode</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -226,6 +234,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
       <con:property>trigger_temperature</con:property>
+      <con:property>Utility_Name</con:property>
       <con:property>User_ID</con:property>
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
@@ -451,7 +460,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Slot_1</con:name>
-      <con:value>"8b6b0d10-0292-40e6-a6db-77d6accb7a90"</con:value>
+      <con:value>"153fd300-679f-4570-8edc-57895d2db5f1"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

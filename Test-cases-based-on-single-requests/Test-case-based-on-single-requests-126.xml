@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="72620928-c7e7-4628-a093-e2b0d73af3d6" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 126" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="72620928-c7e7-4628-a093-e2b0d73af3d6fileName">Test-case-based-on-single-requests-126</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Set access token" id="b1625b2e-feb7-48af-98d1-7144581c905c">
+    <con:settings/>
+    <con:config service="Set access token" resourcePath="/amazonTokens" methodName="Set access token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Set access token" id="6a3b1d7e-2bfd-488e-bc90-4258f2389de6" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${API-Connect}</con:endpoint>
+        <con:request>{
+  "applianceId" : 56,
+  "accessToken" : "Atza|IwEBINEeHyhcDsKkLVcD0o-fSa7LarqRoTpBzlTTR1BVboUPNJoYJF02tK3SBEl15p8DP4aIYLxcyDlCcW5EgYHiBWHBkgOmr6i0tWduGHVsHktRylDvanfZEVnksF77kZ4CQL4h_rG1-lpJ5FIX6IalZGHTOPq9ZQxc8ZzJOzQ_QAgQYG2PiYd736CzK4FGJyZjwsuM_mzuplvWjegeU-P5pIMgCB48N8VdBS_txFnIawKIgpHZ2zWhTumJ2Rmd0hS2gq7y3cZQrMj9C0rV50DTqWBo-MB-AHcRqx-zrgWG7u1AMFJgNNWltJCd0_mY-twcxIXNw0JIeJsn5UqrRx0LqrIU3LoS88CbsqDkZLAJfQZdL2Ths4WCtR8L01hYjjRgjhsAFPrDW4IMw_ZPgWH7JH4XZCtDpoxlGv_PKy-hDwZuWPGGlyeFzdS3xfQDxl_ZdD6gNRZTJbPen86qSK_9OzNh",
+  "refreshToken" : "Atzr|IwEBIKksYiIDUGmq5e8uHFBDk1OF17TF2q_FNDUoQN3BICQNoZaMlt0bRIh68pDcEMPAZ2_jSI6sv9NTbFFE6_VgxwxtUFhrVSD0953jfQqflD-wR2kkgN32EbIN8_hN86r8g_tUcIc1dFbF6i1dybnFuIaRkx0ZfeOPibl9NiRoMrGiVQcMOWDLyXZP-RbLsJAmMVvQqldj0tfxYNixzqztBx-MPNukuwoglOGnRD99zsd3WbyBULaE2K_hBHIWBpAojzoKLQOv80gRvRT59AyGaoTnESe4R7fxjf11jPintdduI07DVU8GDC1tUawCJgqgciKGqtIxvqzzDdFIo9Hy38xwtZXUbaLb1tkbj_ZK62hUIONLlE1zyVPZdtaVuQmQYOmfN-hLI5MF5CsX-Oix8OTwchCRuhzoFC9LaiVpZAAPi83o0KhYPsVohBSr90dyfpg",
+  "clientId" : "amzn1.application-oa2-client.9a3253fa600c40acbbab1b843331b22c",
+  "accessExpiration" : 1547190060000
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="wp-client-brand" value="whirlpool" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>wp-client-brand</con:entry>
+          <con:entry>wp-client-platform</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

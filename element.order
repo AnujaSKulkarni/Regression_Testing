@@ -157,4 +157,6 @@ user-search
 Retrieve-DDM-Literals
 Regression-Suite
 LoadSuite
+Single-Request-Test-Cases
+Test-cases-based-on-single-requests
 REST-Virt-1

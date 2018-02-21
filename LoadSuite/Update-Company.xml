@@ -11,9 +11,17 @@
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( QA_Env )</Connection><query>Select BLUADMIN.STATE.STATE_ID as BLUADMIN_STATE_STATE_ID
+        <con:configuration>
+          <driver>com.ibm.db2.jcc.DB2Driver</driver>
+          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
+          <pass>Syntel@mb5027676</pass>
+          <Connection>DataBase( QA_Env )</Connection>
+          <query>Select BLUADMIN.STATE.STATE_ID as BLUADMIN_STATE_STATE_ID
 From BLUADMIN.STATE
-Where BLUADMIN.STATE.STATE_CODE = 'US'</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
+Where BLUADMIN.STATE.STATE_CODE = 'US'</query>
+          <fetchSize/>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -164,7 +172,13 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -223,6 +237,8 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>languageCode</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -243,6 +259,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
       <con:property>trigger_temperature</con:property>
+      <con:property>Utility_Name</con:property>
       <con:property>User_ID</con:property>
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
@@ -573,7 +590,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Company_Name</con:name>
-      <con:value>"Wed_Feb_07_15_06_29_IST_2018_Update Company"</con:value>
+      <con:value>"Wed_Feb_21_16_23_03_IST_2018_Update Company"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

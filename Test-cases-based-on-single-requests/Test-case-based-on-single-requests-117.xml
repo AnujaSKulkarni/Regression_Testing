@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="d352bedf-82ab-4706-bfd3-4ba03998594b" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 117" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d352bedf-82ab-4706-bfd3-4ba03998594bfileName">Test-case-based-on-single-requests-117</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Device Deregistered Notification" id="ae2c6903-c0f4-4c79-9605-9f2a9639f5d4">
+    <con:settings/>
+    <con:config service="Device Deregistered Notification" resourcePath="/replenish/notifications" methodName="Device Deregistered Notification" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Device Deregistered Notification" id="63a90df0-8756-4bd8-a390-c29e59229a4e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://amazonreplenishmentserviceqa-v2.mybluemix.net</con:endpoint>
+        <con:request>{  
+   "SignatureVersion":"1",
+   "MessageAttributes":{  
+      "version":{  
+         "Type":"String",
+         "Value":"1.0"
+      }
+   },
+   "Type":"Notification",
+   "TopicArn":"arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV",
+   "Message":"{\"notificationInfo\":{\"notificationType\":\"DeviceDeregisteredNotification\",\"lwaClientId\":\"amzn1.application-oa2-client.5d3e65cb51e34155aff669682e248130\",\"notificationTime\":\"2017-09-20T19:51:06.382Z\",\"notificationId\":\"amzn1.dash.notification.v1.545f63d1-28c3-4630-b48e-a18e99233b5a\",\"version\":\"2015-06-05\"},\"deviceInfo\":{\"deviceIdentifier\":{\"serialNumber\":\"12423\"},\"productIdentifier\":{\"modelId\":\"V10KWasher\"}},\"customerInfo\":{\"directedCustomerId\":\"amzn1.account.AHV2UB34C6YHUGKVBKCR2MUHW2BQ\"}}",
+   "UnsubscribeURL":"https://sns.us-west-2.amazonaws.com/?Action=Unsubscribe&amp;SubscriptionArn=arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV:4f6a1f49-8bd9-4051-bfba-ec473d165cad",
+   "Signature":"LD6P3ZMafntmPEYc687PJA74cT25VdMspOThUntO7u244sebqk4s2/FX7t8CoOQh8KIo+aswlSCy5DM6ui8aa/N+WsQhCzqlmJv3UyxcKYjq3ylrOBA+/eG6DW5x18qFIwp+AgqUjA+jAaMjmHtywo7Uc3XT8E/ML/+TxwaH/9hSl28Q3uaXTIsH3pUZ4iTGnHPaJqe4SyXAKHIS496znQTUxNreMkZYLj5+SRn4UvnvcC1Q44a96H6hHRwXWKJwzLc+NZRTtz1wDvHcYVaT72odJAUexHq4xxvtvHx5mYk29wcmoDhrhmryNFx3VzH/9U5HrKZjQUvjdK2VBISE2A==",
+   "Timestamp":"2017-09-20T19:51:06.712Z",
+   "SigningCertURL":"https://sns.us-west-2.amazonaws.com/SimpleNotificationService-433026a4050d206028891664da859041.pem",
+   "Subject":"DRS Notification",
+   "MessageId":"85bbed9a-84e6-5ccb-a0cd-bfa64c0c90a7"
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>x-amz-sns-message-type</con:entry>
+          <con:entry>Content-Type</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

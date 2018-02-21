@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="97f41462-0e14-4489-a76e-624f2624d378" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 102" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="97f41462-0e14-4489-a76e-624f2624d378fileName">Test-case-based-on-single-requests-102</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="syncInventoryAppliance" id="ad1d6d68-48dc-4680-a779-ae7a3cff2748">
+    <con:settings/>
+    <con:config service="syncInventoryAppliance" resourcePath="/syncInventoryAppliance" methodName="SyncInventoryAppliance" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="syncInventoryAppliance" id="7ade65fc-26a9-4c18-a6de-cdf5b11b9630" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${LAR}</con:endpoint>
+        <con:request>{
+        "invId": 12,
+        "lastUpdate": "2014-01-14T20:23:07.644Z",
+        "inventoryItems": [
+            {
+                "invItemId": 12,
+                "invId": 12,
+                "invCategoryId": 5,
+                "stdInvItemId": 1,
+                "description": "old egg",
+                "qty": 5,
+                "invuomId": 1,
+                "expireDate": "2013-12-18T00:00:00.000Z",
+                "lastUpdate": "2012-12-20T00:00:00.000Z"
+            },
+            {
+                "invItemId": 5,
+                "invId": 12,
+                "invCategoryId": 5,
+                "stdInvItemId": 1,
+                "description": "new egg",
+                "qty": 5,
+                "invuomId": 1,
+                "expireDate": "2013-12-18T00:00:00.000Z",
+                "lastUpdate": "2012-12-20T00:00:00.000Z"
+            }
+        ]
+    }</con:request>
+        <con:originalUri>https://api-dev.whrcloud.com/api/v1/syncInventoryAppliance</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

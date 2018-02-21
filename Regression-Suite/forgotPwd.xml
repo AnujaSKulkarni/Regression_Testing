@@ -585,7 +585,7 @@ out.close()
 log.info "Report Generated"</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="89deb55c-a4ab-4ed5-8984-81f04c8752ab">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="89deb55c-a4ab-4ed5-8984-81f04c8752ab" disabled="true">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
@@ -595,7 +595,7 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>TUE_FEB_20_19_10_21_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>WED_FEB_21_16_15_44_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
