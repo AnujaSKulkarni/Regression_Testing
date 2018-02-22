@@ -156,6 +156,3 @@ PUSH-Notification
 user-search
 Retrieve-DDM-Literals
 https%3A%2F%2F%7B%7BAPI-Connect%7D%7D
-Regression-Suite
-LoadSuite
-REST-Virt-1

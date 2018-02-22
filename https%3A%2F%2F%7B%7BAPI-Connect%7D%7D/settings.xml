@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="5742cbbf-2fcd-42be-9c46-4b503ff3cf9c" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://{{API-Connect}}" type="rest" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings>
+    <con:setting id="5742cbbf-2fcd-42be-9c46-4b503ff3cf9cfileName">https%3A%2F%2F%7B%7BAPI-Connect%7D%7D</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://{{API-Connect}}</con:endpoint>
+  </con:endpoints>
+</con:interface>

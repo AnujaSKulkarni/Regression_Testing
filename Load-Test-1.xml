@@ -46,7 +46,7 @@
         <con1:addons/>
       </con1:addon>
     </con1:addons>
-    <con1:scene label="New Scenario" id="9b0cc878-640f-40bf-9e6e-0a509ff14ea9" version="21">
+    <con1:scene label="New Scenario" id="9b0cc878-640f-40bf-9e6e-0a509ff14ea9" version="27">
       <con1:properties>
         <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
         <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">false</con1:property>
@@ -99,7 +99,7 @@
         <con1:properties>
           <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
           <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
-          <con1:property propagates="true" key="limitVU" type="java.lang.Long">9223372036854775807</con1:property>
+          <con1:property propagates="true" key="limitVU" type="java.lang.Long">10</con1:property>
           <con1:property propagates="true" key="load" type="java.lang.Long">20</con1:property>
           <con1:property propagates="true" key="interval" type="java.lang.Long">1000</con1:property>
         </con1:properties>

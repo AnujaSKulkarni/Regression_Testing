@@ -42,7 +42,7 @@
     </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json</con:mediaType>
-      <con:status>404</con:status>
+      <con:status>404 401</con:status>
       <con:params/>
       <con:element xmlns:not="https://api-test.whrcloud.com/api/v1/notifications">not:Fault</con:element>
     </con:representation>
@@ -50,7 +50,7 @@
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
-      <con:endpoint>${API_Connect}</con:endpoint>
+      <con:endpoint>${API-Connect}</con:endpoint>
       <con:request>{              
 "said":"WPR333334RA96",
 "alertdef":{
