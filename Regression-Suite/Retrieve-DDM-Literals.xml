@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="855b1ed1-801a-46a6-b3f1-2115e978673c" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Retrieve DDM Literals" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="855b1ed1-801a-46a6-b3f1-2115e978673cfileName">Retrieve-DDM-Literals</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="DataSource_Setup" id="06531826-50f6-44e6-a469-30d83364f89c">
+<con:testCase id="855b1ed1-801a-46a6-b3f1-2115e978673c" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Retrieve DDM Literals" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="855b1ed1-801a-46a6-b3f1-2115e978673cfileName">Retrieve-DDM-Literals</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="DataSource_Setup" id="06531826-50f6-44e6-a469-30d83364f89c">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
