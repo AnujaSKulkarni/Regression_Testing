@@ -20,6 +20,7 @@ Create-Location.xml
 Send-Invitation.xml
 Update-Location.xml
 get-location.xml
+Get-Appliance-by-Location-ID.xml
 Get-Location-by-AccountId.xml
 Get-Appliance-attributes-from-Device-Shadow.xml
 Get-device-shadow-for-id.xml
@@ -102,10 +103,9 @@ LocalizedDateAndTime.xml
 Logout.xml
 Energy_providers.xml
 Rate-Revealer.xml
-Retrieve-DDM-Literals.xml
+Smart_energy.xml
 UnClaim-Appliance.xml
 Appliance-Wraper.xml
-Get-Appliance-by-Location-ID.xml
 Device-Registration1.xml
 multi-subscribe-for-opt--in-and-out.xml
 PUSH-Notification.xml
@@ -114,3 +114,4 @@ Search-Appliance.xml
 UnClaim-Appliance1.xml
 Delete-Account.xml
 Test_Run_Summary.xml
+Retrieve-DDM-Literals.xml

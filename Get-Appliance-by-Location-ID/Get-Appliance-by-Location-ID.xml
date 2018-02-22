@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Get Appliance by Location ID" path="/appliancesForLoc/${#[Regression Suite#Appliance Wraper#Appliance Wraper]#Response#$['appliance']['locationId']}" id="6ddb80b2-5155-4426-8648-4714b261a2d4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Get Appliance by Location ID" path="/appliancesForLoc/303" id="6ddb80b2-5155-4426-8648-4714b261a2d4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="6ddb80b2-5155-4426-8648-4714b261a2d4fileName">Get-Appliance-by-Location-ID</con:setting>
   </con:settings>
@@ -14,7 +14,7 @@
         <con:default>Bearer ${access_token}</con:default>
         <con:description xsi:nil="true"/>
       </con:parameter>
-    <con:parameter><con:name>wp-client-region</con:name><con:value>NAR</con:value><con:style>HEADER</con:style><con:default>NAR</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>wp-client-brand</con:name><con:value>Whirlpool</con:value><con:style>HEADER</con:style><con:default>Whirlpool</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>wp-client-country</con:name><con:value>US</con:value><con:style>HEADER</con:style><con:default>US</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters>
+    </con:parameters>
     <con:representation type="RESPONSE">
       <con:mediaType>application/json</con:mediaType>
       <con:status>200</con:status>
@@ -23,7 +23,7 @@
     </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json</con:mediaType>
-      <con:status>404 401</con:status>
+      <con:status>404</con:status>
       <con:params/>
       <con:element xmlns:ns="https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/appliancesForLoc/303">ns:Fault</con:element>
     </con:representation>
@@ -40,7 +40,9 @@
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
-      <con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-brand</con:entry><con:entry>wp-client-country</con:entry></con:parameterOrder>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
       <con:environmentSpec>
         <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
           <con:authProfile>Inherit From Parent</con:authProfile>

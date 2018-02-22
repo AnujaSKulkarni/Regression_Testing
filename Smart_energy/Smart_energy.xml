@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Rate Revealer" path="/locations/723/smart_energy" id="096ea2da-7180-4d56-b4ab-f2147fea3d87" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Smart_energy" path="/locations/1398/smart_energy" id="ff578da2-a5bb-40a1-9190-abf6d633755c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="096ea2da-7180-4d56-b4ab-f2147fea3d87fileName">Rate-Revealer</con:setting>
+    <con:setting id="ff578da2-a5bb-40a1-9190-abf6d633755cfileName">Smart_energy</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="Rate Revealer" id="25b55be9-0bf1-4e9d-a0f6-8f7c8f9f488d" method="GET">
+  <con:method name="Smart_energy" id="799764c6-2782-4d43-b095-a07850543733" method="GET">
     <con:settings/>
     <con:parameters>
       <con:parameter>
@@ -15,11 +15,11 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
-    <con:request name="Rate Revealer" id="c99260b8-29f0-4dac-82f8-a5dd99f3057a" mediaType="application/json">
+    <con:request name="Smart_energy" id="87fcf112-05a3-43c9-a24a-441d1cecd0e5" mediaType="application/json">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
-      <con:endpoint>${API_Connect}</con:endpoint>
+      <con:endpoint>${API-Connect}</con:endpoint>
       <con:request/>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>

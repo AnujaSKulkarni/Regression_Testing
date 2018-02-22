@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Rate Revealer" path="/locations/723/smart_energy" id="096ea2da-7180-4d56-b4ab-f2147fea3d87" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="WPR333334UCD3" path="/api/v1/appliances/search/WPR333334UCD3" id="ccdc7d6b-3cc1-4761-846a-da9146da0c86" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="096ea2da-7180-4d56-b4ab-f2147fea3d87fileName">Rate-Revealer</con:setting>
+    <con:setting id="ccdc7d6b-3cc1-4761-846a-da9146da0c86fileName">WPR333334UCD3</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="Rate Revealer" id="25b55be9-0bf1-4e9d-a0f6-8f7c8f9f488d" method="GET">
+  <con:method name="WPR333334UCD3" id="8dc20661-09dc-4f2c-a724-61e23ab352be" method="GET">
     <con:settings/>
-    <con:parameters>
-      <con:parameter>
-        <con:name>Authorization</con:name>
-        <con:value>Bearer ${access_token}</con:value>
-        <con:style>HEADER</con:style>
-        <con:default>Bearer ${access_token}</con:default>
-        <con:description xsi:nil="true"/>
-      </con:parameter>
-    </con:parameters>
-    <con:request name="Rate Revealer" id="c99260b8-29f0-4dac-82f8-a5dd99f3057a" mediaType="application/json">
+    <con:parameters/>
+    <con:request name="Request 1" id="4b4288b6-16d1-48e1-ab3b-7177f6a0b9e6" mediaType="application/json">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
-      <con:endpoint>${API_Connect}</con:endpoint>
+      <con:endpoint>https://{{API-Connect}}</con:endpoint>
       <con:request/>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
@@ -27,9 +19,6 @@
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
-      <con:parameterOrder>
-        <con:entry>Authorization</con:entry>
-      </con:parameterOrder>
       <con:environmentSpec>
         <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
           <con:authProfile>Inherit From Parent</con:authProfile>

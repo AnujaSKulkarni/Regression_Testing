@@ -151,9 +151,11 @@ Delete-Favorities
 HistoryWithTimeRange
 Energy_providers
 Rate-Revealer
+Smart_energy
 multi-subscribe-for-opt--in-and-out
 PUSH-Notification
 user-search
+https%3A%2F%2F%7B%7BAPI-Connect%7D%7D
 Retrieve-DDM-Literals
 Regression-Suite
 LoadSuite
