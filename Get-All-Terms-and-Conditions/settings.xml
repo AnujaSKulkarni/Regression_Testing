@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="d91adf52-62c4-4bd9-b89c-a68a9a28ae4dfileName">Get-All-Terms-and-Conditions</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/terms</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

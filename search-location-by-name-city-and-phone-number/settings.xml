@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="c7bbbea6-644b-4629-878a-ef55db340db7fileName">search-location-by-name-city-and-phone-number</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/locatio</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

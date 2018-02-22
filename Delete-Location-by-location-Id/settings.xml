@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="3c0e97d3-0707-4059-b678-1910319cd65efileName">Delete-Location-by-location-Id</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/locatio</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

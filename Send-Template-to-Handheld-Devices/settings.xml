@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="1140f642-dedc-44c7-b09d-7dc5a66d2325fileName">Send-Template-to-Handheld-Devices</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://templates/s</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

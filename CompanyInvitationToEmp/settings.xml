@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="4f9aee5f-401f-46e7-a71a-c65302155422fileName">CompanyInvitationToEmp</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://${QA_Env}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

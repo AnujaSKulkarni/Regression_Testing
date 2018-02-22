@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="e7aeac97-e1f1-433c-8bc0-6f2088a2f2a4fileName">SyncShoppingLists</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://larshoppinglistserviceqa-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

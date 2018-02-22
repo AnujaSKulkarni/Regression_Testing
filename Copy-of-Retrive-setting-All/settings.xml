@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="40c87b27-5f44-4084-ba41-4d30e4025614fileName">Copy-of-Retrive-setting-All</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

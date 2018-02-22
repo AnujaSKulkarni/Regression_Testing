@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="3d02c233-531a-4058-bdef-28f09084ac03fileName">Update-alert-status-by-locationId</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/updateA</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

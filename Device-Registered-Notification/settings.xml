@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="6df5d884-b0e6-4488-9a56-1b8cffb59938fileName">Device-Registered-Notification</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://amazonreplenishmentserviceqa-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

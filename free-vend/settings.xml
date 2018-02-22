@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="67ffb1d7-f7ba-4e2a-807d-a0cb4fd47661fileName">free-vend</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/freeV</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

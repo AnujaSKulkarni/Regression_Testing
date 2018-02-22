@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="ee949f52-a795-4b04-9ba4-4ac00fabd99afileName">Set-demand-response-for-multiple-appliances</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

@@ -122,7 +122,7 @@
     <con:databaseConnection>
       <con:name>DataBase</con:name>
       <con:driver>com.ibm.db2.jcc.DB2Driver</con:driver>
-      <con:connectionString>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
+      <con:connectionString>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
       <con:password>Syntel@mb5027676</con:password>
     </con:databaseConnection>
   </con:databaseConnectionContainer>
@@ -159,13 +159,13 @@
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="ResetAfterForgotPassword">
-      <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="forgotPwd">
-      <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="get all appliances dashDB">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${Appliance}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Delete Appliance">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
@@ -582,7 +582,7 @@
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="HistoryWithTimeRange">
-      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Energy_providers">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
@@ -590,9 +590,7 @@
     <con:service type="REST" name="Rate Revealer">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="Smart_energy">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
+    
     <con:service type="REST" name="multi subscribe for opt  in and out">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
@@ -602,10 +600,8 @@
     <con:service type="REST" name="user search">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="https://{{API-Connect}}">
-      <con:endpoint authProfile="No Authorization">https://{{API-Connect}}</con:endpoint>
-    </con:service>
-    <con:property>
+    
+    <con:service type="REST" name="Retrieve DDM Literals"><con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint></con:service><con:property>
       <con:name>Location</con:name>
       <con:value>http://locationserviceqa-v2.mybluemix.net/api/v1</con:value>
     </con:property>
@@ -1167,9 +1163,7 @@
     <con:service type="REST" name="Rate Revealer">
       <con:endpoint authProfile="No Authorization"/>
     </con:service>
-    <con:service type="REST" name="Smart_energy">
-      <con:endpoint authProfile="No Authorization"/>
-    </con:service>
+    
     <con:service type="REST" name="multi subscribe for opt  in and out">
       <con:endpoint authProfile="No Authorization"/>
     </con:service>
@@ -1179,10 +1173,8 @@
     <con:service type="REST" name="user search">
       <con:endpoint authProfile="No Authorization"/>
     </con:service>
-    <con:service type="REST" name="https://{{API-Connect}}">
-      <con:endpoint authProfile="No Authorization"/>
-    </con:service>
-    <con:property>
+    
+    <con:service type="REST" name="Retrieve DDM Literals"><con:endpoint authProfile="No Authorization"/></con:service><con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicedev-v2.mybluemix.net/api/v1</con:value>
     </con:property>
@@ -1744,9 +1736,7 @@
     <con:service type="REST" name="Rate Revealer">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="Smart_energy">
-      <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
-    </con:service>
+    
     <con:service type="REST" name="multi subscribe for opt  in and out">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
@@ -1756,10 +1746,8 @@
     <con:service type="REST" name="user search">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="https://{{API-Connect}}">
-      <con:endpoint authProfile="No Authorization" xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-    </con:service>
-    <con:property>
+    
+    <con:service type="REST" name="Retrieve DDM Literals"><con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">${API-Connect}</con:endpoint></con:service><con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicestg-v2.mybluemix.net/api/v1</con:value>
     </con:property>

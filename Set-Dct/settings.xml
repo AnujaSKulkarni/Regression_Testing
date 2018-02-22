@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="0aaca294-1b58-44c6-be99-34c63d2321e7fileName">Set-Dct</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://larshoppinglistserviceqa-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

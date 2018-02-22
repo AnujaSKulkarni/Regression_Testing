@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="fa392730-9297-4984-8607-ce7655544572fileName">Copy-of-Delete-SettingByAttribute</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{Favorites}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

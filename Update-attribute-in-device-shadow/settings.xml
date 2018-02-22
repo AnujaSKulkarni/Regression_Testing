@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="2ab2cbee-9469-49da-92e5-40ca6b422837fileName">Update-attribute-in-device-shadow</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/appli</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

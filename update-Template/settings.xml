@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="f83d4f63-63fc-4bab-b7f3-3aeedad23bd7fileName">update-Template</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://templates/a</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

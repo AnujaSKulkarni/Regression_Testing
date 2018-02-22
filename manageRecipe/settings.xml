@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="769e3f02-d5e8-4567-9f01-482d20e65340fileName">manageRecipe</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

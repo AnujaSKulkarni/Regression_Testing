@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="a5f5ae8a-838a-4335-b008-a140afffb6ecfileName">Search-Appliance</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/appli</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

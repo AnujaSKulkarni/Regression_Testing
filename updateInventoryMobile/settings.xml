@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="78a3f6ae-57f1-4212-9062-fc024cdbc46afileName">updateInventoryMobile</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://larshoppinglistserviceqa-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

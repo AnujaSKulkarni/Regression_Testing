@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="2a54a098-5e6d-460b-af20-5a224022b143fileName">Delete-Template</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://templates/d</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

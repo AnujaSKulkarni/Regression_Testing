@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="76579f4e-65d7-42e6-a846-c8c3dacd9b2afileName">forgotPwd</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://${QA_Env}</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

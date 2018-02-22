@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="ff2e1ebd-ad68-4b01-b6b7-0eae9ffd7d15fileName">Get-location-by-locationId</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://api/location/1</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>

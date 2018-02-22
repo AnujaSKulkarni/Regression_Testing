@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="ee909c42-9e89-44ea-b95e-259c550d9aa2fileName">Create-Template-Definition</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>http://templates/c</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>
