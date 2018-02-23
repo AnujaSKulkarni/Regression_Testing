@@ -239,6 +239,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
       <con:property>Language_ID</con:property>
+      <con:property>languageCode</con:property>
       <con:property>Last_Name</con:property>
       <con:property>Lastupdate</con:property>
       <con:property>Latitude</con:property>
@@ -247,7 +248,6 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>languageCode</con:property>
       <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
@@ -596,7 +596,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>12076</con:value>
+      <con:value>12130</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

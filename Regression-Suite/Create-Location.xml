@@ -241,6 +241,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
       <con:property>Language_ID</con:property>
+      <con:property>languageCode</con:property>
       <con:property>Last_Name</con:property>
       <con:property>Lastupdate</con:property>
       <con:property>Latitude</con:property>
@@ -249,7 +250,6 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>languageCode</con:property>
       <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
@@ -791,15 +791,15 @@ out.close()</script>
       <con:name>Location_ID_Transfer</con:name>
       <con:value>HTTP/1.1 200 undefined
 Server: nginx/1.4.6 (Ubuntu)
-Date: Thu, 22 Feb 2018 11:03:46 GMT
+Date: Fri, 23 Feb 2018 14:25:39 GMT
 Content-Type: application/json
 Connection: keep-alive
 X-Backside-Transport: OK OK
-X-Global-Transaction-ID: 106910309
+X-Global-Transaction-ID: 40186411
 User-Agent: IBM-APIConnect/201
 X-B3-Sampled: 1
-X-B3-SpanId: 2886f57796a17880
-X-B3-TraceId: 2886f57796a17880
+X-B3-SpanId: 86252fc734cfe422
+X-B3-TraceId: 86252fc734cfe422
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
 Access-Control-Max-Age: 3600
@@ -814,11 +814,11 @@ Expires: 0
 X-Frame-Options: DENY
 Strict-Transport-Security: max-age=15768000
 
-{"LOCATION_ID":2699,"CITY":"New York","ACCOUNT_ID":12076,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Regression Location","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York","RATE_PLAN_NAME":"Tariff"}</con:value>
+{"LOCATION_ID":2707,"CITY":"New York","ACCOUNT_ID":12130,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Regression Location","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York","RATE_PLAN_NAME":"Tariff"}</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>12076</con:value>
+      <con:value>12130</con:value>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
@@ -830,7 +830,7 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>Location</con:name>
-      <con:value>Regression_Location_Thu_Feb_22_16_32_56_IST_2018</con:value>
+      <con:value>Regression_Location_Fri_Feb_23_19_55_26_IST_2018</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

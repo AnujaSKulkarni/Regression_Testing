@@ -203,6 +203,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
       <con:property>Language_ID</con:property>
+      <con:property>languageCode</con:property>
       <con:property>Last_Name</con:property>
       <con:property>Lastupdate</con:property>
       <con:property>Latitude</con:property>
@@ -211,7 +212,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>languageCode</con:property>
       <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
@@ -292,7 +292,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="46aa6d8e-f6df-41c8-b693-88d5c158ecc5" disabled="true">
+  <con:testStep type="groovy" name="Report" id="46aa6d8e-f6df-41c8-b693-88d5c158ecc5">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

@@ -239,6 +239,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
       <con:property>Language_ID</con:property>
+      <con:property>languageCode</con:property>
       <con:property>Last_Name</con:property>
       <con:property>Lastupdate</con:property>
       <con:property>Latitude</con:property>
@@ -247,7 +248,6 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>languageCode</con:property>
       <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
@@ -331,7 +331,7 @@ def tC_Number = context.expand( '${DataSource#TC_Number}' )
 log.info tC_Number</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Account Phone Number confirmation_Positive" id="7a763062-d0de-4dbe-a2c5-b82050f75ec6">
+  <con:testStep type="restrequest" name="Account Phone Number confirmation_Positive" id="7a763062-d0de-4dbe-a2c5-b82050f75ec6" disabled="true">
     <con:settings/>
     <con:config service="Account Phone Number confirmation" resourcePath="/accounts/confirm_phone/${#TestCase#Account_ID}/${#TestCase#Verification_Code}" methodName="Account Phone Number confirmation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Account Phone Number confirmation_Positive" id="8a3f64c1-3406-4942-acb9-69c0144db28d" mediaType="application/json" postQueryString="false">
@@ -449,7 +449,7 @@ log.info tC_Number</script>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="e34d4c6d-67e6-4e70-82fa-5998d98a88cd">
+  <con:testStep type="groovy" name="Report" id="e34d4c6d-67e6-4e70-82fa-5998d98a88cd" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -593,11 +593,11 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value/>
+      <con:value>12130</con:value>
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
-      <con:value/>
+      <con:value>552</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
