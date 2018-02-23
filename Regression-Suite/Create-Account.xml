@@ -209,6 +209,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
       <con:property>Language_ID</con:property>
+      <con:property>languageCode</con:property>
       <con:property>Last_Name</con:property>
       <con:property>Lastupdate</con:property>
       <con:property>Latitude</con:property>
@@ -217,7 +218,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>languageCode</con:property>
       <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
@@ -353,7 +353,8 @@ testRunner.testCase.setPropertyValue("Region", Region)</script>
   "phoneVerificationConfirmedAt": null,
   "validateMobile": true,
   "userRole":${DataSource#User_Role},
-  "enabled":1
+  "enabled":1,
+  "languageCode":${DataSource#languageCode}
 }</con:request>
         <con:originalUri>http://api/accou/api/accounts</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="243cede5-7830-4e85-bb98-d0f7cf1edba3" name="Valid HTTP Status Codes">
