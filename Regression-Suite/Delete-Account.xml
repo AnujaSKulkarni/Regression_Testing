@@ -287,7 +287,7 @@ if (API_Name != TestCaseName){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Account" id="08f0f107-09ca-4dad-9d35-e274c0660397" disabled="true">
+  <con:testStep type="restrequest" name="Delete Account" id="08f0f107-09ca-4dad-9d35-e274c0660397">
     <con:settings/>
     <con:config service="Delete Account" resourcePath="/client_auth/accounts/${DataSource_RunTime#Account_ID_Number}" methodName="Delete Account" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete Account" id="bb6390f9-a30f-48ca-b53a-ca7cae11b0b2" mediaType="application/json" postQueryString="false">

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="109fe003-7051-48de-99b9-f4f9b3ebb3ce" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 152" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="109fe003-7051-48de-99b9-f4f9b3ebb3cefileName">Test-case-based-on-single-requests-152</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="GET groups by AccountId" id="84bd0592-880b-440d-9039-6b3b2eb19e94">
+    <con:settings/>
+    <con:config service="GET groups by AccountId" resourcePath="/get_groups/${#[Regression Suite#Create Group]#Account_ID}" methodName="GET groups by AccountId" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GET groups by AccountId" id="0d1d98c6-502c-4d00-a6cf-bd9b009a3757" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#API-Connect}</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/get_groups/4186</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="76f7f158-0170-4a6c-840b-e42652c5f573" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 166" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="76f7f158-0170-4a6c-840b-e42652c5f573fileName">Test-case-based-on-single-requests-166</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Register Company" id="226b4a09-1507-40fa-9206-2bc7da42f791">
+    <con:settings/>
+    <con:config service="Register Company" resourcePath="/registerCompany/${#TestCase#Account_ID}" methodName="Register Company" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Register Company" id="5ec84156-e162-48c1-97b3-5d6755b37f06" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${QA_Env}</con:endpoint>
+        <con:request>{
+"companyId":82,  
+"statusId":1,
+"languageId":1,
+"address1": "SYNTEL_PUNE",
+"address2":"road",
+"logo":null,
+"customerCare":"baif2",
+"companyName": "SYNTEL_PUNE",
+"countryId":1,
+"phoneNumber": "7755927984",
+"email": "bali_bali37@gmail.com",
+"city": "jammu",
+"stateId": 1,
+"postalCode": "77555",
+"secretCode": "45455",
+"createdAt":null,
+"updatedAt":null,
+"phoneNo":"1234567890",
+"validateMobile":0
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

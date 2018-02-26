@@ -4,6 +4,11 @@
     <con:setting id="soapUIObjectSourceId">540b2489-c93e-4184-a262-ab41ff1468cd</con:setting>
     <con:setting id="soapUIObjectSourceType">soapUIObjectSourceType_RestRequest</con:setting>
     <con:setting id="c2dd13ac-4174-48bb-8648-d1e22ad98b10fileName">Load-Test-3</con:setting>
+    <con:setting id="IncludeScenarioResults">true</con:setting>
+    <con:setting id="IncludeStatistics">true</con:setting>
+    <con:setting id="IncludeTestStepsHistory">false</con:setting>
+    <con:setting id="IncludeStatisticHistory">false</con:setting>
+    <con:setting id="IncludeHelp">true</con:setting>
   </con:settings>
   <con1:loadui-project id="e8667419-e98b-4c94-9a5b-57256cbfb5ec" label="Load Test 3" xmlns:con1="http://eviware.com/loadui/config">
     <con1:properties>
@@ -21,7 +26,7 @@
       <con1:property key="limits">Time=120;</con1:property>
     </con1:attributes>
     <con1:addons/>
-    <con1:scene label="New Scenario" id="19771ac6-74c2-4923-bc81-2ec2e1311686" version="73">
+    <con1:scene label="New Scenario" id="19771ac6-74c2-4923-bc81-2ec2e1311686" version="755">
       <con1:properties>
         <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
         <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">true</con1:property>
@@ -56,8 +61,8 @@
           <con1:property propagates="true" key="maxQueueSize" type="java.lang.Long">1000</con1:property>
           <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
           <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
-          <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">1000</con1:property>
-          <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">540b2489-c93e-4184-a262-ab41ff1468cd</con1:property>
+          <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">5000</con1:property>
+          <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">4d9b8d24-cdbf-470c-926c-ce1cd761a7a0</con1:property>
           <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
           <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
           <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
@@ -73,7 +78,7 @@
       <con1:component type="com.eviware.loadui.impl.component.generators.FixedVU" label="Fixed Load 2" id="cc31adfa-ec2e-4905-ad23-875de50d9326" category="Generators">
         <con1:properties>
           <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
-          <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">false</con1:property>
           <con1:property propagates="true" key="limitVU" type="java.lang.Long">9223372036854775807</con1:property>
           <con1:property propagates="true" key="load" type="java.lang.Long">2</con1:property>
           <con1:property propagates="true" key="interval" type="java.lang.Long">1000</con1:property>
@@ -92,7 +97,7 @@
           <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
           <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
           <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
-          <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">3bf86977-b47c-4b8c-a725-59d7191582ad</con1:property>
+          <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">4116a559-779e-43a0-ba46-4ec42bfc53ae</con1:property>
           <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
           <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
           <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
@@ -114,29 +119,7 @@
           <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
           <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
           <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
-          <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">7228c46f-c9a2-4f5b-91c6-959c521738da</con1:property>
-          <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
-          <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
-          <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
-          <con1:property propagates="true" key="closeConnectionsAfterRequest" type="java.lang.Boolean">false</con1:property>
-          <con1:property propagates="true" key="disableSoapuiAssertions" type="java.lang.Boolean">false</con1:property>
-          <con1:property propagates="true" key="forceShareDatasources" type="java.lang.Boolean">true</con1:property>
-        </con1:properties>
-        <con1:attributes>
-          <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ready API TestCase Runner</con1:property>
-        </con1:attributes>
-        <con1:addons/>
-      </con1:component>
-      <con1:component type="com.eviware.loadui.components.soapui.SoapUISamplerComponent" label="Test cases based on single requests:Test case based on single requests 129" id="e15a0da1-9c70-4be0-ae6f-dc7d7fc3c851" category="Runners">
-        <con1:properties>
-          <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
-          <con1:property propagates="true" key="concurrentSamples" type="java.lang.Long">1000</con1:property>
-          <con1:property propagates="true" key="property_name_is_not_relevant_for_private_property" type="java.lang.Long">9223372036854775807</con1:property>
-          <con1:property propagates="true" key="maxQueueSize" type="java.lang.Long">1000</con1:property>
-          <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
-          <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
-          <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
-          <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">2e543913-859e-49a5-b780-a8363664770c</con1:property>
+          <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">7026bea1-9c34-446c-8319-d9c3af471c0e</con1:property>
           <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
           <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
           <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
@@ -158,7 +141,29 @@
           <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
           <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
           <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
-          <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">2e01aa5c-d9e6-4405-b4bf-29c272675b45</con1:property>
+          <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">2a08d959-9f3a-43ae-a1ff-868c8924e49f</con1:property>
+          <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
+          <con1:property propagates="true" key="closeConnectionsAfterRequest" type="java.lang.Boolean">false</con1:property>
+          <con1:property propagates="true" key="disableSoapuiAssertions" type="java.lang.Boolean">false</con1:property>
+          <con1:property propagates="true" key="forceShareDatasources" type="java.lang.Boolean">true</con1:property>
+        </con1:properties>
+        <con1:attributes>
+          <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ready API TestCase Runner</con1:property>
+        </con1:attributes>
+        <con1:addons/>
+      </con1:component>
+      <con1:component type="com.eviware.loadui.components.soapui.SoapUISamplerComponent" label="Regression Suite:Get Account" id="44f48f5c-7d05-468e-a413-d1bb01dff7fc" category="Runners">
+        <con1:properties>
+          <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+          <con1:property propagates="true" key="concurrentSamples" type="java.lang.Long">1000</con1:property>
+          <con1:property propagates="true" key="property_name_is_not_relevant_for_private_property" type="java.lang.Long">9223372036854775807</con1:property>
+          <con1:property propagates="true" key="maxQueueSize" type="java.lang.Long">1000</con1:property>
+          <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
+          <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
+          <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
+          <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">142faeec-38e8-4777-8542-18dd120eef17</con1:property>
           <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
           <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
           <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
@@ -175,8 +180,8 @@
       <con1:connection outputTerminalId="cc31adfa-ec2e-4905-ad23-875de50d9326/triggerTerminal" inputTerminalId="62989a19-f338-4637-b553-e66c8328ab29/triggerTerminal"/>
       <con1:connection outputTerminalId="62989a19-f338-4637-b553-e66c8328ab29/runningTerminal" inputTerminalId="b1a6fc58-43b6-4281-9423-6057e790aff4/triggerTerminal"/>
       <con1:connection outputTerminalId="b1a6fc58-43b6-4281-9423-6057e790aff4/runningTerminal" inputTerminalId="ea58f4c0-ebf5-4b73-bc57-f5af248d48c1/triggerTerminal"/>
-      <con1:connection outputTerminalId="ea58f4c0-ebf5-4b73-bc57-f5af248d48c1/runningTerminal" inputTerminalId="e15a0da1-9c70-4be0-ae6f-dc7d7fc3c851/triggerTerminal"/>
-      <con1:connection outputTerminalId="e15a0da1-9c70-4be0-ae6f-dc7d7fc3c851/runningTerminal" inputTerminalId="799d86a9-e657-4d57-ba16-18d33d57f3ef/triggerTerminal"/>
+      <con1:connection outputTerminalId="ea58f4c0-ebf5-4b73-bc57-f5af248d48c1/runningTerminal" inputTerminalId="44f48f5c-7d05-468e-a413-d1bb01dff7fc/triggerTerminal"/>
+      <con1:connection outputTerminalId="44f48f5c-7d05-468e-a413-d1bb01dff7fc/runningTerminal" inputTerminalId="799d86a9-e657-4d57-ba16-18d33d57f3ef/triggerTerminal"/>
       <con1:connection outputTerminalId="799d86a9-e657-4d57-ba16-18d33d57f3ef/runningTerminal" inputTerminalId="cc31adfa-ec2e-4905-ad23-875de50d9326/Sample Count"/>
     </con1:scene>
     <con1:statistics>

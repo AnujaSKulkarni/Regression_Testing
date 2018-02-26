@@ -305,7 +305,7 @@ file1.append("---------------- Response --------------------------\n")
 file1.append(response)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Skip on failure" id="3e639b64-0915-44ce-a8d5-aee7d1c6dc1a">
+  <con:testStep type="groovy" name="Skip on failure" id="3e639b64-0915-44ce-a8d5-aee7d1c6dc1a" disabled="true">
     <con:settings/>
     <con:config>
       <script>def TestCaseName = testRunner.testCase.getName()

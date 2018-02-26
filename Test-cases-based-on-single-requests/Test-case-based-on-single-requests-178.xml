@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="943625cb-2031-4678-8805-73c1db350141" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 178" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="943625cb-2031-4678-8805-73c1db350141fileName">Test-case-based-on-single-requests-178</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrive-CycleById" id="5217a84b-4954-4769-9466-579d698cdb03">
+    <con:settings/>
+    <con:config service="Retrive-CycleById" resourcePath="/account/favorites/${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$['applianceId']}/entity/cycle/id/${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$['favoritesList'][0]['favoriteCycles'][0]['id']}" methodName="Retrive-CycleById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Retrive-CycleById" id="81028d02-3f41-4c5b-abc9-c5ff192f96b8" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${API-Connect}</con:endpoint>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

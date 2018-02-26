@@ -278,7 +278,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="809cc9a1-96bb-4b6c-b195-32f573e517b2">
+  <con:testStep type="groovy" name="Flow Control" id="809cc9a1-96bb-4b6c-b195-32f573e517b2" disabled="true">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -306,7 +306,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="70ccc799-98d4-4a70-aae2-6c9dce06db6f" disabled="true">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="70ccc799-98d4-4a70-aae2-6c9dce06db6f">
     <con:settings/>
     <con:config>
       <script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
@@ -325,7 +325,7 @@ def tC_Number = context.expand( '${DataSource#TC_Number}' )
 log.info tC_Number</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Get Account_Positive" id="1c8e7adf-9ee3-4caf-a310-7ca17c4f6994" disabled="true">
+  <con:testStep type="restrequest" name="Get Account_Positive" id="1c8e7adf-9ee3-4caf-a310-7ca17c4f6994">
     <con:settings/>
     <con:config service="Get Account" resourcePath="/account/${#TestCase#Account_ID}" methodName="Get Account" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Get Account_Positive" id="2686a9fb-f18b-41ef-a5fe-403186c27901" mediaType="application/json">

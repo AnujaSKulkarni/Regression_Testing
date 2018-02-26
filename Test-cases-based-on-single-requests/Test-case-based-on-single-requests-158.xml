@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="182d34b4-9e16-43e7-bd27-f8a6b2ae75d4" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 158" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="182d34b4-9e16-43e7-bd27-f8a6b2ae75d4fileName">Test-case-based-on-single-requests-158</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Send Invitation" id="1b0f5202-329a-45f6-9346-2afa00dd5016">
+    <con:settings/>
+    <con:config service="Send Invitation" resourcePath="/invitation" methodName="Send Invitation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Send Invitation" id="998055dd-af0d-42e1-a884-d37b7d3871ef" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${QA_Env}</con:endpoint>
+        <con:request>{
+  "accountId":16,
+  "locationId":16,
+  "groupId":2,
+  "emailId":"alekhya_hamsa@syntelinc.com"
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="wp-client-country" value="US"/>
+          <con:entry key="wp-client-brand" value="Whirlpool"/>
+          <con:entry key="wp-client-region" value="NAR"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>wp-client-region</con:entry>
+          <con:entry>wp-client-country</con:entry>
+          <con:entry>wp-client-brand</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

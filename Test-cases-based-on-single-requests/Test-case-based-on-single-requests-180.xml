@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="cc5c0946-57ab-48d8-a65e-c305c5222e1d" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 180" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="cc5c0946-57ab-48d8-a65e-c305c5222e1dfileName">Test-case-based-on-single-requests-180</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Delete-cycleByid" id="bae84b0b-edf0-411c-8de1-ef603695a2f1">
+    <con:settings/>
+    <con:config service="Delete-cycleByid" resourcePath="/account/favorites/${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$['_id']}/entity/cycle/id/${#[Regression Suite#Retrive Favorites#Retrive Favorites]#Response#$['favoritesList'][0]['favoriteCycles'][0]['id']}" methodName="Delete-cycleByid" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Delete-cycleByid" id="7f4f9207-1963-4955-910c-70f2a80463ad" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${API-Connect}</con:endpoint>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

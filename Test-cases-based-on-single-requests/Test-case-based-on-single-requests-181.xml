@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="3a64c11e-e8e3-498b-a355-37e42c4eee52" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test case based on single requests 181" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="3a64c11e-e8e3-498b-a355-37e42c4eee52fileName">Test-case-based-on-single-requests-181</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Delete-SettingByAttribute" id="016e9000-b3cc-47b0-9456-26f57c7c7a92">
+    <con:settings/>
+    <con:config service="Delete-SettingByAttribute" resourcePath="/account/favorites/${#[Regression Suite#create-setting#create-setting]#RawRequest#$['applianceId']}/entity/setting/id/M2MAttributeName" methodName="Delete-SettingByAttribute" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Delete-SettingByAttribute" id="a8b5708a-ff79-40a8-9695-373542efa5e5" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${API-Connect}</con:endpoint>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

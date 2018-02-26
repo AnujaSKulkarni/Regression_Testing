@@ -590,11 +590,11 @@ log.info "Report Generated"</script>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"WED_FEB_21_16_16_52_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"WED_FEB_21_21_13_46_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>WED_FEB_21_16_16_52_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>WED_FEB_21_21_13_46_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

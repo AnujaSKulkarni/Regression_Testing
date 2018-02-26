@@ -317,7 +317,7 @@ Region = Region.replace("\"", "")
 testRunner.testCase.setPropertyValue("Region", Region)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="553e222f-726d-42cd-af62-e1f737ee38d3" disabled="true">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="553e222f-726d-42cd-af62-e1f737ee38d3">
     <con:settings/>
     <con:config>
       <script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
@@ -352,7 +352,7 @@ def tC_Number = context.expand( '${DataSource#TC_Number}' )
 log.info tC_Number</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Update Account_Positive" id="177ed89a-a486-4a40-9711-8f5c28b122ae" disabled="true">
+  <con:testStep type="restrequest" name="Update Account_Positive" id="177ed89a-a486-4a40-9711-8f5c28b122ae">
     <con:settings/>
     <con:config service="Update Account" resourcePath="/accounts" methodName="Update Account" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Update Account_Positive" id="60bed9aa-ab33-4a0a-91dd-6785e582ecc1" mediaType="application/json" postQueryString="false">
@@ -661,7 +661,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="95508331-3636-4e7e-95da-1d8ac7999672" disabled="true">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="95508331-3636-4e7e-95da-1d8ac7999672">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
@@ -679,15 +679,15 @@ out.close()</script>
     </con:property>
     <con:property>
       <con:name>Brand_Name</con:name>
-      <con:value/>
+      <con:value>Whirlpool</con:value>
     </con:property>
     <con:property>
       <con:name>Country_Name</con:name>
-      <con:value/>
+      <con:value>US</con:value>
     </con:property>
     <con:property>
       <con:name>Region</con:name>
-      <con:value/>
+      <con:value>NAR</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
