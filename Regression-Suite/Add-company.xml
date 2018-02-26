@@ -556,7 +556,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Company_Name</con:name>
-      <con:value>"Company_Thu_Feb_22_12_07_17_IST_2018"</con:value>
+      <con:value>"Company_Mon_Feb_26_12_16_23_IST_2018"</con:value>
     </con:property>
     <con:property>
       <con:name>Country_Code</con:name>
@@ -564,7 +564,7 @@ out.close()</script>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"THU_FEB_22_12_06_55_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"MON_FEB_26_12_16_20_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

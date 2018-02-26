@@ -456,7 +456,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>LWA_Client_ID</con:name>
-      <con:value>"amzn1.application-oa2-client.086aef6518504b8c93232888877fcdcf"</con:value>
+      <con:value>"amzn1.application-oa2-client.ecde09fea05c48caa917a4890367f57f"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
