@@ -111,6 +111,7 @@ multi-subscribe-for-opt--in-and-out.xml
 PUSH-Notification.xml
 user-search.xml
 Search-Appliance.xml
+Create_Timer.xml
 UnClaim-Appliance1.xml
 Delete-Account.xml
 Test_Run_Summary.xml
