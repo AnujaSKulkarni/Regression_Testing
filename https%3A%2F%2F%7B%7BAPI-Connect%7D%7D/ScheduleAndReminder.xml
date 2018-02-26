@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Create_Timer" path="/appliance/appliances/scheduleAndReminder" id="27de1287-a239-4734-b4b1-f2afd70fd045" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="27de1287-a239-4734-b4b1-f2afd70fd045fileName">ScheduleAndReminder</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Create_Timer" id="1b4bec50-b556-4f18-a2b9-c19bdb6cd2f2" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Create_Timer" id="7fe5a907-d497-42de-b712-8b7f2cc6a85f" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${API-Connect}</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

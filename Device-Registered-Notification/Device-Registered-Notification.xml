@@ -44,7 +44,7 @@
       <con:params/>
       <con:element>data</con:element>
     </con:representation>
-    <con:request name="Device Registered Notification" id="772c4e9a-fe52-46e9-9483-86dc725a5508" mediaType="application/json" postQueryString="false">
+    <con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:request name="Device Registered Notification" id="772c4e9a-fe52-46e9-9483-86dc725a5508" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>

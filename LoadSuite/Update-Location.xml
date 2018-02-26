@@ -147,13 +147,7 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Run_Time_Data}</file>
-          <worksheet>Location_Run_Time_Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Run_Time_Data}</file><worksheet>Location_Run_Time_Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -177,13 +171,7 @@ testRunner.testCase.testSuite.setPropertyValue("Location_ID", Location_ID_Number
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -242,8 +230,6 @@ testRunner.testCase.testSuite.setPropertyValue("Location_ID", Location_ID_Number
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
-      <con:property>languageCode</con:property>
-      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -264,7 +250,6 @@ testRunner.testCase.testSuite.setPropertyValue("Location_ID", Location_ID_Number
       <con:property>Status_ID</con:property>
       <con:property>Street</con:property>
       <con:property>trigger_temperature</con:property>
-      <con:property>Utility_Name</con:property>
       <con:property>User_ID</con:property>
       <con:property>User_Role</con:property>
       <con:property>Verification_Code</con:property>
@@ -640,11 +625,11 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value/>
+      <con:value>11195</con:value>
     </con:property>
     <con:property>
       <con:name>Location_ID</con:name>
-      <con:value/>
+      <con:value>2483</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
