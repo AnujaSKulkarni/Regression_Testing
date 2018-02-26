@@ -593,11 +593,11 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>12130</con:value>
+      <con:value/>
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
-      <con:value>552</con:value>
+      <con:value/>
     </con:property>
   </con:properties>
   <con:reportParameters/>

@@ -75,6 +75,12 @@
       <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
       <con:params/>
     </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>text/html</con:mediaType>
+      <con:status>407</con:status>
+      <con:params/>
+      <con:element>html</con:element>
+    </con:representation>
     <con:request name="GET Client Token" id="3d9e8eef-6b94-46de-8b7d-21a4174f9b47" mediaType="multipart/form-data" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
