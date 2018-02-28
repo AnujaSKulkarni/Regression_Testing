@@ -4,6 +4,12 @@
     <con:setting id="4d9b8d24-cdbf-470c-926c-ce1cd761a7a0fileName">GET-Client-Token</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="delay" name="Wait Time" id="2411be80-2cb0-45ef-a47a-cc7491f6bd69">
+    <con:settings/>
+    <con:config>
+      <delay>10000</delay>
+    </con:config>
+  </con:testStep>
   <con:testStep type="restrequest" name="GET Client Token" id="c810a02f-cf50-48a2-aef1-81284de01dde">
     <con:settings/>
     <con:config service="GET Client Token" resourcePath="/oauth/token" methodName="GET Client Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -68,7 +74,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="b84b3a8e-19cb-464f-b654-3cd1415b95c9">
+  <con:testStep type="groovy" name="Report" id="b84b3a8e-19cb-464f-b654-3cd1415b95c9" disabled="true">
     <con:settings/>
     <con:config>
       <script>def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
@@ -146,7 +152,10 @@ file1.append(response)</script>
     <con:settings/>
     <con:config>
       <script>def TestCaseName = testRunner.testCase.getName()
+count = testRunner.testCase.getTestStepCount()
+log.info(count)
 obj = context.testCase.getTestStepByName(TestCaseName)
+log.info(obj)
 assertions = obj.getAssertionList()
 def Status
 assertions.each{
