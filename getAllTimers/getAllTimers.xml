@@ -21,6 +21,12 @@
       <con:params/>
       <con:element>Response</con:element>
     </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:element xmlns:all="https://api-test.whrcloud.com/api/v1/appliance/account/ALL/appliance/ALL">all:Fault</con:element>
+    </con:representation>
     <con:request name="getAllTimers" id="331661b6-ade6-4f8c-8140-aa6f14694f57" mediaType="application/json">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
