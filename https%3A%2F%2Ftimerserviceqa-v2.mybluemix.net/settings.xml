@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="893dcc73-a9a8-4b11-b89d-57fc21bb1368" wadlVersion="http://wadl.dev.java.net/2009/02" name="getAllTimers for appliance" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="893dcc73-a9a8-4b11-b89d-57fc21bb1368fileName">https%3A%2F%2Ftimerserviceqa-v2.mybluemix.net</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://timerserviceqa-v2.mybluemix.net</con:endpoint>
+  </con:endpoints>
+</con:interface>
