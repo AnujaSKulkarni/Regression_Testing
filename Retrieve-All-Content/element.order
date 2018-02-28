@@ -163,6 +163,3 @@ https%3A%2F%2Ftimerserviceqa-v2.mybluemix.net
 getAllTimers-account
 Retrieve-NotificationMessages
 Retrieve-All-Content
-Regression-Suite
-LoadSuite
-REST-Virt-1

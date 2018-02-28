@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="ceb7260b-197b-46d0-9e43-abd56f151f3e" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Retrieve NotificationMessages" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ceb7260b-197b-46d0-9e43-abd56f151f3efileName">Retrieve-NotificationMessages</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Retrieve NotificationMessages" id="c90f560c-5a71-4859-ba32-a80e745d4de7">
+    <con:settings/>
+    <con:config service="Retrieve NotificationMessages" resourcePath="/contents/notificationMessages/DDM_Dryer_V10K_V1" methodName="Retrieve NotificationMessages" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Retrieve NotificationMessages" id="70b2e948-9e08-4ae8-8bc7-01e943093d62" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{
+"languageCode":"eng"
+}</con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>wp-client-region</con:entry>
+          <con:entry>wp-client-brand</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

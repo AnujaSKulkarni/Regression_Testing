@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="ec445c4d-ef8c-457f-9db2-3990f3163ec2" activeEnvironment="Stage_Env" name="Regression Pro" resourceRoot="${projectDir}" defaultScriptLanguage="Groovy" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" updated="2.2.0 20171026-0943" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="ec445c4d-ef8c-457f-9db2-3990f3163ec2" activeEnvironment="Default environment" name="Regression Pro" resourceRoot="${projectDir}" defaultScriptLanguage="Groovy" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" updated="2.2.0 20171026-0943" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
   <con:entry key="Environment" value="Default"/>
@@ -623,6 +623,12 @@
     <con:service type="REST" name="getAllTimers account">
       <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
+    <con:service type="REST" name="Retrieve NotificationMessages">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Retrieve All Content">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
     <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationserviceqa-v2.mybluemix.net/api/v1</con:value>
@@ -1218,6 +1224,12 @@
     <con:service type="REST" name="getAllTimers account">
       <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
+    <con:service type="REST" name="Retrieve NotificationMessages">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="Retrieve All Content">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
     <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicedev-v2.mybluemix.net/api/v1</con:value>
@@ -1812,6 +1824,12 @@
     </con:service>
     <con:service type="REST" name="getAllTimers account">
       <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="Retrieve NotificationMessages">
+      <con:endpoint authProfile="No Authorization">https://{{API-Connect}}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Retrieve All Content">
+      <con:endpoint authProfile="No Authorization">https://{{API-Connect}}</con:endpoint>
     </con:service>
     <con:property>
       <con:name>Location</con:name>
