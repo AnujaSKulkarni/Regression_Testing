@@ -147,7 +147,13 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -442,15 +448,15 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>start_Date</con:name>
-      <con:value>1519817140770</con:value>
+      <con:value>1519891640465</con:value>
     </con:property>
     <con:property>
       <con:name>end_Date</con:name>
-      <con:value>1519902640770</con:value>
+      <con:value>1519977140465</con:value>
     </con:property>
     <con:property>
       <con:name>next_notification_time</con:name>
-      <con:value>1519819840770</con:value>
+      <con:value>1519894340465</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
