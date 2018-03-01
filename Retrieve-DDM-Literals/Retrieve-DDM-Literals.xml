@@ -1,2 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Retrieve DDM Literals" path="/contents/ddmLiterals/DDM_V10K_Washer" id="b398b347-f088-4503-8697-c9c5ae98b45d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="b398b347-f088-4503-8697-c9c5ae98b45dfileName">Retrieve-DDM-Literals</con:setting></con:settings><con:parameters/><con:method name="Retrieve DDM Literals" id="faba636d-bba4-445d-b69d-d3b8e8be1eb7" method="POST"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value>Bearer ${access_token}</con:value><con:style>HEADER</con:style><con:default>Bearer ${access_token}</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>wp-client-region</con:name><con:value>NAR</con:value><con:style>HEADER</con:style><con:default>NAR</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>wp-client-brand</con:name><con:value>WHIRLPOOL</con:value><con:style>HEADER</con:style><con:default>WHIRLPOOL</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ddm="https://api-test.whrcloud.com/api/v1/contents/ddmLiterals/DDM_V10K_Washer">ddm:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:ddm="https://api-test.whrcloud.com/api/v1/contents/ddmLiterals/DDM_V10K_Washer">ddm:Fault</con:element></con:representation><con:request name="Retrieve DDM Literals" id="23eab518-4b20-4861-9fa8-bbedf8f89ee8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://{{API-Connect}}</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder></con:request></con:method></con:resource>
+<con:resource name="Retrieve DDM Literals" path="/contents/ddmLiterals/${DataSource#DDM_Name}" id="b398b347-f088-4503-8697-c9c5ae98b45d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b398b347-f088-4503-8697-c9c5ae98b45dfileName">Retrieve-DDM-Literals</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Retrieve DDM Literals" id="faba636d-bba4-445d-b69d-d3b8e8be1eb7" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-region</con:name>
+        <con:value>NAR</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>NAR</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-brand</con:name>
+        <con:value>WHIRLPOOL</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>WHIRLPOOL</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ddm="https://api-test.whrcloud.com/api/v1/contents/ddmLiterals/DDM_V10K_Washer">ddm:Response</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400 401 404</con:status>
+      <con:params/>
+      <con:element xmlns:ddm="https://api-test.whrcloud.com/api/v1/contents/ddmLiterals/DDM_V10K_Washer">ddm:Fault</con:element>
+    </con:representation>
+    <con:request name="Retrieve DDM Literals" id="23eab518-4b20-4861-9fa8-bbedf8f89ee8" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${API-Connect}</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>wp-client-region</con:entry>
+        <con:entry>wp-client-brand</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>
