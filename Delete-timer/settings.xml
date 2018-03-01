@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="18415c85-0509-4725-9b5e-9b33338cacaffileName">Delete-timer</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
 </con:interface>

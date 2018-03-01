@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="1f2bc0b7-e7b7-49bf-88b2-3c8859f8bc2dfileName">Retrieve-NotificationMessages</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
 </con:interface>
