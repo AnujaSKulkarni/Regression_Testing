@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="05d8d941-bffe-4411-abf1-b7bb2653a090" wadlVersion="http://wadl.dev.java.net/2009/02" name="UpdateTimerCheck" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="05d8d941-bffe-4411-abf1-b7bb2653a090fileName">UpdateTimerCheck</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://{{API-Connect}}</con:endpoint>
+  </con:endpoints>
+</con:interface>

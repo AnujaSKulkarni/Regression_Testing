@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="7cd3f8a0-2101-4c35-b0e6-064ffd543fdf" wadlVersion="http://wadl.dev.java.net/2009/02" name="Retrieve All Content" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7cd3f8a0-2101-4c35-b0e6-064ffd543fdffileName">Retrieve-All-Content</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://{{API-Connect}}</con:endpoint>
+  </con:endpoints>
+</con:interface>

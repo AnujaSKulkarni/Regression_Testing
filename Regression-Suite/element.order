@@ -102,9 +102,10 @@ LocalizedDateAndTime.xml
 Logout.xml
 Energy_providers.xml
 Rate-Revealer.xml
-Retrieve-DDM-Literals.xml
 UnClaim-Appliance.xml
 Appliance-Wraper.xml
+Retrieve-DDM-Literals.xml
+Retrieve-NotificationMessages.xml
 Get-Appliance-by-Location-ID.xml
 Device-Registration1.xml
 multi-subscribe-for-opt--in-and-out.xml
@@ -112,6 +113,15 @@ PUSH-Notification.xml
 user-search.xml
 Search-Appliance.xml
 Create_Timer.xml
+UpdateTimerCheck.xml
+getAllTimers.xml
+getAllTimers-for-appliance.xml
+getAllTimers-account.xml
+TimerOverlapping.xml
+SameDayCheck.xml
+outofThreshold.xml
+Delete-timer.xml
 UnClaim-Appliance1.xml
 Delete-Account.xml
 Test_Run_Summary.xml
+Retrieve-All-Content.xml
