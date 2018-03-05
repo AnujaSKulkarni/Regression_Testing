@@ -165,4 +165,5 @@ Retrieve-NotificationMessages
 Retrieve-All-Content
 Regression-Suite
 LoadSuite
+Test-cases-based-on-single-requests
 REST-Virt-1

@@ -4,6 +4,12 @@
     <con:setting id="7026bea1-9c34-446c-8319-d9c3af471c0efileName">GET-Member-Token</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="delay" name="Wait Time" id="7910f66d-6f54-4829-a819-106a40aada50">
+    <con:settings/>
+    <con:config>
+      <delay>10000</delay>
+    </con:config>
+  </con:testStep>
   <con:testStep type="groovy" name="DataSource_Setup" id="0401e430-2634-44be-a1d9-991e7c6aca20">
     <con:settings/>
     <con:config>
@@ -146,15 +152,21 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Run_Time_Data}</file><worksheet>Account_Run_Time_Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Run_Time_Data}</file>
+          <worksheet>Account_Run_Time_Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
-      
-      
-      
-      
-      <con:property>Account_ID_Number</con:property><con:property>Verification_Code</con:property><con:property>Email_ID</con:property><con:property>Group_ID</con:property><con:completeLastOperation>true</con:completeLastOperation>
+      <con:property>Account_ID_Number</con:property>
+      <con:property>Verification_Code</con:property>
+      <con:property>Email_ID</con:property>
+      <con:property>Group_ID</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
@@ -226,7 +238,7 @@ if(RunTimeDataSource_Flag == true){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="5615ccd4-92a5-4f69-a3be-35571835387e">
+  <con:testStep type="groovy" name="Report" id="5615ccd4-92a5-4f69-a3be-35571835387e" disabled="true">
     <con:settings/>
     <con:config>
       <script>def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
@@ -299,7 +311,7 @@ file1.append("---------------- Response --------------------------\n")
 file1.append(response)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Skip on failure" id="3e639b64-0915-44ce-a8d5-aee7d1c6dc1a">
+  <con:testStep type="groovy" name="Skip on failure" id="3e639b64-0915-44ce-a8d5-aee7d1c6dc1a" disabled="true">
     <con:settings/>
     <con:config>
       <script>def TestCaseName = testRunner.testCase.getName()
@@ -338,6 +350,12 @@ log.info "token: " + Refresh_Token
 com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Refresh_Token", Refresh_Token)</script>
     </con:config>
   </con:testStep>
+  <con:testStep type="delay" name="Wait Time 2" id="eb105c45-8f92-4f2a-a042-6705a4308efb">
+    <con:settings/>
+    <con:config>
+      <delay>500</delay>
+    </con:config>
+  </con:testStep>
   <con:properties>
     <con:property>
       <con:name>Member_Token_response</con:name>
@@ -347,6 +365,11 @@ com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Refresh_Token", Ref
   <con:reportParameters/>
   <con:breakPoints>
     <con:testStepId>0401e430-2634-44be-a1d9-991e7c6aca20</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>7910f66d-6f54-4829-a819-106a40aada50</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
