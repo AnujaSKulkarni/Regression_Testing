@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="9f9a3d41-5457-4d65-b7a2-dfc3fea0feea" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update Location" searchProperties="true" timeout="0" maxResults="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="69a4a5ca-10b2-4632-afa5-9251025c4541" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update Location" searchProperties="true" timeout="0" maxResults="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="701d071b-f0ea-484a-a9c0-d3a5c6ad45c4fileName">Update-Location</con:setting>
-    <con:setting id="9f9a3d41-5457-4d65-b7a2-dfc3fea0feeafileName">Update-Location</con:setting>
-  </con:settings>
+  <con:setting id="69a4a5ca-10b2-4632-afa5-9251025c4541fileName">Update-Location</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="3868eca5-1d20-42c6-b420-5baa258b4993">
+  <con:testStep type="groovy" name="DataSource_Setup" id="e9f0c2ca-3005-42b2-a9e8-ab69ae2c39d6">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -143,7 +142,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource_RunTime" id="c3021604-b1ae-48a2-89e6-480026cdfdf4">
+  <con:testStep type="datasource" name="DataSource_RunTime" id="03f604c2-4a95-4d46-9a1b-4c2b2f899cc2">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -151,13 +150,13 @@ if(RunTimeDataSource_Flag == true){
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
-      <con:property>Location_ID_Number</con:property>
-      <con:property>Account_ID_Number</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
+      
+      
+      <con:property>Location_ID_Number</con:property><con:property>Account_ID_Number</con:property><con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="4d98bd12-efce-4373-a7f7-330574d898c4">
+  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="c91577aa-f304-4aa4-9154-ecc949aa13ed">
     <con:settings/>
     <con:config>
       <script>def Location_ID_Number = context.expand( '${DataSource_RunTime#Location_ID_Number}' )
@@ -167,7 +166,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_ID", Account_ID_Number)
 testRunner.testCase.testSuite.setPropertyValue("Location_ID", Location_ID_Number)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="d500e731-a53e-4bb2-8c79-dae4534d770f">
+  <con:testStep type="datasource" name="DataSource" id="1ce56be7-328d-4862-9015-6bb033636f1c">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -175,90 +174,95 @@ testRunner.testCase.testSuite.setPropertyValue("Location_ID", Location_ID_Number
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
-      <con:property>TC_Number</con:property>
-      <con:property>Service_Name</con:property>
-      <con:property>Defect_ID</con:property>
-      <con:property>API_Name</con:property>
-      <con:property>Data_Combination</con:property>
-      <con:property>Remark</con:property>
-      <con:property>Comments</con:property>
-      <con:property>Account_Number</con:property>
-      <con:property>Address_1</con:property>
-      <con:property>Address_2</con:property>
-      <con:property>Alert_ID</con:property>
-      <con:property>Alert_Platform_Type</con:property>
-      <con:property>Alternate_Email_ID</con:property>
-      <con:property>Appliance_ID</con:property>
-      <con:property>Appliance_Master_ID</con:property>
-      <con:property>Appliance_Master_Version_ID</con:property>
-      <con:property>Appliance_Name</con:property>
-      <con:property>Attribute_Name</con:property>
-      <con:property>Attribute_Value</con:property>
-      <con:property>Brand</con:property>
-      <con:property>City</con:property>
-      <con:property>Company_ID</con:property>
-      <con:property>Company_Name</con:property>
-      <con:property>Confirm_Password</con:property>
-      <con:property>Country_Name</con:property>
-      <con:property>Country_Code</con:property>
-      <con:property>Country_ID</con:property>
-      <con:property>Customer_Care</con:property>
-      <con:property>DCT</con:property>
-      <con:property>desired_temperature</con:property>
-      <con:property>Device_ID</con:property>
-      <con:property>Device_Notification_ID</con:property>
-      <con:property>Device_Shadow_Name</con:property>
-      <con:property>Edge_Device_ID</con:property>
-      <con:property>Elevation</con:property>
-      <con:property>Email_BodyMessage</con:property>
-      <con:property>Email_From</con:property>
-      <con:property>Email_ID_Data</con:property>
-      <con:property>Email_Subject</con:property>
-      <con:property>Email_To</con:property>
-      <con:property>enable_cloth_spin</con:property>
-      <con:property>First_Name</con:property>
-      <con:property>Group_Number</con:property>
-      <con:property>inv__description</con:property>
-      <con:property>JSON_Body</con:property>
-      <con:property>Key</con:property>
-      <con:property>Language_ID</con:property>
-      <con:property>Last_Name</con:property>
-      <con:property>Lastupdate</con:property>
-      <con:property>Latitude</con:property>
-      <con:property>Locale_ID</con:property>
-      <con:property>Location_Name</con:property>
-      <con:property>Location_Number</con:property>
-      <con:property>Longitude</con:property>
-      <con:property>Loyalty_ID</con:property>
-      <con:property>Nest_Away</con:property>
-      <con:property>Nest_Thermostat_ID</con:property>
-      <con:property>New_Password</con:property>
-      <con:property>Notification_Type</con:property>
-      <con:property>Password</con:property>
-      <con:property>Phone_No.</con:property>
-      <con:property>Platform</con:property>
-      <con:property>Postal_Code</con:property>
-      <con:property>Rate_Plan_Code</con:property>
-      <con:property>Rate_Plan_ID</con:property>
-      <con:property>Region</con:property>
-      <con:property>Role_ID</con:property>
-      <con:property>SAID</con:property>
-      <con:property>Shoppinglist_ID</con:property>
-      <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_Name</con:property>
-      <con:property>Status</con:property>
-      <con:property>Status_ID</con:property>
-      <con:property>Street</con:property>
-      <con:property>trigger_temperature</con:property>
-      <con:property>User_ID</con:property>
-      <con:property>User_Role</con:property>
-      <con:property>Verification_Code</con:property>
-      <con:property>Version</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>DDM_Name</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>languageCode</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>name</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>Utility_Name</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="e6c4815f-f0ea-4b05-a145-8c9ef2b57366">
+  <con:testStep type="groovy" name="Flow Control" id="841e4ef8-3b6c-40cd-b7e4-b8ea320f2471">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -286,7 +290,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="6d945cb3-1ff8-45f1-ab8b-520f07795d36" disabled="true">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="a3946250-2077-495c-8f33-885b6525d822" disabled="true">
     <con:settings/>
     <con:config>
       <script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
@@ -318,7 +322,7 @@ if (data_Combination == "Negative"){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Update Location_Positive" id="5b0b3e08-3ecc-455f-b8b4-64a1f2a990e4" disabled="true">
+  <con:testStep type="restrequest" name="Update Location_Positive" id="f0676900-36e6-488b-95d0-10144ec7ad93" disabled="true">
     <con:settings/>
     <con:config service="Update location" resourcePath="/location" methodName="Update location" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Update Location_Positive" id="6d4fe3b7-7bf1-421d-a116-38f2401d4425" mediaType="application/json" postQueryString="false">
@@ -327,7 +331,7 @@ if (data_Combination == "Negative"){
         </con:settings>
         <con:endpoint>${Location}</con:endpoint>
         <con:request>{
-  "locationId":${#TestCase#Location_ID},
+  "locationId":${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']},
   "locationName":${DataSource#Location_Name},
   "street": ${DataSource#Street},
   "stateId": ${#[Regression Suite#Create Location#JDBC]#st_STATE_ID},
@@ -338,23 +342,23 @@ if (data_Combination == "Negative"){
   "utilityProviderName": "",
   "ratePlanId": ${DataSource#Rate_Plan_ID},
   "ratePlanCode": ${DataSource#Rate_Plan_Code},
-  "smartEnergy":0,
+  "smartEnergy":1,
   "localeId": ${DataSource#Locale_ID},
   "loyaltyId": ${DataSource#Loyalty_ID},
   "status": "1",
   "createdAt": "2017-04-19T 17:05:53Z",
   "updatedAt": "2017-05-19T 17:06:53Z",
   "ratePlanName": "Tariff",
-  "utilityName": "",
-  "utilityId": 0,
+  "utilityName":${DataSource#Utility_Name},
+  "utilityId": 3061,
   "latitude": ${DataSource#Latitude},
   "longitude": ${DataSource#Longitude},
   "elevation": ${DataSource#Elevation},
   "enableClothspin":${DataSource#enable_cloth_spin},
   "countryId": ${#[Regression Suite#Create Location#JDBC]#st_COUNTRY_ID},
   "countryCode": ${#[Regression Suite#Create Location]#COUNTRY_CODE},
-  "accountId":${#TestCase#Account_ID} 
-  
+  "accountId":${#TestCase#Account_ID},
+  "smartEnergyProfile":1
 }</con:request>
         <con:originalUri>http://locationserviceqa-v2.mybluemix.net/api/v1/location</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="982069ef-9638-47dc-85f6-a5e131af6f32" name="Valid HTTP Status Codes">
@@ -407,7 +411,7 @@ if (data_Combination == "Negative"){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Update Location_Negative" id="7177ed62-e31d-4a0f-abbc-909816ad8f34" disabled="true">
+  <con:testStep type="restrequest" name="Update Location_Negative" id="0f50b83f-93cb-4dcf-8587-7c133e83d377" disabled="true">
     <con:settings/>
     <con:config service="Update location" resourcePath="/location" methodName="Update location" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Update Location_Negative" id="6d4fe3b7-7bf1-421d-a116-38f2401d4425" mediaType="application/json" postQueryString="false">
@@ -485,7 +489,7 @@ if (data_Combination == "Negative"){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="8e455eda-e6a8-4ff7-add4-270333110af0" disabled="true">
+  <con:testStep type="groovy" name="Report" id="7c9959bc-fc0a-4227-bcfd-dcc42e1b2161" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -615,7 +619,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="adfc3b48-39dd-428a-b8e8-a8b6e6d879e3">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="7a167633-ea06-4019-a3e2-6679e83440b1">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
@@ -625,11 +629,11 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11195</con:value>
+      <con:value>4763</con:value>
     </con:property>
     <con:property>
       <con:name>Location_ID</con:name>
-      <con:value>2483</con:value>
+      <con:value>2472</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

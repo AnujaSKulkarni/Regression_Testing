@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="237c256b-0606-444a-b4e4-fc58ee0c173b" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create Account" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="cfd95af1-7c43-46b0-bde7-27564268c545" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create Account" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="IncludeOverview">true</con:setting>
     <con:setting id="IncludeResults">true</con:setting>
@@ -7,10 +7,9 @@
     <con:setting id="ErrorDetails">true</con:setting>
     <con:setting id="IncludeCoverage">true</con:setting>
     <con:setting id="4116a559-779e-43a0-ba46-4ec42bfc53aefileName">Create-Account</con:setting>
-    <con:setting id="237c256b-0606-444a-b4e4-fc58ee0c173bfileName">Create-Account</con:setting>
-  </con:settings>
+  <con:setting id="cfd95af1-7c43-46b0-bde7-27564268c545fileName">Create-Account</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="1a87e732-23b9-44a6-b1b5-3c0ed6fcbe83">
+  <con:testStep type="groovy" name="DataSource_Setup" id="604f0607-472e-416e-8aa2-cbdcaffa0aaf">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -148,7 +147,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="4b82f83a-1666-4ec4-9e70-caad6334547e">
+  <con:testStep type="datasource" name="DataSource" id="e6afb342-84e5-4144-b5ec-8b003df7d26f">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -157,87 +156,91 @@ if(RunTimeDataSource_Flag == true){
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
       <con:preload>false</con:preload>
-      <con:property>TC_Number</con:property>
-      <con:property>Service_Name</con:property>
-      <con:property>Defect_ID</con:property>
-      <con:property>API_Name</con:property>
-      <con:property>Data_Combination</con:property>
-      <con:property>Remark</con:property>
-      <con:property>Comments</con:property>
-      <con:property>Account_Number</con:property>
-      <con:property>Address_1</con:property>
-      <con:property>Address_2</con:property>
-      <con:property>Alert_ID</con:property>
-      <con:property>Alert_Platform_Type</con:property>
-      <con:property>Alternate_Email_ID</con:property>
-      <con:property>Appliance_ID</con:property>
-      <con:property>Appliance_Master_ID</con:property>
-      <con:property>Appliance_Master_Version_ID</con:property>
-      <con:property>Appliance_Name</con:property>
-      <con:property>Attribute_Name</con:property>
-      <con:property>Attribute_Value</con:property>
-      <con:property>Brand</con:property>
-      <con:property>City</con:property>
-      <con:property>Company_ID</con:property>
-      <con:property>Company_Name</con:property>
-      <con:property>Confirm_Password</con:property>
-      <con:property>Country_Name</con:property>
-      <con:property>Country_Code</con:property>
-      <con:property>Country_ID</con:property>
-      <con:property>Customer_Care</con:property>
-      <con:property>DCT</con:property>
-      <con:property>desired_temperature</con:property>
-      <con:property>Device_ID</con:property>
-      <con:property>Device_Notification_ID</con:property>
-      <con:property>Device_Shadow_Name</con:property>
-      <con:property>Edge_Device_ID</con:property>
-      <con:property>Elevation</con:property>
-      <con:property>Email_BodyMessage</con:property>
-      <con:property>Email_From</con:property>
-      <con:property>Email_ID_Data</con:property>
-      <con:property>Email_Subject</con:property>
-      <con:property>Email_To</con:property>
-      <con:property>enable_cloth_spin</con:property>
-      <con:property>First_Name</con:property>
-      <con:property>Group_Number</con:property>
-      <con:property>inv__description</con:property>
-      <con:property>JSON_Body</con:property>
-      <con:property>Key</con:property>
-      <con:property>Language_ID</con:property>
-      <con:property>Last_Name</con:property>
-      <con:property>Lastupdate</con:property>
-      <con:property>Latitude</con:property>
-      <con:property>Locale_ID</con:property>
-      <con:property>Location_Name</con:property>
-      <con:property>Location_Number</con:property>
-      <con:property>Longitude</con:property>
-      <con:property>Loyalty_ID</con:property>
-      <con:property>name</con:property>
-      <con:property>Nest_Away</con:property>
-      <con:property>Nest_Thermostat_ID</con:property>
-      <con:property>New_Password</con:property>
-      <con:property>Notification_Type</con:property>
-      <con:property>Password</con:property>
-      <con:property>Phone_No.</con:property>
-      <con:property>Platform</con:property>
-      <con:property>Postal_Code</con:property>
-      <con:property>Rate_Plan_Code</con:property>
-      <con:property>Rate_Plan_ID</con:property>
-      <con:property>Region</con:property>
-      <con:property>Role_ID</con:property>
-      <con:property>SAID</con:property>
-      <con:property>Shoppinglist_ID</con:property>
-      <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_Name</con:property>
-      <con:property>Status</con:property>
-      <con:property>Status_ID</con:property>
-      <con:property>Street</con:property>
-      <con:property>trigger_temperature</con:property>
-      <con:property>User_ID</con:property>
-      <con:property>User_Role</con:property>
-      <con:property>Verification_Code</con:property>
-      <con:property>Version</con:property>
-      <con:startRow/>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>DDM_Name</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>languageCode</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>name</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>Utility_Name</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:startRow/>
       <con:endRow/>
       <con:recordsPerIteration>1</con:recordsPerIteration>
       <con:completeLastOperation>true</con:completeLastOperation>
@@ -248,7 +251,7 @@ if(RunTimeDataSource_Flag == true){
       <con:expandProperties>false</con:expandProperties>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="a5e7a635-5dea-4524-8a50-da80d8ffbad6">
+  <con:testStep type="groovy" name="Flow Control" id="e86771bd-9162-43b7-bcbc-8c4c33b50b8f">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -289,7 +292,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Unique_Email_ID" id="c2978a13-f705-49e4-bc56-60ca48ae7025" disabled="true">
+  <con:testStep type="groovy" name="Unique_Email_ID" id="68b87e65-6853-4d6c-bf8a-3c1d53f6d9ff" disabled="true">
     <con:settings/>
     <con:config>
       <script>String date = new Date()
@@ -313,7 +316,7 @@ Region = Region.replace("\"", "")
 testRunner.testCase.setPropertyValue("Region", Region)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Create Account_Positive" id="6ecb93b6-85ff-4bd0-9041-6fad56169d3a" disabled="true">
+  <con:testStep type="restrequest" name="Create Account_Positive" id="55b02ea1-eb22-4c22-8ae7-4432efb3608b" disabled="true">
     <con:settings/>
     <con:config service="Create Account" resourcePath="/client_auth/accounts" methodName="Create Account" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Create Account_Positive" id="ca9f4001-c1e6-4520-a84d-0a8f310353ef" mediaType="application/json" postQueryString="false">
@@ -346,7 +349,8 @@ testRunner.testCase.setPropertyValue("Region", Region)</script>
   "phoneVerificationConfirmedAt": null,
   "validateMobile": true,
   "userRole":${DataSource#User_Role},
-  "enabled":1
+  "enabled":1,
+  "languageCode":${DataSource#languageCode}
 }</con:request>
         <con:originalUri>http://api/accou/api/accounts</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="243cede5-7830-4e85-bb98-d0f7cf1edba3" name="Valid HTTP Status Codes">
@@ -466,7 +470,7 @@ testRunner.testCase.setPropertyValue("Region", Region)</script>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Create Account_Negative" id="b8181c84-4b68-4c24-a3ac-d5a3d6fa11c5" disabled="true">
+  <con:testStep type="restrequest" name="Create Account_Negative" id="b8b925bf-8959-4fef-af7b-bba8dfcfc00b" disabled="true">
     <con:settings/>
     <con:config service="Create Account" resourcePath="/client_auth/accounts" methodName="Create Account" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Create Account_Negative" id="ca9f4001-c1e6-4520-a84d-0a8f310353ef" mediaType="application/json" postQueryString="false">
@@ -559,7 +563,7 @@ testRunner.testCase.setPropertyValue("Region", Region)</script>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="d3f832fd-54ae-435e-91fd-e167d6f4387b" disabled="true">
+  <con:testStep type="groovy" name="Report" id="21c37d10-fe86-488b-acef-69376b6041a9" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -693,7 +697,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Skip on failure" id="5944da56-b51a-46b0-bc00-f17f9ec81b85" disabled="true">
+  <con:testStep type="groovy" name="Skip on failure" id="4152c503-8d93-47f0-9582-44641d784b17" disabled="true">
     <con:settings/>
     <con:config>
       <script>/*def TestCaseName = testRunner.testCase.getName()
@@ -721,7 +725,7 @@ if(Status == "Fail"){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Data_Sink_Flow_Control" id="77f027b3-a4d0-47b3-bf06-cf573b59e1da" disabled="true">
+  <con:testStep type="groovy" name="Data_Sink_Flow_Control" id="db078852-f830-4233-85f6-bdc139977338" disabled="true">
     <con:settings/>
     <con:config>
       <script>/*Get Test Case Name and Status*/
@@ -740,7 +744,8 @@ if(data_combination == "Negative"){
 Header = testRunner.testCase.testSteps[TestCaseName].testRequest.response.getResponseHeaders()
 def Status_Code = Header["#status#"]
 log.info Status_Code[0]
-if(Status_Code[0] == "HTTP/1.1 200 OK"){
+Status_Code = Status_Code[0]
+if(Status_Code.contains("200")){
 	testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(false)
 	//myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
 	//def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
@@ -750,7 +755,7 @@ if(Status_Code[0] == "HTTP/1.1 200 OK"){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="f8eaa91b-b253-4e6c-95d7-2fef03614222" disabled="true">
+  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="68aa2d61-ad8f-40a3-ba9a-bfbe30c73306" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -824,7 +829,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="Positive_Data_Loop" id="d6941c5a-c351-4968-8560-ecb9062f0a93">
+  <con:testStep type="datasourceloop" name="Positive_Data_Loop" id="7490a7cf-82fb-442b-ad86-ca3532519602">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>

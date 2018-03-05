@@ -318,7 +318,7 @@ log.info tC_Number</script>
   </con:testStep>
   <con:testStep type="restrequest" name="Resend Email Confirmation_Positive" id="9ff83380-3b6b-4237-9e4b-353b00813eca" disabled="true">
     <con:settings/>
-    <con:config service="Resend Email Confirmation" resourcePath="/client_auth/accounts/resend_confirmation/${#TestCase#Account_ID}" methodName="Resend Email Confirmation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Resend Email Confirmation" resourcePath="/client_auth/accounts/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['email']}/confirmations/resend" methodName="Resend Email Confirmation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Resend Email Confirmation_Positive" id="49ced10b-024a-4800-811c-3312adada08e" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -384,7 +384,7 @@ log.info tC_Number</script>
   </con:testStep>
   <con:testStep type="restrequest" name="Resend Email Confirmation_Negative" id="eccc14aa-09e3-42f7-b399-6c09e36f3bbf" disabled="true">
     <con:settings/>
-    <con:config service="Resend Email Confirmation" resourcePath="/client_auth/accounts/resend_confirmation/${#TestCase#Account_ID}" methodName="Resend Email Confirmation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Resend Email Confirmation" resourcePath="/client_auth/accounts/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['email']}/confirmations/resend" methodName="Resend Email Confirmation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Resend Email Confirmation_Negative" id="49ced10b-024a-4800-811c-3312adada08e" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -586,7 +586,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>12407</con:value>
+      <con:value>12475</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

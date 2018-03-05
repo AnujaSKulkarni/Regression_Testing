@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="6ede06e2-8f63-4a2f-9b69-5172ef83921a" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Logout" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="19e76e2e-1132-48b2-9f26-89d23c66f96c" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Logout" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="0c8cf918-fbec-4b68-a14e-138409406de0fileName">Logout</con:setting>
-    <con:setting id="6ede06e2-8f63-4a2f-9b69-5172ef83921afileName">Logout</con:setting>
-  </con:settings>
+  <con:setting id="19e76e2e-1132-48b2-9f26-89d23c66f96cfileName">Logout</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="1842ac42-566e-4ea8-8fca-40e5ad38d80d">
+  <con:testStep type="groovy" name="DataSource_Setup" id="82acc744-b609-47cf-8d96-208f158b990b">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -143,7 +142,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="b5124197-125e-4e18-9bfe-00e919f42254">
+  <con:testStep type="datasource" name="DataSource" id="08fdc6ba-8e0c-4c00-a9e4-6e3c611e5112">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -234,7 +233,7 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="62094bc0-192b-45df-ac86-055560b2a9bd">
+  <con:testStep type="groovy" name="Flow Control" id="c4bd7025-8002-41d8-bd74-ebd3c0ebad26">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -261,7 +260,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Logout" id="1105cf47-e750-424c-8765-560da8af5bf2" disabled="true">
+  <con:testStep type="restrequest" name="Logout" id="b2dccfb1-3e12-47db-9095-369329bc9ed2" disabled="true">
     <con:settings/>
     <con:config service="Logout" resourcePath="/oauth/revoke-token" methodName="Logout" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Logout" id="e6588876-1b06-4715-a2a9-edf00409cc6b" mediaType="application/x-www-form-urlencoded" postQueryString="false">
@@ -321,7 +320,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="4b6678ab-9baa-4d99-8e42-2ff1576f0cc2" disabled="true">
+  <con:testStep type="groovy" name="Report" id="6d508df3-91d0-4a2f-9f83-044e9c280f8c" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -445,7 +444,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="05634f7b-b33d-43a5-949b-dcf8f7146848">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="a4dbbca2-5435-4dd5-ade1-d059622eff21">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>

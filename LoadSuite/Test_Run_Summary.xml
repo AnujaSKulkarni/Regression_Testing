@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="f8ef9ea2-5a39-4686-95b7-cf48c62f9133" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test_Run_Summary" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="e8c21dd3-9f18-471b-843b-96b3ab22047e" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test_Run_Summary" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="4e33ef7d-7efd-4286-92b3-1be3d319e143fileName">Test_Run_Summary</con:setting>
-    <con:setting id="f8ef9ea2-5a39-4686-95b7-cf48c62f9133fileName">Test_Run_Summary</con:setting>
-  </con:settings>
+  <con:setting id="e8c21dd3-9f18-471b-843b-96b3ab22047efileName">Test_Run_Summary</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="Test_Run_Summary" id="a2a8a4bd-f8f9-4d93-8774-42413223fedb">
+  <con:testStep type="groovy" name="Test_Run_Summary" id="703b78ee-fee8-4c2c-bf68-0e99e8f4a66e">
     <con:settings/>
     <con:config>
       <script>import groovy.io.FileType
