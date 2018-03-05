@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="335c075f-193e-4a4f-a88b-c9698cbcda87" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetRolesList" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="d770626e-63b7-4df4-ba3c-d8c3de9f08e3" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetRolesList" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="83c1b1b3-0f75-4106-86f8-1a6e535743eefileName">GetRolesList</con:setting>
-    <con:setting id="335c075f-193e-4a4f-a88b-c9698cbcda87fileName">GetRolesList</con:setting>
-  </con:settings>
+  <con:setting id="d770626e-63b7-4df4-ba3c-d8c3de9f08e3fileName">GetRolesList</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="81a29ba2-3f5d-4f3b-8b6f-45cd7f666162">
+  <con:testStep type="groovy" name="DataSource_Setup" id="4b1d6303-6161-4fdb-acbe-bb970aa43bec">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -143,7 +142,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="3294de37-5d81-4ad6-865e-f5d90d3c74a4">
+  <con:testStep type="datasource" name="DataSource" id="58215bb3-8cc7-4a7c-a3e6-2fb28c1d7879">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -206,6 +205,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -234,7 +234,7 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="120836a0-9cb6-4663-9cf8-2d09d58a36d8">
+  <con:testStep type="groovy" name="Flow Control" id="75321e53-8eca-4cb1-85a8-51823af11bcc">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -261,7 +261,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="GetRolesList" id="482a3010-8f74-4188-b9f7-4da643e8dff1" disabled="true">
+  <con:testStep type="restrequest" name="GetRolesList" id="2f90d309-9704-4b84-8673-e15dda4cf0e7" disabled="true">
     <con:settings/>
     <con:config service="GetRolesList" resourcePath="/get_roles_list" methodName="GetRolesList" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="GetRolesList" id="93000728-c718-4417-9115-5321dde8e36b" mediaType="application/json">
@@ -321,7 +321,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="21d668f7-0ef5-4ddc-a112-945d377c2f08" disabled="true">
+  <con:testStep type="groovy" name="Report" id="e4f0ca4e-71b1-4cd6-aece-b7be757f047e" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -451,7 +451,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="21bb3925-8863-4cc7-a219-430660b7a8d2">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="78925fd3-1bef-4530-baa9-0b46b6f34aef">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>

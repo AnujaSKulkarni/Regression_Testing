@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="c833caee-3e85-4f7a-b955-537c5f9b0984" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="LocalizedDateAndTime" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="91212d51-97c1-445d-8a80-cf10364e1b6f" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="LocalizedDateAndTime" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="0fb9844e-5b63-45d8-81b7-10ac64aa433bfileName">LocalizedDateAndTime</con:setting>
-    <con:setting id="c833caee-3e85-4f7a-b955-537c5f9b0984fileName">LocalizedDateAndTime</con:setting>
-  </con:settings>
+  <con:setting id="91212d51-97c1-445d-8a80-cf10364e1b6ffileName">LocalizedDateAndTime</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="datasource" name="JDBC" id="91de86b1-0328-4d63-aaf7-407ac51dd09e">
+  <con:testStep type="datasource" name="JDBC" id="bbc65962-5798-41b1-9731-e64e45ad4a91">
     <con:settings>
       <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
     </con:settings>
@@ -22,7 +21,7 @@ Where BLUADMIN.APPLIANCE.STATUS = 'CLAIMED'</query><fetchSize/><stored-procedure
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="5cb9ee85-ff8a-47b6-a2f7-c9268cea63af">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="b1dab64e-8064-430c-b1c2-bc0c6bf2ea8d">
     <con:settings/>
     <con:config>
       <script>import java.text.SimpleDateFormat
@@ -36,12 +35,14 @@ log.info date
 
 testRunner.testCase.setPropertyValue("Current_Date", date)
 
+
+
 def BLUADMIN_APPLIANCE_SAID = context.expand( '${JDBC#BLUADMIN_APPLIANCE_SAID}' )
 def SAID = "\"" + BLUADMIN_APPLIANCE_SAID + "\""
 testRunner.testCase.setPropertyValue("SAID", SAID)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="DataSource_Setup" id="a617f138-f12b-425b-98b1-f495e0195b1f">
+  <con:testStep type="groovy" name="DataSource_Setup" id="83f84a89-f2c8-4982-8af5-d2ba5a7c2492">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -179,7 +180,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="e5f195dc-244b-4946-945b-d90abbb923ef">
+  <con:testStep type="datasource" name="DataSource" id="e745d346-ff77-4a06-aa03-59a1efe2703f">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -268,7 +269,7 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="b09ab200-bf2f-4c14-ab72-02486712a2d0">
+  <con:testStep type="groovy" name="flow control" id="2ddd8386-0fa9-4494-9889-c73eff5f1b00">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -286,7 +287,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="LocalizedDateAndTime" id="d7dcc925-fa7c-4236-8638-5e262a99004c" disabled="true">
+  <con:testStep type="restrequest" name="LocalizedDateAndTime" id="3e606250-a4c0-436c-a8b3-71ca40aaa08e" disabled="true">
     <con:settings/>
     <con:config service="LocalizedDateAndTime" resourcePath="/localizedDateAndTime" methodName="LocalizedDateAndTime" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="LocalizedDateAndTime" id="724171b3-eafa-4adf-89c1-cec63e486ddb" mediaType="application/json" postQueryString="false">
@@ -329,7 +330,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="5c79cb41-0482-49cb-8e88-85acb940cf79" disabled="true">
+  <con:testStep type="groovy" name="Report" id="6e9f7346-88ce-45ed-9876-daa5b7d68c6c" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -453,7 +454,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="4a0ffd26-3620-4389-acd7-7504565c1882">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="fbb6d05d-5be2-49da-b513-68d14b893797">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
@@ -463,11 +464,11 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Current_Date</con:name>
-      <con:value>"2018-01-19T18:20:34+00:00"</con:value>
+      <con:value>"2018-02-27T17:05:21+00:00"</con:value>
     </con:property>
     <con:property>
       <con:name>SAID</con:name>
-      <con:value>"WPR3333A7VVDE"</con:value>
+      <con:value>""</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

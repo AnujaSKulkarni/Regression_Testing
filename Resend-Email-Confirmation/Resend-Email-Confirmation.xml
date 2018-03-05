@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Resend Email Confirmation" path="/client_auth/accounts/resend_confirmation/${#TestCase#Account_ID}" id="58c3cd27-a79e-4101-a9ad-03dc61783d6a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Resend Email Confirmation" path="/client_auth/accounts/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['email']}/confirmations/resend" id="58c3cd27-a79e-4101-a9ad-03dc61783d6a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="58c3cd27-a79e-4101-a9ad-03dc61783d6afileName">Resend-Email-Confirmation</con:setting>
   </con:settings>

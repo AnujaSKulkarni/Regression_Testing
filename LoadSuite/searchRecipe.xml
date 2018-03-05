@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="99ee7d20-7266-48b1-bcd3-e39a311203e7" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="searchRecipe" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="2ea8544f-7c8e-43db-8890-b578f0a4a585" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="searchRecipe" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="ff033a49-9cdd-4fc9-a904-c9496ffb96a2fileName">searchRecipe</con:setting>
-    <con:setting id="99ee7d20-7266-48b1-bcd3-e39a311203e7fileName">searchRecipe</con:setting>
-  </con:settings>
+  <con:setting id="2ea8544f-7c8e-43db-8890-b578f0a4a585fileName">searchRecipe</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="9ee8acef-5fea-49df-a6fc-0c48a3089cdd">
+  <con:testStep type="groovy" name="DataSource_Setup" id="f9b6ded2-8352-4a13-aa38-263947e3addf">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -143,7 +142,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="cc29065d-b1a0-492f-a668-a57a61a19c15">
+  <con:testStep type="datasource" name="DataSource" id="621776e0-94ea-4983-b64a-c66f29f5ad1c">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -206,6 +205,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -234,7 +234,7 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="e0ffb650-fdc2-4da1-a022-951b8eee51bb">
+  <con:testStep type="groovy" name="Flow Control" id="5625fec6-c9d5-430a-b913-31a5d2e125c3">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -255,7 +255,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="UPC_DataSource" id="5494da57-6caf-4889-a343-c1da07433944">
+  <con:testStep type="datasource" name="UPC_DataSource" id="865c6866-c9e6-4acd-af66-1f87a1a94488" disabled="true">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -274,7 +274,7 @@ if (API_Name != TestCaseName){
       <con:expandProperties>false</con:expandProperties>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="searchRecipe" id="ad45bd6a-ad22-42d2-b0f0-cbd26178d8aa">
+  <con:testStep type="restrequest" name="searchRecipe" id="9d5bdd0a-36c8-43bf-877d-387c4ba4e426" disabled="true">
     <con:settings/>
     <con:config service="searchRecipe" resourcePath="/searchRecipe/${UPC_DataSource#UPC_Codes}/en" methodName="searchRecipe" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="searchRecipe" id="d2d2db26-4f43-48d8-a10b-56ea805d8d8d" mediaType="application/json">
@@ -310,7 +310,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="b601ec2b-5060-47cc-88aa-687626047291">
+  <con:testStep type="groovy" name="Report" id="572e6247-5736-48da-8bfa-955dfc256633" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -341,8 +341,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
 
 
 def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
-log.info Final_Path
+//log.info Final_Path
 def final_path = new File(Final_Path)
+final_path.mkdir()
+Final_Path = Final_Path + "search_recipe/"
+final_path = new File(Final_Path)
 final_path.mkdir()
 
 
@@ -376,6 +379,7 @@ date = date.replaceAll(":","_")
 date = date.replaceAll(" ","_")
 def TCName = TestCaseName.replaceAll(" ","_")
 report_file = Final_Path + TCN + "_" + TCName + "_" + date + "_" + Status + ".txt"
+log.info "Report File path" + report_file
 /* Writing to file */
 def file1 = new File(report_file)
 
@@ -439,14 +443,20 @@ out.close()
 log.info "Report Generated"</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="UPC_DataSource Loop" id="282e3620-f607-4524-be3c-ca1d940ea7ad">
+  <con:testStep type="delay" name="Delay" id="474f5244-0b6d-4405-8255-c0acec3c156b" disabled="true">
+    <con:settings/>
+    <con:config>
+      <delay>1000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="UPC_DataSource Loop" id="dec05d6e-4da0-4278-a961-3c44be118678" disabled="true">
     <con:settings/>
     <con:config>
       <dataSourceStep>UPC_DataSource</dataSourceStep>
       <targetStep>searchRecipe</targetStep>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="7b724da6-bcd6-4d89-837b-768a65e00071">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="2a4347e8-f326-41b2-8772-ea23d61e8d2f">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>

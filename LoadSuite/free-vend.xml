@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="8ceb8915-2d69-499a-a98e-e0fd66c7175e" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="free vend" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="4f63297b-32fa-448b-8240-b477557fc3de" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="free vend" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="9eb9ef9a-187f-4533-ad4f-e0beab1118c0fileName">free-vend</con:setting>
-    <con:setting id="8ceb8915-2d69-499a-a98e-e0fd66c7175efileName">free-vend</con:setting>
-  </con:settings>
+  <con:setting id="4f63297b-32fa-448b-8240-b477557fc3defileName">free-vend</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="datasource" name="DataSource" id="61a4b793-2926-48fa-bd6a-fefe59dad497">
+  <con:testStep type="datasource" name="DataSource" id="7890d9a8-b358-4719-aee3-4bd6e0609314">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -67,7 +66,7 @@
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="8e61f079-80fb-4efa-83db-89fc5510448b">
+  <con:testStep type="groovy" name="Flow Control" id="3e65b48f-1e14-4e77-bd49-03646025d68f">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -92,7 +91,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="free vend_Positive" id="9f446509-a674-49fd-a7fc-831aa0f34151">
+  <con:testStep type="restrequest" name="free vend_Positive" id="46ddefc3-9175-4fa7-a903-1fc968de0984">
     <con:settings/>
     <con:config service="free vend" resourcePath="/freeVend/${DataSource#SAID}" methodName="free vend" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="free vend_Positive" id="e71a60e5-b94e-4b25-b7b1-ebf4f8472f3d" mediaType="application/json">
@@ -146,7 +145,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="free vend_Negative" id="242d9819-9720-4c46-a2c7-1934ff27b401">
+  <con:testStep type="restrequest" name="free vend_Negative" id="32f5846a-424d-453a-a9fd-e061a609f477">
     <con:settings/>
     <con:config service="free vend" resourcePath="/freeVend/${DataSource#SAID}" methodName="free vend" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="free vend_Negative" id="e71a60e5-b94e-4b25-b7b1-ebf4f8472f3d" mediaType="application/json">
@@ -200,7 +199,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="14536501-a755-41fa-90ae-9b7d3085b8bd">
+  <con:testStep type="groovy" name="Report" id="4663eb9a-c8b2-437e-8fc4-ade88b587516">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -328,7 +327,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="e3bff923-94e3-4d94-b44e-200a92f66891">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="1fbf311e-e9db-4ded-ba9d-b41d30c28c8e">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>

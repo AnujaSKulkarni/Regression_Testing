@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="93eda719-4e57-41e2-a887-47bd137f831c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Delete Location" searchProperties="true" timeout="0" maxResults="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="fc57d3ea-e55e-44b9-b9cd-c81960aa9dd2" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Delete Location" searchProperties="true" timeout="0" maxResults="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="8cb6c968-ee27-4a49-9fb7-2422b506a07bfileName">Delete-Location</con:setting>
-    <con:setting id="93eda719-4e57-41e2-a887-47bd137f831cfileName">Delete-Location</con:setting>
-  </con:settings>
+  <con:setting id="fc57d3ea-e55e-44b9-b9cd-c81960aa9dd2fileName">Delete-Location</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="6edacff6-784b-4b60-8b2b-6f944150e153">
+  <con:testStep type="groovy" name="DataSource_Setup" id="0cf9a4df-b502-4d63-88be-c3828b840611">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -143,7 +142,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="9acb228d-1f91-40fc-8ee2-55fa723c505e">
+  <con:testStep type="datasource" name="DataSource" id="f0b67532-e696-4657-9b71-e82cfb5d37f9">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -234,7 +233,7 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="cba87a29-5bf0-4e15-8ff6-86812f18bacc">
+  <con:testStep type="groovy" name="Flow Control" id="6c1eaf81-d193-46e6-aa0b-97e9ac5fe401">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -274,7 +273,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource_RunTime" id="a0203c63-d899-4348-b8d8-e8a37c3bb515" disabled="true">
+  <con:testStep type="datasource" name="DataSource_RunTime" id="f19ff019-9fae-4edd-aed2-64ffef578ad6" disabled="true">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -288,14 +287,14 @@ if (API_Name != TestCaseName){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup_RunTime" id="7b0b62ff-3b5e-4e2c-9525-6c5bc903205a" disabled="true">
+  <con:testStep type="groovy" name="Test_Data_Setup_RunTime" id="df5fad86-2aaf-4fb2-bd30-1d0b2cb85a48" disabled="true">
     <con:settings/>
     <con:config>
       <script>def Location_ID_Number = context.expand( '${DataSource_RunTime#Location_ID_Number}' )
 testRunner.testCase.setPropertyValue("Location_ID_Number",Location_ID_Number)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Location_Positive" id="fe218574-81e1-4c20-9abd-fc571d787589" disabled="true">
+  <con:testStep type="restrequest" name="Delete Location_Positive" id="113f2dba-e578-42f4-b8e0-a9d4099fb798" disabled="true">
     <con:settings/>
     <con:config service="Delete Location" resourcePath="/location/${#TestCase#Location_ID_Number}" methodName="Delete Location" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete Location_Positive" id="4ff6d4a3-85f7-4f79-b145-51be0b215387" mediaType="application/json" postQueryString="false">
@@ -355,7 +354,7 @@ testRunner.testCase.setPropertyValue("Location_ID_Number",Location_ID_Number)</s
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report_RunTime" id="c0749063-1a92-4f04-9e77-c417be130b03" disabled="true">
+  <con:testStep type="groovy" name="Report_RunTime" id="f25a03ab-15d4-4e54-9ce6-7dcad9e08b59" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -483,14 +482,14 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop_RunTime" id="78979f14-4b84-47d7-9604-37d29f9fcff5" disabled="true">
+  <con:testStep type="datasourceloop" name="DataSource Loop_RunTime" id="1ef81d14-ecf0-4b74-9108-66074376a3c2" disabled="true">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource_RunTime</dataSourceStep>
       <targetStep>Test_Data_Setup_RunTime</targetStep>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="73ad0f13-b962-446d-973d-cb6305c566ab" disabled="true">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="4c3698ef-eb1a-4a3d-bfe4-0d0a0dbbdd4d" disabled="true">
     <con:settings/>
     <con:config>
       <script>def Location_ID_Number = context.expand( '${DataSource#Location_Number}' )
@@ -499,7 +498,7 @@ testRunner.testCase.setPropertyValue("Location_ID_Number",Location_ID_Number)
 log.info Location_ID_Number</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Location_Negative" id="b495f674-6193-4128-81fa-538dc4a1f219" disabled="true">
+  <con:testStep type="restrequest" name="Delete Location_Negative" id="b8ee9c73-5518-46f9-a305-b33d9bccf18c" disabled="true">
     <con:settings/>
     <con:config service="Delete Location" resourcePath="/location/${#TestCase#Location_ID_Number}" methodName="Delete Location" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete Location_Negative" id="4ff6d4a3-85f7-4f79-b145-51be0b215387" mediaType="application/json" postQueryString="false">
@@ -559,7 +558,7 @@ log.info Location_ID_Number</script>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="ea06cfc3-662b-423c-b262-8369bcdf5855" disabled="true">
+  <con:testStep type="groovy" name="Report" id="7637f7bc-4547-46b0-ad3a-6f0c6399e7a2" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -688,7 +687,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="5b7bc822-69d7-4cf7-9ddf-da2c41aaa472">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="8ae18a92-2d6e-4f0c-8246-7c30522a4cca">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
