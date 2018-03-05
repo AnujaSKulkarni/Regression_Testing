@@ -165,12 +165,12 @@ if(RunTimeDataSource_Flag == true){
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters>
-          <con:entry key="password" value="Whirlpool123$"/>
-          <con:entry key="grant_type" value="password"/>
-          <con:entry key="client_secret" value="syntel123$"/>
-          <con:entry key="client_id" value="syntel"/>
-          <con:entry key="username" value="wcloud_admin_account_soapui@mailinator.com"/>
-        </con:parameters>
+  <con:entry key="password" value="Whirlpool123$"/>
+  <con:entry key="grant_type" value="password"/>
+  <con:entry key="client_secret" value="syntel123$"/>
+  <con:entry key="client_id" value="syntel"/>
+  <con:entry key="username" value="wcloud_admin_account_soapui@mailinator.com"/>
+</con:parameters>
         <con:parameterOrder>
           <con:entry>grant_type</con:entry>
           <con:entry>username</con:entry>
