@@ -49,12 +49,6 @@
       <con:params/>
       <con:element xmlns:loc="http://locationserviceqa.mybluemix.net/api/location">loc:Fault</con:element>
     </con:representation>
-    <con:representation type="RESPONSE">
-      <con:mediaType xsi:nil="true"/>
-      <con:status>0</con:status>
-      <con:params/>
-      <con:element>data</con:element>
-    </con:representation>
     <con:request name="Create Location" id="6160fb0a-7b6c-4952-b026-d37159474bbd" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

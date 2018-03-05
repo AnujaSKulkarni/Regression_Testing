@@ -2,8 +2,7 @@
 <con:testCase id="ce9c6884-1240-416f-a293-090c9b3d87a0" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GET Client Token" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="4d9b8d24-cdbf-470c-926c-ce1cd761a7a0fileName">GET-Client-Token</con:setting>
-    <con:setting id="ce9c6884-1240-416f-a293-090c9b3d87a0fileName">GET-Client-Token</con:setting>
-  </con:settings>
+  <con:setting id="ce9c6884-1240-416f-a293-090c9b3d87a0fileName">GET-Client-Token</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="GET Client Token" id="00fe5c07-58b4-4710-86af-0e1c819d5077">
     <con:settings/>
@@ -69,7 +68,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="2e340076-6a97-4870-8c67-599573b21b21" disabled="true">
+  <con:testStep type="groovy" name="Report" id="2e340076-6a97-4870-8c67-599573b21b21">
     <con:settings/>
     <con:config>
       <script>def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
@@ -143,7 +142,7 @@ file1.append("---------------- Response --------------------------\n")
 file1.append(response)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Skip_on_failure" id="abc93a93-603c-4419-8f21-6efe0224731d" disabled="true">
+  <con:testStep type="groovy" name="Skip_on_failure" id="abc93a93-603c-4419-8f21-6efe0224731d">
     <con:settings/>
     <con:config>
       <script>def TestCaseName = testRunner.testCase.getName()

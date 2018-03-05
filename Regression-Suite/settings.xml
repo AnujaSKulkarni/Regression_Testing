@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite id="08d716b0-d72a-4b2e-8d65-6c52af8434f5" name="Regression Suite" xmlns:con="http://eviware.com/soapui/config">
+<con:testSuite id="08d716b0-d72a-4b2e-8d65-6c52af8434f5" name="Regression Suite" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="IncludeOverview">true</con:setting>
     <con:setting id="IncludeResults">true</con:setting>
