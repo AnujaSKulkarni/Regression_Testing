@@ -293,9 +293,9 @@ if (API_Name != TestCaseName){
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}"/>
-          <con:entry key="wp-client-brand" value="Whirlpool"/>
-        </con:parameters>
+  <con:entry key="Authorization" value="Bearer ${#[LoadSuite#Get All Accounts#GET Member Token]#Response#$['access_token']}"/>
+  <con:entry key="wp-client-brand" value="Whirlpool"/>
+</con:parameters>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
           <con:entry>Content-Type</con:entry>

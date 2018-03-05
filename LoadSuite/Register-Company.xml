@@ -347,7 +347,7 @@ if (API_Name != TestCaseName){
 "logo":null,
 "customerCare":${DataSource#Customer_Care},
 "companyName": ${#TestCase#Company_Name},
-"countryId":${#[Regression Suite#Add company]#Country_Code},
+"countryId":${#[LoadSuite#Add company]#Country_Code},
 "phoneNumber": ${DataSource#Phone_No.},
 "email": ${#TestCase#Email_ID},
 "city": ${DataSource#City},
@@ -634,7 +634,7 @@ out.close()</script>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>4763</con:value>
+      <con:value>4812</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

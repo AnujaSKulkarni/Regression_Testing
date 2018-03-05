@@ -144,14 +144,12 @@ if(RunTimeDataSource_Flag == true){
   </con:testStep>
   <con:testStep type="groovy" name="Test_Data_Setup" id="d99ad239-a9b5-4c65-84f3-f8c26a892b8a">
     <con:settings/>
-    <con:config>
-      <script>def Response = context.expand( '${#[Regression Suite#Create Client Version#Create Client Version]#Response#$[\'response\']}' )
+    <con:config><script>def Response = context.expand( '${#[LoadSuite#Create Client Version#Create Client Version]#Response#$[\'response\']}' )
 String[] temp_response = Response.split(": ")
 log.info temp_response[1]
 temp_response = temp_response[1].split(" Created")
 log.info temp_response[0]
-testRunner.testCase.setPropertyValue("Client_Version_ID", temp_response[0])</script>
-    </con:config>
+testRunner.testCase.setPropertyValue("Client_Version_ID", temp_response[0])</script></con:config>
   </con:testStep>
   <con:testStep type="datasource" name="DataSource" id="6c888426-80ec-41eb-93a0-1a6863f63574">
     <con:settings/>
@@ -473,7 +471,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Client_Version_ID</con:name>
-      <con:value>424</con:value>
+      <con:value>428</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

@@ -157,9 +157,9 @@ if(RunTimeDataSource_Flag == true){
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( Stage_Env )</Connection><query>Select BLUADMIN.SLS_USER.USER_ID as BLUADMIN_SLS_USER_USER_ID
+        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( QA_Env )</Connection><query>Select BLUADMIN.SLS_USER.USER_ID as BLUADMIN_SLS_USER_USER_ID
 From BLUADMIN.SLS_USER
-Where BLUADMIN.SLS_USER.ACCOUNT_ID = ${#[Regression Suite#GET Member Token#DataSource_RunTime]#Account_ID_Number}</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
+Where BLUADMIN.SLS_USER.ACCOUNT_ID = ${#[LoadSuite#GET Member Token#DataSource_RunTime]#Account_ID_Number}</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -669,7 +669,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>TimeStamp</con:name>
-      <con:value>1520233098</con:value>
+      <con:value>1520242401</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

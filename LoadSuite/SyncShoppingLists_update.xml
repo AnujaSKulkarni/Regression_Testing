@@ -278,8 +278,8 @@ if (API_Name != TestCaseName){
   "deviceGuid": "30ad09ad8fa0098ad9d9999eeeeea",
   "cleanLists": [{}],
   "dirtyLists": [{
-    "shoppinglistId": ${#[Regression Suite#SyncShoppingLists_create#SyncShoppingLists_create_Positive]#Response#$['response']['newLists'][0]['_id']},
-    "userId": ${#[Regression Suite#SyncShoppingLists_create#SyncShoppingLists_create_Positive]#Response#$['response']['newLists'][0]['userId']},
+    "shoppinglistId": ${#[LoadSuite#SyncShoppingLists_create#SyncShoppingLists_create_Positive]#Response#$['response']['newLists'][0]['_id']},
+    "userId": ${#[LoadSuite#SyncShoppingLists_create#SyncShoppingLists_create_Positive]#Response#$['response']['newLists'][0]['userId']},
         "userFirstName":${DataSource#First_Name},
             "userLastName":${DataSource#Last_Name},
             "name":${DataSource#Shoppinglist_Name} ,

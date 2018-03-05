@@ -276,8 +276,8 @@ if (API_Name != TestCaseName){
     "deviceGuid": "30ad09ad8fa0098ad9d9999eeeeea",
     "cleanLists": [
         {
-            "shoppinglistId": ${#[Regression Suite#SyncShoppingLists_create#SyncShoppingLists_create_Positive]#Response#$['response']['newLists'][0]['_id']},
-            "userId": ${#[Regression Suite#SyncShoppingLists_create#JDBC]#BLUADMIN_SLS_USER_USER_ID},
+            "shoppinglistId": ${#[LoadSuite#SyncShoppingLists_create#SyncShoppingLists_create_Positive]#Response#$['response']['newLists'][0]['_id']},
+            "userId": ${#[LoadSuite#SyncShoppingLists_create#JDBC]#BLUADMIN_SLS_USER_USER_ID},
             "userFirstName": "RupalNew",
             "userLastName": "Kesharwani",
             "name": "Mike's Ingredient List 2",

@@ -331,10 +331,10 @@ if (data_Combination == "Negative"){
         </con:settings>
         <con:endpoint>${Location}</con:endpoint>
         <con:request>{
-  "locationId":${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']},
+  "locationId":${#[LoadSuite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']},
   "locationName":${DataSource#Location_Name},
   "street": ${DataSource#Street},
-  "stateId": ${#[Regression Suite#Create Location#JDBC]#st_STATE_ID},
+  "stateId": ${#[LoadSuite#Create Location#JDBC]#st_STATE_ID},
   "city": ${DataSource#City},
   "postalCode": ${DataSource#Postal_Code},
   "secondLineAddress": "Home",
@@ -355,8 +355,8 @@ if (data_Combination == "Negative"){
   "longitude": ${DataSource#Longitude},
   "elevation": ${DataSource#Elevation},
   "enableClothspin":${DataSource#enable_cloth_spin},
-  "countryId": ${#[Regression Suite#Create Location#JDBC]#st_COUNTRY_ID},
-  "countryCode": ${#[Regression Suite#Create Location]#COUNTRY_CODE},
+  "countryId": ${#[LoadSuite#Create Location#JDBC]#st_COUNTRY_ID},
+  "countryCode": ${#[LoadSuite#Create Location]#COUNTRY_CODE},
   "accountId":${#TestCase#Account_ID},
   "smartEnergyProfile":1
 }</con:request>
@@ -629,11 +629,11 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>4763</con:value>
+      <con:value>4812</con:value>
     </con:property>
     <con:property>
       <con:name>Location_ID</con:name>
-      <con:value>2472</con:value>
+      <con:value>2485</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

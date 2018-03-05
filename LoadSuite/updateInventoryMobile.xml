@@ -273,7 +273,7 @@ if (API_Name != TestCaseName){
         </con:settings>
         <con:endpoint>${LAR}</con:endpoint>
         <con:request>{
-    "invId": ${#[Regression Suite#SyncInventoryMobile#SyncInventoryMobile]#Response#$['response'][0]['_id']},
+    "invId": ${#[LoadSuite#SyncInventoryMobile#SyncInventoryMobile]#Response#$['response'][0]['_id']},
     "lastUpdate": "2014-01-15T20:23:07.644Z",
     "inventoryItems": [
         {

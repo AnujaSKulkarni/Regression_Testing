@@ -10,7 +10,7 @@
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( QA_Env )</Connection><query>Select BLUADMIN.STATE.STATE_ID as BLUADMIN_STATE_STATE_ID
+        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( Stage_Env )</Connection><query>Select BLUADMIN.STATE.STATE_ID as BLUADMIN_STATE_STATE_ID
 From BLUADMIN.STATE
 Where BLUADMIN.STATE.STATE_CODE = 'US'</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
       </con:dataSource>
@@ -311,13 +311,13 @@ testRunner.testCase.setPropertyValue("Company_Name", Company_Name)</script>
         <con:endpoint>${QA_Env}</con:endpoint>
         <con:request>{  
   "companyName": ${#TestCase#Company_Name},
-  "companyId":${#[Regression Suite#Register Company#JDBC]#BLUADMIN_COMPANY_COMPANY_ID},
+  "companyId":${#[LoadSuite#Register Company#JDBC]#BLUADMIN_COMPANY_COMPANY_ID},
   "address": ${DataSource#Address_1},
   "logo":null,
   "customerCare":${DataSource#Customer_Care},
   "updatedAt":null,
   "phoneNo": ${DataSource#Phone_No.},
-  "email": ${#[Regression Suite#Register Company]#Email_ID},
+  "email": ${#[LoadSuite#Register Company]#Email_ID},
   "address2":${DataSource#Address_2},
   "city": ${DataSource#City},
   "stateId": ${JDBC#BLUADMIN_STATE_STATE_ID},
@@ -577,7 +577,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Company_Name</con:name>
-      <con:value>"Mon_Mar_05_12_25_41_IST_2018_Update Company"</con:value>
+      <con:value>"Mon_Mar_05_16_29_51_IST_2018_Update Company"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
