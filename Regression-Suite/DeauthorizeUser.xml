@@ -256,7 +256,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="DeauthorizeUser" id="16fdbe78-e7ab-4123-9ca0-04434b60009e" disabled="true">
+  <con:testStep type="restrequest" name="DeauthorizeUser" id="16fdbe78-e7ab-4123-9ca0-04434b60009e">
     <con:settings/>
     <con:config service="DeauthorizeUser" resourcePath="/location/${#Project#Location_ID}/deauthorizeUser" methodName="DeauthorizeUser" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="DeauthorizeUser" id="4142fdae-14c4-4ecf-abd1-e5036bf49888" mediaType="application/json" postQueryString="false">
@@ -324,7 +324,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="d336725f-cb80-468c-8e51-128d15a8fc36" disabled="true">
+  <con:testStep type="groovy" name="Report" id="d336725f-cb80-468c-8e51-128d15a8fc36">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
