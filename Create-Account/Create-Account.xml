@@ -83,6 +83,12 @@
       <con:params/>
       <con:element>data</con:element>
     </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>text/html</con:mediaType>
+      <con:status>502</con:status>
+      <con:params/>
+      <con:element>html</con:element>
+    </con:representation>
     <con:request name="Create Account" id="ca9f4001-c1e6-4520-a84d-0a8f310353ef" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
