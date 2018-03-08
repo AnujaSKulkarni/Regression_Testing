@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Retrieve NotificationMessages" path="/contents/notificationMessages/${DataSource#DDM_Name}" id="25f1a692-57e6-4805-87bf-49ef2554a8ae" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Retrieve NotificationMessages" path="/contents/notificationMessages/DDM_Washer_SmartGrid_V1" id="25f1a692-57e6-4805-87bf-49ef2554a8ae" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="25f1a692-57e6-4805-87bf-49ef2554a8aefileName">Retrieve-NotificationMessages</con:setting>
   </con:settings>
@@ -44,6 +44,12 @@
       <con:status>502</con:status>
       <con:params/>
       <con:element>html</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ddm="https://api-stg.whrcloud.com/api/v1/contents/notificationMessages/%22DDM_Washer_SmartGrid_V1%22">ddm:Response</con:element>
     </con:representation>
     <con:request name="Retrieve NotificationMessages" id="70b2e948-9e08-4ae8-8bc7-01e943093d62" mediaType="application/json" postQueryString="false">
       <con:settings>
