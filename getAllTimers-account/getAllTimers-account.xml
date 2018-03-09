@@ -27,12 +27,6 @@
       <con:params/>
       <con:element xmlns:wpr="https://api-test.whrcloud.com/api/v1/appliance/account/ALL/appliance/WPR333334RA96">wpr:Fault</con:element>
     </con:representation>
-    <con:representation type="RESPONSE">
-      <con:mediaType xsi:nil="true"/>
-      <con:status>0</con:status>
-      <con:params/>
-      <con:element>data</con:element>
-    </con:representation>
     <con:request name="getAllTimers account" id="77546013-6984-4ac0-ab70-90b978310ece" mediaType="application/json">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

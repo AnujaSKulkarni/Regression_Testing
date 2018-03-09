@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="386a250f-fa9f-45d9-8cf8-ed543b9457d6" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update Company" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="194ad280-09a3-4ed0-9c86-a91e43cf2e7d" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update Company" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="56b80110-5a78-429e-809b-6be46a98721ffileName">Update-Company</con:setting>
-    <con:setting id="386a250f-fa9f-45d9-8cf8-ed543b9457d6fileName">Update-Company</con:setting>
-  </con:settings>
+  <con:setting id="194ad280-09a3-4ed0-9c86-a91e43cf2e7dfileName">Update-Company</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="datasource" name="JDBC" id="6c19fba2-5260-4a30-8ed6-13eea96cf5de">
+  <con:testStep type="datasource" name="JDBC" id="4fc44434-dc39-4106-aa21-c7a1f68a1303">
     <con:settings>
       <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( QA_Env )</Connection><query>Select BLUADMIN.STATE.STATE_ID as BLUADMIN_STATE_STATE_ID
+        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( Stage_Env )</Connection><query>Select BLUADMIN.STATE.STATE_ID as BLUADMIN_STATE_STATE_ID
 From BLUADMIN.STATE
 Where BLUADMIN.STATE.STATE_CODE = 'US'</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
       </con:dataSource>
@@ -22,7 +21,7 @@ Where BLUADMIN.STATE.STATE_CODE = 'US'</query><fetchSize/><stored-procedure>fals
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="DataSource_Setup" id="a3f1866a-049a-4c12-bc13-93a91ac54d8b">
+  <con:testStep type="groovy" name="DataSource_Setup" id="9608ed9d-909b-47ab-ae27-f7da8610ec73">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -160,7 +159,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="2f4d5344-ebcc-4e5f-8f09-6cc9a22cdcdd">
+  <con:testStep type="datasource" name="DataSource" id="7bf84821-c2f7-42fd-b608-9b44448e50fc">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -168,90 +167,95 @@ if(RunTimeDataSource_Flag == true){
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
-      <con:property>TC_Number</con:property>
-      <con:property>Service_Name</con:property>
-      <con:property>Defect_ID</con:property>
-      <con:property>API_Name</con:property>
-      <con:property>Data_Combination</con:property>
-      <con:property>Remark</con:property>
-      <con:property>Comments</con:property>
-      <con:property>Account_Number</con:property>
-      <con:property>Address_1</con:property>
-      <con:property>Address_2</con:property>
-      <con:property>Alert_ID</con:property>
-      <con:property>Alert_Platform_Type</con:property>
-      <con:property>Alternate_Email_ID</con:property>
-      <con:property>Appliance_ID</con:property>
-      <con:property>Appliance_Master_ID</con:property>
-      <con:property>Appliance_Master_Version_ID</con:property>
-      <con:property>Appliance_Name</con:property>
-      <con:property>Attribute_Name</con:property>
-      <con:property>Attribute_Value</con:property>
-      <con:property>Brand</con:property>
-      <con:property>City</con:property>
-      <con:property>Company_ID</con:property>
-      <con:property>Company_Name</con:property>
-      <con:property>Confirm_Password</con:property>
-      <con:property>Country_Name</con:property>
-      <con:property>Country_Code</con:property>
-      <con:property>Country_ID</con:property>
-      <con:property>Customer_Care</con:property>
-      <con:property>DCT</con:property>
-      <con:property>desired_temperature</con:property>
-      <con:property>Device_ID</con:property>
-      <con:property>Device_Notification_ID</con:property>
-      <con:property>Device_Shadow_Name</con:property>
-      <con:property>Edge_Device_ID</con:property>
-      <con:property>Elevation</con:property>
-      <con:property>Email_BodyMessage</con:property>
-      <con:property>Email_From</con:property>
-      <con:property>Email_ID_Data</con:property>
-      <con:property>Email_Subject</con:property>
-      <con:property>Email_To</con:property>
-      <con:property>enable_cloth_spin</con:property>
-      <con:property>First_Name</con:property>
-      <con:property>Group_Number</con:property>
-      <con:property>inv__description</con:property>
-      <con:property>JSON_Body</con:property>
-      <con:property>Key</con:property>
-      <con:property>Language_ID</con:property>
-      <con:property>Last_Name</con:property>
-      <con:property>Lastupdate</con:property>
-      <con:property>Latitude</con:property>
-      <con:property>Locale_ID</con:property>
-      <con:property>Location_Name</con:property>
-      <con:property>Location_Number</con:property>
-      <con:property>Longitude</con:property>
-      <con:property>Loyalty_ID</con:property>
-      <con:property>Nest_Away</con:property>
-      <con:property>Nest_Thermostat_ID</con:property>
-      <con:property>New_Password</con:property>
-      <con:property>Notification_Type</con:property>
-      <con:property>Password</con:property>
-      <con:property>Phone_No.</con:property>
-      <con:property>Platform</con:property>
-      <con:property>Postal_Code</con:property>
-      <con:property>Rate_Plan_Code</con:property>
-      <con:property>Rate_Plan_ID</con:property>
-      <con:property>Region</con:property>
-      <con:property>Role_ID</con:property>
-      <con:property>SAID</con:property>
-      <con:property>Shoppinglist_ID</con:property>
-      <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_Name</con:property>
-      <con:property>Status</con:property>
-      <con:property>Status_ID</con:property>
-      <con:property>Street</con:property>
-      <con:property>trigger_temperature</con:property>
-      <con:property>User_ID</con:property>
-      <con:property>User_Role</con:property>
-      <con:property>Verification_Code</con:property>
-      <con:property>Version</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>DDM_Name</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>languageCode</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>name</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>Utility_Name</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="46b35625-6b7f-4383-8d89-5f96a5a28571">
+  <con:testStep type="groovy" name="Flow Control" id="88e57d1c-c0cf-4078-b1db-693212b2bde5">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -280,7 +284,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="df26abef-27a1-41c9-959e-39188e0317ef" disabled="true">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="eafbfc4a-6d21-4a9d-b233-ed02f1532698" disabled="true">
     <con:settings/>
     <con:config>
       <script>def Company_Name = context.expand( '${DataSource#Company_Name}' )
@@ -297,7 +301,7 @@ log.info Company_Name
 testRunner.testCase.setPropertyValue("Company_Name", Company_Name)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Update Company_Positive" id="0bed1ac8-b90b-487b-863a-ffca33ef71a7" disabled="true">
+  <con:testStep type="restrequest" name="Update Company_Positive" id="4edda74c-941c-4f01-8c0b-213e1ee2066c" disabled="true">
     <con:settings/>
     <con:config service="Update Company" resourcePath="/updateCompany" methodName="Update Company" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Update Company_Positive" id="e7ee279a-1ce6-4066-bf8b-f0f1baae2aff" mediaType="application/json" postQueryString="false">
@@ -307,13 +311,13 @@ testRunner.testCase.setPropertyValue("Company_Name", Company_Name)</script>
         <con:endpoint>${QA_Env}</con:endpoint>
         <con:request>{  
   "companyName": ${#TestCase#Company_Name},
-  "companyId":${#[Regression Suite#Register Company#JDBC]#BLUADMIN_COMPANY_COMPANY_ID},
+  "companyId":${#[LoadSuite#Register Company#JDBC]#BLUADMIN_COMPANY_COMPANY_ID},
   "address": ${DataSource#Address_1},
   "logo":null,
   "customerCare":${DataSource#Customer_Care},
   "updatedAt":null,
   "phoneNo": ${DataSource#Phone_No.},
-  "email": ${#[Regression Suite#Register Company]#Email_ID},
+  "email": ${#[LoadSuite#Register Company]#Email_ID},
   "address2":${DataSource#Address_2},
   "city": ${DataSource#City},
   "stateId": ${JDBC#BLUADMIN_STATE_STATE_ID},
@@ -369,7 +373,7 @@ testRunner.testCase.setPropertyValue("Company_Name", Company_Name)</script>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Update Company_Negative" id="2a930af4-8da2-47ac-80b4-ada2175baf49" disabled="true">
+  <con:testStep type="restrequest" name="Update Company_Negative" id="88207c7d-9841-43a9-921c-e84efe548e27" disabled="true">
     <con:settings/>
     <con:config service="Update Company" resourcePath="/updateCompany" methodName="Update Company" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Update Company_Negative" id="e7ee279a-1ce6-4066-bf8b-f0f1baae2aff" mediaType="application/json" postQueryString="false">
@@ -434,7 +438,7 @@ testRunner.testCase.setPropertyValue("Company_Name", Company_Name)</script>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="a9cb8ed3-273a-462d-8bac-4395e86b275c" disabled="true">
+  <con:testStep type="groovy" name="Report" id="9c44b1e8-b5b3-4c98-9798-0d1a8fb5ba34" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -563,7 +567,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="4895418e-210e-4425-a7e5-bbb6b20923bf">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="47bd2fc0-b11a-4da9-a79c-5361c9cc1c4e">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
@@ -573,7 +577,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Company_Name</con:name>
-      <con:value>"Wed_Feb_07_15_06_29_IST_2018_Update Company"</con:value>
+      <con:value>"Mon_Mar_05_16_29_51_IST_2018_Update Company"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

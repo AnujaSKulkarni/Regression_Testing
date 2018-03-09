@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="7e732e35-d7c8-44fd-a7e4-3c9f16923628" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Invite Company" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="8dcb2114-0727-4587-aff3-b68c3fc897ef" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Invite Company" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="9c1fcb8f-c2b6-40c9-ac55-039f025faba3fileName">Invite-Company</con:setting>
-    <con:setting id="7e732e35-d7c8-44fd-a7e4-3c9f16923628fileName">Invite-Company</con:setting>
-  </con:settings>
+  <con:setting id="8dcb2114-0727-4587-aff3-b68c3fc897effileName">Invite-Company</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="d90b590a-e012-4a0c-bc40-5d94fd4aacfb">
+  <con:testStep type="groovy" name="DataSource_Setup" id="0bffafc3-7d96-42a3-aba5-2453868387bb">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -143,7 +142,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="81c6cf36-ba5b-488c-a81e-1d7aea932c32">
+  <con:testStep type="datasource" name="DataSource" id="df1ae1d3-2034-4549-82cd-bbbc8333dcbd">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -151,90 +150,95 @@ if(RunTimeDataSource_Flag == true){
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
-      <con:property>TC_Number</con:property>
-      <con:property>Service_Name</con:property>
-      <con:property>Defect_ID</con:property>
-      <con:property>API_Name</con:property>
-      <con:property>Data_Combination</con:property>
-      <con:property>Remark</con:property>
-      <con:property>Comments</con:property>
-      <con:property>Account_Number</con:property>
-      <con:property>Address_1</con:property>
-      <con:property>Address_2</con:property>
-      <con:property>Alert_ID</con:property>
-      <con:property>Alert_Platform_Type</con:property>
-      <con:property>Alternate_Email_ID</con:property>
-      <con:property>Appliance_ID</con:property>
-      <con:property>Appliance_Master_ID</con:property>
-      <con:property>Appliance_Master_Version_ID</con:property>
-      <con:property>Appliance_Name</con:property>
-      <con:property>Attribute_Name</con:property>
-      <con:property>Attribute_Value</con:property>
-      <con:property>Brand</con:property>
-      <con:property>City</con:property>
-      <con:property>Company_ID</con:property>
-      <con:property>Company_Name</con:property>
-      <con:property>Confirm_Password</con:property>
-      <con:property>Country_Name</con:property>
-      <con:property>Country_Code</con:property>
-      <con:property>Country_ID</con:property>
-      <con:property>Customer_Care</con:property>
-      <con:property>DCT</con:property>
-      <con:property>desired_temperature</con:property>
-      <con:property>Device_ID</con:property>
-      <con:property>Device_Notification_ID</con:property>
-      <con:property>Device_Shadow_Name</con:property>
-      <con:property>Edge_Device_ID</con:property>
-      <con:property>Elevation</con:property>
-      <con:property>Email_BodyMessage</con:property>
-      <con:property>Email_From</con:property>
-      <con:property>Email_ID_Data</con:property>
-      <con:property>Email_Subject</con:property>
-      <con:property>Email_To</con:property>
-      <con:property>enable_cloth_spin</con:property>
-      <con:property>First_Name</con:property>
-      <con:property>Group_Number</con:property>
-      <con:property>inv__description</con:property>
-      <con:property>JSON_Body</con:property>
-      <con:property>Key</con:property>
-      <con:property>Language_ID</con:property>
-      <con:property>Last_Name</con:property>
-      <con:property>Lastupdate</con:property>
-      <con:property>Latitude</con:property>
-      <con:property>Locale_ID</con:property>
-      <con:property>Location_Name</con:property>
-      <con:property>Location_Number</con:property>
-      <con:property>Longitude</con:property>
-      <con:property>Loyalty_ID</con:property>
-      <con:property>Nest_Away</con:property>
-      <con:property>Nest_Thermostat_ID</con:property>
-      <con:property>New_Password</con:property>
-      <con:property>Notification_Type</con:property>
-      <con:property>Password</con:property>
-      <con:property>Phone_No.</con:property>
-      <con:property>Platform</con:property>
-      <con:property>Postal_Code</con:property>
-      <con:property>Rate_Plan_Code</con:property>
-      <con:property>Rate_Plan_ID</con:property>
-      <con:property>Region</con:property>
-      <con:property>Role_ID</con:property>
-      <con:property>SAID</con:property>
-      <con:property>Shoppinglist_ID</con:property>
-      <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_Name</con:property>
-      <con:property>Status</con:property>
-      <con:property>Status_ID</con:property>
-      <con:property>Street</con:property>
-      <con:property>trigger_temperature</con:property>
-      <con:property>User_ID</con:property>
-      <con:property>User_Role</con:property>
-      <con:property>Verification_Code</con:property>
-      <con:property>Version</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>DDM_Name</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>languageCode</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>name</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>Utility_Name</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="88f9d43e-802c-48aa-991d-2abdbc1d24eb">
+  <con:testStep type="groovy" name="Flow Control" id="22cb92f5-278b-4ecb-8c07-a7bad7f7db13">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -265,7 +269,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Unique_Company_Email_ID" id="f5387d34-4c3f-4570-8fb7-0d6f6d96356e" disabled="true">
+  <con:testStep type="groovy" name="Unique_Company_Email_ID" id="5c9cb174-7012-4216-8abe-4c76a7e6a49a" disabled="true">
     <con:settings/>
     <con:config>
       <script>String date = new Date()
@@ -279,7 +283,7 @@ testRunner.testCase.testSuite.setPropertyValue("Company_Email_ID", Email_ID)
 testRunner.testCase.testSuite.setPropertyValue("Company_Email_ID_string", Email_ID_string)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="1746caa8-54e1-4928-bbe3-daeea90ff06c" disabled="true">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="f3cfe6ab-b165-49fa-87c3-c15ceb6ccd29" disabled="true">
     <con:settings/>
     <con:config>
       <script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
@@ -296,7 +300,7 @@ if (data_Combination == "Negative"){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Invite Company_Positive" id="e7255150-cf1a-4e80-8362-3c36bbe3ce38" disabled="true">
+  <con:testStep type="restrequest" name="Invite Company_Positive" id="8f5c04e6-c837-4525-b877-b6c0d3fdbfb6" disabled="true">
     <con:settings/>
     <con:config service="Invite Company" resourcePath="/inviteCompany/${#TestCase#Email_ID}/" methodName="Invite Company" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Invite Company_Positive" id="70ab9939-fe96-4e62-b8ef-6c0078b34984" mediaType="application/json" postQueryString="false">
@@ -356,7 +360,7 @@ if (data_Combination == "Negative"){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Invite Company_Negative" id="5cd46bc3-3a96-4eea-985e-440b93802ec1" disabled="true">
+  <con:testStep type="restrequest" name="Invite Company_Negative" id="d137d62a-e84f-4e53-88f7-6e71c04d12f3" disabled="true">
     <con:settings/>
     <con:config service="Invite Company" resourcePath="/inviteCompany/${#TestCase#Email_ID}/" methodName="Invite Company" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Invite Company_Negative" id="70ab9939-fe96-4e62-b8ef-6c0078b34984" mediaType="application/json" postQueryString="false">
@@ -409,7 +413,7 @@ if (data_Combination == "Negative"){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="f8655268-740c-4bc6-8b49-35b625a23969" disabled="true">
+  <con:testStep type="groovy" name="Report" id="ce826b3c-a6be-4119-ade8-236c16b71291" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -538,7 +542,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="184d1d13-60f2-4b0d-a462-9c1f8c43c23b">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="5d86b854-4086-4650-886d-450cc33b9d71">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
@@ -548,7 +552,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>WED_FEB_07_15_05_52_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>MON_MAR_05_16_29_33_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

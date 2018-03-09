@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="1bd37dc6-bdec-4b8a-a2ad-78fc981d0ce0" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="SyncShoppingLists_update" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="c66ef3dc-777d-4cd3-9380-086ca8c97955" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="SyncShoppingLists_update" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="529c9d0d-52a2-4436-9daa-a2ae982587b0fileName">SyncShoppingLists_update</con:setting>
-    <con:setting id="1bd37dc6-bdec-4b8a-a2ad-78fc981d0ce0fileName">SyncShoppingLists_update</con:setting>
-  </con:settings>
+  <con:setting id="c66ef3dc-777d-4cd3-9380-086ca8c97955fileName">SyncShoppingLists_update</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="2fdae388-8aa2-4785-b116-3c80e9f8bf0e">
+  <con:testStep type="groovy" name="DataSource_Setup" id="e5c414de-647e-4027-ad43-9f82ee07b438">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -143,96 +142,101 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="6d5a4d3e-320e-44a8-96e1-ef4927e0601e">
+  <con:testStep type="datasource" name="DataSource" id="371f0cad-b3c7-4e4a-a467-9423e9fdb845">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
         <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
-      <con:property>TC_Number</con:property>
-      <con:property>Service_Name</con:property>
-      <con:property>Defect_ID</con:property>
-      <con:property>API_Name</con:property>
-      <con:property>Data_Combination</con:property>
-      <con:property>Remark</con:property>
-      <con:property>Comments</con:property>
-      <con:property>Account_Number</con:property>
-      <con:property>Address_1</con:property>
-      <con:property>Address_2</con:property>
-      <con:property>Alert_ID</con:property>
-      <con:property>Alert_Platform_Type</con:property>
-      <con:property>Alternate_Email_ID</con:property>
-      <con:property>Appliance_ID</con:property>
-      <con:property>Appliance_Master_ID</con:property>
-      <con:property>Appliance_Master_Version_ID</con:property>
-      <con:property>Appliance_Name</con:property>
-      <con:property>Attribute_Name</con:property>
-      <con:property>Attribute_Value</con:property>
-      <con:property>Brand</con:property>
-      <con:property>City</con:property>
-      <con:property>Company_ID</con:property>
-      <con:property>Company_Name</con:property>
-      <con:property>Confirm_Password</con:property>
-      <con:property>Country_Name</con:property>
-      <con:property>Country_Code</con:property>
-      <con:property>Country_ID</con:property>
-      <con:property>Customer_Care</con:property>
-      <con:property>DCT</con:property>
-      <con:property>desired_temperature</con:property>
-      <con:property>Device_ID</con:property>
-      <con:property>Device_Notification_ID</con:property>
-      <con:property>Device_Shadow_Name</con:property>
-      <con:property>Edge_Device_ID</con:property>
-      <con:property>Elevation</con:property>
-      <con:property>Email_BodyMessage</con:property>
-      <con:property>Email_From</con:property>
-      <con:property>Email_ID_Data</con:property>
-      <con:property>Email_Subject</con:property>
-      <con:property>Email_To</con:property>
-      <con:property>enable_cloth_spin</con:property>
-      <con:property>First_Name</con:property>
-      <con:property>Group_Number</con:property>
-      <con:property>inv__description</con:property>
-      <con:property>JSON_Body</con:property>
-      <con:property>Key</con:property>
-      <con:property>Language_ID</con:property>
-      <con:property>Last_Name</con:property>
-      <con:property>Lastupdate</con:property>
-      <con:property>Latitude</con:property>
-      <con:property>Locale_ID</con:property>
-      <con:property>Location_Name</con:property>
-      <con:property>Location_Number</con:property>
-      <con:property>Longitude</con:property>
-      <con:property>Loyalty_ID</con:property>
-      <con:property>Nest_Away</con:property>
-      <con:property>Nest_Thermostat_ID</con:property>
-      <con:property>New_Password</con:property>
-      <con:property>Notification_Type</con:property>
-      <con:property>Password</con:property>
-      <con:property>Phone_No.</con:property>
-      <con:property>Platform</con:property>
-      <con:property>Postal_Code</con:property>
-      <con:property>Rate_Plan_Code</con:property>
-      <con:property>Rate_Plan_ID</con:property>
-      <con:property>Region</con:property>
-      <con:property>Role_ID</con:property>
-      <con:property>SAID</con:property>
-      <con:property>Shoppinglist_ID</con:property>
-      <con:property>Shoppinglist_Name</con:property>
-      <con:property>State_Name</con:property>
-      <con:property>Status</con:property>
-      <con:property>Status_ID</con:property>
-      <con:property>Street</con:property>
-      <con:property>trigger_temperature</con:property>
-      <con:property>User_ID</con:property>
-      <con:property>User_Role</con:property>
-      <con:property>Verification_Code</con:property>
-      <con:property>Version</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <con:property>TC_Number</con:property><con:property>Service_Name</con:property><con:property>Defect_ID</con:property><con:property>API_Name</con:property><con:property>Data_Combination</con:property><con:property>Remark</con:property><con:property>Comments</con:property><con:property>Account_Number</con:property><con:property>Address_1</con:property><con:property>Address_2</con:property><con:property>Alert_ID</con:property><con:property>Alert_Platform_Type</con:property><con:property>Alternate_Email_ID</con:property><con:property>Appliance_ID</con:property><con:property>Appliance_Master_ID</con:property><con:property>Appliance_Master_Version_ID</con:property><con:property>Appliance_Name</con:property><con:property>Attribute_Name</con:property><con:property>Attribute_Value</con:property><con:property>Brand</con:property><con:property>City</con:property><con:property>Company_ID</con:property><con:property>Company_Name</con:property><con:property>Confirm_Password</con:property><con:property>Country_Name</con:property><con:property>Country_Code</con:property><con:property>Country_ID</con:property><con:property>Customer_Care</con:property><con:property>DCT</con:property><con:property>DDM_Name</con:property><con:property>desired_temperature</con:property><con:property>Device_ID</con:property><con:property>Device_Notification_ID</con:property><con:property>Device_Shadow_Name</con:property><con:property>Edge_Device_ID</con:property><con:property>Elevation</con:property><con:property>Email_BodyMessage</con:property><con:property>Email_From</con:property><con:property>Email_ID_Data</con:property><con:property>Email_Subject</con:property><con:property>Email_To</con:property><con:property>enable_cloth_spin</con:property><con:property>First_Name</con:property><con:property>Group_Number</con:property><con:property>inv__description</con:property><con:property>JSON_Body</con:property><con:property>Key</con:property><con:property>Language_ID</con:property><con:property>languageCode</con:property><con:property>Last_Name</con:property><con:property>Lastupdate</con:property><con:property>Latitude</con:property><con:property>Locale_ID</con:property><con:property>Location_Name</con:property><con:property>Location_Number</con:property><con:property>Longitude</con:property><con:property>Loyalty_ID</con:property><con:property>name</con:property><con:property>Nest_Away</con:property><con:property>Nest_Thermostat_ID</con:property><con:property>New_Password</con:property><con:property>Notification_Type</con:property><con:property>Password</con:property><con:property>Phone_No.</con:property><con:property>Platform</con:property><con:property>Postal_Code</con:property><con:property>Rate_Plan_Code</con:property><con:property>Rate_Plan_ID</con:property><con:property>Region</con:property><con:property>Role_ID</con:property><con:property>SAID</con:property><con:property>Shoppinglist_ID</con:property><con:property>Shoppinglist_Name</con:property><con:property>State_Name</con:property><con:property>Status</con:property><con:property>Status_ID</con:property><con:property>Street</con:property><con:property>trigger_temperature</con:property><con:property>Utility_Name</con:property><con:property>User_ID</con:property><con:property>User_Role</con:property><con:property>Verification_Code</con:property><con:property>Version</con:property><con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="30bc2ce7-3875-4ac6-b868-b31b1388bba8">
+  <con:testStep type="groovy" name="flow control" id="3665827a-9601-4792-9db1-56632c7d7f11">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -260,7 +264,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="SyncShoppingLists_update_Positive" id="15502139-1407-4a4d-b21b-e30d9ba7ef9f" disabled="true">
+  <con:testStep type="restrequest" name="SyncShoppingLists_update_Positive" id="564c446a-f362-459d-abaf-8f7cfde47d73" disabled="true">
     <con:settings/>
     <con:config service="SyncShoppingLists" resourcePath="/syncShoppingLists" methodName="SyncShoppingLists" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="SyncShoppingLists_update_Positive" id="cb783b4e-430d-454d-b87a-61a1c56fed72" mediaType="application/json" postQueryString="false">
@@ -274,8 +278,8 @@ if (API_Name != TestCaseName){
   "deviceGuid": "30ad09ad8fa0098ad9d9999eeeeea",
   "cleanLists": [{}],
   "dirtyLists": [{
-    "shoppinglistId": ${#[Regression Suite#SyncShoppingLists_create#SyncShoppingLists_create_Positive]#Response#$['response']['newLists'][0]['_id']},
-    "userId": ${#[Regression Suite#SyncShoppingLists_create#SyncShoppingLists_create_Positive]#Response#$['response']['newLists'][0]['userId']},
+    "shoppinglistId": ${#[LoadSuite#SyncShoppingLists_create#SyncShoppingLists_create_Positive]#Response#$['response']['newLists'][0]['_id']},
+    "userId": ${#[LoadSuite#SyncShoppingLists_create#SyncShoppingLists_create_Positive]#Response#$['response']['newLists'][0]['userId']},
         "userFirstName":${DataSource#First_Name},
             "userLastName":${DataSource#Last_Name},
             "name":${DataSource#Shoppinglist_Name} ,
@@ -341,7 +345,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="SyncShoppingLists_update_Negative" id="9a1287e8-e669-4401-802b-fef84d5b3e53" disabled="true">
+  <con:testStep type="restrequest" name="SyncShoppingLists_update_Negative" id="f20a9abf-1bea-4246-9ee4-1fe8acb55d80" disabled="true">
     <con:settings/>
     <con:config service="SyncShoppingLists" resourcePath="/syncShoppingLists" methodName="SyncShoppingLists" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="SyncShoppingLists_update_Negative" id="cb783b4e-430d-454d-b87a-61a1c56fed72" mediaType="application/json" postQueryString="false">
@@ -416,7 +420,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="759da51e-1658-48a7-ac37-abc1e687d744" disabled="true">
+  <con:testStep type="groovy" name="Report" id="8543f626-9908-4d5e-80d7-aae634a9fcf6" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -545,7 +549,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="6b7f84a2-63ff-4578-9c5a-ac040ac895b7">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="0c6ea234-4042-4113-8ecf-350074cb3678">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>

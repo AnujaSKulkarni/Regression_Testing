@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="1d32c62a-0d44-4e94-bb98-d00b00ed043d" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GET Client Token" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="ce9c6884-1240-416f-a293-090c9b3d87a0" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GET Client Token" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="4d9b8d24-cdbf-470c-926c-ce1cd761a7a0fileName">GET-Client-Token</con:setting>
-    <con:setting id="1d32c62a-0d44-4e94-bb98-d00b00ed043dfileName">GET-Client-Token</con:setting>
-  </con:settings>
+  <con:setting id="ce9c6884-1240-416f-a293-090c9b3d87a0fileName">GET-Client-Token</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="restrequest" name="GET Client Token" id="b1a02e89-798d-47c6-8fb4-e220c3820f43">
+  <con:testStep type="restrequest" name="GET Client Token" id="00fe5c07-58b4-4710-86af-0e1c819d5077">
     <con:settings/>
     <con:config service="GET Client Token" resourcePath="/oauth/token" methodName="GET Client Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="GET Client Token" id="3d9e8eef-6b94-46de-8b7d-21a4174f9b47" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="GET Client Token" id="3d9e8eef-6b94-46de-8b7d-21a4174f9b47" mediaType="application/x-www-form-urlencoded" postQueryString="true">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -69,7 +68,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="b8c3f161-8f53-410e-91fb-defcfbc1e8ed">
+  <con:testStep type="groovy" name="Report" id="2e340076-6a97-4870-8c67-599573b21b21">
     <con:settings/>
     <con:config>
       <script>def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
@@ -143,7 +142,7 @@ file1.append("---------------- Response --------------------------\n")
 file1.append(response)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Skip_on_failure" id="12f48c15-ab32-47fa-8ec5-720b938813ad">
+  <con:testStep type="groovy" name="Skip_on_failure" id="abc93a93-603c-4419-8f21-6efe0224731d">
     <con:settings/>
     <con:config>
       <script>def TestCaseName = testRunner.testCase.getName()
@@ -169,12 +168,93 @@ testRunner.cancel(k)}
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Client Token - Global Variable" id="c7c5014d-431f-4c9f-8272-d6367b276f37">
+  <con:testStep type="groovy" name="Client Token - Global Variable" id="1656c00c-acb4-4e01-adb6-5f79029ae585">
     <con:settings/>
     <con:config>
       <script>def token = context.expand( '${GET Client Token#Response#$[\'access_token\']}' )
 log.info(token)
 com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Client_Token", token)</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="28f79874-8624-4a11-854e-87daad7a8335" disabled="true">
+    <con:settings/>
+    <con:config>
+      <script><![CDATA[def totalTestSuiteCount = 0;
+//def enabledTestSuiteCount = 0;
+//def disabledTestSuiteCount = 0;
+
+totalTestSuiteCount = testRunner.testCase.testSuite.project.getTestSuiteCount();
+
+
+for(i = 0; i < totalTestSuiteCount; i++) {
+flag = testRunner.testCase.testSuite.project.getTestSuiteAt(i).isDisabled();
+//if(!flag)
+//enabledTestSuiteCount = enabledTestSuiteCount + 1;
+//else
+//disabledTestSuiteCount = disabledTestSuiteCount + 1;
+}
+
+log.info "Total Test Suite Count : " + totalTestSuiteCount;
+//log.info "Total Enabled/Active Test Suite Count : " + enabledTestSuiteCount;
+//log.info "Total Disabled/Reusable Test Suite Count : " + disabledTestSuiteCount;
+def totalTestCaseCount = 0;
+//def enabledTestCaseCount = 0;
+//def disabledTestCaseCount = 0;
+
+for(i = 0; i < totalTestSuiteCount; i++) {
+flag = testRunner.testCase.testSuite.project.getTestSuiteAt(i).isDisabled();
+if(!flag) {
+totalTestCaseCount = totalTestCaseCount + testRunner.testCase.testSuite.project.getTestSuiteAt(i).getTestCaseCount();
+}
+}
+
+//for(i = 0; i < totalTestSuiteCount; i++) {
+//flag = testRunner.testCase.testSuite.project.getTestSuiteAt(i).isDisabled();
+//if(!flag) {
+//tccount = testRunner.testCase.testSuite.project.getTestSuiteAt(i).getTestCaseCount();
+//for(j = 0; j < tccount; j++) {
+//tcflag = testRunner.testCase.testSuite.project.getTestSuiteAt(i).getTestCaseAt(j).isDisabled();
+//if(!tcflag)
+//enabledTestCaseCount = enabledTestCaseCount + 1;
+//else
+//disabledTestCaseCount = disabledTestCaseCount + 1;
+//}
+//}
+//}
+
+log.info "Total Test Case Count : " + totalTestCaseCount;
+//log.info "Total Enabled/Active Test Case Count : " + enabledTestCaseCount;
+//log.info "Total Disabled/Reusable Test Case Count : " + disabledTestCaseCount;
+
+/*def a = totalTestCaseCount;
+while (a>0) {
+a--;
+
+def testCase = testRunner.testCase.testSuite.testCases["TestCase"];  
+def properties = new com.eviware.soapui.support.types.StringToObjectMap();  
+//def async = false;  
+//testCase.run(properties, async);
+}*/
+for(j=0;j<10;j++){
+for(i=0;i<totalTestCaseCount;i++){
+	log.info "j----------"+j    +   "i----------"+ i
+}
+def totalTeststepCount = 0;
+//def enabledTestCaseCount = 0;
+//def disabledTestCaseCount = 0;
+
+for(i = 0; i < totalTestCaseCount; i++) {
+flag = testRunner.testCase.testSuite.project.getTestSuiteAt(i).isDisabled();
+if(!flag) {
+totalTeststepCount = totalTeststepCount + testRunner.testCase.testSuite.project.getTestSuiteAt(i).getTestCaseAt(i);getteststepCount()
+}
+}
+	//def testCase = testRunner.testCase.testSuite.testCases["TestCase"];
+	
+	//log.info testCase 
+//def properties = new com.eviware.soapui.support.types.StringToObjectMap(); 
+//log.info properties
+}]]></script>
     </con:config>
   </con:testStep>
   <con:setupScript>//***********************Transferring Environment Properties to Global Variables***********************

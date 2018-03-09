@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="fcd1b0b3-2c37-4364-af48-a435d09b0103" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Refresh Token" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="8a0c0e9e-055d-416c-b905-13f306ba218a" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Refresh Token" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="15b7ea8d-4772-4b54-83ec-8ae7854bee20fileName">Refresh-Token</con:setting>
-    <con:setting id="fcd1b0b3-2c37-4364-af48-a435d09b0103fileName">Refresh-Token</con:setting>
-  </con:settings>
+  <con:setting id="8a0c0e9e-055d-416c-b905-13f306ba218afileName">Refresh-Token</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="300ea739-66ce-446b-922f-b1f472b8bcc0">
+  <con:testStep type="groovy" name="DataSource_Setup" id="96cdc22f-aa90-4540-9909-c049e7e8fe50">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -143,7 +142,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="a70e674e-67e9-4249-8469-cf4f591c0845">
+  <con:testStep type="datasource" name="DataSource" id="d1fbde99-fd4f-42e7-8be6-9235a4319b4f">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -206,6 +205,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>Location_Number</con:property>
       <con:property>Longitude</con:property>
       <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
       <con:property>Nest_Away</con:property>
       <con:property>Nest_Thermostat_ID</con:property>
       <con:property>New_Password</con:property>
@@ -234,7 +234,7 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="03967220-db89-4b48-aa55-f6a2c2a75fe7">
+  <con:testStep type="groovy" name="Flow Control" id="813c1fc9-d8c2-4973-9039-d22435432c86">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -265,7 +265,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Refresh Token" id="b194d0da-2697-4c98-9c6f-259752544e82" disabled="true">
+  <con:testStep type="restrequest" name="Refresh Token" id="d0b03978-b418-4f49-87a9-dd2a18da2854" disabled="true">
     <con:settings/>
     <con:config service="Refresh_Token" resourcePath="/oauth/token?grant_type=refresh_token&amp;refresh_token=${Refresh_Token}" methodName="Refresh_Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Refresh Token" id="e906f975-0d70-47d2-a4b3-3abd73ee06b7" mediaType="application/x-www-form-urlencoded" postQueryString="true">
@@ -323,7 +323,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="a6c7a15a-d4b1-41ef-9d98-d78c9231eb7f" disabled="true">
+  <con:testStep type="groovy" name="Report" id="20d88f49-2345-4e33-ba73-f1823f5c8a3d" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -447,7 +447,7 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Member Token - Global Variable" id="63a610ee-b7a7-4a0f-8c05-6190b3657ba7" disabled="true">
+  <con:testStep type="groovy" name="Member Token - Global Variable" id="b9f1be03-7cb3-440d-9477-1dc44099748f" disabled="true">
     <con:settings/>
     <con:config>
       <script>def token = context.expand( '${Refresh Token#Response#$[\'access_token\']}' )
@@ -459,7 +459,7 @@ log.info "token: " + Refresh_Token
 com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Refresh_Token", Refresh_Token)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="fe31bba4-150c-4b64-9631-512a075cee87">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="c4c5bc23-1fd8-464c-a9d9-e44dc8adc8c7">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>

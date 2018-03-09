@@ -39,18 +39,6 @@
       <con:params/>
       <con:element xmlns:ddm="https://api-stg.whrcloud.com/api/v1/contents/all/DDM_Washer_SmartGrid_V1">ddm:Fault</con:element>
     </con:representation>
-    <con:representation type="RESPONSE">
-      <con:mediaType>application/json</con:mediaType>
-      <con:status>200</con:status>
-      <con:params/>
-      <con:element xmlns:ddm="https://api-stg.whrcloud.com/api/v1/contents/all/DDM_Washer_SmartGrid_V1">ddm:Response</con:element>
-    </con:representation>
-    <con:representation type="FAULT">
-      <con:mediaType>text/html</con:mediaType>
-      <con:status>502</con:status>
-      <con:params/>
-      <con:element>html</con:element>
-    </con:representation>
     <con:request name="Retrieve All Content" id="f174f593-b82b-4a49-a31b-be09a0cda7ac" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

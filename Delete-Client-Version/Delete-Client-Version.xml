@@ -31,7 +31,7 @@
       <con:params/>
       <con:element xmlns:ns="https://accountserviceqa-v2.mybluemix.net/api/v1/delete_client_version/25">ns:Response</con:element>
     </con:representation>
-    <con:request name="Delete Client Version" id="4023bdeb-f938-44ec-8701-590c0d128342" mediaType="application/json" postQueryString="false">
+    <con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="https://accountserviceqa-v2.mybluemix.net/api/v1/delete_client_version/25">ns:Response</con:element></con:representation><con:request name="Delete Client Version" id="4023bdeb-f938-44ec-8701-590c0d128342" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>

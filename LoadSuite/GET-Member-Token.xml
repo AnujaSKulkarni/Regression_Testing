@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="759fc19a-be00-44d9-a1aa-706c23d27c2c" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GET Member Token" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="79e05a8c-c9b3-4545-bc07-1c7269c8de7a" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GET Member Token" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="7026bea1-9c34-446c-8319-d9c3af471c0efileName">GET-Member-Token</con:setting>
-    <con:setting id="759fc19a-be00-44d9-a1aa-706c23d27c2cfileName">GET-Member-Token</con:setting>
-  </con:settings>
+  <con:setting id="79e05a8c-c9b3-4545-bc07-1c7269c8de7afileName">GET-Member-Token</con:setting></con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="3c49feb5-d24e-475f-930d-cc7e6f334165">
+  <con:testStep type="groovy" name="DataSource_Setup" id="a35817a5-6917-4a76-b524-f2d7ea7f94a1">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -143,7 +142,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource_RunTime" id="74fe9580-b198-4bc7-ab8e-4211d79e59da">
+  <con:testStep type="datasource" name="DataSource_RunTime" id="c72acfcc-5b9b-405b-be73-45ff5cb62dbd">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -151,15 +150,15 @@ if(RunTimeDataSource_Flag == true){
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
-      <con:property>Account_ID_Number</con:property>
-      <con:property>Verification_Code</con:property>
-      <con:property>Email_ID</con:property>
-      <con:property>Group_ID</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
+      
+      
+      
+      
+      <con:property>Account_ID_Number</con:property><con:property>Verification_Code</con:property><con:property>Email_ID</con:property><con:property>Group_ID</con:property><con:completeLastOperation>true</con:completeLastOperation>
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="GET Member Token" id="eb8b3311-3cbc-42cb-ab68-c773d43f97f2">
+  <con:testStep type="restrequest" name="GET Member Token" id="654f3f02-1ad8-4a12-8f77-3a54c9ffd82a">
     <con:settings/>
     <con:config service="GET Member Token" resourcePath="/oauth/token" methodName="GET Member Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="GET Member Token" id="dbba64c0-256c-4cda-a935-104acc1c460c" mediaType="application/x-www-form-urlencoded" postQueryString="true">
@@ -182,12 +181,12 @@ if(RunTimeDataSource_Flag == true){
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters>
-          <con:entry key="password" value="Whirlpool123"/>
-          <con:entry key="grant_type" value="password"/>
-          <con:entry key="client_secret" value="syntel123$"/>
-          <con:entry key="client_id" value="syntel"/>
-          <con:entry key="username" value="${DataSource_RunTime#Email_ID}"/>
-        </con:parameters>
+  <con:entry key="password" value="Whirlpool123$"/>
+  <con:entry key="grant_type" value="password"/>
+  <con:entry key="client_secret" value="syntel123$"/>
+  <con:entry key="client_id" value="syntel"/>
+  <con:entry key="username" value="wcloud_admin_account_soapui@mailinator.com"/>
+</con:parameters>
         <con:parameterOrder>
           <con:entry>grant_type</con:entry>
           <con:entry>username</con:entry>
@@ -227,7 +226,7 @@ if(RunTimeDataSource_Flag == true){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="edc361e9-cad2-4576-ad4c-eb3ac4bbc773">
+  <con:testStep type="groovy" name="Report" id="2535388b-5b3c-4ba7-9374-1f53fdacb010">
     <con:settings/>
     <con:config>
       <script>def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
@@ -300,7 +299,7 @@ file1.append("---------------- Response --------------------------\n")
 file1.append(response)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Skip on failure" id="dbbe3ff3-44e7-423c-afe9-00e0ed3a4349">
+  <con:testStep type="groovy" name="Skip on failure" id="2ffa47f7-2716-469a-8ccf-17f8cc41f2c1">
     <con:settings/>
     <con:config>
       <script>def TestCaseName = testRunner.testCase.getName()
@@ -326,7 +325,7 @@ testRunner.cancel(k)}
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Member Token - Global Variable" id="a6fb58f2-5d43-49be-9832-e16991d78675">
+  <con:testStep type="groovy" name="Member Token - Global Variable" id="e1a51546-49f4-4717-b52e-fd49b3381c21">
     <con:settings/>
     <con:config>
       <script>def token = context.expand( '${GET Member Token#Response#$[\'access_token\']}' )

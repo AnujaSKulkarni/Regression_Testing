@@ -53,7 +53,7 @@
       <con:params/>
       <con:element xmlns:inv="https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-dev/api/v1/api/invitation">inv:Response</con:element>
     </con:representation>
-    <con:request name="Send Invitation" id="998055dd-af0d-42e1-a884-d37b7d3871ef" mediaType="application/json" postQueryString="false">
+    <con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Send Invitation" id="998055dd-af0d-42e1-a884-d37b7d3871ef" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
