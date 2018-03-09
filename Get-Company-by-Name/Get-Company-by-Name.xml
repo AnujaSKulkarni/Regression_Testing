@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Get Company by Name" path="/company/${#[Regression Suite#Get All Companies#Get All Companies]#Response#$[7]['COMPANY_NAME']}" id="93d0be83-4dce-45ce-bbb2-5e0235c5efa8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Get Company by Name" path="/company/WhirlPool" id="93d0be83-4dce-45ce-bbb2-5e0235c5efa8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="93d0be83-4dce-45ce-bbb2-5e0235c5efa8fileName">Get-Company-by-Name</con:setting>
   </con:settings>
@@ -20,12 +20,6 @@
       <con:status>200</con:status>
       <con:params/>
       <con:element>Response</con:element>
-    </con:representation>
-    <con:representation type="FAULT">
-      <con:mediaType>application/json</con:mediaType>
-      <con:status>404</con:status>
-      <con:params/>
-      <con:element xmlns:whir="https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/v1/company/WhirlPool">whir:Fault</con:element>
     </con:representation>
     <con:request name="Get Company by Name" id="ef6c30f1-4666-4212-b52e-9dfc12ce8b2f" mediaType="application/json">
       <con:settings>

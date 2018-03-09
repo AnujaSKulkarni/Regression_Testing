@@ -18,6 +18,7 @@ Get-All-Terms-and-Conditions.xml
 Refresh-Token.xml
 Create-Location.xml
 Send-Invitation.xml
+getallinvitedmember.xml
 Update-Location.xml
 get-location.xml
 Get-Location-by-AccountId.xml
@@ -123,5 +124,7 @@ SameDayCheck.xml
 outofThreshold.xml
 Delete-timer.xml
 UnClaim-Appliance1.xml
+getCountriesAndStates.xml
+Update_Password.xml
 Delete-Account.xml
 Test_Run_Summary.xml
