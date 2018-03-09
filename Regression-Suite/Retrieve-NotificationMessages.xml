@@ -265,7 +265,7 @@ if (API_Name != TestCaseName){
         </con:settings>
         <con:endpoint>${API-Connect}</con:endpoint>
         <con:request>{
-"languageCode":${DataSource#languageCode}
+"languageCode":"eng"
 }</con:request>
         <con:originalUri>https://api-stg.whrcloud.com/api/v1/contents/notificationMessages/%22DDM_Washer_SmartGrid_V1%22</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="585eecc8-aa53-488b-8b43-01da99b432ac" name="Valid HTTP Status Codes">

@@ -265,7 +265,7 @@ if (API_Name != TestCaseName){
         </con:settings>
         <con:endpoint>${API-Connect}</con:endpoint>
         <con:request>{
-"languageCode":${DataSource#languageCode}
+"languageCode":"eng"
 }</con:request>
         <con:originalUri>https://api-test.whrcloud.com/api/v1/contents/ddmLiterals/DDM_V10K_Washer</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="ee4c5fd5-06e1-4f52-afad-d74c8c5046f1" name="Valid HTTP Status Codes">
