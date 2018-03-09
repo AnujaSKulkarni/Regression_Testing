@@ -436,7 +436,7 @@ if (data_Combination == "Negative"){
   "loyaltyId": ${DataSource#Loyalty_ID},
   "status": "1",
   "createdAt": "2017-04-19T 17:05:53Z",
-  "updatedAt": "2017-05-19T 17:06:53Z",
+   "updatedAt": "2017-05-19T 17:06:53Z",
   "ratePlanName": "Tariff",
   "utilityName": "",
   "utilityId": 0,
@@ -629,11 +629,11 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>5371</con:value>
+      <con:value>5520</con:value>
     </con:property>
     <con:property>
       <con:name>Location_ID</con:name>
-      <con:value>2576</con:value>
+      <con:value>2606</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
