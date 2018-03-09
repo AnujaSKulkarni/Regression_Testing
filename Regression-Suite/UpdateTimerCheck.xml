@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="b0672a0d-5854-4034-b297-95d7f569c7ab" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="UpdateTimerCheck" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="b0672a0d-5854-4034-b297-95d7f569c7ab" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="UpdateTimerCheck" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="b0672a0d-5854-4034-b297-95d7f569c7abfileName">UpdateTimerCheck</con:setting>
   </con:settings>

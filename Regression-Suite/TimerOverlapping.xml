@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="f2a4ea37-540c-4247-8c67-70cdeffb1fad" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TimerOverlapping" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="f2a4ea37-540c-4247-8c67-70cdeffb1fad" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TimerOverlapping" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="73d1d700-1906-4116-9b1a-d45d23ad5c22fileName">Create_Timer</con:setting>
     <con:setting id="f2a4ea37-540c-4247-8c67-70cdeffb1fadfileName">TimerOverlapping</con:setting>

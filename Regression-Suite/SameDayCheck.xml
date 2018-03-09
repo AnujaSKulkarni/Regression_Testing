@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="fe200ae5-f7e2-428c-804e-f850c4636405" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="SameDayCheck" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="fe200ae5-f7e2-428c-804e-f850c4636405" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="SameDayCheck" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="73d1d700-1906-4116-9b1a-d45d23ad5c22fileName">Create_Timer</con:setting>
     <con:setting id="fe200ae5-f7e2-428c-804e-f850c4636405fileName">SameDayCheck</con:setting>
