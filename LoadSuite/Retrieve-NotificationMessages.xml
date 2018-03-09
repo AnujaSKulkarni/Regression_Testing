@@ -258,7 +258,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Retrieve NotificationMessages" id="29a15dda-5f32-4b13-afb2-c879f5462041" disabled="true">
     <con:settings/>
-    <con:config service="Retrieve NotificationMessages" resourcePath="/contents/notificationMessages/${DataSource#DDM_Name}" methodName="Retrieve NotificationMessages" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Retrieve NotificationMessages" resourcePath="/contents/notificationMessages/DDM_Washer_SmartGrid_V1" methodName="Retrieve NotificationMessages" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Retrieve NotificationMessages" id="70b2e948-9e08-4ae8-8bc7-01e943093d62" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

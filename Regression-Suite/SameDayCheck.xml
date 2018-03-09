@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="fe200ae5-f7e2-428c-804e-f850c4636405" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="SameDayCheck" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="fe200ae5-f7e2-428c-804e-f850c4636405" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="SameDayCheck" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="73d1d700-1906-4116-9b1a-d45d23ad5c22fileName">Create_Timer</con:setting>
     <con:setting id="fe200ae5-f7e2-428c-804e-f850c4636405fileName">SameDayCheck</con:setting>
@@ -442,15 +442,15 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>start_Date</con:name>
-      <con:value>1520417497198</con:value>
+      <con:value>1520421674396</con:value>
     </con:property>
     <con:property>
       <con:name>end_Date</con:name>
-      <con:value>1520502997198</con:value>
+      <con:value>1520507174396</con:value>
     </con:property>
     <con:property>
       <con:name>next_notification_time</con:name>
-      <con:value>1520420197198</con:value>
+      <con:value>1520424374396</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

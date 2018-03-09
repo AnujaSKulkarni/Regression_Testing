@@ -258,7 +258,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Retrieve DDM Literals" id="b1db9eb6-df41-4aa0-96f9-e3a1078e0e76">
     <con:settings/>
-    <con:config service="Retrieve DDM Literals" resourcePath="/contents/ddmLiterals/${DataSource#DDM_Name}" methodName="Retrieve DDM Literals" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Retrieve DDM Literals" resourcePath="/contents/ddmLiterals/DDM_Washer_SmartGrid_V1" methodName="Retrieve DDM Literals" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Retrieve DDM Literals" id="23eab518-4b20-4861-9fa8-bbedf8f89ee8" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

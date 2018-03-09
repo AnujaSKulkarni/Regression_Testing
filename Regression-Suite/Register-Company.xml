@@ -186,7 +186,7 @@ testRunner.testCase.setPropertyValue("Account_ID", account_ID_Number)</script>
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( Stage_Env )</Connection><query>Select BLUADMIN.COMPANY.COMPANY_ID as BLUADMIN_COMPANY_COMPANY_ID
+        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( QA_Env )</Connection><query>Select BLUADMIN.COMPANY.COMPANY_ID as BLUADMIN_COMPANY_COMPANY_ID
 From BLUADMIN.COMPANY
 Where BLUADMIN.COMPANY.COMPANY_NAME = ${#TestCase#Company_Name_JDBC}</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
       </con:dataSource>
@@ -622,19 +622,19 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Company_Name</con:name>
-      <con:value>"Company_Wed_Mar_07_15_19_42_IST_2018"</con:value>
+      <con:value>"Company_Thu_Mar_08_15_12_12_IST_2018"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"WED_MAR_07_15_19_37_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"THU_MAR_08_15_12_07_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Company_Name_JDBC</con:name>
-      <con:value>'Company_Wed_Mar_07_15_19_42_IST_2018'</con:value>
+      <con:value>'Company_Thu_Mar_08_15_12_12_IST_2018'</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>5282</con:value>
+      <con:value>5371</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

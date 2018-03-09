@@ -15,7 +15,7 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
-    <con:request name="cookRecipe" id="fb4ab90f-3b95-47f8-8238-0e3640181f7d" mediaType="application/json" postQueryString="false">
+    <con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html</con:mediaType><con:status>407</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="cookRecipe" id="fb4ab90f-3b95-47f8-8238-0e3640181f7d" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
