@@ -1,2 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="getallinvitedmember" path="/members/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" id="b5ddee4e-4675-427a-8e67-07898c57cf10" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="b5ddee4e-4675-427a-8e67-07898c57cf10fileName">getallinvitedmember</con:setting></con:settings><con:parameters/><con:method name="getallinvitedmember" id="505b07cf-df89-439f-98d1-5d2b77410137" method="GET"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value>bearer ${access_token}</con:value><con:style>HEADER</con:style><con:default>bearer ${access_token}</con:default><con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:parameter><con:parameter><con:name>wp-client-region</con:name><con:value>NAR</con:value><con:style>HEADER</con:style><con:default>NAR</con:default><con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:parameter><con:parameter><con:name>wp-client-country</con:name><con:value>US</con:value><con:style>HEADER</con:style><con:default>US</con:default><con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:parameter><con:parameter><con:name>wp-client-brand</con:name><con:value>Whirlpool</con:value><con:style>HEADER</con:style><con:default>Whirlpool</con:default><con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:parameter></con:parameters><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:ns="https://api-stg.whrcloud.com/api/v1/members/5522">ns:Fault</con:element></con:representation><con:request name="getallinvitedmember" id="aa987182-fe19-47f6-8be5-e8a0e93ce082" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${API-Connect}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-country</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder></con:request></con:method></con:resource>
+<con:resource name="getallinvitedmember" path="/members/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" id="b5ddee4e-4675-427a-8e67-07898c57cf10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b5ddee4e-4675-427a-8e67-07898c57cf10fileName">getallinvitedmember</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="getallinvitedmember" id="505b07cf-df89-439f-98d1-5d2b77410137" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-region</con:name>
+        <con:value>NAR</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>NAR</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-country</con:name>
+        <con:value>US</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>US</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-brand</con:name>
+        <con:value>Whirlpool</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Whirlpool</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://api-stg.whrcloud.com/api/v1/members/5522">ns:Fault</con:element>
+    </con:representation>
+    <con:request name="getallinvitedmember" id="aa987182-fe19-47f6-8be5-e8a0e93ce082" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${API-Connect}</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>wp-client-region</con:entry>
+        <con:entry>wp-client-country</con:entry>
+        <con:entry>wp-client-brand</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>
