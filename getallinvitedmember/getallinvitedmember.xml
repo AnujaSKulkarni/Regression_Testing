@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="getallinvitedmember" path="/members/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" id="b5ddee4e-4675-427a-8e67-07898c57cf10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="getallinvitedmember" path="/members/${#[Regression Suite#Send Invitation#Send Invitation]#RawRequest#$['accountId']}" id="b5ddee4e-4675-427a-8e67-07898c57cf10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="b5ddee4e-4675-427a-8e67-07898c57cf10fileName">getallinvitedmember</con:setting>
   </con:settings>
@@ -41,6 +41,12 @@
       <con:status>401</con:status>
       <con:params/>
       <con:element xmlns:ns="https://api-stg.whrcloud.com/api/v1/members/5522">ns:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://api-stg.whrcloud.com/api/v1/members/5522">ns:Response</con:element>
     </con:representation>
     <con:request name="getallinvitedmember" id="aa987182-fe19-47f6-8be5-e8a0e93ce082" mediaType="application/json">
       <con:settings>
