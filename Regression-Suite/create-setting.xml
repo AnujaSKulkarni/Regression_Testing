@@ -313,8 +313,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="201afb48-a68a-4a52-ad9e-32803bcf668a" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+    <con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -435,10 +434,10 @@ log.info Row_count
 Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
+Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
+out.close()</script></con:config>
   </con:testStep>
   <con:testStep type="datasourceloop" name="DataSource Loop" id="09a79c19-185f-4991-aa89-5d3b0efa9f8a">
     <con:settings/>
