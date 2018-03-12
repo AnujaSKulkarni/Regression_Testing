@@ -106,6 +106,7 @@ Rate-Revealer.xml
 UnClaim-Appliance.xml
 Appliance-Wraper.xml
 getallappliances_by_accountid.xml
+updateAppliances.xml
 Retrieve-DDM-Literals.xml
 Retrieve-NotificationMessages.xml
 Retrieve-All-Content.xml

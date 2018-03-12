@@ -269,7 +269,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Unlink Inviation" id="24643a03-85ca-4433-9992-3c5558f004fb">
+  <con:testStep type="restrequest" name="Unlink Inviation" id="24643a03-85ca-4433-9992-3c5558f004fb" disabled="true">
     <con:settings/>
     <con:config service="Unlink Inviation" resourcePath="/invitations/unlink" methodName="Unlink Inviation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Unlink Inviation" id="c3cbb5aa-5597-4a8e-b6f7-5bfa70240747" mediaType="application/json" postQueryString="false">
@@ -312,7 +312,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="b3a7bc6e-3772-4f4b-b959-48b0a207cd4d">
+  <con:testStep type="groovy" name="Report" id="b3a7bc6e-3772-4f4b-b959-48b0a207cd4d" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -451,7 +451,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>emailId</con:name>
-      <con:value>"MON_MAR_12_14_25_31_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"MON_MAR_12_19_13_32_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

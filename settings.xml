@@ -122,7 +122,7 @@
     <con:databaseConnection>
       <con:name>DataBase</con:name>
       <con:driver>com.ibm.db2.jcc.DB2Driver</con:driver>
-      <con:connectionString>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
+      <con:connectionString>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
       <con:password>Syntel@mb5027676</con:password>
     </con:databaseConnection>
   </con:databaseConnectionContainer>
@@ -642,6 +642,9 @@
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="getallappliances_by_accountid">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="updateAppliances">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:property>
@@ -1260,6 +1263,9 @@
     <con:service type="REST" name="getallappliances_by_accountid">
       <con:endpoint authProfile="No Authorization"/>
     </con:service>
+    <con:service type="REST" name="updateAppliances">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
     <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicedev-v2.mybluemix.net/api/v1</con:value>
@@ -1874,7 +1880,10 @@
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="getallappliances_by_accountid">
-      <con:endpoint authProfile="No Authorization"/>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="updateAppliances">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:property>
       <con:name>Location</con:name>

@@ -269,6 +269,7 @@ if (API_Name != TestCaseName){
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request/>
+        <con:originalUri>https://api-test.whrcloud.com/api/v1/appliance/allAppliances/account/12696</con:originalUri>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -408,6 +409,13 @@ Cell cell_1 = row.createCell(1).setCellValue(Status)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
 out.close()</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="4b88b9fa-ad07-402b-9e9c-b89f355404b8">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>flow control</targetStep>
     </con:config>
   </con:testStep>
   <con:properties/>
