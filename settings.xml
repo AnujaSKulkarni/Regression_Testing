@@ -629,7 +629,22 @@
     <con:service type="REST" name="Retrieve All Content">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="Update_Password"><con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint></con:service><con:service type="REST" name="getCountriesAndStates"><con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint></con:service><con:service type="REST" name="getallinvitedmember"><con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint></con:service><con:service type="REST" name="Unlink Inviation"><con:endpoint authProfile="No Authorization" xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:service><con:property>
+    <con:service type="REST" name="Update_Password">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getCountriesAndStates">
+      <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getallinvitedmember">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Unlink Inviation">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getallappliances_by_accountid">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationserviceqa-v2.mybluemix.net/api/v1</con:value>
     </con:property>
@@ -1230,7 +1245,22 @@
     <con:service type="REST" name="Retrieve All Content">
       <con:endpoint authProfile="No Authorization"/>
     </con:service>
-    <con:service type="REST" name="Update_Password"><con:endpoint authProfile="Inherit From Parent"/></con:service><con:service type="REST" name="getCountriesAndStates"><con:endpoint authProfile="No Authorization"/></con:service><con:service type="REST" name="getallinvitedmember"><con:endpoint authProfile="Inherit From Parent"/></con:service><con:service type="REST" name="Unlink Inviation"><con:endpoint authProfile="No Authorization"/></con:service><con:property>
+    <con:service type="REST" name="Update_Password">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="getCountriesAndStates">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="getallinvitedmember">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="Unlink Inviation">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="getallappliances_by_accountid">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicedev-v2.mybluemix.net/api/v1</con:value>
     </con:property>
@@ -1831,7 +1861,22 @@
     <con:service type="REST" name="Retrieve All Content">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="Update_Password"><con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint></con:service><con:service type="REST" name="getCountriesAndStates"><con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint></con:service><con:service type="REST" name="getallinvitedmember"><con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint></con:service><con:service type="REST" name="Unlink Inviation"><con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint></con:service><con:property>
+    <con:service type="REST" name="Update_Password">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getCountriesAndStates">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getallinvitedmember">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Unlink Inviation">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getallappliances_by_accountid">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicestg-v2.mybluemix.net/api/v1</con:value>
     </con:property>

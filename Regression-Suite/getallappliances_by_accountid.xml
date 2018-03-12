@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="6756c8db-584e-4b6f-9343-8307243d995e" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="get location" searchProperties="true" timeout="0" maxResults="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="fac7ae81-313e-488c-8d4a-1fe831dae2e0" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="getallappliances_by_accountid" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="6756c8db-584e-4b6f-9343-8307243d995efileName">get-location</con:setting>
+    <con:setting id="fac7ae81-313e-488c-8d4a-1fe831dae2e0fileName">getallappliances_by_accountid</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="413563de-5509-4f59-bc21-dc88ada89b60">
+  <con:testStep type="groovy" name="DataSource_Setup" id="1660511b-4a81-4ae5-a5e1-ebf1cbe4515e">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -122,7 +122,7 @@ if(RunTimeDataSource_Flag == true){
 	def Run_Time_Data = context.expand( '${Run_Time_Data}' )
 	InputStream ExcelFileToRead = new FileInputStream(Run_Time_Data);
 	HSSFWorkbook wb = new HSSFWorkbook(ExcelFileToRead);
-	HSSFSheet sheet = wb.getSheet("Location_Run_Time_Data")
+	HSSFSheet sheet = wb.getSheet("Account_Run_Time_Data")
 	HSSFRow row; 
 	HSSFCell cell;
 	
@@ -142,37 +142,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource_RunTime" id="304e8ae2-fdb1-4259-b14a-503fca6a7df1">
-    <con:settings/>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Run_Time_Data}</file>
-          <worksheet>Location_Run_Time_Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
-      <con:property>Location_ID_Number</con:property>
-      <con:property>Account_ID_Number</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="a7860430-2ae8-4f76-aa57-23cc31a51f07">
-    <con:settings/>
-    <con:config>
-      <script>def Location_ID = context.expand( '${DataSource_RunTime#Location_ID_Number}' )
-def Account_ID = context.expand( '${DataSource_RunTime#Account_ID_Number}' )
-
-testRunner.testCase.testSuite.setPropertyValue("Account_ID", Account_ID)
-testRunner.testCase.testSuite.setPropertyValue("Location_ID", Location_ID)</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="8633437e-cffa-40d7-b00b-0af24679a05a">
+  <con:testStep type="datasource" name="DataSource" id="63e4e0cc-86ba-4165-9846-63b617c11063">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -184,8 +154,8 @@ testRunner.testCase.testSuite.setPropertyValue("Location_ID", Location_ID)</scri
           <evaluateFormulas>false</evaluateFormulas>
         </con:configuration>
       </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
+      <con:shared>false</con:shared>
+      <con:restartShared>false</con:restartShared>
       <con:property>TC_Number</con:property>
       <con:property>Service_Name</con:property>
       <con:property>Defect_ID</con:property>
@@ -273,174 +243,45 @@ testRunner.testCase.testSuite.setPropertyValue("Location_ID", Location_ID)</scri
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="18dd3be7-7021-4f7e-af1c-a96fb26bdc30">
+  <con:testStep type="groovy" name="flow control" id="437aa98b-d119-47cd-a85e-4c57f934e4b1">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+log.info dataCombination
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
 if (API_Name != TestCaseName){
-	testRunner.testCase.testSteps['get location_Positive'].setDisabled(true)
-	testRunner.testCase.testSteps['get location_Negative'].setDisabled(true)
+	testRunner.testCase.testSteps['getallappliances_by_accountid'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
-	testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(true)
 }else{
-	if(dataCombination == "Positive"){
-		testRunner.testCase.testSteps['get location_Positive'].setDisabled(false)
-		testRunner.testCase.testSteps['get location_Negative'].setDisabled(true)
-		testRunner.testCase.testSteps['Report'].setDisabled(false)
-		testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(false)
-	}
-	if(dataCombination == "Negative"){
-		testRunner.testCase.testSteps['get location_Positive'].setDisabled(true)
-		testRunner.testCase.testSteps['get location_Negative'].setDisabled(false)
-		testRunner.testCase.testSteps['Report'].setDisabled(false)
-		testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(false)
-	}
+	testRunner.testCase.testSteps['getallappliances_by_accountid'].setDisabled(false)
+	testRunner.testCase.testSteps['Report'].setDisabled(false)
+	
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="114db595-b0bd-4ba4-a6cc-01fcd6f1ca9e" disabled="true">
+  <con:testStep type="restrequest" name="getallappliances_by_accountid" id="5d1da3fa-0d06-4849-a1be-d73a61e7baac" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
-def Location_ID_Property = context.expand( '${#TestSuite#Location_ID}' )
-def Account_ID_Property = context.expand( '${#TestSuite#Account_ID}' )
-
-def Account_ID_Sheet = context.expand( '${DataSource#Account_Number}' )
-def Location_ID_Sheet = context.expand( '${DataSource#Location_Number}' )
-Location_ID_Sheet = Location_ID_Sheet.replace("\"", "")
-Account_ID_Sheet = Account_ID_Sheet.replace("\"", "")
-
-if (data_Combination == "Positive"){
-	testRunner.testCase.setPropertyValue("Location_ID",Location_ID_Property)
-	testRunner.testCase.setPropertyValue("Account_ID",Location_ID_Property)
-}
-if (data_Combination == "Negative"){
-	testRunner.testCase.setPropertyValue("Location_ID",Location_ID_Sheet)
-	testRunner.testCase.setPropertyValue("Account_ID",Location_ID_Sheet)
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="get location_Positive" id="b7ffb01c-9838-4a04-8b53-9a3d935e0c07" disabled="true">
-    <con:settings/>
-    <con:config service="get location" resourcePath="/locations/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}" methodName="get location" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="get location_Positive" id="6d4d7cac-0d08-4709-bc6c-9176997138c9" mediaType="application/json">
+    <con:config service="getallappliances_by_accountid" resourcePath="/appliance/allAppliances/account/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" methodName="getallappliances_by_accountid" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="getallappliances_by_accountid" id="c149f9b0-14be-4e7e-bc4c-8c85ea09a251" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${Location}</con:endpoint>
         <con:request/>
-        <con:originalUri>http://locationserviceqa-v2.mybluemix.net/api/v1/location/1375</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="6b1ada7d-cf0d-46ef-97fe-72bd20ff30f5" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters>
-          <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
-        </con:parameterOrder>
-        <con:environmentSpec>
-          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
-            <con:authProfile>No Authorization</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="get location_Negative" id="03e65738-c561-4ab0-b52d-9fc0d37fc9fe" disabled="true">
-    <con:settings/>
-    <con:config service="get location" resourcePath="/locations/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}" methodName="get location" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="get location_Negative" id="6d4d7cac-0d08-4709-bc6c-9176997138c9" mediaType="application/json">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>${Location}</con:endpoint>
-        <con:request/>
-        <con:assertion type="Valid HTTP Status Codes" id="8fb05ede-5a61-4c12-b434-806ce66a1cff" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>500</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
         <con:parameters/>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
         </con:parameterOrder>
-        <con:environmentSpec>
-          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
-            <con:authProfile>No Authorization</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="89921b16-a2a2-4863-aee1-dabda749dd69" disabled="true">
+  <con:testStep type="groovy" name="Report" id="3c095179-9da8-4d13-8d1f-5f0287a1e29e" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -479,12 +320,7 @@ def data_combination = context.expand( '${DataSource#Data_Combination}' )
 /*Get TC Name*/
 def TCN = context.expand( '${DataSource#TC_Number}' )
 def TestCaseName = testRunner.testCase.getName()
-if(data_combination == "Positive"){
-	TestCaseName = TestCaseName + "_Positive"
-}
-if(data_combination == "Negative"){
-	TestCaseName = TestCaseName + "_Negative"
-}
+
 log.info TestCaseName
 
 obj = context.testCase.getTestStepByName(TestCaseName)
@@ -540,12 +376,18 @@ file1.append("---------------- Request ---------------------------\n")
 
 
 /*Get request and response*/
-myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
-def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
-def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
-file1.append(request + "\n\n\n\n")
-file1.append("---------------- Response --------------------------\n")
-file1.append(response)
+try{
+	myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
+	def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
+	def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+	file1.append(request + "\n\n\n\n")
+	file1.append("---------------- Response --------------------------\n")
+	file1.append(response)
+}
+catch (Exception e){
+	log.info("Empty Request Response")
+}
+
 
 
 /* Creating Excel for test result */
@@ -563,69 +405,16 @@ log.info Row_count
 Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
-Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="ea4dd885-5a2a-4c29-81b9-498b8e2dafc2">
-    <con:settings/>
-    <con:config>
-      <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>Flow Control</targetStep>
-    </con:config>
-  </con:testStep>
-  <con:properties>
-    <con:property>
-      <con:name>Location_ID</con:name>
-      <con:value>2852</con:value>
-    </con:property>
-    <con:property>
-      <con:name>Account_ID</con:name>
-      <con:value>2852</con:value>
-    </con:property>
-  </con:properties>
+  <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>304e8ae2-fdb1-4259-b14a-503fca6a7df1</con:testStepId>
+    <con:testStepId>5d1da3fa-0d06-4849-a1be-d73a61e7baac</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>a7860430-2ae8-4f76-aa57-23cc31a51f07</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>413563de-5509-4f59-bc21-dc88ada89b60</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:environmentSpec>
-    <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-  </con:environmentSpec>
 </con:testCase>

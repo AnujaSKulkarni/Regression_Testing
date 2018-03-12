@@ -105,6 +105,7 @@ Energy_providers.xml
 Rate-Revealer.xml
 UnClaim-Appliance.xml
 Appliance-Wraper.xml
+getallappliances_by_accountid.xml
 Retrieve-DDM-Literals.xml
 Retrieve-NotificationMessages.xml
 Retrieve-All-Content.xml
@@ -126,6 +127,6 @@ Delete-timer.xml
 UnClaim-Appliance1.xml
 getCountriesAndStates.xml
 Update_Password.xml
+Unlink-Inviation.xml
 Delete-Account.xml
 Test_Run_Summary.xml
-Unlink-Inviation.xml

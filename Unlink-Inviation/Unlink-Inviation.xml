@@ -1,2 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Unlink Inviation" path="/invitations/unlink" id="67e5d615-b805-4ab0-b097-b90c3e72bc2a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="67e5d615-b805-4ab0-b097-b90c3e72bc2afileName">Unlink-Inviation</con:setting></con:settings><con:parameters/><con:method name="Unlink Inviation" id="f4728bda-58ba-43a4-a951-d016ad665bb2" method="POST"><con:settings/><con:parameters><con:parameter><con:name>Authorization</con:name><con:value>bearer ${access_token} </con:value><con:style>HEADER</con:style><con:default>bearer ${access_token} </con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>wp-client-region</con:name><con:value>NAR</con:value><con:style>HEADER</con:style><con:default>NAR</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>wp-client-country</con:name><con:value>US</con:value><con:style>HEADER</con:style><con:default>US</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>wp-client-brand</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:request name="Unlink Inviation" id="c3cbb5aa-5597-4a8e-b6f7-5bfa70240747" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://{{API-Connect}}</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-country</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder></con:request></con:method></con:resource>
+<con:resource name="Unlink Inviation" path="/invitations/unlink" id="67e5d615-b805-4ab0-b097-b90c3e72bc2a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="67e5d615-b805-4ab0-b097-b90c3e72bc2afileName">Unlink-Inviation</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Unlink Inviation" id="f4728bda-58ba-43a4-a951-d016ad665bb2" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>bearer ${access_token}</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-region</con:name>
+        <con:value>NAR</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>NAR</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-country</con:name>
+        <con:value>US</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>US</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-brand</con:name>
+        <con:value/>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:unl="https://api-test.whrcloud.com/api/v1/invitations/unlink">unl:Response</con:element>
+    </con:representation>
+    <con:request name="Unlink Inviation" id="c3cbb5aa-5597-4a8e-b6f7-5bfa70240747" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://{{API-Connect}}</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>wp-client-region</con:entry>
+        <con:entry>wp-client-country</con:entry>
+        <con:entry>wp-client-brand</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

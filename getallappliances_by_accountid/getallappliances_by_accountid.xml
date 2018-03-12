@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="getallappliances_by_accountid" path="/appliance/allAppliances/account/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" id="9ff92f66-a042-4bbb-b121-9018063a362e" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9ff92f66-a042-4bbb-b121-9018063a362efileName">getallappliances_by_accountid</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="getallappliances_by_accountid" id="730c0af1-7f55-4e96-8e0a-9987cc5c0a4a" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>bearer ${access_token}</con:default>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="getallappliances_by_accountid" id="c149f9b0-14be-4e7e-bc4c-8c85ea09a251" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>
