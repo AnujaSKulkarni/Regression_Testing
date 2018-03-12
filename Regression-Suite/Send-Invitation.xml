@@ -574,11 +574,11 @@ log.info "Report Generated"</script>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"SAT_MAR_10_14_13_33_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"MON_MAR_12_12_24_34_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>SAT_MAR_10_14_13_33_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>MON_MAR_12_12_24_34_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
