@@ -243,6 +243,14 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="651d2086-be97-47a7-984b-1bb3a057f432">
+    <con:settings/>
+    <con:config>
+      <script>def rawRequest = context.expand( '${#[Regression Suite#Send Invitation#Send Invitation]#RawRequest#$[\'emailId\']}' )
+rawRequest = "\"" + rawRequest + "\""
+testRunner.testCase.setPropertyValue("emailId", rawRequest)</script>
+    </con:config>
+  </con:testStep>
   <con:testStep type="groovy" name="flow control" id="e5129727-79d3-425d-827d-dd74e3cbde60">
     <con:settings/>
     <con:config>
@@ -261,7 +269,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Unlink Inviation" id="24643a03-85ca-4433-9992-3c5558f004fb" disabled="true">
+  <con:testStep type="restrequest" name="Unlink Inviation" id="24643a03-85ca-4433-9992-3c5558f004fb">
     <con:settings/>
     <con:config service="Unlink Inviation" resourcePath="/invitations/unlink" methodName="Unlink Inviation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Unlink Inviation" id="c3cbb5aa-5597-4a8e-b6f7-5bfa70240747" mediaType="application/json" postQueryString="false">
@@ -269,10 +277,26 @@ if (API_Name != TestCaseName){
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request>{
-  "emailId":"NOTIFICATION_MANAGEMENT@MAILINATOR.COM",
+  "emailId":${#TestCase#emailId},
   "invitationType":"pending",
-  "accountId":11242
+  "accountId":${#[Regression Suite#Send Invitation#Send Invitation]#RawRequest#$['accountId']}
 }</con:request>
+        <con:originalUri>https://api-test.whrcloud.com/api/v1/invitations/unlink</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5ff44d72-923c-41a7-871c-ddbbc3ebf3af" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="MessageContentAssertion" id="0e70764e-758e-4572-b88c-4bbacde31e35" name="Message Content Assertion">
+          <con:configuration xsi:type="con:MessageContentAssertion">
+            <con:originalMessage><![CDATA[<Response xmlns="https://api-test.whrcloud.com/api/v1/invitations/unlink">
+   <code>200</code>
+   <message>Pending user removed successfully</message>
+   <status>SUCCESS</status>
+</Response>]]></con:originalMessage>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -288,7 +312,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="b3a7bc6e-3772-4f4b-b959-48b0a207cd4d" disabled="true">
+  <con:testStep type="groovy" name="Report" id="b3a7bc6e-3772-4f4b-b959-48b0a207cd4d">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -424,10 +448,20 @@ out.close()</script>
       <targetStep>flow control</targetStep>
     </con:config>
   </con:testStep>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>emailId</con:name>
+      <con:value>"MON_MAR_12_14_25_31_IST_2018@MAILINATOR.COM"</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
   <con:breakPoints>
     <con:testStepId>24643a03-85ca-4433-9992-3c5558f004fb</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>651d2086-be97-47a7-984b-1bb3a057f432</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

@@ -168,6 +168,3 @@ getCountriesAndStates
 getallinvitedmember
 Unlink-Inviation
 getallappliances_by_accountid
-Regression-Suite
-LoadSuite
-REST-Virt-1
