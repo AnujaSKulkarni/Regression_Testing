@@ -333,7 +333,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Get All Accounts" id="6bb0d62c-f02c-45c9-9416-419d047255a8" disabled="true">
+  <con:testStep type="restrequest" name="Get All Accounts" id="6bb0d62c-f02c-45c9-9416-419d047255a8">
     <con:settings/>
     <con:config service="Get All Accounts" resourcePath="/accounts" methodName="Get All Accounts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Get All Accounts" id="b8b46a01-298e-4615-8039-eb0f93b0a321" mediaType="application/json" postQueryString="false">
@@ -419,7 +419,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="98e3db88-fccc-4207-8bd8-c6f018c15c78" disabled="true">
+  <con:testStep type="groovy" name="Report" id="98e3db88-fccc-4207-8bd8-c6f018c15c78">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
