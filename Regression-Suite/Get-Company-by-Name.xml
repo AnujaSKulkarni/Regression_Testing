@@ -257,7 +257,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Get Company by Name" id="ced678b1-8628-45a9-870f-4977a4b3f6f9" disabled="true">
     <con:settings/>
-    <con:config service="Get Company by Name" resourcePath="/company/WhirlPool" methodName="Get Company by Name" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Get Company by Name" resourcePath="/company/${#[Regression Suite#Register Company#Register Company_Positive]#Response#$['companyName']}" methodName="Get Company by Name" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Get Company by Name" id="ef6c30f1-4666-4212-b52e-9dfc12ce8b2f" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

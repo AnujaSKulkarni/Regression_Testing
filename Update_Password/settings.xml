@@ -1,10 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:RestService" id="c1df7be3-938a-41e7-b1a2-0d6420642bfb" wadlVersion="http://wadl.dev.java.net/2009/02" name="Update_Password" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
-    <con:setting id="c1df7be3-938a-41e7-b1a2-0d6420642bfbfileName">Update_Password</con:setting>
-  </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
-    <con:endpoint>https://{{API-Connect}}</con:endpoint>
-  </con:endpoints>
-</con:interface>
+<con:interface xsi:type="con:RestService" id="c1df7be3-938a-41e7-b1a2-0d6420642bfb" wadlVersion="http://wadl.dev.java.net/2009/02" name="Update_Password" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="c1df7be3-938a-41e7-b1a2-0d6420642bfbfileName">Update_Password</con:setting></con:settings><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://{{API-Connect}}</con:endpoint></con:endpoints></con:interface>

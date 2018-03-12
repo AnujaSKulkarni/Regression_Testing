@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="0593590c-c465-41b7-abd5-94c35e4282d6" wadlVersion="http://wadl.dev.java.net/2009/02" name="Unlink Inviation" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="0593590c-c465-41b7-abd5-94c35e4282d6fileName">Unlink-Inviation</con:setting></con:settings><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://{{API-Connect}}</con:endpoint></con:endpoints></con:interface>
