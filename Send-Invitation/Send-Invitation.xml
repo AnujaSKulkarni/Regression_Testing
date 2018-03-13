@@ -71,10 +71,10 @@
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:jmsPropertyConfig/>
       <con:parameters>
-  <con:entry key="wp-client-country" value="US"/>
-  <con:entry key="wp-client-brand" value="Whirlpool"/>
-  <con:entry key="wp-client-region" value="NAR"/>
-</con:parameters>
+        <con:entry key="wp-client-country" value="US"/>
+        <con:entry key="wp-client-brand" value="Whirlpool"/>
+        <con:entry key="wp-client-region" value="NAR"/>
+      </con:parameters>
       <con:parameterOrder>
         <con:entry>Authorization</con:entry>
         <con:entry>wp-client-region</con:entry>

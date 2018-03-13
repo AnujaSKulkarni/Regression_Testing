@@ -67,7 +67,7 @@
     </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json;charset=UTF-8</con:mediaType>
-      <con:status>400 401 500</con:status>
+      <con:status>400 401</con:status>
       <con:params/>
       <con:element xmlns:tok="https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/oauth/token">tok:Fault</con:element>
     </con:representation>
@@ -81,7 +81,7 @@
       <con:params/>
       <con:element>data</con:element>
     </con:representation>
-    <con:representation type="FAULT"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:status>404</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="GET Member Token" id="dbba64c0-256c-4cda-a935-104acc1c460c" mediaType="application/json" postQueryString="false">
+    <con:request name="GET Member Token" id="dbba64c0-256c-4cda-a935-104acc1c460c" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
