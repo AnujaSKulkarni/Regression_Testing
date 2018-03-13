@@ -160,7 +160,13 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -333,7 +339,8 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="0fc1afe9-4ae7-4aff-a15a-15b3f1665651" disabled="true">
     <con:settings/>
-    <con:config><script>import java.io.FileInputStream
+    <con:config>
+      <script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -457,7 +464,8 @@ Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script></con:config>
+out.close()</script>
+    </con:config>
   </con:testStep>
   <con:testStep type="datasourceloop" name="DataSource Loop" id="fd9f5055-eb87-4901-91f0-2b2a48dd29f1">
     <con:settings/>
@@ -469,11 +477,11 @@ out.close()</script></con:config>
   <con:properties>
     <con:property>
       <con:name>applianceid</con:name>
-      <con:value>""</con:value>
+      <con:value>"Refrigerator123"</con:value>
     </con:property>
     <con:property>
       <con:name>id</con:name>
-      <con:value>""</con:value>
+      <con:value>"Refrigerator123-4QBT"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

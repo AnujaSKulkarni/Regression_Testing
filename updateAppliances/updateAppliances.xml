@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="updateAppliances" path="/updateAppliances" id="a5e88fe4-ef45-498c-89f6-578624c23b53" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a5e88fe4-ef45-498c-89f6-578624c23b53fileName">updateAppliances</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>Content-Type</con:name>
+      <con:value/>
+      <con:style>HEADER</con:style>
+      <con:default/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="UpdateAppliances" id="1e937484-76cd-4d4b-9332-773277c073b8" method="PUT">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>bearer ${access_token}</con:default>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:upd="https://api-test.whrcloud.com/api/v1/updateAppliances">upd:Fault</con:element>
+    </con:representation>
+    <con:request name="updateAppliances" id="556a0d4f-443a-46c0-8e74-e59e33b324bd" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>{
+"applianceId":413,
+"applianceName":"DDM_Washer_SmartGrid"
+}</con:request>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>Content-Type</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

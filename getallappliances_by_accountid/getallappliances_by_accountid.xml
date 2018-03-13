@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="getallappliances_by_accountid" path="/appliance/allAppliances/account/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" id="9ff92f66-a042-4bbb-b121-9018063a362e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="getallappliances_by_accountid" path="/appliance/allAppliances/account/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['ACCOUNT_ID']}" id="9ff92f66-a042-4bbb-b121-9018063a362e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="9ff92f66-a042-4bbb-b121-9018063a362efileName">getallappliances_by_accountid</con:setting>
   </con:settings>
@@ -19,9 +19,11 @@
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
-      <con:endpoint>https://{{API-Connect}}</con:endpoint><con:request/>
+      <con:endpoint>https://{{API-Connect}}</con:endpoint>
+      <con:request/>
       <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>

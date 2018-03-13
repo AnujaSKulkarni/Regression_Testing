@@ -141,11 +141,18 @@ if(RunTimeDataSource_Flag == true){
 	}
 }</script>
     </con:config>
-  </con:testStep><con:testStep type="datasource" name="DataSource" id="63e4e0cc-86ba-4165-9846-63b617c11063">
+  </con:testStep>
+  <con:testStep type="datasource" name="DataSource" id="63e4e0cc-86ba-4165-9846-63b617c11063">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -256,12 +263,13 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="getallappliances_by_accountid" id="5d1da3fa-0d06-4849-a1be-d73a61e7baac" disabled="true">
     <con:settings/>
-    <con:config service="getallappliances_by_accountid" resourcePath="/appliance/allAppliances/account/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" methodName="getallappliances_by_accountid" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="getallappliances_by_accountid" resourcePath="/appliance/allAppliances/account/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['ACCOUNT_ID']}" methodName="getallappliances_by_accountid" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="getallappliances_by_accountid" id="c149f9b0-14be-4e7e-bc4c-8c85ea09a251" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request/>
+        <con:originalUri>https://api-test.whrcloud.com/api/v1/appliance/allAppliances/account/12767</con:originalUri>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -276,7 +284,8 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="3c095179-9da8-4d13-8d1f-5f0287a1e29e" disabled="true">
     <con:settings/>
-    <con:config><script>import java.io.FileInputStream
+    <con:config>
+      <script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -400,9 +409,16 @@ Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script></con:config>
+out.close()</script>
+    </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="dd86647a-c277-475a-b186-042817c7370c"><con:settings/><con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>flow control</targetStep></con:config></con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="dd86647a-c277-475a-b186-042817c7370c">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>flow control</targetStep>
+    </con:config>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
@@ -410,4 +426,9 @@ out.close()</script></con:config>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
-<con:breakPoints><con:testStepId>dd86647a-c277-475a-b186-042817c7370c</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>
+  <con:breakPoints>
+    <con:testStepId>dd86647a-c277-475a-b186-042817c7370c</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>
