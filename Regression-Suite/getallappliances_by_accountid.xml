@@ -146,7 +146,13 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -255,7 +261,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="getallappliances_by_accountid" id="5d1da3fa-0d06-4849-a1be-d73a61e7baac" disabled="true">
+  <con:testStep type="restrequest" name="getallappliances_by_accountid" id="5d1da3fa-0d06-4849-a1be-d73a61e7baac">
     <con:settings/>
     <con:config service="getallappliances_by_accountid" resourcePath="/appliance/allAppliances/account/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['ACCOUNT_ID']}" methodName="getallappliances_by_accountid" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="getallappliances_by_accountid" id="c149f9b0-14be-4e7e-bc4c-8c85ea09a251" mediaType="application/json">
@@ -282,7 +288,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="3c095179-9da8-4d13-8d1f-5f0287a1e29e" disabled="true">
+  <con:testStep type="groovy" name="Report" id="3c095179-9da8-4d13-8d1f-5f0287a1e29e">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
