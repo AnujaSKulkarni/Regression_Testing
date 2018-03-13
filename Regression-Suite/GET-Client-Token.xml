@@ -144,17 +144,16 @@ file1.append(response)</script>
   </con:testStep>
   <con:testStep type="groovy" name="Skip_on_failure" id="d1d92961-450c-4a63-bb98-16763b9f01f0">
     <con:settings/>
-    <con:config>
-      <script>def TestCaseName = testRunner.testCase.getName()
+    <con:config><script>def TestCaseName = testRunner.testCase.getName()
 obj = context.testCase.getTestStepByName(TestCaseName)
 assertions = obj.getAssertionList()
 def Status
 assertions.each{
 	def stat = (it.status).toString()
-	if(stat == "VALID"){
+	if(stat == "VALID" || stat == "PASS"){
 		Status = "Pass"
 	}
-	if(stat == "FAILED"){
+	if(stat == "FAILED" || stat == "FAIL"){
 		Status = "Fail"
 	}
 }
@@ -165,8 +164,7 @@ com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Client_Token","unde
 if(Status == "Fail"){
 testRunner.testCase.testSteps.each{k, v ->    
 testRunner.cancel(k)}
-}</script>
-    </con:config>
+}</script></con:config>
   </con:testStep>
   <con:testStep type="groovy" name="Client Token - Global Variable" id="afdf120f-5e91-4685-9179-63f5ccd9fcd8">
     <con:settings/>
