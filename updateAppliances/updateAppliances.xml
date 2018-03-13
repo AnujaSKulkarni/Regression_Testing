@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="updateAppliances" path="/updateAppliances" id="a5e88fe4-ef45-498c-89f6-578624c23b53" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="updateAppliances" path="/updateAppliances" id="a5e88fe4-ef45-498c-89f6-578624c23b53" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="a5e88fe4-ef45-498c-89f6-578624c23b53fileName">updateAppliances</con:setting>
   </con:settings>
@@ -9,7 +9,7 @@
       <con:value/>
       <con:style>HEADER</con:style>
       <con:default/>
-      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:description xsi:nil="true"/>
     </con:parameter>
   </con:parameters>
   <con:method name="UpdateAppliances" id="1e937484-76cd-4d4b-9332-773277c073b8" method="PUT">
@@ -20,7 +20,7 @@
         <con:value>bearer ${access_token}</con:value>
         <con:style>HEADER</con:style>
         <con:default>bearer ${access_token}</con:default>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
     <con:representation type="REQUEST">
@@ -29,7 +29,7 @@
     </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json</con:mediaType>
-      <con:status>401</con:status>
+      <con:status>401 400</con:status>
       <con:params/>
       <con:element xmlns:upd="https://api-test.whrcloud.com/api/v1/updateAppliances">upd:Fault</con:element>
     </con:representation>
@@ -37,11 +37,13 @@
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
+      <con:endpoint>https://{{Appliance}}</con:endpoint>
       <con:request>{
 "applianceId":413,
 "applianceName":"DDM_Washer_SmartGrid"
 }</con:request>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
