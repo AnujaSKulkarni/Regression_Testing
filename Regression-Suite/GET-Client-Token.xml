@@ -421,7 +421,7 @@ wb.setSheetName(0,"Test_Run_Results")
 
 r = s.createRow(0)
 // create a numeric cell
-for(i = 0; i &lt; 3;i++){
+for(i = 0; i &lt; 5;i++){
 	c = r.createCell(i);
 	if(i == 0){
 		c.setCellValue("TC_Number");
@@ -431,6 +431,12 @@ for(i = 0; i &lt; 3;i++){
 	}
 	if(i == 2){
 		c.setCellValue("API_Name");
+	}
+	if(i == 3){
+		c.setCellValue("Execution TimeStamp");
+	}
+	if(i == 4){
+		c.setCellValue("Execution TimeTaken");
 	}
 }
 wb.write(out);
