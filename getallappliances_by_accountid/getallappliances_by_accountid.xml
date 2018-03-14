@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="getallappliances_by_accountid" path="/appliance/allAppliances/account/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['ACCOUNT_ID']}" id="9ff92f66-a042-4bbb-b121-9018063a362e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="getallappliances_by_accountid" path="/appliance/allAppliances/account/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['ACCOUNT_ID']}" id="825872fd-c3f3-4fc1-8ae8-e842a016a49b" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="9ff92f66-a042-4bbb-b121-9018063a362efileName">getallappliances_by_accountid</con:setting>
+    <con:setting id="825872fd-c3f3-4fc1-8ae8-e842a016a49bfileName">getallappliances_by_accountid</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="getallappliances_by_accountid" id="730c0af1-7f55-4e96-8e0a-9987cc5c0a4a" method="GET">
+  <con:method name="getallappliances_by_accountid" id="680a23e3-7008-4053-9035-c0dd8a54b98b" method="GET">
     <con:settings/>
     <con:parameters>
       <con:parameter>
@@ -12,23 +12,22 @@
         <con:value>bearer ${access_token}</con:value>
         <con:style>HEADER</con:style>
         <con:default>bearer ${access_token}</con:default>
-        <con:description xsi:nil="true"/>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       </con:parameter>
     </con:parameters>
     <con:representation type="RESPONSE">
       <con:mediaType>application/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
-      <con:element xmlns:ns="https://api-test.whrcloud.com/api/v1/appliance/allAppliances/account/12767">ns:Response</con:element>
+      <con:element xmlns:ns="https://api-test.whrcloud.com/api/v1/appliance/allAppliances/account/12870">ns:Response</con:element>
     </con:representation>
-    <con:request name="getallappliances_by_accountid" id="c149f9b0-14be-4e7e-bc4c-8c85ea09a251" mediaType="application/json">
+    <con:request name="getallappliances_by_accountid" id="739ebfad-7d1b-4dc2-bee0-c98e25f597ed" mediaType="application/json">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
-      <con:endpoint>https://{{API-Connect}}</con:endpoint>
+      <con:endpoint>${API-Connect}</con:endpoint>
       <con:request/>
       <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>

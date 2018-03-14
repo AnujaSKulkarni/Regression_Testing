@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="974437e3-6fff-4832-837d-f0d6b71f410c" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="updateAppliances" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="c978d812-5a9b-47d9-a766-c0cc15ecdce7" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update appliance" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="974437e3-6fff-4832-837d-f0d6b71f410cfileName">updateAppliances</con:setting>
+    <con:setting id="c978d812-5a9b-47d9-a766-c0cc15ecdce7fileName">Update-appliance</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="22b1f6bf-4bf0-4998-a8fb-316246a4e2b7">
+  <con:testStep type="groovy" name="DataSource_Setup" id="5d8b317f-8b91-482b-9f08-1860692312d8">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -142,11 +142,17 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="e5a81321-63bf-412a-995e-f3e7e39eff77">
+  <con:testStep type="datasource" name="DataSource" id="eec00469-ca60-4e76-b61e-1bc75c16d882">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -237,7 +243,7 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="97e9c055-0d9a-4178-bbb8-25a36cfbc1c0">
+  <con:testStep type="groovy" name="flow control" id="89784e40-defd-46c0-aa1f-1b066f4250e6">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -246,28 +252,29 @@ def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
 if (API_Name != TestCaseName){
-	testRunner.testCase.testSteps['updateAppliances'].setDisabled(true)
+	testRunner.testCase.testSteps['Update appliance'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
 }else{
-	testRunner.testCase.testSteps['updateAppliances'].setDisabled(false)
+	testRunner.testCase.testSteps['Update appliance'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
 	
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="updateAppliances" id="40bbb3dd-e232-4338-977a-ae1a079aaf05">
+  <con:testStep type="restrequest" name="Update appliance" id="5254678e-c170-4333-a68a-e800aa962a8b">
     <con:settings/>
-    <con:config service="updateAppliances" resourcePath="/updateAppliances" methodName="UpdateAppliances" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="updateAppliances" id="556a0d4f-443a-46c0-8e74-e59e33b324bd" mediaType="application/json" postQueryString="false">
+    <con:config service="Update appliance" resourcePath="/updateAppliances" methodName="Update appliance" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Update appliance" id="e6facf30-f1b6-4581-aba9-172bd6523539" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request>{
-"applianceId":${#[Regression Suite#Appliance Wraper#Appliance Wraper]#Response#$['appliance']['applianceId']},
-"applianceName":"Washer_SmartGrid"
+  "applianceName":${DataSource#Appliance_Name},
+"applianceId":${#[Regression Suite#Appliance Wraper#Appliance Wraper]#Response#$['appliance']['applianceId']}
+  
 }</con:request>
         <con:originalUri>https://api-test.whrcloud.com/api/v1/updateAppliances</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="5d277119-0b3a-4784-b86f-2aa2d256cf0c" name="Valid HTTP Status Codes">
+        <con:assertion type="Valid HTTP Status Codes" id="002e9744-7fcc-4acd-86a6-9927806e477a" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
@@ -278,17 +285,14 @@ if (API_Name != TestCaseName){
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-          <entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/>
-        </con:parameters>
+        <con:parameters/>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
-          <con:entry>Content-Type</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="7126aa13-a709-41ec-b816-613e0c2e4b2f">
+  <con:testStep type="groovy" name="Report" id="41aaf1d8-70ec-4641-8074-5bec101fd373">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -412,13 +416,12 @@ log.info Row_count
 Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
-Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="a775f7b8-d815-4569-9ed1-a7162d90fde7">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="a5a08bfe-1229-4283-a533-79caf319dec4">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
@@ -428,7 +431,7 @@ out.close()</script>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>40bbb3dd-e232-4338-977a-ae1a079aaf05</con:testStepId>
+    <con:testStepId>5254678e-c170-4333-a68a-e800aa962a8b</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
