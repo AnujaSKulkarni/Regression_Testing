@@ -128,3 +128,5 @@ getCountriesAndStates.xml
 Update_Password.xml
 Delete-Account.xml
 Test_Run_Summary.xml
+getallappliances_by_accountid.xml
+updateAppliances.xml
