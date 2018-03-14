@@ -463,8 +463,7 @@ testRunner.testCase.testSuite.setPropertyValue("Group_Name_string", Email_ID_str
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="14457311-3574-4362-a788-5f447bca7b37" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+    <con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -513,10 +512,10 @@ assertions = obj.getAssertionList()
 def Status
 assertions.each{
 	def stat = (it.status).toString()
-	if(stat == "VALID"){
+	if(stat == "VALID" || stat == "PASS"){
 		Status = "Pass"
 	}
-	if(stat == "FAILED"){
+	if(stat == "FAILED" || stat == "FAIL"){
 		Status = "Fail"
 	}
 }
@@ -587,8 +586,7 @@ Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
+out.close()</script></con:config>
   </con:testStep>
   <con:testStep type="groovy" name="Data_Sink_Flow_Control" id="148cd184-6ccd-4996-806c-5c68afd95bbb" disabled="true">
     <con:settings/>
