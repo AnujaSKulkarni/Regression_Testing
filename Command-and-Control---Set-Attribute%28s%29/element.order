@@ -12,6 +12,5 @@ forgotPwd
 get-all-appliances-dashDB
 Delete-Appliance
 Get-Value-of-attribute-for-particular-entity
-Update-appliance
 Search-Appliance
 Command-and-Control---Set-Attribute%28s%29

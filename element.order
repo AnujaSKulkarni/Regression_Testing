@@ -12,7 +12,6 @@ forgotPwd
 get-all-appliances-dashDB
 Delete-Appliance
 Get-Value-of-attribute-for-particular-entity
-Update-appliance
 Search-Appliance
 Command-and-Control---Set-Attribute%28s%29
 free-vend
@@ -168,6 +167,6 @@ getCountriesAndStates
 getallinvitedmember
 Unlink-Inviation
 getallappliances_by_accountid
-updateAppliances
+Update-appliance
 Regression-Suite
 REST-Virt-1

@@ -122,9 +122,10 @@
     <con:databaseConnection>
       <con:name>DataBase</con:name>
       <con:driver>com.ibm.db2.jcc.DB2Driver</con:driver>
-      <con:connectionString>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
+      <con:connectionString>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
       <con:password>Syntel@mb5027676</con:password>
-    <con:connectionProperties/></con:databaseConnection>
+      <con:connectionProperties/>
+    </con:databaseConnection>
   </con:databaseConnectionContainer>
   <con:jmsConnectionContainer/>
   <con:oAuth2ProfileContainer/>
@@ -171,9 +172,6 @@
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Get Value of attribute for particular entity">
-      <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="Update appliance">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Search Appliance">
@@ -629,7 +627,22 @@
     <con:service type="REST" name="Retrieve All Content">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="Update_Password"><con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint></con:service><con:service type="REST" name="getCountriesAndStates"><con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint></con:service><con:service type="REST" name="getallinvitedmember"><con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint></con:service><con:property>
+    <con:service type="REST" name="Update_Password">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getCountriesAndStates">
+      <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getallinvitedmember">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getallappliances_by_accountid">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Update appliance">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationserviceqa-v2.mybluemix.net/api/v1</con:value>
     </con:property>
@@ -727,7 +740,8 @@
         <con:driver>com.ibm.db2.jcc.DB2Driver</con:driver>
         <con:connectionString>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
         <con:password>Syntel@mb5027676</con:password>
-      <con:connectionProperties/></con:databaseConnection>
+        <con:connectionProperties/>
+      </con:databaseConnection>
     </con:databaseConnectionContainer>
     <con:jmsConnectionContainer/>
   </con:environment>
@@ -772,9 +786,6 @@
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Get Value of attribute for particular entity">
-      <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="Update appliance">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Search Appliance">
@@ -1230,7 +1241,22 @@
     <con:service type="REST" name="Retrieve All Content">
       <con:endpoint authProfile="No Authorization"/>
     </con:service>
-    <con:service type="REST" name="Update_Password"><con:endpoint authProfile="Inherit From Parent"/></con:service><con:service type="REST" name="getCountriesAndStates"><con:endpoint authProfile="No Authorization"/></con:service><con:service type="REST" name="getallinvitedmember"><con:endpoint authProfile="Inherit From Parent"/></con:service><con:property>
+    <con:service type="REST" name="Update_Password">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="getCountriesAndStates">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="getallinvitedmember">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="getallappliances_by_accountid">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="Update appliance">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicedev-v2.mybluemix.net/api/v1</con:value>
     </con:property>
@@ -1328,7 +1354,8 @@
         <con:driver>com.ibm.db2.jcc.DB2Driver</con:driver>
         <con:connectionString>jdbc:db2://dashdb-txnha-small-yp-dal10-23.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
         <con:password>Syntel@mb5027676</con:password>
-      <con:connectionProperties/></con:databaseConnection>
+        <con:connectionProperties/>
+      </con:databaseConnection>
     </con:databaseConnectionContainer>
     <con:jmsConnectionContainer/>
   </con:environment>
@@ -1373,9 +1400,6 @@
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Get Value of attribute for particular entity">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="Update appliance">
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Search Appliance">
@@ -1831,7 +1855,22 @@
     <con:service type="REST" name="Retrieve All Content">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
-    <con:service type="REST" name="Update_Password"><con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint></con:service><con:service type="REST" name="getCountriesAndStates"><con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint></con:service><con:service type="REST" name="getallinvitedmember"><con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint></con:service><con:property>
+    <con:service type="REST" name="Update_Password">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getCountriesAndStates">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getallinvitedmember">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="getallappliances_by_accountid">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="Update appliance">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicestg-v2.mybluemix.net/api/v1</con:value>
     </con:property>
@@ -1929,7 +1968,8 @@
         <con:driver>com.ibm.db2.jcc.DB2Driver</con:driver>
         <con:connectionString>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
         <con:password>Syntel@mb5027676</con:password>
-      <con:connectionProperties/></con:databaseConnection>
+        <con:connectionProperties/>
+      </con:databaseConnection>
     </con:databaseConnectionContainer>
     <con:jmsConnectionContainer/>
   </con:environment>

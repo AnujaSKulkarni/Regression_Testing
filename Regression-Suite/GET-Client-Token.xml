@@ -70,7 +70,8 @@
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="b84b3a8e-19cb-464f-b654-3cd1415b95c9">
     <con:settings/>
-    <con:config><script>def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
+    <con:config>
+      <script>def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
 log.info Final_Path
 def final_path = new File(Final_Path)
 final_path.mkdir()
@@ -84,10 +85,10 @@ assertions = obj.getAssertionList()
 def Status
 assertions.each{
 	def stat = (it.status).toString()
-	if(stat == "VALID" || stat == "PASS"){
+	if(stat == "VALID"){
 		Status = "Pass"
 	}
-	if(stat == "FAILED" || stat == "FAIL"){
+	if(stat == "FAILED"){
 		Status = "Fail"
 	}
 }
@@ -138,7 +139,8 @@ def request = new String(myRequestStep.testRequest.messageExchange.rawRequestDat
 def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
 file1.append(request + "\n\n\n\n")
 file1.append("---------------- Response --------------------------\n")
-file1.append(response)</script></con:config>
+file1.append(response)</script>
+    </con:config>
   </con:testStep>
   <con:testStep type="groovy" name="Skip_on_failure" id="d1d92961-450c-4a63-bb98-16763b9f01f0">
     <con:settings/>
