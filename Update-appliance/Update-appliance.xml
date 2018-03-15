@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Update appliance" path="/updateAppliances" id="60f3c112-a1cc-48a6-b877-73451924177a" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Update appliance" path="/updateAppliances" id="60f3c112-a1cc-48a6-b877-73451924177a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="60f3c112-a1cc-48a6-b877-73451924177afileName">Update-appliance</con:setting>
   </con:settings>
@@ -12,7 +12,7 @@
         <con:value>bearer ${access_token}</con:value>
         <con:style>HEADER</con:style>
         <con:default>bearer ${access_token}</con:default>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
     <con:representation type="REQUEST">
@@ -25,12 +25,20 @@
       <con:params/>
       <con:element xmlns:upd="https://api-test.whrcloud.com/api/v1/updateAppliances">upd:Fault</con:element>
     </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:upd="https://api-test.whrcloud.com/api/v1/updateAppliances">upd:Response</con:element>
+    </con:representation>
     <con:request name="Update appliance" id="e6facf30-f1b6-4581-aba9-172bd6523539" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
+      <con:endpoint>https://{{API-Connect}}</con:endpoint>
       <con:request/>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>

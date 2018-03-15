@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:RestService" id="22998f21-69b1-46f7-bacc-5729e06a6c73" wadlVersion="http://wadl.dev.java.net/2009/02" name="Update appliance" type="rest" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<con:interface xsi:type="con:RestService" id="22998f21-69b1-46f7-bacc-5729e06a6c73" wadlVersion="http://wadl.dev.java.net/2009/02" name="Update appliance" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="22998f21-69b1-46f7-bacc-5729e06a6c73fileName">Update-appliance</con:setting>
   </con:settings>
