@@ -146,13 +146,7 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Run_Time_Data}</file>
-          <worksheet>Location_Run_Time_Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Run_Time_Data}</file><worksheet>Location_Run_Time_Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -176,13 +170,7 @@ testRunner.testCase.testSuite.setPropertyValue("Location_ID", Location_ID_Number
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -502,8 +490,7 @@ if (data_Combination == "Negative"){
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="50c16775-6ba0-4bc6-95e1-7d96d76b7832" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+    <con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -553,10 +540,10 @@ assertions = obj.getAssertionList()
 def Status
 assertions.each{
 	def stat = (it.status).toString()
-	if(stat == "VALID"){
+	if(stat == "VALID" || stat == "PASS"){
 		Status = "Pass"
 	}
-	if(stat == "FAILED"){
+	if(stat == "FAILED" || stat == "FAIL"){
 		Status = "Fail"
 	}
 }
@@ -627,8 +614,7 @@ Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
+out.close()</script></con:config>
   </con:testStep>
   <con:testStep type="datasourceloop" name="DataSource Loop" id="90884a32-f343-441f-8609-17af61f4ccbb">
     <con:settings/>
@@ -640,11 +626,11 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>6056</con:value>
+      <con:value>12875</con:value>
     </con:property>
     <con:property>
       <con:name>Location_ID</con:name>
-      <con:value>2724</con:value>
+      <con:value>2879</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

@@ -318,8 +318,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="ba0b0088-8975-4f90-afe8-5bf61e35b49b" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+    <con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -363,10 +362,10 @@ assertions = obj.getAssertionList()
 def Status
 assertions.each{
 	def stat = (it.status).toString()
-	if(stat == "VALID"){
+	if(stat == "VALID" || stat == "PASS"){
 		Status = "Pass"
 	}
-	if(stat == "FAILED"){
+	if(stat == "FAILED" || stat == "FAIL"){
 		Status = "Fail"
 	}
 }
@@ -437,8 +436,7 @@ Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
+out.close()</script></con:config>
   </con:testStep>
   <con:testStep type="datasourceloop" name="DataSource Loop" id="38de196c-1ca8-4996-b4bf-6d7a92918e18">
     <con:settings/>

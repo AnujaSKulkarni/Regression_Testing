@@ -160,13 +160,7 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Run_Time_Data}</file>
-          <worksheet>Account_Run_Time_Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Run_Time_Data}</file><worksheet>Account_Run_Time_Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -192,17 +186,9 @@ testRunner.testCase.setPropertyValue("Account_ID", account_ID_Number)</script>
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration>
-          <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
-          <pass>Syntel@mb5027676</pass>
-          <Connection>DataBase( QA_Env )</Connection>
-          <query>Select BLUADMIN.COMPANY.COMPANY_ID as BLUADMIN_COMPANY_COMPANY_ID
+        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( QA_Env )</Connection><query>Select BLUADMIN.COMPANY.COMPANY_ID as BLUADMIN_COMPANY_COMPANY_ID
 From BLUADMIN.COMPANY
-Where BLUADMIN.COMPANY.COMPANY_NAME = ${#TestCase#Company_Name_JDBC}</query>
-          <fetchSize/>
-          <stored-procedure>false</stored-procedure>
-        </con:configuration>
+Where BLUADMIN.COMPANY.COMPANY_NAME = ${#TestCase#Company_Name_JDBC}</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -227,13 +213,7 @@ Where BLUADMIN.COMPANY.COMPANY_NAME = ${#TestCase#Company_Name_JDBC}</query>
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -504,8 +484,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="eaea1283-6bf9-471e-85aa-022da4795cbb" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+    <con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -554,10 +533,10 @@ assertions = obj.getAssertionList()
 def Status
 assertions.each{
 	def stat = (it.status).toString()
-	if(stat == "VALID"){
+	if(stat == "VALID" || stat == "PASS"){
 		Status = "Pass"
 	}
-	if(stat == "FAILED"){
+	if(stat == "FAILED" || stat == "FAIL"){
 		Status = "Fail"
 	}
 }
@@ -628,8 +607,7 @@ Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
+out.close()</script></con:config>
   </con:testStep>
   <con:testStep type="datasourceloop" name="DataSource Loop" id="7d093ef3-0be8-423d-a7d8-d1b1e0f19cdc">
     <con:settings/>
@@ -641,19 +619,19 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Company_Name</con:name>
-      <con:value>"Company_Wed_Mar_14_20_22_23_IST_2018"</con:value>
+      <con:value>"Company_Wed_Mar_14_12_15_59_IST_2018"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"WED_MAR_14_20_22_19_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"WED_MAR_14_12_15_56_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Company_Name_JDBC</con:name>
-      <con:value>'Company_Wed_Mar_14_20_22_23_IST_2018'</con:value>
+      <con:value>'Company_Wed_Mar_14_12_15_59_IST_2018'</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>6056</con:value>
+      <con:value>12875</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

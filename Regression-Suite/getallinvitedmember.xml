@@ -248,8 +248,7 @@ if (API_Name != TestCaseName){
 }</script></con:config>
   </con:testStep><con:testStep type="restrequest" name="getallinvitedmember" id="3baf989e-8b38-4c2a-9112-95ddf253d4a5" disabled="true"><con:settings/><con:config service="getallinvitedmember" resourcePath="/members/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" methodName="getallinvitedmember" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getallinvitedmember" id="aa987182-fe19-47f6-8be5-e8a0e93ce082" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${API-Connect}</con:endpoint><con:request/><con:originalUri>https://api-stg.whrcloud.com/api/v1/members/5522</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/><con:parameterOrder><con:entry>Authorization</con:entry><con:entry>wp-client-region</con:entry><con:entry>wp-client-country</con:entry><con:entry>wp-client-brand</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Report" id="789de1bb-394c-4ef9-8e4d-571c9708d18c" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+    <con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -293,10 +292,10 @@ assertions = obj.getAssertionList()
 def Status
 assertions.each{
 	def stat = (it.status).toString()
-	if(stat == "VALID"){
+	if(stat == "VALID" || stat == "PASS"){
 		Status = "Pass"
 	}
-	if(stat == "FAILED"){
+	if(stat == "FAILED" || stat == "FAIL"){
 		Status = "Fail"
 	}
 }
@@ -372,8 +371,7 @@ Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
+out.close()</script></con:config>
   </con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="ce4d737c-acb7-4e10-8848-7bdec0e84e3a">
     <con:settings/>
     <con:config>

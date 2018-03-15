@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="22998f21-69b1-46f7-bacc-5729e06a6c73fileName">Update-appliance</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
 </con:interface>

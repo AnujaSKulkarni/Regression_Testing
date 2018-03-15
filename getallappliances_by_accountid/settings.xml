@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="8ff14833-7d26-426b-ac0b-1644b16424c2fileName">getallappliances_by_accountid</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints>
+  
+  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
 </con:interface>
