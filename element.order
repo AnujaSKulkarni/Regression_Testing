@@ -165,8 +165,8 @@ Retrieve-All-Content
 Update_Password
 getCountriesAndStates
 getallinvitedmember
-Unlink-Inviation
 getallappliances_by_accountid
 Update-appliance
+Unlink-Inviation
 Regression-Suite
 REST-Virt-1

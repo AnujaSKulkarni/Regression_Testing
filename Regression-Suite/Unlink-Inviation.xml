@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="6c8f2c62-3010-40a8-939e-8c25eba405dc" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Unlink Inviation" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="6bea5ae1-c0c0-4c51-9800-c50f346c603c" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Unlink Inviation" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="6c8f2c62-3010-40a8-939e-8c25eba405dcfileName">Unlink-Inviation</con:setting>
+    <con:setting id="6bea5ae1-c0c0-4c51-9800-c50f346c603cfileName">Unlink-Inviation</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="ce8f42dc-b334-46b7-b7d6-a86216ae65ce">
+  <con:testStep type="groovy" name="DataSource_Setup" id="7215f69e-71d8-4c08-b14d-7c57e6094101">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -142,7 +142,7 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="59527339-800c-40ca-a542-7b8e006e44e9">
+  <con:testStep type="datasource" name="DataSource" id="aa00b40d-77e9-4c13-a878-0b342d965be1">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -243,15 +243,7 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Groovy Script" id="651d2086-be97-47a7-984b-1bb3a057f432">
-    <con:settings/>
-    <con:config>
-      <script>def rawRequest = context.expand( '${#[Regression Suite#Send Invitation#Send Invitation]#RawRequest#$[\'emailId\']}' )
-rawRequest = "\"" + rawRequest + "\""
-testRunner.testCase.setPropertyValue("emailId", rawRequest)</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="flow control" id="e5129727-79d3-425d-827d-dd74e3cbde60">
+  <con:testStep type="groovy" name="flow control" id="8db1231e-08e7-44ba-9e71-69848c18da3e">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
@@ -269,40 +261,35 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Unlink Inviation" id="24643a03-85ca-4433-9992-3c5558f004fb" disabled="true">
+  <con:testStep type="groovy" name="Groovy Script" id="324cab33-d30b-4aa7-abef-bbfb672cb8f0">
+    <con:settings/>
+    <con:config>
+      <script>def rawRequest = context.expand( '${#[Regression Suite#Send Invitation#Send Invitation]#RawRequest#$[\'emailId\']}' )
+rawRequest = "\"" + rawRequest +  "\""
+testRunner.testCase.setPropertyValue("email_id", rawRequest)</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Unlink Inviation" id="7b9eeb53-7c30-43f7-9a4e-9285d3e6a8fa" disabled="true">
     <con:settings/>
     <con:config service="Unlink Inviation" resourcePath="/invitations/unlink" methodName="Unlink Inviation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Unlink Inviation" id="c3cbb5aa-5597-4a8e-b6f7-5bfa70240747" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Unlink Inviation" id="080c3420-2580-43b7-9826-f078a8787749" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
+        <con:endpoint>${API-Connect}</con:endpoint>
         <con:request>{
-  "emailId":${#TestCase#emailId},
+  "emailId":${#TestCase#email_id},
   "invitationType":"pending",
   "accountId":${#[Regression Suite#Send Invitation#Send Invitation]#RawRequest#$['accountId']}
 }</con:request>
-        <con:originalUri>https://api-test.whrcloud.com/api/v1/invitations/unlink</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="5ff44d72-923c-41a7-871c-ddbbc3ebf3af" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="MessageContentAssertion" id="0e70764e-758e-4572-b88c-4bbacde31e35" name="Message Content Assertion">
-          <con:configuration xsi:type="con:MessageContentAssertion">
-            <con:originalMessage><![CDATA[<Response xmlns="https://api-test.whrcloud.com/api/v1/invitations/unlink">
-   <code>200</code>
-   <message>Pending user removed successfully</message>
-   <status>SUCCESS</status>
-</Response>]]></con:originalMessage>
-          </con:configuration>
-        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
+        <con:parameters>
+          <entry key="wp-client-brand" value="whirlpool" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
           <con:entry>wp-client-region</con:entry>
@@ -312,7 +299,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="b3a7bc6e-3772-4f4b-b959-48b0a207cd4d" disabled="true">
+  <con:testStep type="groovy" name="Report" id="dda4fe42-b25f-4030-9d9c-f55c7fe1b7f6" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -359,10 +346,10 @@ assertions = obj.getAssertionList()
 def Status
 assertions.each{
 	def stat = (it.status).toString()
-	if(stat == "VALID"){
+	if(stat == "VALID" || stat == "PASS"){
 		Status = "Pass"
 	}
-	if(stat == "FAILED"){
+	if(stat == "FAILED" || stat == "FAIL"){
 		Status = "Fail"
 	}
 }
@@ -436,37 +423,25 @@ log.info Row_count
 Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
-Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="e459aaf9-09f4-4ac6-8b4e-1053daef34c2">
-    <con:settings/>
-    <con:config>
-      <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>flow control</targetStep>
-    </con:config>
-  </con:testStep>
   <con:properties>
     <con:property>
-      <con:name>emailId</con:name>
-<<<<<<< HEAD
-      <con:value>"TUE_MAR_13_12_01_19_IST_2018@MAILINATOR.COM"</con:value>
-=======
-      <con:value>"TUE_MAR_13_11_50_34_IST_2018@MAILINATOR.COM"</con:value>
->>>>>>> branch 'master' of https://github.com/MohitBhanawat/SoapUI
+      <con:name>email_id</con:name>
+      <con:value>"FRI_MAR_16_16_07_40_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>24643a03-85ca-4433-9992-3c5558f004fb</con:testStepId>
+    <con:testStepId>324cab33-d30b-4aa7-abef-bbfb672cb8f0</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
   <con:breakPoints>
-    <con:testStepId>651d2086-be97-47a7-984b-1bb3a057f432</con:testStepId>
+    <con:testStepId>7b9eeb53-7c30-43f7-9a4e-9285d3e6a8fa</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

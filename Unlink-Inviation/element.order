@@ -165,4 +165,6 @@ Retrieve-All-Content
 Update_Password
 getCountriesAndStates
 getallinvitedmember
+getallappliances_by_accountid
+Update-appliance
 Unlink-Inviation
