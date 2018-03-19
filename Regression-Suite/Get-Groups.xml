@@ -146,13 +146,7 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Run_Time_Data}</file>
-          <worksheet>Account_Run_Time_Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Run_Time_Data}</file><worksheet>Account_Run_Time_Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -175,13 +169,7 @@ testRunner.testCase.setPropertyValue("Group_ID", Group_ID)</script>
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -359,8 +347,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="83bd5b69-083c-4acc-992f-816b819167e1" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+    <con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -476,10 +463,11 @@ Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
+Cell cell_3 = row.createCell(3).setCellValue(date_now)
+Cell cell_4 = row.createCell(4).setCellValue(Time_Taken)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
+out.close()</script></con:config>
   </con:testStep>
   <con:testStep type="datasourceloop" name="DataSource Loop" id="42e4ed98-532a-42d6-90f3-0dfc3d96c331">
     <con:settings/>

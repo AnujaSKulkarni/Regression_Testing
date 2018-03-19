@@ -441,6 +441,8 @@ Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
+Cell cell_3 = row.createCell(3).setCellValue(date_now)
+Cell cell_4 = row.createCell(4).setCellValue(Time_Taken)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
 out.close()</script></con:config>
