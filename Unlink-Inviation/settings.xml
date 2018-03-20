@@ -4,8 +4,8 @@
     <con:setting id="0593590c-c465-41b7-abd5-94c35e4282d6fileName">Unlink-Inviation</con:setting>
     <con:setting id="f7f8a282-5622-41e9-9adc-54fa24709ef9fileName">Unlink-Inviation</con:setting>
   </con:settings>
-  
-  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
     <con:endpoint>https://{{API-Connect}}</con:endpoint>
   </con:endpoints>
 </con:interface>
