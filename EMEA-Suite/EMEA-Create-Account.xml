@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="5001483f-4479-47fb-a537-ccac8c35ca71" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="EMEA-Create Account" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5001483f-4479-47fb-a537-ccac8c35ca71fileName">EMEA-Create-Account</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="EMEA-Create Account" id="234459d7-5723-4f7d-b0d6-26a824d616be">
+    <con:settings/>
+    <con:config service="Create Account" resourcePath="/client_auth/accounts" methodName="Create Account" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="EMEA-Create Account" id="ca9f4001-c1e6-4520-a84d-0a8f310353ef" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${#Project#API-Connect}</con:endpoint>
+        <con:request>{
+  "companyId": 0,
+  "languageId": 1,
+  "statusId": 1,
+  "firstName": "Whirlpool",
+  "lastName": "Admin",
+  "email": "Whirlpool_Admin@ymail.com",
+  "emailConfirmedAt": null,
+  "signedInCount": 0,
+  "currentSignInAt": null,
+  "lastSignInAt": null,
+  "lockedAt": null,
+  "resetPasswordSentAt": null,
+  "confirmationSentAt": "1488808319",
+  "phoneNo": "2693389891",
+  "createdAt": null,
+  "updatedAt": null,
+  "m2mUserId": 1,
+  "notificationId": 0,
+  "password": "Whirlpool123$",
+  "phoneVerificationSentAt": "1488808319",
+  "verificationCode": 1234,
+  "phoneVerificationConfirmedAt": null,
+  "validateMobile": true,
+  "userRole":"ROLE_ADMIN",
+  "enabled":1
+}</con:request>
+        <con:originalUri>http://api/accou/api/accounts</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>wp-client-brand</con:entry>
+          <con:entry>wp-client-region</con:entry>
+          <con:entry>wp-client-country</con:entry>
+          <con:entry>Content-Type</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

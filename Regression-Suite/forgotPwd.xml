@@ -307,7 +307,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="e7852168-ef38-4e2c-a013-ce6f1426d86c" disabled="true">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="e7852168-ef38-4e2c-a013-ce6f1426d86c">
     <con:settings/>
     <con:config>
       <script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
@@ -324,7 +324,7 @@ if (data_Combination == "Negative"){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="forgotPwd_Positive" id="c13558ed-05fa-4de2-b37b-23a81bcfcd23" disabled="true">
+  <con:testStep type="restrequest" name="forgotPwd_Positive" id="c13558ed-05fa-4de2-b37b-23a81bcfcd23">
     <con:settings/>
     <con:config service="forgotPwd" resourcePath="/client_auth/accounts/forgotPassword/${#TestCase#Email_ID}" methodName="forgotPwd" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="forgotPwd_Positive" id="043b2d58-2080-4a90-baa9-a688fe40264f" mediaType="application/json" postQueryString="false">
@@ -451,7 +451,7 @@ if (data_Combination == "Negative"){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="cee7e8a5-9cc8-4d30-bddb-08415fad5faa" disabled="true">
+  <con:testStep type="groovy" name="Report" id="cee7e8a5-9cc8-4d30-bddb-08415fad5faa">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -598,7 +598,7 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>FRI_MAR_16_16_06_55_IST_2018@MAILINATOR.COM</con:value>
+      <con:value/>
     </con:property>
   </con:properties>
   <con:reportParameters/>
