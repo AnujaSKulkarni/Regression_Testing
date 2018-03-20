@@ -317,7 +317,7 @@ if (API_Name != TestCaseName){
           <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
-        </con:environmentSpec>
+        <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -477,5 +477,5 @@ out.close()</script></con:config>
     <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
-  </con:environmentSpec>
+  <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
 </con:testCase>

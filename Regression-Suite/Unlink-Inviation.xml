@@ -290,7 +290,7 @@ testRunner.testCase.setPropertyValue("email_id", rawRequest)</script>
           <con:entry>wp-client-country</con:entry>
           <con:entry>wp-client-brand</con:entry>
         </con:parameterOrder>
-      </con:restRequest>
+      <con:environmentSpec><con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
     </con:config>
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="dda4fe42-b25f-4030-9d9c-f55c7fe1b7f6" disabled="true">
@@ -439,4 +439,4 @@ out.close()</script>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
-</con:testCase>
+<con:environmentSpec><con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>
