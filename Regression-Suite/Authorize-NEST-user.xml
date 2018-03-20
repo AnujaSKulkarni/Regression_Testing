@@ -239,8 +239,7 @@ if(RunTimeDataSource_Flag == true){
   </con:testStep>
   <con:testStep type="groovy" name="Code_Extraction" id="5a89f148-30c9-46fe-aba2-7a1627713d55">
     <con:settings/>
-    <con:config>
-      <script>import org.openqa.selenium.By;
+    <con:config><script><![CDATA[import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -251,11 +250,11 @@ WebDriver driver = new ChromeDriver();
 
 driver.manage().window().maximize();
 
-driver.get("https://home.nest.com/login/oauth2?client_id=fe5c17c7-50de-49ef-8e43-87a4bfd6f2ba&amp;state=STATE");
+driver.get("https://home.nest.com/login/oauth2?client_id=fe5c17c7-50de-49ef-8e43-87a4bfd6f2ba&state=STATE");
 
-for(int i = 0; i &lt; 1000 ; i++){
+for(int i = 0; i < 1000 ; i++){
 	try{
-		driver.findElement(By.id("ember651")).isDisplayed();
+		driver.findElement(By.className("form-group")).isDisplayed();
 		Thread.sleep(2000);
 		log.info("Webpage loaded");
 		break;
@@ -265,16 +264,32 @@ for(int i = 0; i &lt; 1000 ; i++){
 	}
 }
 
-// Enter UserName
-driver.findElement(By.id("ember590")).sendKeys("NEST_TESTING@MAILINATOR.COM");
-//Enter Password
-String Password = "Whirlpool123\$"
-driver.findElement(By.id("ember642")).sendKeys(Password);
+// Enter UserName & Password
+int size = driver.findElements(By.className("ember-text-field")).size();
+for(int i = 0; i < size; i++) {
+	String field_name = driver.findElements(By.className("ember-text-field")).get(i).getAttribute("name");
+	log.info(field_name);
+	if(field_name.equals("email")) {
+		driver.findElements(By.className("ember-text-field")).get(i).sendKeys("NEST_TESTING@MAILINATOR.COM");
+	}
+	if(field_name.equals("password")) {
+		driver.findElements(By.className("ember-text-field")).get(i).sendKeys("Whirlpool123\$");
+	}
+}
+
+
 //submit button
-driver.findElement(By.id("ember651")).click();
+int size1 = driver.findElements(By.className("button")).size();
+for(int i = 0; i < size1; i++) {
+	String name = driver.findElements(By.className("button")).get(i).getText();
+	log.info(name);
+	if(name.equals("SIGN IN")) {
+		driver.findElements(By.className("button")).get(i).click();
+	}
+}
 
 // Wait For Page To Load
-for(int i = 0; i &lt; 1000 ; i++){
+for(int i = 0; i < 1000 ; i++){
 	try{
 		driver.findElement(By.className("spin-button-label")).isDisplayed();
 		Thread.sleep(5000);
@@ -289,7 +304,7 @@ for(int i = 0; i &lt; 1000 ; i++){
 String Current_URL_Before = driver.getCurrentUrl();
 driver.findElement(By.className("spin-button-label")).click();
 
-for(int i = 0; i &lt; 1000 ; i++){
+for(int i = 0; i < 1000 ; i++){
 	String Current_URL = driver.getCurrentUrl();
 	if(Current_URL_Before.equals(Current_URL)){
 		log.info("Waiting for webpage to load");
@@ -306,8 +321,7 @@ log.info(Current_URL);
 String[] Code = Current_URL.split("code=");
 log.info(Code[1]);
 driver.close();
-testRunner.testCase.setPropertyValue("code", Code[1])</script>
-    </con:config>
+testRunner.testCase.setPropertyValue("code", Code[1])]]></script></con:config>
   </con:testStep>
   <con:testStep type="restrequest" name="GET Member Token" id="7eff3d4d-3090-4ad0-9758-8f6294a0a340">
     <con:settings/>
