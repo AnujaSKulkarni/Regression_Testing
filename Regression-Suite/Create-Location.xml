@@ -321,13 +321,13 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="JDBC" id="f5bad6a2-116f-4d38-b6c5-9d08c855489e" disabled="true">
+  <con:testStep type="datasource" name="JDBC" id="f5bad6a2-116f-4d38-b6c5-9d08c855489e">
     <con:settings>
       <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( QA_Env )</Connection><query>Select st.STATE_ID As st_STATE_ID, st.COUNTRY_ID As st_COUNTRY_ID,
+        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal10-91.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr><pass>Wcloudpro@read1</pass><Connection>DataBase( Pre_Prod )</Connection><query>Select st.STATE_ID As st_STATE_ID, st.COUNTRY_ID As st_COUNTRY_ID,
   con.COUNTRY_ID As con_COUNTRY_ID, con.COUNTRY_CODE As con_COUNTRY_CODE
 From BLUADMIN.STATE st Inner Join
   BLUADMIN.COUNTRY con On st.COUNTRY_ID = con.COUNTRY_ID
@@ -343,7 +343,7 @@ Where upper(st.STATE_NAME) = upper(${#TestCase#State_Name})</query><fetchSize/><
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="2f9ba70a-5101-4e83-9c40-99a0cd617b70" disabled="true">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="2f9ba70a-5101-4e83-9c40-99a0cd617b70">
     <con:settings/>
     <con:config>
       <script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
@@ -372,7 +372,7 @@ def tC_Number = context.expand( '${DataSource#TC_Number}' )
 log.info tC_Number</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Create Location_Positive" id="63e72d55-0340-4dd8-927a-46ed2b309583" disabled="true">
+  <con:testStep type="restrequest" name="Create Location_Positive" id="63e72d55-0340-4dd8-927a-46ed2b309583">
     <con:settings/>
     <con:config service="Create Location" resourcePath="/client_auth/location" methodName="Create Location" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Create Location_Positive" id="6160fb0a-7b6c-4952-b026-d37159474bbd" mediaType="application/json" postQueryString="false">
@@ -546,7 +546,7 @@ log.info tC_Number</script>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="af3c9bae-47e7-4e54-a7bb-2f3e894868c8" disabled="true">
+  <con:testStep type="groovy" name="Report" id="af3c9bae-47e7-4e54-a7bb-2f3e894868c8">
     <con:settings/>
     <con:config><script>import java.io.FileInputStream
 import java.io.File
@@ -676,7 +676,7 @@ FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
 out.close()</script></con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Data_Sink_Flow_Control" id="f678df91-127f-4bed-a7fa-b7bc515becc5" disabled="true">
+  <con:testStep type="groovy" name="Data_Sink_Flow_Control" id="f678df91-127f-4bed-a7fa-b7bc515becc5">
     <con:settings/>
     <con:config>
       <script>/*Get Test Case Name and Status*/
@@ -706,7 +706,7 @@ if(Status_Code.contains("200")){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="4a31b7e1-496d-49ad-94ed-aea1b9b4eb45" disabled="true">
+  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="4a31b7e1-496d-49ad-94ed-aea1b9b4eb45">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -799,11 +799,11 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>363</con:value>
+      <con:value>371</con:value>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
-      <con:value/>
+      <con:value>'New York'</con:value>
     </con:property>
     <con:property>
       <con:name>COUNTRY_CODE</con:name>
@@ -811,7 +811,7 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>Location</con:name>
-      <con:value>Regression_Location_Tue_Mar_20_16_43_05_IST_2018</con:value>
+      <con:value>Regression_Location_Wed_Mar_21_15_15_24_IST_2018</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
