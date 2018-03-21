@@ -146,13 +146,7 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration>
-          <file>${Test_Data_Path}</file>
-          <worksheet>Data</worksheet>
-          <cell>A2</cell>
-          <ignoreEmpty>true</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
+        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -386,7 +380,7 @@ testRunner.testCase.setPropertyValue("code", Code[1])]]></script>
           <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
-        </con:environmentSpec>
+        <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -441,14 +435,13 @@ if (API_Name != TestCaseName){
           <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
-        </con:environmentSpec>
+        <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="1c646068-e980-49f7-ad51-5c81c523ab45" disabled="true">
     <con:settings/>
-    <con:config>
-      <script>import java.io.FileInputStream
+    <con:config><script>import java.io.FileInputStream
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -564,10 +557,11 @@ Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
 Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
+Cell cell_3 = row.createCell(3).setCellValue(date_now)
+Cell cell_4 = row.createCell(4).setCellValue(Time_Taken)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()</script>
-    </con:config>
+out.close()</script></con:config>
   </con:testStep>
   <con:testStep type="datasourceloop" name="DataSource Loop" id="9fdd6141-9b02-415e-8c91-4c2cae0584ec">
     <con:settings/>
@@ -607,5 +601,5 @@ out.close()</script>
     <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
-  </con:environmentSpec>
+  <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
 </con:testCase>

@@ -154,9 +154,9 @@ if(RunTimeDataSource_Flag == true){
       
       
       
-      <con:property>Account_ID_Number</con:property><con:property>Verification_Code</con:property><con:property>Email_ID</con:property><con:property>Group_ID</con:property><con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
+      <con:property>Account_ID_Number</con:property><con:property>Verification_Code</con:property><con:property>Email_ID</con:property><con:property>Group_ID</con:property><con:startRow/><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation>
+      <con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun>
+    <con:expandProperties>false</con:expandProperties></con:config>
   </con:testStep>
   <con:testStep type="restrequest" name="GET Member Token" id="df760567-0724-4947-9398-3235ab9c0d35">
     <con:settings/>
@@ -222,7 +222,7 @@ if(RunTimeDataSource_Flag == true){
           <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
-        </con:environmentSpec>
+        <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -373,5 +373,5 @@ com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Refresh_Token", Ref
     <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
-  </con:environmentSpec>
+  <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
 </con:testCase>

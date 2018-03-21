@@ -300,7 +300,7 @@ testRunner.testCase.setPropertyValue("next_notification_time", m3.toString())</s
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
         </con:parameterOrder>
-      </con:restRequest>
+      <con:environmentSpec><con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest>
     </con:config>
   </con:testStep>
   <con:testStep type="groovy" name="Report" id="9e8fa1ff-ebd6-4262-b5c2-68b3ec127bcb" disabled="true">
@@ -426,6 +426,9 @@ log.info Row_count
 Row row = sh.createRow(Row_count)
 Cell cell = row.createCell(0).setCellValue(TCN)
 Cell cell_1 = row.createCell(1).setCellValue(Status)
+Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
+Cell cell_3 = row.createCell(3).setCellValue(date_now)
+Cell cell_4 = row.createCell(4).setCellValue(Time_Taken)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
 out.close()</script></con:config>
@@ -462,4 +465,4 @@ out.close()</script></con:config>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
-</con:testCase>
+<con:environmentSpec><con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

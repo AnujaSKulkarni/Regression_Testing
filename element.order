@@ -169,4 +169,5 @@ getallappliances_by_accountid
 Update-appliance
 Unlink-Inviation
 Regression-Suite
+EMEA-Suite
 REST-Virt-1
