@@ -10,16 +10,16 @@
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="JDBC">
-        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr><pass>Syntel@mb5027676</pass><Connection>DataBase( Default environment )</Connection><query>Select BLUADMIN.COUNTRY.COUNTRY_ID as BLUADMIN_COUNTRY_COUNTRY_ID
+        <con:configuration><driver>com.ibm.db2.jcc.DB2Driver</driver><connstr>jdbc:db2://dashdb-txn-small-yp-dal10-91.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr><pass>Wcloudpro@read1</pass><Connection>DataBase( Pre_Prod )</Connection><query>Select BLUADMIN.COUNTRY.COUNTRY_ID as BLUADMIN_COUNTRY_COUNTRY_ID
 From BLUADMIN.COUNTRY
 Where BLUADMIN.COUNTRY.COUNTRY_CODE = 'US'</query><fetchSize/><stored-procedure>false</stored-procedure></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
       <con:property>BLUADMIN_COUNTRY_COUNTRY_ID</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
+      <con:startRow/><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation>
+      <con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun>
+    <con:expandProperties>false</con:expandProperties></con:config>
   </con:testStep>
   <con:testStep type="groovy" name="DataSource_Setup" id="3feb850e-61f2-4c5d-b080-e0d4eeca4457">
     <con:settings/>
