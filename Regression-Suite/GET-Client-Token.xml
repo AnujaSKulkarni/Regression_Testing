@@ -4,6 +4,236 @@
     <con:setting id="4d9b8d24-cdbf-470c-926c-ce1cd761a7a0fileName">GET-Client-Token</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="groovy" name="Setup" id="28ff5ea0-ec8d-4ea6-8e21-7a1329e1949d">
+    <con:settings/>
+    <con:config>
+      <script>//***********************Transferring Environment Properties to Global Variables***********************
+def Property_Count = testRunner.testCase.testSuite.project.propertyCount
+def Property_Name
+def Property_Value
+for(i = 0; i &lt; Property_Count; i++){
+	Property_Name = testRunner.testCase.testSuite.project.getPropertyAt(i).name
+	Property_Value = testRunner.testCase.testSuite.project.getPropertyValue(Property_Name)
+	log.info "Property_Name: " + Property_Name
+	log.info "Property_Value: " + Property_Value
+	com.eviware.soapui.SoapUI.globalProperties.setPropertyValue(Property_Name, Property_Value)
+}
+
+
+
+
+//*************************************************Delete Header*************************************
+
+import com.eviware.soapui.support.types.StringToStringMap 
+
+//Get through all the test steps in the project
+testRunner.testCase.testSuite.project.testSuites.each
+{
+    suite ->
+    suite.getValue().testCases.each
+    {
+        q1->
+        q1.getValue().testSteps.each
+        {
+                       it->
+                       if (it.getValue().config.type.equals("restrequest"))
+                       {
+                               //Get the headers of the current teststep
+                               def nextRequest = it.getValue().getHttpRequest()
+                               nextRequest.requestHeaders = [:] as StringToStringMap
+                       }
+        }
+    }
+}
+log.info("************************************************\n Done ! Header deleted for all teststeps!\n************************************************ ")
+
+
+
+/*	//*************************************************Read Header*************************************
+
+String Headerfilepath = context.expand( '${Header_File_Path}' )
+new File(Headerfilepath).eachLine 
+{ 	
+	line ->
+	def header_name
+	def header_value
+	def temp_header = line
+	temp_header = line.split(":")
+	log.info temp_header[0]
+	log.info temp_header[1]
+	header_name = temp_header[0]
+	header_value = temp_header[1]
+
+	
+	//*************************************************Add Header*************************************
+	//Get through all the test steps in the project
+	testRunner.testCase.testSuite.project.testSuites.each
+	{
+		suite ->
+		suite.getValue().testCases.each
+		{
+			q1->
+			q1.getValue().testSteps.each
+			{
+						   it->
+						   if (it.getValue().config.type.equals("restrequest"))
+						   {
+								   //Get the headers of the current teststep
+								   def headers = it.getValue().getHttpRequest().getRequestHeaders()
+								   def list = []
+								   //Append the new header to the existing list
+								   list.add(header_value)
+								   headers[header_name] = list;
+								   //Set the updated header list
+								   it.getValue().getHttpRequest().setRequestHeaders(headers)
+						   }
+			}
+		}
+	}
+	log.info("************************************************\n Done ! New Header Appended to all teststeps!\n************************************************ ")
+}
+*/
+
+/* Creating Test Result Directory */
+import java.text.SimpleDateFormat
+
+/* Fetching Username of logged in user */
+def username = System.getProperty("user.name");
+
+/* Defining &amp; creating Directory */
+def today = new Date()
+def dateFormat = new SimpleDateFormat("yyyy-MM-dd")
+def date_Folder = dateFormat.format(today)
+def Environment_Name = context.expand( '${#Project#Environment_Name}' )
+file_path = "C:/Users/" + username + "/Documents/TestResults/"
+def path = new File(file_path)
+path.mkdir()
+file_path_2 = file_path + Environment_Name + "/"
+def path_2 = new File(file_path_2)
+path_2.mkdir()
+	
+file_path_1 = file_path_2 + date_Folder + "/"
+def path_1 = new File(file_path_1)
+log.info path_1.exists()
+if (path_1.exists() == false){
+	log.info "Folder not found"
+	path_1.mkdir()
+	log.info "Set Run Count to '0'"
+	testRunner.testCase.testSuite.setPropertyValue("Run_count", "0")
+}
+def Run_Count = testRunner.testCase.testSuite.getPropertyValue("Run_count")
+Run_Count = Run_Count.toInteger()
+Run_Count++
+Final_Path = file_path_1 + "Run_Number_" + Run_Count + "/"
+log.info Final_Path
+Run_Count = Run_Count.toString()
+testRunner.testCase.testSuite.setPropertyValue("Run_count", Run_Count)
+def final_path = new File(Final_Path)
+final_path.mkdir()
+com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Test_Result_Path", Final_Path)
+
+
+/* Creating Excel for test result */
+import java.io.FileInputStream
+import java.io.InputStream
+import java.io.FileOutputStream
+import java.io.IOException
+import java.util.Iterator
+import java.text.SimpleDateFormat
+import org.apache.poi.ss.util.CellReference
+import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.DateUtil
+import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.ss.usermodel.Sheet
+import org.apache.poi.ss.usermodel.Workbook
+import org.apache.poi.ss.usermodel.WorkbookFactory
+import org.apache.poi.hssf.usermodel.HSSFWorkbook
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import org.apache.poi.xssf.streaming.SXSSFWorkbook
+
+def Testresultpath = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
+Testresultpath = Testresultpath + "Test_Run_Results.xls"
+
+// create a new file
+FileOutputStream out = new FileOutputStream(Testresultpath);
+// create a new workbook
+Workbook wb = new HSSFWorkbook();
+// create a new sheet
+Sheet s = wb.createSheet();
+// declare a row object reference
+Row r = null;
+// declare a cell object reference
+Cell c = null;
+
+
+// set the sheet name in Unicode
+wb.setSheetName(0,"Test_Run_Results")
+
+r = s.createRow(0)
+// create a numeric cell
+for(i = 0; i &lt; 5;i++){
+	c = r.createCell(i);
+	if(i == 0){
+		c.setCellValue("TC_Number");
+	}
+	if(i == 1){
+		c.setCellValue("Status");
+	}
+	if(i == 2){
+		c.setCellValue("API_Name");
+	}
+	if(i == 3){
+		c.setCellValue("Execution TimeStamp");
+	}
+	if(i == 4){
+		c.setCellValue("Execution TimeTaken");
+	}
+}
+wb.write(out);
+out.close();
+
+
+/*Run Time Data */
+def Rundatapath = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
+Rundatapath = Rundatapath + "Run_Time_Data.xls"
+com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Run_Time_Data", Rundatapath)
+
+// create a new file
+FileOutputStream out1 = new FileOutputStream(Rundatapath);
+// create a new workbook
+Workbook wb1 = new HSSFWorkbook();
+// create a new sheet
+Sheet Account = wb1.createSheet();
+Sheet Location = wb1.createSheet();
+// declare a row object reference
+Row r1 = null;
+// declare a cell object reference
+Cell c1 = null;
+
+
+// set the sheet name in Unicode
+wb1.setSheetName(0,"Account_Run_Time_Data")
+wb1.setSheetName(1,"Location_Run_Time_Data")
+
+r1 = Account.createRow(0)
+c1 = r1.createCell(0);
+c1.setCellValue("Account_ID_Number");
+c2 = r1.createCell(1);
+c2.setCellValue("Verification_Code");
+c3 = r1.createCell(2)
+c3.setCellValue("Email_ID")
+c4 = r1.createCell(3)
+c4.setCellValue("Group_ID")
+
+r1 = Location.createRow(0)
+c1 = r1.createCell(0);
+c1.setCellValue("Location_ID_Number");
+c2 = r1.createCell(1)
+c2.setCellValue("Account_ID_Number")
+wb1.write(out1);
+out1.close();</script>
+    </con:config>
+  </con:testStep>
   <con:testStep type="restrequest" name="GET Client Token" id="c810a02f-cf50-48a2-aef1-81284de01dde">
     <con:settings/>
     <con:config service="GET Client Token" resourcePath="/oauth/token" methodName="GET Client Token" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -266,231 +496,7 @@ totalTeststepCount = totalTeststepCount + testRunner.testCase.testSuite.project.
 }]]></script>
     </con:config>
   </con:testStep>
-  <con:setupScript>//***********************Transferring Environment Properties to Global Variables***********************
-def Property_Count = testRunner.testCase.testSuite.project.propertyCount
-def Property_Name
-def Property_Value
-for(i = 0; i &lt; Property_Count; i++){
-	Property_Name = testRunner.testCase.testSuite.project.getPropertyAt(i).name
-	Property_Value = testRunner.testCase.testSuite.project.getPropertyValue(Property_Name)
-	log.info "Property_Name: " + Property_Name
-	log.info "Property_Value: " + Property_Value
-	com.eviware.soapui.SoapUI.globalProperties.setPropertyValue(Property_Name, Property_Value)
-}
-
-
-
-
-//*************************************************Delete Header*************************************
-
-import com.eviware.soapui.support.types.StringToStringMap 
-
-//Get through all the test steps in the project
-testRunner.testCase.testSuite.project.testSuites.each
-{
-    suite ->
-    suite.getValue().testCases.each
-    {
-        q1->
-        q1.getValue().testSteps.each
-        {
-                       it->
-                       if (it.getValue().config.type.equals("restrequest"))
-                       {
-                               //Get the headers of the current teststep
-                               def nextRequest = it.getValue().getHttpRequest()
-                               nextRequest.requestHeaders = [:] as StringToStringMap
-                       }
-        }
-    }
-}
-log.info("************************************************\n Done ! Header deleted for all teststeps!\n************************************************ ")
-
-
-
-/*	//*************************************************Read Header*************************************
-
-String Headerfilepath = context.expand( '${Header_File_Path}' )
-new File(Headerfilepath).eachLine 
-{ 	
-	line ->
-	def header_name
-	def header_value
-	def temp_header = line
-	temp_header = line.split(":")
-	log.info temp_header[0]
-	log.info temp_header[1]
-	header_name = temp_header[0]
-	header_value = temp_header[1]
-
-	
-	//*************************************************Add Header*************************************
-	//Get through all the test steps in the project
-	testRunner.testCase.testSuite.project.testSuites.each
-	{
-		suite ->
-		suite.getValue().testCases.each
-		{
-			q1->
-			q1.getValue().testSteps.each
-			{
-						   it->
-						   if (it.getValue().config.type.equals("restrequest"))
-						   {
-								   //Get the headers of the current teststep
-								   def headers = it.getValue().getHttpRequest().getRequestHeaders()
-								   def list = []
-								   //Append the new header to the existing list
-								   list.add(header_value)
-								   headers[header_name] = list;
-								   //Set the updated header list
-								   it.getValue().getHttpRequest().setRequestHeaders(headers)
-						   }
-			}
-		}
-	}
-	log.info("************************************************\n Done ! New Header Appended to all teststeps!\n************************************************ ")
-}
-*/
-
-/* Creating Test Result Directory */
-import java.text.SimpleDateFormat
-
-/* Fetching Username of logged in user */
-def username = System.getProperty("user.name");
-
-/* Defining &amp; creating Directory */
-def today = new Date()
-def dateFormat = new SimpleDateFormat("yyyy-MM-dd")
-def date_Folder = dateFormat.format(today)
-def Environment_Name = context.expand( '${#Project#Environment_Name}' )
-file_path = "C:/Users/" + username + "/Documents/TestResults/"
-def path = new File(file_path)
-path.mkdir()
-file_path_2 = file_path + Environment_Name + "/"
-def path_2 = new File(file_path_2)
-path_2.mkdir()
-	
-file_path_1 = file_path_2 + date_Folder + "/"
-def path_1 = new File(file_path_1)
-log.info path_1.exists()
-if (path_1.exists() == false){
-	log.info "Folder not found"
-	path_1.mkdir()
-	log.info "Set Run Count to '0'"
-	testRunner.testCase.testSuite.setPropertyValue("Run_count", "0")
-}
-def Run_Count = testRunner.testCase.testSuite.getPropertyValue("Run_count")
-Run_Count = Run_Count.toInteger()
-Run_Count++
-Final_Path = file_path_1 + "Run_Number_" + Run_Count + "/"
-log.info Final_Path
-Run_Count = Run_Count.toString()
-testRunner.testCase.testSuite.setPropertyValue("Run_count", Run_Count)
-def final_path = new File(Final_Path)
-final_path.mkdir()
-com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Test_Result_Path", Final_Path)
-
-
-/* Creating Excel for test result */
-import java.io.FileInputStream
-import java.io.InputStream
-import java.io.FileOutputStream
-import java.io.IOException
-import java.util.Iterator
-import java.text.SimpleDateFormat
-import org.apache.poi.ss.util.CellReference
-import org.apache.poi.ss.usermodel.Cell
-import org.apache.poi.ss.usermodel.DateUtil
-import org.apache.poi.ss.usermodel.Row
-import org.apache.poi.ss.usermodel.Sheet
-import org.apache.poi.ss.usermodel.Workbook
-import org.apache.poi.ss.usermodel.WorkbookFactory
-import org.apache.poi.hssf.usermodel.HSSFWorkbook
-import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import org.apache.poi.xssf.streaming.SXSSFWorkbook
-
-def Testresultpath = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
-Testresultpath = Testresultpath + "Test_Run_Results.xls"
-
-// create a new file
-FileOutputStream out = new FileOutputStream(Testresultpath);
-// create a new workbook
-Workbook wb = new HSSFWorkbook();
-// create a new sheet
-Sheet s = wb.createSheet();
-// declare a row object reference
-Row r = null;
-// declare a cell object reference
-Cell c = null;
-
-
-// set the sheet name in Unicode
-wb.setSheetName(0,"Test_Run_Results")
-
-r = s.createRow(0)
-// create a numeric cell
-for(i = 0; i &lt; 5;i++){
-	c = r.createCell(i);
-	if(i == 0){
-		c.setCellValue("TC_Number");
-	}
-	if(i == 1){
-		c.setCellValue("Status");
-	}
-	if(i == 2){
-		c.setCellValue("API_Name");
-	}
-	if(i == 3){
-		c.setCellValue("Execution TimeStamp");
-	}
-	if(i == 4){
-		c.setCellValue("Execution TimeTaken");
-	}
-}
-wb.write(out);
-out.close();
-
-
-/*Run Time Data */
-def Rundatapath = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
-Rundatapath = Rundatapath + "Run_Time_Data.xls"
-com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("Run_Time_Data", Rundatapath)
-
-// create a new file
-FileOutputStream out1 = new FileOutputStream(Rundatapath);
-// create a new workbook
-Workbook wb1 = new HSSFWorkbook();
-// create a new sheet
-Sheet Account = wb1.createSheet();
-Sheet Location = wb1.createSheet();
-// declare a row object reference
-Row r1 = null;
-// declare a cell object reference
-Cell c1 = null;
-
-
-// set the sheet name in Unicode
-wb1.setSheetName(0,"Account_Run_Time_Data")
-wb1.setSheetName(1,"Location_Run_Time_Data")
-
-r1 = Account.createRow(0)
-c1 = r1.createCell(0);
-c1.setCellValue("Account_ID_Number");
-c2 = r1.createCell(1);
-c2.setCellValue("Verification_Code");
-c3 = r1.createCell(2)
-c3.setCellValue("Email_ID")
-c4 = r1.createCell(3)
-c4.setCellValue("Group_ID")
-
-r1 = Location.createRow(0)
-c1 = r1.createCell(0);
-c1.setCellValue("Location_ID_Number");
-c2 = r1.createCell(1)
-c2.setCellValue("Account_ID_Number")
-wb1.write(out1);
-out1.close();</con:setupScript>
+  <con:setupScript/>
   <con:properties>
     <con:property>
       <con:name>Client_Token_Response</con:name>
