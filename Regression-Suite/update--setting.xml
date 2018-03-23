@@ -486,7 +486,7 @@ out.close()</script>
     </con:property>
     <con:property>
       <con:name>id</con:name>
-      <con:value>"Refrigerator123-ETPT"</con:value>
+      <con:value>""</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
