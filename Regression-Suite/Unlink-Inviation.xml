@@ -445,7 +445,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>email_id</con:name>
-      <con:value>""</con:value>
+      <con:value>"FRI_MAR_23_13_13_45_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
