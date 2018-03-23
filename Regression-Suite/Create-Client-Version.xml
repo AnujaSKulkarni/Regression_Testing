@@ -146,7 +146,13 @@ if(RunTimeDataSource_Flag == true){
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
@@ -466,7 +472,7 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Application</con:name>
-      <con:value>"Thu_Mar_22_15_00_27_IST_2018"</con:value>
+      <con:value>"Fri_Mar_23_12_32_26_IST_2018"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
