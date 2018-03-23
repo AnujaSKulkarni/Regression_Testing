@@ -308,7 +308,7 @@ From (Select app.appliance_id
 "applianceId":${JDBC#A_appliance_id},
 "notificationType":"PUSH",
 "accountId":${#[Regression Suite#Create Location]#Account_ID},
-"status":"Enable"
+"status":"Enable",
  "deviceId": "D5A17B98-2136-4D2A-B3CC-9FF67E34EC96",
  "platform": "A"
 }]</con:request>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Fetch device specific notifications" path="/user/notification/device/D5A17B98-2136-4D2A-B3CC-9FF67E34EC96" id="c351dd2b-7fe6-4a7f-8cb6-6b8ea1e5efee" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c351dd2b-7fe6-4a7f-8cb6-6b8ea1e5efeefileName">Fetch-device-specific-notifications</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Fetch device specific notifications" id="ab2f8703-e2b9-42ed-b2be-392ee00063a6" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>bearer ${access_token}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>bearer ${access_token}</con:default>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-region</con:name>
+        <con:value>NAR</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>NAR</con:default>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-country</con:name>
+        <con:value>US</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>US</con:default>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wp-client-brand</con:name>
+        <con:value>Whirlpool</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Whirlpool</con:default>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:d5a1="https://api-test.whrcloud.com/api/v1/user/notification/device/D5A17B98-2136-4D2A-B3CC-9FF67E34EC96">d5a1:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:d5a1="https://api-test.whrcloud.com/api/v1/user/notification/device/D5A17B98-2136-4D2A-B3CC-9FF67E34EC96">d5a1:Response</con:element>
+    </con:representation>
+    <con:request name="Fetch device specific notifications" id="40554e4b-a3e4-4544-9cea-ca797377daf0" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${API-Connect}</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>wp-client-region</con:entry>
+        <con:entry>wp-client-country</con:entry>
+        <con:entry>wp-client-brand</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

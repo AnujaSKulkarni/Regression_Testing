@@ -169,5 +169,3 @@ getallappliances_by_accountid
 Update-appliance
 Unlink-Inviation
 Fetch-device-specific-notifications
-Regression-Suite
-REST-Virt-1

@@ -113,6 +113,7 @@ Retrieve-All-Content.xml
 Get-Appliance-by-Location-ID.xml
 Device-Registration1.xml
 multi-subscribe-for-opt--in-and-out.xml
+Fetch-device-specific-notifications.xml
 PUSH-Notification.xml
 user-search.xml
 Search-Appliance.xml
