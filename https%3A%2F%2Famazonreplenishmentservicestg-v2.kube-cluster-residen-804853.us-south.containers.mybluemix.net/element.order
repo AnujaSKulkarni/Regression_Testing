@@ -170,5 +170,3 @@ Update-appliance
 Unlink-Inviation
 Fetch-device-specific-notifications
 https%3A%2F%2Famazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net
-Regression-Suite
-REST-Virt-1

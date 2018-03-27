@@ -32,7 +32,13 @@
       <con:params/>
       <con:element>data</con:element>
     </con:representation>
-    <con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Device Deregistered Notification" id="63a90df0-8756-4bd8-a390-c29e59229a4e" mediaType="application/json" postQueryString="false">
+    <con:representation type="RESPONSE">
+      <con:mediaType xsi:nil="true"/>
+      <con:status>0</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
+    <con:request name="Device Deregistered Notification" id="63a90df0-8756-4bd8-a390-c29e59229a4e" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
@@ -55,6 +61,7 @@
    "Subject":"DRS Notification",
    "MessageId":"85bbed9a-84e6-5ccb-a0cd-bfa64c0c90a7"
 }</con:request>
+      <con:originalUri>https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net/replenish/notifications</con:originalUri>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
@@ -78,7 +85,16 @@
         <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
-      <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
+        <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
     <con:environmentSpec>
       <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
@@ -90,7 +106,10 @@
       <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
         <con:authProfile>Inherit From Parent</con:authProfile>
       </con:entry>
-    <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
+      <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
   </con:method>
   <con:environmentSpec>
     <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
@@ -102,5 +121,8 @@
     <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
-  <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
+    <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:resource>

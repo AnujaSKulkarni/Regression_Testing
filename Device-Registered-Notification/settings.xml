@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="6df5d884-b0e6-4488-9a56-1b8cffb59938fileName">Device-Registered-Notification</con:setting>
   </con:settings>
-  
-  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
     <con:endpoint>https://amazonreplenishmentserviceqa-v2.mybluemix.net</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>
@@ -17,5 +17,10 @@
     <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
-  <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
+    <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+  <con:inferredSchema><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<xml-fragment><inf:schema xmlns:inf="http://www.eviware.com/soapui/InferredSchema"><inf:namespace>https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net</inf:namespace><inf:particle xsi:type="inf:ElementParticle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><inf:name>data</inf:name><inf:type xsi:type="inf:TypeReference"><inf:reference xmlns:amaz="https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net">amaz:_data</inf:reference></inf:type></inf:particle><inf:prefix key="http://www.w3.org/2001/XMLSchema" value="xs"/><inf:complexType><inf:completed>true</inf:completed><inf:mixed>false</inf:mixed><inf:name>_data</inf:name><inf:attribute xsi:type="inf:AttributeParticle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><inf:name>contentLength</inf:name><inf:type xsi:type="inf:SimpleType"><inf:completed>false</inf:completed><inf:typeName>boolean</inf:typeName></inf:type></inf:attribute><inf:attribute xsi:type="inf:AttributeParticle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><inf:name>contentType</inf:name><inf:type xsi:type="inf:SimpleType"><inf:completed>false</inf:completed><inf:typeName>string</inf:typeName></inf:type></inf:attribute><inf:content xsi:type="inf:EmptyContent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><inf:completed>true</inf:completed></inf:content></inf:complexType></inf:schema><inf:schema xmlns:inf="http://www.eviware.com/soapui/InferredSchema"><inf:namespace>https://amazonreplenishmentserviceqa-v2.kube-cluster-residen.us-south.containers.mybluemix.net</inf:namespace><inf:particle xsi:type="inf:ElementParticle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><inf:name>data</inf:name><inf:type xsi:type="inf:TypeReference"><inf:reference xmlns:amaz="https://amazonreplenishmentserviceqa-v2.kube-cluster-residen.us-south.containers.mybluemix.net">amaz:_data</inf:reference></inf:type></inf:particle><inf:prefix key="http://www.w3.org/2001/XMLSchema" value="xs"/><inf:complexType><inf:completed>true</inf:completed><inf:mixed>true</inf:mixed><inf:name>_data</inf:name><inf:attribute xsi:type="inf:AttributeParticle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><inf:name>contentLength</inf:name><inf:type xsi:type="inf:SimpleType"><inf:completed>false</inf:completed><inf:typeName>positiveInteger</inf:typeName></inf:type></inf:attribute><inf:attribute xsi:type="inf:AttributeParticle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><inf:name>contentType</inf:name><inf:type xsi:type="inf:SimpleType"><inf:completed>false</inf:completed><inf:typeName>string</inf:typeName></inf:type></inf:attribute><inf:content xsi:type="inf:SimpleContent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><inf:typeName>string</inf:typeName></inf:content></inf:complexType></inf:schema></xml-fragment>]]></con:inferredSchema>
 </con:interface>
