@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Device Registered Notification" path="/replenish/notifications" id="06172921-b183-4ab6-9690-bfbec9286a7a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Device Registered Notification" path="" id="06172921-b183-4ab6-9690-bfbec9286a7a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="06172921-b183-4ab6-9690-bfbec9286a7afileName">Device-Registered-Notification</con:setting>
   </con:settings>
-  <con:parameters/>
+  <con:parameters>
+    <con:parameter>
+      <con:name>x-amz-sns-message-type</con:name>
+      <con:value>DeviceRegisteredNotification</con:value>
+      <con:style>HEADER</con:style>
+      <con:default>DeviceRegisteredNotification</con:default>
+      <con:description xsi:nil="true"/>
+    </con:parameter>
+    <con:parameter>
+      <con:name>Content-Type</con:name>
+      <con:value>application/json</con:value>
+      <con:style>HEADER</con:style>
+      <con:default>application/json</con:default>
+      <con:description xsi:nil="true"/>
+    </con:parameter>
+  </con:parameters>
   <con:method name="Device Registered Notification" id="291c6b60-ccbb-43f5-9495-ad755521014b" method="POST">
     <con:settings/>
-    <con:parameters>
-      <con:parameter>
-        <con:name>x-amz-sns-message-type</con:name>
-        <con:value>DeviceRegisteredNotification</con:value>
-        <con:style>HEADER</con:style>
-        <con:default>DeviceRegisteredNotification</con:default>
-        <con:description xsi:nil="true"/>
-      </con:parameter>
-      <con:parameter>
-        <con:name>Content-Type</con:name>
-        <con:value>application/json</con:value>
-        <con:style>HEADER</con:style>
-        <con:default>application/json</con:default>
-        <con:description xsi:nil="true"/>
-      </con:parameter>
-    </con:parameters>
+    <con:parameters></con:parameters>
     <con:representation type="RESPONSE">
       <con:mediaType>text/plain;charset=UTF-8</con:mediaType>
       <con:status>200</con:status>
@@ -44,9 +44,20 @@
       <con:params/>
       <con:element>data</con:element>
     </con:representation>
-    <con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:request name="Device Registered Notification" id="772c4e9a-fe52-46e9-9483-86dc725a5508" mediaType="application/json" postQueryString="false">
+    <con:representation type="REQUEST">
+      <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>text/plain; charset=utf-8</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
+    <con:request name="Device Registered Notification" id="772c4e9a-fe52-46e9-9483-86dc725a5508" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        <con:setting id="AutoInferSchemas">true</con:setting>
       </con:settings>
       <con:endpoint>https://amazonreplenishmentserviceqa-v2.mybluemix.net</con:endpoint>
       <con:request>{  
@@ -91,7 +102,16 @@
         <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
-      <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
+        <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
     <con:environmentSpec>
       <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
@@ -103,7 +123,10 @@
       <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
         <con:authProfile>Inherit From Parent</con:authProfile>
       </con:entry>
-    <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
+      <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
   </con:method>
   <con:environmentSpec>
     <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
@@ -115,5 +138,8 @@
     <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
-  <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
+    <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:resource>

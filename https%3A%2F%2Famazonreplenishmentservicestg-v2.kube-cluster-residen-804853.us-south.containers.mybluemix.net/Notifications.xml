@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Notifications" path="/replenish/notifications" id="efc2ef66-11e6-4420-8baa-37e0df8f1703" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="efc2ef66-11e6-4420-8baa-37e0df8f1703fileName">Notifications</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Notifications" id="fd9c31a6-c643-4102-977a-a91ef13ae0fe" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>x-amz-sns-message-type</con:name>
+        <con:value>DeviceRegisteredNotification</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>DeviceRegisteredNotification</con:default>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType xsi:nil="true"/>
+      <con:status>0</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
+    <con:request name="Request 1" id="54a771fd-c481-49b6-92bb-c0637a484e40" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net</con:endpoint>
+      <con:request>{  
+   "SignatureVersion":"1",
+   "MessageAttributes":{  
+      "version":{  
+         "Type":"String",
+         "Value":"1.0"
+      }
+   },
+   "Type":"Notification",
+   "TopicArn":"arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV",
+   "Message":"{\"notificationInfo\":{\"notificationType\":\"DeviceRegisteredNotification\",\"lwaClientId\":\"amzn1.application-oa2-client.5d3e65cb51e34155aff669682e248130\",\"notificationTime\":\"2017-09-20T20:02:30.655Z\",\"notificationId\":\"amzn1.dash.notification.v1.01284574-0919-48b7-8a95-49ec24673cba\",\"version\":\"2015-06-05\"},\"deviceInfo\":{\"deviceIdentifier\":{\"serialNumber\":\"12423\"},\"productIdentifier\":{\"modelId\":\"V10KWasher\"}},\"customerInfo\":{\"directedCustomerId\":\"amzn1.account.AHV2UB34C6YHUGKVBKCR2MUHW2BQ\"}}",
+   "UnsubscribeURL":"https://sns.us-west-2.amazonaws.com/?Action=Unsubscribe&amp;SubscriptionArn=arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV:4f6a1f49-8bd9-4051-bfba-ec473d165cad",
+   "Signature":"Kp0z6h9hw6tA65a5eb+hnZUqn4ARcz5vfWlaa4fIAqce81ONTrrzEcLqIn59KLG7v8rA7yR6FFMwggjf2TwXvMOVM8uLB4LbI3O+/DKca526ledNRlz3JWNfzw3HYxoIjGl+fFbWgoALvEZ8ytuz5is5KnCpuFL2TETO9xPr3exfJW9K2UQ9aAnoSY9t8QlMQqeX4Yzov0kJSA5DI+Va/cAcWIjBxwJ1sN2VmSXAsOOkkwOy4SZLjnBNQWK3s6HjinsEb2ni0Fe/f6RT3lMYlm0q4LzZwThyGMaYDlhw6/KHCY0duc/x2BYZ5fnNNVc8/vm9+qRbT4jVjIHEHxi5TQ==",
+   "Timestamp":"2017-09-20T20:02:30.954Z",
+   "SigningCertURL":"https://sns.us-west-2.amazonaws.com/SimpleNotificationService-433026a4050d206028891664da859041.pem",
+   "Subject":"DRS Notification",
+   "MessageId":"3112c63e-8be2-5f7d-a874-940240745d2c"
+}</con:request>
+      <con:originalUri>https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net/replenish/notifications</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>x-amz-sns-message-type</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>
