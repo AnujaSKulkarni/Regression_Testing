@@ -15,15 +15,15 @@
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"WED_MAR_28_11_03_22_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"WED_MAR_28_14_29_47_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>WED_MAR_28_11_03_22_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>WED_MAR_28_14_29_47_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">10049</con:value>
+      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">undefined</con:value>
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
@@ -63,11 +63,11 @@
     </con:property>
     <con:property>
       <con:name>Status</con:name>
-      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Fail</con:value>
     </con:property>
     <con:property>
       <con:name>Run_count</con:name>
-      <con:value>5</con:value>
+      <con:value>7</con:value>
     </con:property>
     <con:property>
       <con:name>Email_cnf</con:name>
