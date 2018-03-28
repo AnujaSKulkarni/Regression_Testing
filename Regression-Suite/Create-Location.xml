@@ -341,9 +341,9 @@ if (API_Name != TestCaseName){
       <con:dataSource type="JDBC">
         <con:configuration>
           <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
+          <connstr>jdbc:db2://dashdb-txnha-flex-yp-dal09-20.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
           <pass>Syntel@mb5027676</pass>
-          <Connection>DataBase( QA_Env )</Connection>
+          <Connection>DataBase( Stage_Env )</Connection>
           <query>Select st.STATE_ID As st_STATE_ID, st.COUNTRY_ID As st_COUNTRY_ID,
   con.COUNTRY_ID As con_COUNTRY_ID, con.COUNTRY_CODE As con_COUNTRY_CODE
 From BLUADMIN.STATE st Inner Join
@@ -839,7 +839,7 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>9966</con:value>
+      <con:value>10049</con:value>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
@@ -847,11 +847,11 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>COUNTRY_CODE</con:name>
-      <con:value>"US"</con:value>
+      <con:value>""</con:value>
     </con:property>
     <con:property>
       <con:name>Location</con:name>
-      <con:value>Regression_Location_Tue_Mar_27_15_34_51_IST_2018</con:value>
+      <con:value>Regression_Location_Wed_Mar_28_11_04_05_IST_2018</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
