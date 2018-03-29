@@ -861,7 +861,7 @@ out.close()</script>
       <targetStep>Flow Control</targetStep>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Groovy Script" id="3112e7a8-0973-4a67-977d-a58687d292f9">
+  <con:testStep type="groovy" name="Groovy Script" id="3112e7a8-0973-4a67-977d-a58687d292f9" disabled="true">
     <con:settings/>
     <con:config>
       <script/>
