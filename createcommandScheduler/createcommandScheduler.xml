@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="createcommandScheduler" path="/appliance/appliances/commandScheduler" id="c7363d47-d5c4-4cdf-94be-abc4404876a3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c7363d47-d5c4-4cdf-94be-abc4404876a3fileName">createcommandScheduler</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="createcommandScheduler" id="70e01a03-46a4-4aec-82e3-515480f88371" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="createcommandScheduler" id="6729e6f9-5c98-47f3-b8fd-3d409de44c4b" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>${API-Connect}</con:endpoint>
+      <con:request>{
+  "applianceId":"WPR333334UCD3",
+  "timerName":"timer:WPR333334UCD3:Test-388",
+  "nextNotificationTime":1522159800000,
+   "maxDelay":5000,
+   "startThreshold":1522159800000,
+   "endThreshold":1522161000000,
+    "scheduleType": "singleEvent",                                                                          
+        "scheduleDuration":60000,                                                                                                                                                                                                                                                                       
+    "attributeMap":{                                                                                                                                                                                                                                  
+     "XCat_PowerSetRealTimePowerPublishTiming":"14400000",
+   "XCat_PowerSetRealTimePowerPublishStart":1,     
+  "Sys_OpStatusDisplayTemp":"29"
+
+         } 
+ }</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

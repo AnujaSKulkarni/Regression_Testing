@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="74a170cd-7fc5-440a-b2c6-d264f40a8f50" wadlVersion="http://wadl.dev.java.net/2009/02" name="createcommandScheduler" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="74a170cd-7fc5-440a-b2c6-d264f40a8f50fileName">createcommandScheduler</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://api-test.whrcloud.com</con:endpoint>
+  </con:endpoints>
+</con:interface>

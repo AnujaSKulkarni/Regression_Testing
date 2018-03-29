@@ -48,6 +48,12 @@
       <con:params/>
       <con:element xmlns:d5a1="https://api-test.whrcloud.com/api/v1/user/notification/device/D5A17B98-2136-4D2A-B3CC-9FF67E34EC96">d5a1:Response</con:element>
     </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType xsi:nil="true"/>
+      <con:status>204</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
     <con:request name="Fetch device specific notifications" id="40554e4b-a3e4-4544-9cea-ca797377daf0" mediaType="application/json">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
