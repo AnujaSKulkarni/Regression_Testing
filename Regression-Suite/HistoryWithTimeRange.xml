@@ -545,7 +545,7 @@ log.info "Report Generated"</script>
     </con:property>
     <con:property>
       <con:name>attribute_name</con:name>
-      <con:value>"Online"</con:value>
+      <con:value>[]</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
