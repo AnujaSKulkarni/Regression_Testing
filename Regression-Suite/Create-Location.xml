@@ -330,7 +330,16 @@ if (API_Name != TestCaseName){
 		testRunner.testCase.testSteps['Data_Sink_Flow_Control'].setDisabled(false)
 		testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(false)
 	}
-}</script>
+}
+
+
+
+String date = new Date()
+date = date.replaceAll(":","_")
+date = date.replaceAll(" ","_")
+def RandomNumber = (int)(Math.random()*10000000)
+def LocationName = "\"" + "Location_" + date + RandomNumber +  "\""
+testRunner.testCase.setPropertyValue("Location_Name", LocationName)</script>
     </con:config>
   </con:testStep>
   <con:testStep type="datasource" name="JDBC" id="f5bad6a2-116f-4d38-b6c5-9d08c855489e" disabled="true">
@@ -401,7 +410,7 @@ log.info tC_Number</script>
         </con:settings>
         <con:endpoint>${Location}</con:endpoint>
         <con:request>{
- "locationName":${DataSource#Location_Name},
+ "locationName":${#TestCase#Location_Name},
   "street": ${DataSource#Street},
   "stateId":${JDBC#st_STATE_ID},
   "city": ${DataSource#City},
@@ -812,8 +821,8 @@ out.close()</script>
       <con:name>Location_ID_Transfer</con:name>
       <con:value>HTTP/1.1 200 OK
 X-Backside-Transport: OK OK
-Date: Thu, 29 Mar 2018 10:46:09 GMT
-X-Global-Transaction-ID: 268652093
+Date: Fri, 30 Mar 2018 06:22:13 GMT
+X-Global-Transaction-ID: 173781549
 User-Agent: IBM-APIConnect/201
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
@@ -832,11 +841,11 @@ Content-Type: application/json
 Via: 1.1 pps2cwebproxy01.syntelorg.com:8080 (Cisco-WSA/9.1.2-022)
 Connection: keep-alive
 
-{"LOCATION_ID":29360,"CITY":"New York","ACCOUNT_ID":32740,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Regression Location","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York","RATE_PLAN_NAME":"Tariff"}</con:value>
+{"LOCATION_ID":32793,"CITY":"New York","ACCOUNT_ID":45457,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Location_Fri_Mar_30_11_52_10_IST_20189426956","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York","RATE_PLAN_NAME":"Tariff"}</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>32740</con:value>
+      <con:value>45457</con:value>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
@@ -848,7 +857,11 @@ Connection: keep-alive
     </con:property>
     <con:property>
       <con:name>Location</con:name>
-      <con:value>Regression_Location_Thu_Mar_29_16_16_07_IST_2018</con:value>
+      <con:value>Regression_Location_Fri_Mar_30_11_52_10_IST_2018</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Location_Name</con:name>
+      <con:value>"Location_Fri_Mar_30_11_52_14_IST_20186495997"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
