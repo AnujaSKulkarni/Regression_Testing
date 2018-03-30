@@ -238,6 +238,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -341,9 +342,9 @@ if (API_Name != TestCaseName){
       <con:dataSource type="JDBC">
         <con:configuration>
           <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
-          <pass>Syntel@mb5027676</pass>
-          <Connection>DataBase( QA_Env )</Connection>
+          <connstr>jdbc:db2://dashdb-txn-small-yp-dal10-91.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr>
+          <pass>Wcloudpro@read1</pass>
+          <Connection>DataBase( Pre_Prod )</Connection>
           <query>Select st.STATE_ID As st_STATE_ID, st.COUNTRY_ID As st_COUNTRY_ID,
   con.COUNTRY_ID As con_COUNTRY_ID, con.COUNTRY_CODE As con_COUNTRY_CODE
 From BLUADMIN.STATE st Inner Join
@@ -836,7 +837,7 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>13228</con:value>
+      <con:value>32734</con:value>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
@@ -844,11 +845,11 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>COUNTRY_CODE</con:name>
-      <con:value>"US"</con:value>
+      <con:value>""</con:value>
     </con:property>
     <con:property>
       <con:name>Location</con:name>
-      <con:value>Regression_Location_Thu_Mar_29_12_19_57_IST_2018</con:value>
+      <con:value>Regression_Location_Thu_Mar_29_15_49_28_IST_2018</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

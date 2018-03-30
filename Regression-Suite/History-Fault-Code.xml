@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="a16f1e0c-72a7-458a-b9f1-74f9cbed541d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="HistoryWithoutTimeRange" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="8e5ed003-51b2-4e36-a348-35d564cb8d47" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="History-Fault Code" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="241932e4-30cb-4e20-898f-59c649e9d131fileName">HistoryWithTimeRange</con:setting>
-    <con:setting id="a16f1e0c-72a7-458a-b9f1-74f9cbed541dfileName">HistoryWithoutTimeRange</con:setting>
+    <con:setting id="8e5ed003-51b2-4e36-a348-35d564cb8d47fileName">History-Fault-Code</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="DataSource_Setup" id="adb21bee-4435-42ab-8eef-af1a369b0458">
+  <con:testStep type="groovy" name="DataSource_Setup" id="dca54c13-cdd3-41c3-b694-6caf6a39635c">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream;
@@ -143,8 +142,10 @@ if(RunTimeDataSource_Flag == true){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="8ef11bb2-6ebd-49b2-8010-f43efb52f31a">
-    <con:settings/>
+  <con:testStep type="datasource" name="DataSource" id="46ef3ca7-faee-4c85-abdb-e51404d27a72">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
+    </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
         <con:configuration>
@@ -155,8 +156,8 @@ if(RunTimeDataSource_Flag == true){
           <evaluateFormulas>false</evaluateFormulas>
         </con:configuration>
       </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
+      <con:shared>false</con:shared>
+      <con:restartShared>false</con:restartShared>
       <con:property>TC_Number</con:property>
       <con:property>Service_Name</con:property>
       <con:property>Defect_ID</con:property>
@@ -201,6 +202,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -244,132 +246,41 @@ if(RunTimeDataSource_Flag == true){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Flow Control" id="37552f4b-5f8b-44c6-8584-1310edf6f821">
+  <con:testStep type="groovy" name="flow control" id="db5933e9-ae33-40f8-a428-9a6f2503f35a">
     <con:settings/>
     <con:config>
       <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+log.info dataCombination
 def API_Name = context.expand( '${DataSource#API_Name}' )
 def TestCaseName = testRunner.testCase.getName()
 
 if (API_Name != TestCaseName){
-	log.info "Skipping"
-	testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(true)
-	testRunner.testCase.testSteps['Get device shadow for id'].setDisabled(true)
+	testRunner.testCase.testSteps['History-Fault Code'].setDisabled(true)
 	testRunner.testCase.testSteps['Report'].setDisabled(true)
-	testRunner.testCase.testSteps['HistoryWithoutTimeRange'].setDisabled(true)
-	testRunner.testCase.testSteps['Attribute_name'].setDisabled(true)
 }else{
-	testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(false)
-	testRunner.testCase.testSteps['Get device shadow for id'].setDisabled(false)
+	testRunner.testCase.testSteps['History-Fault Code'].setDisabled(false)
 	testRunner.testCase.testSteps['Report'].setDisabled(false)
-	testRunner.testCase.testSteps['HistoryWithoutTimeRange'].setDisabled(false)
-	testRunner.testCase.testSteps['Attribute_name'].setDisabled(false)
+	
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="851b49a2-5fcc-4e9d-9ea6-20e19cd76031" disabled="true">
+  <con:testStep type="restrequest" name="History-Fault Code" id="58692beb-0b15-4ba5-9260-ba526510b2bc">
     <con:settings/>
-    <con:config>
-      <script>def Device_Shadow = context.expand( '${DataSource#Device_Shadow_Name}' )
-def Device_Shadow_Name = Device_Shadow.replace("\"", "")
-testRunner.testCase.setPropertyValue("Device_Shadow_Name", Device_Shadow_Name)</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Get device shadow for id" id="3d9d3109-665d-4aa2-b2ff-1082419b1be4" disabled="true">
-    <con:settings/>
-    <con:config service="Get device shadow for id" resourcePath="/deviceshadow/${#TestCase#Device_Shadow_Name}" methodName="Get device shadow for id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Get device shadow for id" id="29790405-256a-42ec-aa9d-8127214b09f7" mediaType="application/json">
+    <con:config service="History-Fault Code" resourcePath="/history/faultCode" methodName="History-Fault Code" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="History-Fault Code" id="4192dcfb-0381-454d-995a-2498ed767ba4" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>${API-Connect}</con:endpoint>
-        <con:request/>
-        <con:originalUri>https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/deviceshadow/WPR1000101123</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="4560e4c4-8470-482f-a044-8f931bfc20ea" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters>
-          <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>Authorization</con:entry>
-        </con:parameterOrder>
-        <con:environmentSpec>
-          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
-            <con:authProfile>No Authorization</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c">
-            <con:authProfile>No Authorization</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Attribute_name" id="06615959-a68b-4fcc-a41a-44e3041b0fd3" disabled="true">
-    <con:settings/>
-    <con:config>
-      <script>def response = context.expand( '${Get device shadow for id#Response#$[\'attributes\']}' )
-response1 = response.split(":")
-response = response1[0]
-response = response.replace("{", "")
-testRunner.testCase.setPropertyValue("attribute_name", response)</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="HistoryWithoutTimeRange" id="71f21765-6712-4c22-914f-f88ae91fad10" disabled="true">
-    <con:settings/>
-    <con:config service="HistoryWithTimeRange" resourcePath="/appliances/history" methodName="HistoryWithTimeRange" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="HistoryWithoutTimeRange" id="e40d0058-7e55-4add-b618-be7db2b39838" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>${API-Connect}</con:endpoint>
         <con:request>{
-	"applianceId":${DataSource#Device_Shadow_Name},
-	"attributeNames":${#TestCase#attribute_name},
-	"startTime": "",
-	"endTime": ""
+"said":${DataSource#SAID},
+"isLegacy":"false",
+"groupBy":${DataSource#Group By},
+"attributes":${DataSource#Attribute_Name},
+"start":"1010862442000",
+"end":"1622094641000"
 }</con:request>
-        <con:originalUri>https://api-test.whrcloud.com/api/v1/appliances/history</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="e5839b0b-de88-4a9e-9330-c51fa9835433" name="Valid HTTP Status Codes">
+        <con:originalUri>https://api-test.whrcloud.com/api/v1/history/faultCode</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a19cf6c5-800d-4b09-bb44-72954464367e" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
@@ -384,24 +295,10 @@ testRunner.testCase.setPropertyValue("attribute_name", response)</script>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
         </con:parameterOrder>
-        <con:environmentSpec>
-          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c">
-            <con:authProfile>No Authorization</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="cc8f7b7c-41f3-4866-85e9-4b448b07cb2a" disabled="true">
+  <con:testStep type="groovy" name="Report" id="03404862-ae89-47d0-bd16-e3f420eccc1a">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -430,12 +327,10 @@ import org.apache.poi.xssf.usermodel.XSSFRow
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 
-
 def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
 log.info Final_Path
 def final_path = new File(Final_Path)
 final_path.mkdir()
-
 
 /*Get Test Case Name and Status*/
 def data_combination = context.expand( '${DataSource#Data_Combination}' )
@@ -443,6 +338,7 @@ def data_combination = context.expand( '${DataSource#Data_Combination}' )
 def TCN = context.expand( '${DataSource#TC_Number}' )
 def TestCaseName = testRunner.testCase.getName()
 
+log.info TestCaseName
 
 obj = context.testCase.getTestStepByName(TestCaseName)
 assertions = obj.getAssertionList()
@@ -497,18 +393,21 @@ file1.append("---------------- Request ---------------------------\n")
 
 
 /*Get request and response*/
-myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
 try{
-def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
-def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
-file1.append(request + "\n\n\n\n")
-file1.append("---------------- Response --------------------------\n")
-file1.append(response)
-}catch(Exception e){log.info "Request/Response empty"
+	myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
+	def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
+	def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+	file1.append(request + "\n\n\n\n")
+	file1.append("---------------- Response --------------------------\n")
+	file1.append(response)
+}
+catch (Exception e){
+	log.info("Empty Request Response")
 }
 
-/* Creating Excel for test result */
 
+
+/* Creating Excel for test result */
 def Testresultpath = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
 Testresultpath = Testresultpath + "Test_Run_Results.xls"
 log.info Testresultpath
@@ -528,59 +427,21 @@ Cell cell_3 = row.createCell(3).setCellValue(date_now)
 Cell cell_4 = row.createCell(4).setCellValue(Time_Taken)
 FileOutputStream out = new FileOutputStream(Testresultpath,false)
 wb.write(out)
-out.close()
-log.info "Report Generated"</script>
+out.close()</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="6d5cafd7-4d15-488f-8527-82b0b75b4c9f">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="66c980ab-cd29-41f4-9b00-2e0fec83853d">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource</dataSourceStep>
-      <targetStep>Flow Control</targetStep>
+      <targetStep>flow control</targetStep>
     </con:config>
   </con:testStep>
-  <con:properties>
-    <con:property>
-      <con:name>Device_Shadow_Name</con:name>
-      <con:value>WPR33337CH4H6</con:value>
-    </con:property>
-    <con:property>
-      <con:name>attribute_name</con:name>
-      <con:value>"Online"</con:value>
-    </con:property>
-  </con:properties>
+  <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>35981959-51a7-4b65-ab09-28306cb558ce</con:testStepId>
+    <con:testStepId>58692beb-0b15-4ba5-9260-ba526510b2bc</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>bd62e49e-9d33-4696-b6fb-a6596c1f2676</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>24ceb322-060b-4405-bbed-8a47859f13bd</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>c501b1b8-a6fe-4121-8961-27cecc8b9a08</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>596d0860-6623-41c3-b75f-9be62db07eb8</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:environmentSpec>
-    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-    <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
-      <con:authProfile>Inherit From Parent</con:authProfile>
-    </con:entry>
-  </con:environmentSpec>
 </con:testCase>

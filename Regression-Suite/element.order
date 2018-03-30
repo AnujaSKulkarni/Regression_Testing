@@ -93,8 +93,9 @@ Retrive-setting-favfill.xml
 Delete-cycleByid.xml
 Delete-SettingByAttribute.xml
 Delete-Favorities.xml
-HistoryWithTimeRange.xml
-HistoryWithoutTimeRange.xml
+History--Energy.xml
+History-Fault-Code.xml
+History-Cycle.xml
 Delete-Location.xml
 Update-Email.xml
 free-vend.xml

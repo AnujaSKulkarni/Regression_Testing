@@ -202,6 +202,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -265,7 +266,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="JDBC" id="9d7a37ab-b898-4de1-aa86-390c521ed857" disabled="true">
+  <con:testStep type="datasource" name="JDBC" id="9d7a37ab-b898-4de1-aa86-390c521ed857">
     <con:settings>
       <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
     </con:settings>
@@ -294,7 +295,7 @@ From (Select app.appliance_id
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="multi subscribe for opt  in and out" id="cd70758d-1ccd-4464-a202-b83095c9e249" disabled="true">
+  <con:testStep type="restrequest" name="multi subscribe for opt  in and out" id="cd70758d-1ccd-4464-a202-b83095c9e249">
     <con:settings/>
     <con:config service="multi subscribe for opt  in and out" resourcePath="/notifications/subscriptions/multi" methodName="multi subscribe for opt  in and out" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="multi subscribe for opt  in and out" id="941c0ead-0aa8-40a0-bc30-96b0fdfbf90b" mediaType="application/json" postQueryString="false">
@@ -350,7 +351,7 @@ From (Select app.appliance_id
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="9bc5e43b-f904-481b-ba81-e74d7a9aca36" disabled="true">
+  <con:testStep type="groovy" name="Report" id="9bc5e43b-f904-481b-ba81-e74d7a9aca36">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

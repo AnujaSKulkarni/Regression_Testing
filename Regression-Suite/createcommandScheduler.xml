@@ -200,6 +200,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -274,7 +275,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="createcommandScheduler" id="f9afb7cb-dd20-41b6-8f72-03faef3591a8">
+  <con:testStep type="restrequest" name="createcommandScheduler" id="f9afb7cb-dd20-41b6-8f72-03faef3591a8" disabled="true">
     <con:settings/>
     <con:config service="createcommandScheduler" resourcePath="/appliance/appliances/commandScheduler" methodName="createcommandScheduler" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="createcommandScheduler" id="6729e6f9-5c98-47f3-b8fd-3d409de44c4b" mediaType="application/json" postQueryString="false">
@@ -439,7 +440,20 @@ wb.write(out)
 out.close()</script>
     </con:config>
   </con:testStep>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>start_Date</con:name>
+      <con:value>1522321104578</con:value>
+    </con:property>
+    <con:property>
+      <con:name>end_Date</con:name>
+      <con:value>1522334604578</con:value>
+    </con:property>
+    <con:property>
+      <con:name>next_notification_time</con:name>
+      <con:value>1522338204578</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
   <con:breakPoints>
     <con:testStepId>f9afb7cb-dd20-41b6-8f72-03faef3591a8</con:testStepId>
