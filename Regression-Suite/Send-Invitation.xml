@@ -602,11 +602,11 @@ log.info "Report Generated"</script>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"FRI_MAR_30_11_52_14_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"FRI_MAR_30_12_05_02_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>FRI_MAR_30_11_52_14_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>FRI_MAR_30_12_05_02_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
