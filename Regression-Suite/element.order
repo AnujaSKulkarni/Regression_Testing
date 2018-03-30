@@ -93,8 +93,9 @@ Retrive-setting-favfill.xml
 Delete-cycleByid.xml
 Delete-SettingByAttribute.xml
 Delete-Favorities.xml
-HistoryWithTimeRange.xml
-HistoryWithoutTimeRange.xml
+History--Energy.xml
+History-Fault-Code.xml
+History-Cycle.xml
 Delete-Location.xml
 Update-Email.xml
 free-vend.xml
@@ -106,6 +107,7 @@ Rate-Revealer.xml
 UnClaim-Appliance.xml
 Appliance-Wraper.xml
 getallappliances_by_accountid.xml
+Update-appliance.xml
 Retrieve-DDM-Literals.xml
 Retrieve-NotificationMessages.xml
 Retrieve-All-Content.xml
