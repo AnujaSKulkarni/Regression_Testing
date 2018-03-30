@@ -200,7 +200,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
-      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -446,7 +445,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>email_id</con:name>
-      <con:value>""</con:value>
+      <con:value>"FRI_MAR_30_11_52_14_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

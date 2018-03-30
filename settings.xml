@@ -672,7 +672,7 @@
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="getallinvitedmember">
-      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="getallappliances_by_accountid">
       <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
@@ -691,15 +691,6 @@
     </con:service>
     <con:service type="REST" name="createcommandScheduler">
       <con:endpoint authProfile="No Authorization">https://api-test.whrcloud.com</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="History -Energy">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="History-Fault Code">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="History-Cycle">
-      <con:endpoint authProfile="No Authorization">https://{{API-Connect}}</con:endpoint>
     </con:service>
     <con:property>
       <con:name>Location</con:name>
@@ -1329,15 +1320,6 @@
       <con:endpoint authProfile="Inherit From Parent"/>
     </con:service>
     <con:service type="REST" name="createcommandScheduler">
-      <con:endpoint authProfile="No Authorization"/>
-    </con:service>
-    <con:service type="REST" name="History -Energy">
-      <con:endpoint authProfile="No Authorization"/>
-    </con:service>
-    <con:service type="REST" name="History-Fault Code">
-      <con:endpoint authProfile="No Authorization"/>
-    </con:service>
-    <con:service type="REST" name="History-Cycle">
       <con:endpoint authProfile="No Authorization"/>
     </con:service>
     <con:property>
@@ -1970,15 +1952,6 @@
     <con:service type="REST" name="createcommandScheduler">
       <con:endpoint authProfile="No Authorization"/>
     </con:service>
-    <con:service type="REST" name="History -Energy">
-      <con:endpoint authProfile="No Authorization"/>
-    </con:service>
-    <con:service type="REST" name="History-Fault Code">
-      <con:endpoint authProfile="No Authorization"/>
-    </con:service>
-    <con:service type="REST" name="History-Cycle">
-      <con:endpoint authProfile="No Authorization"/>
-    </con:service>
     <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicestg-v2.mybluemix.net/api/v1</con:value>
@@ -2604,19 +2577,10 @@
       <con:endpoint authProfile="No Authorization">https://{{API-Connect}}</con:endpoint>
     </con:service>
     <con:service type="REST" name="https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net">
-      <con:endpoint authProfile="Inherit From Parent"/>
+      <con:endpoint authProfile="Inherit From Parent">https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="createcommandScheduler">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="History -Energy">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="History-Fault Code">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
-    </con:service>
-    <con:service type="REST" name="History-Cycle">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:property>
       <con:name>Location</con:name>
