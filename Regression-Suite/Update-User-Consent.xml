@@ -200,7 +200,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
-      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -470,7 +469,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Appliance_ID</con:name>
-      <con:value>545</con:value>
+      <con:value>488</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

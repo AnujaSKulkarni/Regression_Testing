@@ -14,7 +14,8 @@ def Test_Result_Path = context.expand( '${Test_Result_Path}' )
 def Result_Summary_Path = Test_Result_Path + "Result_Summary.txt"
 def Result_Summary_File = new File(Result_Summary_Path)
 log.info Result_Summary_Path
-
+Result_Summary_File.append "Run Results"
+Result_Summary_File.append "\n"
 def dir = new File(Test_Result_Path)
 dir.eachFileRecurse (FileType.FILES) { file ->
   list &lt;&lt; file
@@ -82,5 +83,8 @@ list.each {
     <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
-  <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
+    <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>

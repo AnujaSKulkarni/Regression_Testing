@@ -236,7 +236,6 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
-      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -694,23 +693,23 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>11072</con:value>
+      <con:value>45469</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"MON_APR_02_10_26_56_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"FRI_MAR_30_18_06_23_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Brand_Name</con:name>
-      <con:value/>
+      <con:value>Whirlpool</con:value>
     </con:property>
     <con:property>
       <con:name>Country_Name</con:name>
-      <con:value/>
+      <con:value>IT</con:value>
     </con:property>
     <con:property>
       <con:name>Region</con:name>
-      <con:value/>
+      <con:value>EMEA</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
