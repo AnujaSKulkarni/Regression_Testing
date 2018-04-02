@@ -238,6 +238,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -350,9 +351,9 @@ testRunner.testCase.setPropertyValue("Location_Name", LocationName)</script>
       <con:dataSource type="JDBC">
         <con:configuration>
           <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txn-small-yp-dal10-91.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr>
-          <pass>Wcloudpro@read1</pass>
-          <Connection>DataBase( Pre_Prod )</Connection>
+          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
+          <pass>Syntel@mb5027676</pass>
+          <Connection>DataBase( QA_Env )</Connection>
           <query>Select st.STATE_ID As st_STATE_ID, st.COUNTRY_ID As st_COUNTRY_ID,
   con.COUNTRY_ID As con_COUNTRY_ID, con.COUNTRY_CODE As con_COUNTRY_CODE
 From BLUADMIN.STATE st Inner Join
@@ -819,33 +820,33 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Location_ID_Transfer</con:name>
-      <con:value>HTTP/1.1 200 OK
+      <con:value>HTTP/1.1 200 undefined
+Server: nginx/1.4.6 (Ubuntu)
+Date: Mon, 02 Apr 2018 04:57:48 GMT
+Content-Type: application/json
+Connection: keep-alive
 X-Backside-Transport: OK OK
-Date: Fri, 30 Mar 2018 06:22:13 GMT
-X-Global-Transaction-ID: 173781549
+X-Global-Transaction-ID: 361394793
 User-Agent: IBM-APIConnect/201
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
 Access-Control-Max-Age: 3600
 Access-Control-Allow-Headers: X-PINGOTHER,Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization
 Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,xsrf-token
-X-Application-Context: wcloud-location-service (Dev):pre-prod
+X-Application-Context: wcloud-location-service (Stage):stg
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Transfer-Encoding: chunked
-Content-Type: application/json
-Via: 1.1 pps2cwebproxy01.syntelorg.com:8080 (Cisco-WSA/9.1.2-022)
-Connection: keep-alive
+Strict-Transport-Security: max-age=15768000
 
-{"LOCATION_ID":32793,"CITY":"New York","ACCOUNT_ID":45457,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Location_Fri_Mar_30_11_52_10_IST_20189426956","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York","RATE_PLAN_NAME":"Tariff"}</con:value>
+{"LOCATION_ID":6289,"CITY":"New York","ACCOUNT_ID":11072,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Location_Mon_Apr_02_10_27_38_IST_20189929739","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":null,"UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York","RATE_PLAN_NAME":"Tariff"}</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>45457</con:value>
+      <con:value>11072</con:value>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
@@ -857,11 +858,11 @@ Connection: keep-alive
     </con:property>
     <con:property>
       <con:name>Location</con:name>
-      <con:value>Regression_Location_Fri_Mar_30_11_52_10_IST_2018</con:value>
+      <con:value>Regression_Location_Mon_Apr_02_10_27_38_IST_2018</con:value>
     </con:property>
     <con:property>
       <con:name>Location_Name</con:name>
-      <con:value>"Location_Fri_Mar_30_11_52_14_IST_20186495997"</con:value>
+      <con:value>"Location_Mon_Apr_02_10_27_42_IST_20187625555"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

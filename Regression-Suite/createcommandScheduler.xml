@@ -200,6 +200,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -442,15 +443,15 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>start_Date</con:name>
-      <con:value>1522392122471</con:value>
+      <con:value>1522646297428</con:value>
     </con:property>
     <con:property>
       <con:name>end_Date</con:name>
-      <con:value>1522405622471</con:value>
+      <con:value>1522659797428</con:value>
     </con:property>
     <con:property>
       <con:name>next_notification_time</con:name>
-      <con:value>1522409222471</con:value>
+      <con:value>1522663397428</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

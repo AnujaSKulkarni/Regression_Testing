@@ -21,7 +21,7 @@
   </con:parameters>
   <con:method name="Device Registered Notification" id="291c6b60-ccbb-43f5-9495-ad755521014b" method="POST">
     <con:settings/>
-    <con:parameters></con:parameters>
+    <con:parameters/>
     <con:representation type="RESPONSE">
       <con:mediaType>text/plain;charset=UTF-8</con:mediaType>
       <con:status>200</con:status>
@@ -53,6 +53,12 @@
       <con:status>404</con:status>
       <con:params/>
       <con:element>data</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+      <con:status>405</con:status>
+      <con:params/>
+      <con:element xmlns:not="https://amazonreplenishmentserviceqa-v2.mybluemix.net/replenish/notifications">not:Fault</con:element>
     </con:representation>
     <con:request name="Device Registered Notification" id="772c4e9a-fe52-46e9-9483-86dc725a5508" mediaType="application/json" postQueryString="false">
       <con:settings>
