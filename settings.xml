@@ -154,6 +154,9 @@
     <con:property>
       <con:name>Role_ID</con:name>
     </con:property>
+    <con:property>
+      <con:name>Appliance_SAID</con:name>
+    </con:property>
   </con:properties>
   <con:wssContainer/>
   <con:databaseConnectionContainer>
@@ -797,6 +800,10 @@
       <con:name>Role_ID</con:name>
       <con:value>64</con:value>
     </con:property>
+    <con:property>
+      <con:name>Appliance_SAID</con:name>
+      <con:value/>
+    </con:property>
     <con:databaseConnectionContainer>
       <con:databaseConnection>
         <con:name>DataBase</con:name>
@@ -1434,6 +1441,10 @@
     </con:property>
     <con:property>
       <con:name>Role_ID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Appliance_SAID</con:name>
       <con:value/>
     </con:property>
     <con:databaseConnectionContainer>
@@ -2075,6 +2086,10 @@
       <con:name>Role_ID</con:name>
       <con:value>41</con:value>
     </con:property>
+    <con:property>
+      <con:name>Appliance_SAID</con:name>
+      <con:value>WPR333334UCD3</con:value>
+    </con:property>
     <con:databaseConnectionContainer>
       <con:databaseConnection>
         <con:name>DataBase</con:name>
@@ -2604,7 +2619,7 @@
       <con:endpoint authProfile="No Authorization">https://{{API-Connect}}</con:endpoint>
     </con:service>
     <con:service type="REST" name="https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net">
-      <con:endpoint authProfile="Inherit From Parent"/>
+      <con:endpoint authProfile="Inherit From Parent">https://amazonreplenishmentservicestg-v2.kube-cluster-residen-804853.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="createcommandScheduler">
       <con:endpoint authProfile="No Authorization">${API-Connect}</con:endpoint>
@@ -2713,6 +2728,10 @@
     <con:property>
       <con:name>Role_ID</con:name>
       <con:value>13</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Appliance_SAID</con:name>
+      <con:value>WPR333334TUG2</con:value>
     </con:property>
     <con:databaseConnectionContainer>
       <con:databaseConnection>
