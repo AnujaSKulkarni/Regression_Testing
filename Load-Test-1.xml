@@ -100,7 +100,7 @@
         <con1:properties>
           <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
           <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
-          <con1:property propagates="true" key="limitVU" type="java.lang.Long">25</con1:property>
+          <con1:property propagates="true" key="limitVU" type="java.lang.Long">9223372036854775807</con1:property>
           <con1:property propagates="true" key="load" type="java.lang.Long">20</con1:property>
           <con1:property propagates="true" key="interval" type="java.lang.Long">1000</con1:property>
         </con1:properties>
@@ -154,7 +154,7 @@
     </con:data>
     <con:data>
       <con:paramName>column_width@ID</con:paramName>
-      <con:paramValue>57</con:paramValue>
+      <con:paramValue>74</con:paramValue>
     </con:data>
     <con:data>
       <con:paramName>column_visible@ID</con:paramName>
@@ -239,6 +239,14 @@
     <con:data>
       <con:paramName>column_visible@soapui_context</con:paramName>
       <con:paramValue>false</con:paramValue>
+    </con:data>
+    <con:data>
+      <con:paramName>column_width@Test step status</con:paramName>
+      <con:paramValue>120</con:paramValue>
+    </con:data>
+    <con:data>
+      <con:paramName>column_visible@Test step status</con:paramName>
+      <con:paramValue>true</con:paramValue>
     </con:data>
   </con:loadUIPanelData>
   <con:statistics id="22e75c4a-3888-4ba9-a2d5-f229083e2537"/>
