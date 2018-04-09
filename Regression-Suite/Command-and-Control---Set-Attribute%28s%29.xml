@@ -272,10 +272,10 @@ if (API_Name != TestCaseName){
         <con:request>{
 	"header": {
 	"command" : "setAttributes",
-	"said" : "WPR333334UCD3"
+	"said" : "${#Project#Appliance_SAID}"
 	},
 "body": {
-	"CycleOptionsWHR_WrinkleShield": 1 
+	"CycleOptionsWHR_WrinkleShield": 0
 	}
 }</con:request>
         <con:originalUri>https://api-stg.whrcloud.com/api/v1/appliance/command</con:originalUri>

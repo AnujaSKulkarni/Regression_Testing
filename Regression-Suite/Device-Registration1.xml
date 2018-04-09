@@ -278,7 +278,7 @@ if (API_Name != TestCaseName){
         <con:assertion type="Valid HTTP Status Codes" id="97e69915-b22c-493f-9448-13cbe5650167" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
-            <codes>201</codes>
+            <codes>201,200</codes>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -286,9 +286,7 @@ if (API_Name != TestCaseName){
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-          <entry key="Authorization" value="Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}" xmlns="http://eviware.com/soapui/config"/>
-        </con:parameters>
+        <con:parameters/>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
           <con:entry>wp-client-brand</con:entry>
