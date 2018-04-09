@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Un Claim Appliance" path="/appliances/unclaim/WPR333334UCD3" id="1aeec800-aaaf-4ed8-bd60-06f9cbaf3cd0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Un Claim Appliance" path="/appliances/unclaim/${#Project#Appliance_SAID}" id="1aeec800-aaaf-4ed8-bd60-06f9cbaf3cd0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="1aeec800-aaaf-4ed8-bd60-06f9cbaf3cd0fileName">Un-Claim-Appliance</con:setting>
   </con:settings>

@@ -271,8 +271,8 @@ if (API_Name != TestCaseName){
         <con:endpoint>${API-Connect}</con:endpoint>
         <con:request>{
         "applianceName": "dryer",
-        "said":"WPR333334UCD3",
-        "locationId":${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}
+        "said":"${#Project#Appliance_SAID}",
+        "locationId":${#Project#Location_ID}
         }</con:request>
         <con:originalUri>https://api-test.whrcloud.com/api/v1/appliances/claim/</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="136a70db-fd2b-4243-a4f7-52651b059f52" name="Valid HTTP Status Codes">

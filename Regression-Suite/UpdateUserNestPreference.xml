@@ -287,11 +287,11 @@ testRunner.testCase.setPropertyValue("Structure_ID", Structure_ID)</script>
         <con:endpoint>${#Project#API-Connect}</con:endpoint>
         <con:request>[
 	{
-		"said":${DataSource#SAID},
+		"said":"${#Project#Appliance_SAID}",
 		"default_structure_id":${#TestCase#Structure_ID},
 		"said_preferences":[
 			{
-		        "Key": ${DataSource#Key},
+		        "Key":${DataSource#Key},
 		        "Type": "home_away",
                 "value": true
             },
@@ -317,7 +317,8 @@ testRunner.testCase.setPropertyValue("Structure_ID", Structure_ID)</script>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="Authorization" value="Bearer ${#[Regression Suite#Authorize NEST user#GET Member Token]#Response#$['access_token']}" xmlns="http://eviware.com/soapui/config"/>
+          <con:entry key="Authorization" value="Bearer ${#[Regression Suite#Authorize NEST user#GET Member Token]#Response#$['access_token']}"/>
+          <con:entry key="wp-client-brand" value="Whirlpool"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>

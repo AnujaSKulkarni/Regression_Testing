@@ -279,7 +279,7 @@ if (API_Name != TestCaseName){
         </con:settings>
         <con:endpoint>${#Project#API-Connect}</con:endpoint>
         <con:request>{
-"said_id":${DataSource#SAID},
+"said_id":${#Project#Appliance_SAID},
 "thermostat_id":${#[Regression Suite#Add Rule]#Thermostate_ID},
 "trigger_temperature":${DataSource#trigger_temperature},
 "desired_temperature":${DataSource#desired_temperature},
