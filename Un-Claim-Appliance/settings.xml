@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="c60accd3-6808-42f1-aa2f-438e3d15493ffileName">Un-Claim-Appliance</con:setting>
   </con:settings>
-  
-  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints/>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints/>
   <con:environmentSpec>
     <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
       <con:authProfile>Inherit From Parent</con:authProfile>
@@ -30,5 +30,14 @@
     <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
-  <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
+    <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:interface>

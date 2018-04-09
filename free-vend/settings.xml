@@ -3,8 +3,8 @@
   <con:settings>
     <con:setting id="67ffb1d7-f7ba-4e2a-807d-a0cb4fd47661fileName">free-vend</con:setting>
   </con:settings>
-  
-  <con:definitionCache type="TEXT" rootPart=""/><con:endpoints>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
     <con:endpoint>http://api/freeV</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>
@@ -32,5 +32,14 @@
     <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
-  <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec>
+    <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:interface>
