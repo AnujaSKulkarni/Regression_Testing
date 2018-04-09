@@ -270,7 +270,7 @@ if (API_Name != TestCaseName){
         </con:settings>
         <con:endpoint>${API-Connect}</con:endpoint>
         <con:request>{              
-"said":"WPR333334UCD3",
+"said":"${#Project#Appliance_SAID}",
 "alertdef":{
   "alertPlatformType":"FabricCare"  
   },
