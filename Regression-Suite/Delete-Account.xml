@@ -353,6 +353,9 @@ if (API_Name != TestCaseName){
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
@@ -492,7 +495,8 @@ log.info "Report Generated"</script>
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource_RunTime</dataSourceStep>
-      <targetStep>GET Member Token</targetStep>
+      <targetStep>Delete Account</targetStep>
+      <discardResults>true</discardResults>
     </con:config>
   </con:testStep>
   <con:testStep type="datasourceloop" name="DataSource Loop" id="64b37392-ca7d-4324-96e5-df0d86d7df84">
@@ -553,6 +557,9 @@ log.info "Report Generated"</script>
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>

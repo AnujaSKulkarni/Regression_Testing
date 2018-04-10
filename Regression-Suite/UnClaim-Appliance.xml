@@ -263,7 +263,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="UnClaim Appliance" id="4f761f7c-a863-4f84-82ce-0103838c9a82" disabled="true">
     <con:settings/>
-    <con:config service="Un Claim Appliance" resourcePath="/appliances/unclaim/WPR333334UCD3" methodName="Un Claim Appliance" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Un Claim Appliance" resourcePath="/appliances/unclaim/${#Project#Appliance_SAID}" methodName="Un Claim Appliance" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="UnClaim Appliance" id="f78b6801-e42a-491d-99be-be4ecbb829e8" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -325,6 +325,9 @@ if (API_Name != TestCaseName){
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>

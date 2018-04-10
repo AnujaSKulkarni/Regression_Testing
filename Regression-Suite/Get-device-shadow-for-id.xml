@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="3e2816f5-1f38-44f1-8f22-9acd34591bc5" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Get device shadow for id" searchProperties="true" timeout="0" maxResults="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="3e2816f5-1f38-44f1-8f22-9acd34591bc5" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Get device shadow for id" searchProperties="true" timeout="0" maxResults="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="3e2816f5-1f38-44f1-8f22-9acd34591bc5fileName">Get-device-shadow-for-id</con:setting>
   </con:settings>
@@ -200,7 +200,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
-      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -282,7 +281,7 @@ testRunner.testCase.setPropertyValue("Device_Shadow_Name", Device_Shadow_Name)</
   </con:testStep>
   <con:testStep type="restrequest" name="Get device shadow for id_Positive" id="05965eb0-ed39-4074-8cdc-c382531dffd5" disabled="true">
     <con:settings/>
-    <con:config service="Get device shadow for id" resourcePath="/deviceshadow/${#TestCase#Device_Shadow_Name}" methodName="Get device shadow for id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Get device shadow for id" resourcePath="/deviceshadow/${#Project#Appliance_SAID}" methodName="Get device shadow for id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Get device shadow for id_Positive" id="29790405-256a-42ec-aa9d-8127214b09f7" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -345,13 +344,16 @@ testRunner.testCase.setPropertyValue("Device_Shadow_Name", Device_Shadow_Name)</
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
   <con:testStep type="restrequest" name="Get device shadow for id_Negative" id="7e666043-1bda-478e-b760-5ae5c421c83b" disabled="true">
     <con:settings/>
-    <con:config service="Get device shadow for id" resourcePath="/deviceshadow/${#TestCase#Device_Shadow_Name}" methodName="Get device shadow for id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Get device shadow for id" resourcePath="/deviceshadow/${#Project#Appliance_SAID}" methodName="Get device shadow for id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Get device shadow for id_Negative" id="29790405-256a-42ec-aa9d-8127214b09f7" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -412,6 +414,9 @@ testRunner.testCase.setPropertyValue("Device_Shadow_Name", Device_Shadow_Name)</
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>
@@ -612,6 +617,9 @@ out.close()</script>
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>

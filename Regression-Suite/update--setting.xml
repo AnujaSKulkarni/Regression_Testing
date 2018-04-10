@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="d5054182-acec-4a7e-a402-6a40a5d66b87" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="update -setting" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="d5054182-acec-4a7e-a402-6a40a5d66b87" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="update -setting" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="d5054182-acec-4a7e-a402-6a40a5d66b87fileName">update--setting</con:setting>
   </con:settings>
@@ -336,6 +336,9 @@ if (API_Name != TestCaseName){
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
@@ -486,7 +489,7 @@ out.close()</script>
     </con:property>
     <con:property>
       <con:name>id</con:name>
-      <con:value>"Refrigerator123-3UMP"</con:value>
+      <con:value>"[]"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

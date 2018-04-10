@@ -273,13 +273,13 @@ if (API_Name != TestCaseName){
       <con:dataSource type="JDBC">
         <con:configuration>
           <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txn-small-yp-dal10-91.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr>
-          <pass>Wcloudpro@read1</pass>
-          <Connection>DataBase( Pre_Prod )</Connection>
+          <connstr>jdbc:db2://dashdb-txnha-small-yp-dal09-13.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr>
+          <pass>Wcloudpro@read45</pass>
+          <Connection>DataBase( PROD )</Connection>
           <query>Select A.appliance_id as A_appliance_id, B.alert_id as B_alert_id
 From (Select app.appliance_id
     From BLUADMIN.appliance app
-    Where upper(app.said) = upper('WPR333334UCD3')) A, (Select ad.alert_id
+    Where upper(app.said) = upper('WPR333334TUG2')) A, (Select ad.alert_id
     From BLUADMIN.alert_definition ad
     Where upper(alert_name) = upper('ClothesDry')) B</query>
           <fetchSize/>
@@ -325,7 +325,7 @@ From (Select app.appliance_id
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="Authorization" value="bearer ${#[Regression Suite#GET Member Token#GET Member Token]#Response#$['access_token']}" xmlns="http://eviware.com/soapui/config"/>
+          <entry key="Authorization" value="Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}" xmlns="http://eviware.com/soapui/config"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
@@ -344,6 +344,9 @@ From (Select app.appliance_id
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>

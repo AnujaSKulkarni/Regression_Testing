@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="086e6fde-eddb-4ed5-aa45-9cf41274ece7" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update replenishment - update pods usage" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="086e6fde-eddb-4ed5-aa45-9cf41274ece7" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update replenishment - update pods usage" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="086e6fde-eddb-4ed5-aa45-9cf41274ece7fileName">Update-replenishment---update-pods-usage</con:setting>
   </con:settings>
@@ -200,7 +200,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
-      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -271,7 +270,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Update replenishment - update pods usage" id="94d4493e-b240-4dd9-8fb2-ec4207da8422">
+  <con:testStep type="restrequest" name="Update replenishment - update pods usage" id="94d4493e-b240-4dd9-8fb2-ec4207da8422" disabled="true">
     <con:settings/>
     <con:config service="Update replenishment - update pods usage" methodName="Update replenishment - update pods usage" resourcePath="/appliance/${#[Regression Suite#Update User Consent]#Appliance_ID}/replenishment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Update replenishment - update pods usage" id="d81a57cb-0e91-4984-8ba3-1c470139fd3e" mediaType="application/json" postQueryString="false">
@@ -332,11 +331,14 @@ if (API_Name != TestCaseName){
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="17ecd005-086c-4fcd-8db4-6858d5500df8">
+  <con:testStep type="groovy" name="Report" id="17ecd005-086c-4fcd-8db4-6858d5500df8" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

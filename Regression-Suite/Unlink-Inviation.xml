@@ -306,6 +306,9 @@ testRunner.testCase.setPropertyValue("email_id", rawRequest)</script>
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
@@ -445,7 +448,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>email_id</con:name>
-      <con:value>"FRI_MAR_30_16_10_23_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"MON_APR_09_18_47_26_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

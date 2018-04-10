@@ -229,7 +229,6 @@ testRunner.testCase.testSuite.setPropertyValue("Account_ID", Account_ID)</script
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
-      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -384,6 +383,9 @@ if (data_Combination == "Negative"){
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
@@ -450,6 +452,9 @@ if (data_Combination == "Negative"){
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>
@@ -597,7 +602,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value/>
+      <con:value>34377</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
@@ -645,6 +650,9 @@ out.close()</script>
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>

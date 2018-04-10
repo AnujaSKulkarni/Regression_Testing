@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="bd011a46-1d1c-43c7-a320-cc3543f68388" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Authorize NEST user" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="bd011a46-1d1c-43c7-a320-cc3543f68388" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Authorize NEST user" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="bd011a46-1d1c-43c7-a320-cc3543f68388fileName">Authorize-NEST-user</con:setting>
   </con:settings>
@@ -395,6 +395,9 @@ testRunner.testCase.setPropertyValue("code", Code[1])]]></script>
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
@@ -457,6 +460,9 @@ if (API_Name != TestCaseName){
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>
@@ -599,7 +605,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>code</con:name>
-      <con:value>CAWQX783RDZHTV2L</con:value>
+      <con:value>H8NNJC92MN5S2LDQ</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

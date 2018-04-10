@@ -200,7 +200,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
-      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -262,7 +261,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="getallinvitedmember" id="3baf989e-8b38-4c2a-9112-95ddf253d4a5">
+  <con:testStep type="restrequest" name="getallinvitedmember" id="3baf989e-8b38-4c2a-9112-95ddf253d4a5" disabled="true">
     <con:settings/>
     <con:config service="getallinvitedmember" resourcePath="/members/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" methodName="getallinvitedmember" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="getallinvitedmember" id="aa987182-fe19-47f6-8be5-e8a0e93ce082" mediaType="application/json">
@@ -272,6 +271,12 @@ if (API_Name != TestCaseName){
         <con:endpoint>${API-Connect}</con:endpoint>
         <con:request/>
         <con:originalUri>https://api-stg.whrcloud.com/api/v1/members/5522</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7750d1e6-8760-4865-8918-eb35fdce9501" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -294,11 +299,14 @@ if (API_Name != TestCaseName){
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="789de1bb-394c-4ef9-8e4d-571c9708d18c">
+  <con:testStep type="groovy" name="Report" id="789de1bb-394c-4ef9-8e4d-571c9708d18c" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

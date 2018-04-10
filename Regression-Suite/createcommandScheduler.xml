@@ -304,6 +304,11 @@ if (API_Name != TestCaseName){
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -442,15 +447,15 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>start_Date</con:name>
-      <con:value>1522407661075</con:value>
+      <con:value>1523280832708</con:value>
     </con:property>
     <con:property>
       <con:name>end_Date</con:name>
-      <con:value>1522421161075</con:value>
+      <con:value>1523294332708</con:value>
     </con:property>
     <con:property>
       <con:name>next_notification_time</con:name>
-      <con:value>1522424761075</con:value>
+      <con:value>1523297932708</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="7906bdad-30cd-4740-a016-577290952096" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Delete Rule" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="7906bdad-30cd-4740-a016-577290952096" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Delete Rule" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="7906bdad-30cd-4740-a016-577290952096fileName">Delete-Rule</con:setting>
   </con:settings>
@@ -285,6 +285,7 @@ if (API_Name != TestCaseName){
         <con:parameters>
           <con:entry key="Authorization" value="Bearer ${#[Regression Suite#Authorize NEST user#GET Member Token]#Response#$['access_token']}"/>
           <con:entry key="{dev_nest_url" value="{dev_nest_url"/>
+          <con:entry key="wp-client-brand" value="Whirlpool"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
@@ -301,6 +302,9 @@ if (API_Name != TestCaseName){
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>
