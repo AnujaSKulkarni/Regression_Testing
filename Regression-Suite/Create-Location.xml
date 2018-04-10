@@ -238,6 +238,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -845,7 +846,7 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>10956</con:value>
+      <con:value/>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
@@ -857,11 +858,11 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>Location</con:name>
-      <con:value>Regression_Location_Fri_Mar_30_16_10_18_IST_2018</con:value>
+      <con:value>Regression_Location_Mon_Apr_09_12_45_05_IST_2018</con:value>
     </con:property>
     <con:property>
       <con:name>Location_Name</con:name>
-      <con:value>"Location_Fri_Mar_30_16_10_23_IST_20184009934"</con:value>
+      <con:value>"Location_Mon_Apr_09_12_45_52_IST_20182206058"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

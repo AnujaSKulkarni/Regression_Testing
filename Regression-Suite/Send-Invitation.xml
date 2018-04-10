@@ -308,6 +308,7 @@ testRunner.testCase.setPropertyValue("Email_ID_string", Email_ID_string)</script
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -602,11 +603,11 @@ log.info "Report Generated"</script>
     </con:property>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"FRI_MAR_30_16_10_23_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"MON_APR_09_12_45_53_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>FRI_MAR_30_16_10_23_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>MON_APR_09_12_45_53_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

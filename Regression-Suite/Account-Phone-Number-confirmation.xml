@@ -236,6 +236,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -614,11 +615,11 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>10956</con:value>
+      <con:value/>
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
-      <con:value>460</con:value>
+      <con:value/>
     </con:property>
   </con:properties>
   <con:reportParameters/>
