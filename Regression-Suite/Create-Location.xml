@@ -827,11 +827,11 @@ out.close()</script>
       <con:name>Location_ID_Transfer</con:name>
       <con:value>HTTP/1.1 200 undefined
 Server: nginx/1.4.6 (Ubuntu)
-Date: Mon, 09 Apr 2018 13:53:53 GMT
+Date: Wed, 11 Apr 2018 13:41:03 GMT
 Content-Type: application/json
 Connection: keep-alive
 X-Backside-Transport: OK OK
-X-Global-Transaction-ID: 478566773
+X-Global-Transaction-ID: 1070223
 User-Agent: IBM-APIConnect/201
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
@@ -847,11 +847,11 @@ Expires: 0
 X-Frame-Options: DENY
 Strict-Transport-Security: max-age=15768000
 
-{"LOCATION_ID":34373,"CITY":"New York","ACCOUNT_ID":34379,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Location_Mon_Apr_09_19_23_50_IST_20182074940","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York","RATE_PLAN_NAME":"Tariff"}</con:value>
+{"LOCATION_ID":35052,"CITY":"New York","ACCOUNT_ID":35065,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Location_Wed_Apr_11_19_11_00_IST_20184105973","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York","RATE_PLAN_NAME":"Tariff"}</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>34379</con:value>
+      <con:value>35065</con:value>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
@@ -863,11 +863,11 @@ Strict-Transport-Security: max-age=15768000
     </con:property>
     <con:property>
       <con:name>Location</con:name>
-      <con:value>Regression_Location_Mon_Apr_09_19_23_50_IST_2018</con:value>
+      <con:value>Regression_Location_Wed_Apr_11_19_11_00_IST_2018</con:value>
     </con:property>
     <con:property>
       <con:name>Location_Name</con:name>
-      <con:value>"Location_Mon_Apr_09_19_23_53_IST_20186480673"</con:value>
+      <con:value>"Location_Wed_Apr_11_19_11_04_IST_20186163253"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
