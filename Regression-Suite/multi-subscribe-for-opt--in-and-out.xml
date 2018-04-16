@@ -273,9 +273,9 @@ if (API_Name != TestCaseName){
       <con:dataSource type="JDBC">
         <con:configuration>
           <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txnha-small-yp-dal09-13.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr>
-          <pass>Wcloudpro@read45</pass>
-          <Connection>DataBase( PROD )</Connection>
+          <connstr>jdbc:db2://dashdb-txn-small-yp-dal10-91.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr>
+          <pass>Wcloudpro@read1</pass>
+          <Connection>DataBase( Pre_Prod )</Connection>
           <query>Select A.appliance_id as A_appliance_id, B.alert_id as B_alert_id
 From (Select app.appliance_id
     From BLUADMIN.appliance app

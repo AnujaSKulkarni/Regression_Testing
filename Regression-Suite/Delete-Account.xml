@@ -266,7 +266,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource_RunTime" id="801becf4-1c35-46e4-9931-f0640fd1b219">
+  <con:testStep type="datasource" name="DataSource_RunTime" id="801becf4-1c35-46e4-9931-f0640fd1b219" disabled="true">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
@@ -288,7 +288,7 @@ if (API_Name != TestCaseName){
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Account" id="08f0f107-09ca-4dad-9d35-e274c0660397">
+  <con:testStep type="restrequest" name="Delete Account" id="08f0f107-09ca-4dad-9d35-e274c0660397" disabled="true">
     <con:settings/>
     <con:config service="Delete Account" resourcePath="/client_auth/accounts/${DataSource_RunTime#Account_ID_Number}" methodName="Delete Account" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete Account" id="bb6390f9-a30f-48ca-b53a-ca7cae11b0b2" mediaType="application/json" postQueryString="false">
@@ -491,7 +491,7 @@ out.close()
 log.info "Report Generated"</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop_RunTime" id="5c903152-122d-47bd-90f4-e73a2e0bf27b">
+  <con:testStep type="datasourceloop" name="DataSource Loop_RunTime" id="5c903152-122d-47bd-90f4-e73a2e0bf27b" disabled="true">
     <con:settings/>
     <con:config>
       <dataSourceStep>DataSource_RunTime</dataSourceStep>
