@@ -200,7 +200,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
-      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -262,7 +261,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Command and Control - Set Attribute(s)" id="45dfb6f1-ab97-45c0-98a1-f09df3981267" disabled="true">
+  <con:testStep type="restrequest" name="Command and Control - Set Attribute(s)" id="45dfb6f1-ab97-45c0-98a1-f09df3981267">
     <con:settings/>
     <con:config service="Command and Control - Set Attribute(s)" resourcePath="/appliance/command" methodName="Command and Control - Set Attribute(s)" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Command and Control - Set Attribute(s)" id="21f0d580-813c-40ca-8714-9d6185a24b32" mediaType="application/json" postQueryString="false">
@@ -345,7 +344,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="5c74b813-f16b-4f29-b1bd-3136b334c5a4" disabled="true">
+  <con:testStep type="groovy" name="Report" id="5c74b813-f16b-4f29-b1bd-3136b334c5a4">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

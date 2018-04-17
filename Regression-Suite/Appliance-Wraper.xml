@@ -200,7 +200,6 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
-      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -273,7 +272,7 @@ if (API_Name != TestCaseName){
         <con:request>{
         "applianceName": "dryer",
         "said":"${#Project#Appliance_SAID}",
-        "locationId":${#Project#Location_ID}
+        "locationId":${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}
         }</con:request>
         <con:originalUri>https://api-test.whrcloud.com/api/v1/appliances/claim/</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="136a70db-fd2b-4243-a4f7-52651b059f52" name="Valid HTTP Status Codes">

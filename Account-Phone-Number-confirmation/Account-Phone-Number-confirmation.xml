@@ -25,6 +25,12 @@
       <con:params/>
       <con:element xmlns:ns="https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/accounts/confirm_phone/4211/1234">ns:Fault</con:element>
     </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/accounts/confirm_phone/4211/1234">ns:Response</con:element>
+    </con:representation>
     <con:request name="Account Phone Number confirmation" id="8a3f64c1-3406-4942-acb9-69c0144db28d" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
