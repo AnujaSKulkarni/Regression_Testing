@@ -622,7 +622,7 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>SAT_APR_14_11_59_11_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>WED_APR_18_14_29_40_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
