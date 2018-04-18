@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="DeauthorizeUser" path="/location/${#Project#Location_ID}/deauthorizeUser" id="adcd6c80-36f8-443a-873b-d30e54e6f7c1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="DeauthorizeUser" path="/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}/deauthorizeUser" id="adcd6c80-36f8-443a-873b-d30e54e6f7c1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="adcd6c80-36f8-443a-873b-d30e54e6f7c1fileName">DeauthorizeUser</con:setting>
   </con:settings>

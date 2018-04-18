@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="74bed9a8-e3d1-4277-9354-b4337b8c1fda" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="UpdateUserNestPreference" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="74bed9a8-e3d1-4277-9354-b4337b8c1fda" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="UpdateUserNestPreference" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="74bed9a8-e3d1-4277-9354-b4337b8c1fdafileName">UpdateUserNestPreference</con:setting>
   </con:settings>
@@ -200,6 +200,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -279,7 +280,7 @@ testRunner.testCase.setPropertyValue("Structure_ID", Structure_ID)</script>
   </con:testStep>
   <con:testStep type="restrequest" name="UpdateUserNestPreference" id="3b7d5b4e-199f-407d-8823-d7e715caa7ed" disabled="true">
     <con:settings/>
-    <con:config service="UpdateUserNestPreference" resourcePath="/location/${#Project#Location_ID}/userNestPreference" methodName="UpdateUserNestPreference" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="UpdateUserNestPreference" resourcePath="/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}/userNestPreference" methodName="UpdateUserNestPreference" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="UpdateUserNestPreference" id="a9843bb0-f110-4d34-98ff-dc1c5b9f3552" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -317,7 +318,7 @@ testRunner.testCase.setPropertyValue("Structure_ID", Structure_ID)</script>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="Bearer ${#[Regression Suite#Authorize NEST user#GET Member Token]#Response#$['access_token']}"/>
+          <con:entry key="Authorization" value="Bearer ${access_token}"/>
           <con:entry key="wp-client-brand" value="Whirlpool"/>
         </con:parameters>
         <con:parameterOrder>

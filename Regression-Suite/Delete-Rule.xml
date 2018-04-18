@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="7906bdad-30cd-4740-a016-577290952096" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Delete Rule" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="7906bdad-30cd-4740-a016-577290952096" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Delete Rule" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="7906bdad-30cd-4740-a016-577290952096fileName">Delete-Rule</con:setting>
   </con:settings>
@@ -200,6 +200,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -263,7 +264,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Delete Rule" id="7366905f-030e-403e-89f2-62fda4cc8309" disabled="true">
     <con:settings/>
-    <con:config service="Delete Rule" resourcePath="/location/${#Project#Location_ID}/nestRule/rule/${#[Regression Suite#Add Rule#Add Rule]#Response#$[0]['RULE_ID']}" methodName="Delete Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Delete Rule" resourcePath="/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}/nestRule/rule/${#[Regression Suite#Add Rule#Add Rule]#Response#$[0]['RULE_ID']}" methodName="Delete Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Delete Rule" id="68596280-f1de-4b03-81bb-5cb3dc70bbc9" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -283,7 +284,7 @@ if (API_Name != TestCaseName){
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="Bearer ${#[Regression Suite#Authorize NEST user#GET Member Token]#Response#$['access_token']}"/>
+          <con:entry key="Authorization" value="Bearer ${access_token}"/>
           <con:entry key="{dev_nest_url" value="{dev_nest_url"/>
           <con:entry key="wp-client-brand" value="Whirlpool"/>
         </con:parameters>

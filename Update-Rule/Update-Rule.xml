@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Update Rule" path="/location/${#Project#Location_ID}/nestRule/rule/${#[Regression Suite#Add Rule#Add Rule]#Response#$[0]['RULE_ID']}" id="e9731598-67f2-43cb-9840-e41308b1325a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Update Rule" path="/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}/nestRule/rule/${#[Regression Suite#Add Rule#Add Rule]#Response#$[0]['RULE_ID']}" id="e9731598-67f2-43cb-9840-e41308b1325a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="e9731598-67f2-43cb-9840-e41308b1325afileName">Update-Rule</con:setting>
   </con:settings>

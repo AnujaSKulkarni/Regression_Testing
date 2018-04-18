@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="fb33a1e1-c9e1-4e1d-a5b1-ec1b169f312c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update Rule" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="fb33a1e1-c9e1-4e1d-a5b1-ec1b169f312c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update Rule" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="fb33a1e1-c9e1-4e1d-a5b1-ec1b169f312cfileName">Update-Rule</con:setting>
   </con:settings>
@@ -200,6 +200,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -272,14 +273,14 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Update Rule" id="30c7dee6-37f3-4f79-b6eb-823a445c8e4c" disabled="true">
     <con:settings/>
-    <con:config service="Update Rule" resourcePath="/location/${#Project#Location_ID}/nestRule/rule/${#[Regression Suite#Add Rule#Add Rule]#Response#$[0]['RULE_ID']}" methodName="Update Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Update Rule" resourcePath="/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}/nestRule/rule/${#[Regression Suite#Add Rule#Add Rule]#Response#$[0]['RULE_ID']}" methodName="Update Rule" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Update Rule" id="9d93a163-fd68-411d-91f6-242ddd5c34f9" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:endpoint>${#Project#API-Connect}</con:endpoint>
         <con:request>{
-"said_id":${#Project#Appliance_SAID},
+"said_id":"${#Project#Appliance_SAID}",
 "thermostat_id":${#[Regression Suite#Add Rule]#Thermostate_ID},
 "trigger_temperature":${DataSource#trigger_temperature},
 "desired_temperature":${DataSource#desired_temperature},
@@ -298,7 +299,7 @@ if (API_Name != TestCaseName){
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="Authorization" value="Bearer ${#[Regression Suite#Authorize NEST user#GET Member Token]#Response#$['access_token']}" xmlns="http://eviware.com/soapui/config"/>
+          <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>

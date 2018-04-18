@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="ae44d359-c139-4470-8bdd-c4b3f017265e" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update replenishment - update current qty" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="ae44d359-c139-4470-8bdd-c4b3f017265e" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update replenishment - update current qty" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="ae44d359-c139-4470-8bdd-c4b3f017265efileName">Update-replenishment---update-current-qty</con:setting>
   </con:settings>
@@ -200,6 +200,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>

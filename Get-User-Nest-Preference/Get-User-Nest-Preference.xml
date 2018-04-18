@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Get User Nest Preference" path="/location/${#Project#Location_ID}/userNestPreference" id="18bc8182-074e-43b6-a030-0b0d7505c40b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Get User Nest Preference" path="/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}/userNestPreference" id="18bc8182-074e-43b6-a030-0b0d7505c40b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="18bc8182-074e-43b6-a030-0b0d7505c40bfileName">Get-User-Nest-Preference</con:setting>
   </con:settings>

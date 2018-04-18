@@ -200,6 +200,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -475,7 +476,7 @@ log.info "Report Generated"</script>
   <con:properties>
     <con:property>
       <con:name>Application</con:name>
-      <con:value>"Sat_Apr_14_12_11_03_IST_2018"</con:value>
+      <con:value>"Wed_Apr_18_15_06_09_IST_2018"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

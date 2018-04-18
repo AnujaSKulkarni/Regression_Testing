@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Get Rule" path="/location/${#Project#Location_ID}/nestRules" id="01243168-f415-4610-ae50-f0bdf8f6a7cf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Get Rule" path="/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}/nestRules" id="01243168-f415-4610-ae50-f0bdf8f6a7cf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="01243168-f415-4610-ae50-f0bdf8f6a7cffileName">Get-Rule</con:setting>
   </con:settings>

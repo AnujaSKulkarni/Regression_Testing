@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="8ecba200-f7f9-42a8-9c49-b2ae45d07a9b" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Get User Nest Preference" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="8ecba200-f7f9-42a8-9c49-b2ae45d07a9b" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Get User Nest Preference" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="8ecba200-f7f9-42a8-9c49-b2ae45d07a9bfileName">Get-User-Nest-Preference</con:setting>
   </con:settings>
@@ -200,6 +200,7 @@ if(RunTimeDataSource_Flag == true){
       <con:property>enable_cloth_spin</con:property>
       <con:property>First_Name</con:property>
       <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
       <con:property>inv__description</con:property>
       <con:property>JSON_Body</con:property>
       <con:property>Key</con:property>
@@ -263,7 +264,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Get User Nest Preference" id="9792cef4-d5a5-499a-9498-fd10b67381f1" disabled="true">
     <con:settings/>
-    <con:config service="Get User Nest Preference" resourcePath="/location/${#Project#Location_ID}/userNestPreference" methodName="Get User Nest Preference" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Get User Nest Preference" resourcePath="/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}/userNestPreference" methodName="Get User Nest Preference" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Get User Nest Preference" id="1add0477-f44a-428e-b628-e4df3df26e35" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -283,8 +284,7 @@ if (API_Name != TestCaseName){
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="Bearer ${#[Regression Suite#Authorize NEST user#GET Member Token]#Response#$['access_token']}"/>
-          <con:entry key="wp-client-brand" value="Whirlpool"/>
+          <entry key="wp-client-brand" value="Whirlpool" xmlns="http://eviware.com/soapui/config"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>

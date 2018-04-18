@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Authorize NEST user" path="/location/${#Project#Location_ID}/authorizeUser/code/${#TestCase#code}" id="fc6c3797-e14d-40ce-b628-ca8d18e2b01e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Authorize NEST user" path="/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}/authorizeUser/code/${#TestCase#code}" id="fc6c3797-e14d-40ce-b628-ca8d18e2b01e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="fc6c3797-e14d-40ce-b628-ca8d18e2b01efileName">Authorize-NEST-user</con:setting>
   </con:settings>

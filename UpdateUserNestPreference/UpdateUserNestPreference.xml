@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="UpdateUserNestPreference" path="/location/${#Project#Location_ID}/userNestPreference" id="56026566-a735-4117-8037-800c6d1540da" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="UpdateUserNestPreference" path="/location/${#[Regression Suite#Create Location#Create Location_Positive]#Response#$['LOCATION_ID']}/userNestPreference" id="56026566-a735-4117-8037-800c6d1540da" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="56026566-a735-4117-8037-800c6d1540dafileName">UpdateUserNestPreference</con:setting>
   </con:settings>
