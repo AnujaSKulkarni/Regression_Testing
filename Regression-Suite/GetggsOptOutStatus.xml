@@ -261,7 +261,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="GetggsOptOutStatus" id="f4af9044-2bc0-47a6-8b8e-81b18b6dff30">
+  <con:testStep type="restrequest" name="GetggsOptOutStatus" id="f4af9044-2bc0-47a6-8b8e-81b18b6dff30" disabled="true">
     <con:settings/>
     <con:config service="GetggsOptOutStatus" resourcePath="/ggsOptOutStatus" methodName="GetggsOptOutStatus" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="GetggsOptOutStatus" id="c2ea6f02-bb90-4b2c-af2c-e52b02acb858" mediaType="application/json">
@@ -311,7 +311,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="b52cd12e-53a9-442c-a21c-462ef2ec3833">
+  <con:testStep type="groovy" name="Report" id="b52cd12e-53a9-442c-a21c-462ef2ec3833" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

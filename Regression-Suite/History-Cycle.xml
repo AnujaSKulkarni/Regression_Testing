@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="8218aad0-05d6-4843-a615-9b3c6b921891" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="History-Cycle" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="8218aad0-05d6-4843-a615-9b3c6b921891" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="History-Cycle" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="8218aad0-05d6-4843-a615-9b3c6b921891fileName">History-Cycle</con:setting>
   </con:settings>

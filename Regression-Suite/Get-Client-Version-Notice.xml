@@ -492,7 +492,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Client_Version_Notice</con:name>
-      <con:value>12311</con:value>
+      <con:value>30</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

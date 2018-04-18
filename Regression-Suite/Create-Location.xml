@@ -351,9 +351,9 @@ testRunner.testCase.setPropertyValue("Location_Name", LocationName)</script>
       <con:dataSource type="JDBC">
         <con:configuration>
           <driver>com.ibm.db2.jcc.DB2Driver</driver>
-          <connstr>jdbc:db2://dashdb-txn-small-yp-dal10-91.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr>
-          <pass>Wcloudpro@read1</pass>
-          <Connection>DataBase( Pre_Prod )</Connection>
+          <connstr>jdbc:db2://dashdb-txnha-small-yp-dal09-13.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</connstr>
+          <pass>Wcloudpro@read45</pass>
+          <Connection>DataBase( PROD )</Connection>
           <query>Select st.STATE_ID As st_STATE_ID, st.COUNTRY_ID As st_COUNTRY_ID,
   con.COUNTRY_ID As con_COUNTRY_ID, con.COUNTRY_CODE As con_COUNTRY_CODE
 From BLUADMIN.STATE st Inner Join
@@ -826,33 +826,33 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Location_ID_Transfer</con:name>
-      <con:value>HTTP/1.1 200 OK
+      <con:value>HTTP/1.1 200 undefined
+Server: nginx/1.4.6 (Ubuntu)
+Date: Wed, 18 Apr 2018 12:56:47 GMT
+Content-Type: application/json
+Connection: keep-alive
 X-Backside-Transport: OK OK
-Date: Wed, 18 Apr 2018 09:39:10 GMT
-X-Global-Transaction-ID: 273777445
+X-Global-Transaction-ID: 90310161
 User-Agent: IBM-APIConnect/201
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
 Access-Control-Max-Age: 3600
 Access-Control-Allow-Headers: X-PINGOTHER,Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization
 Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,xsrf-token
-X-Application-Context: wcloud-location-service (Dev):pre-prod
+X-Application-Context: wcloud-location-service (Dev):prod
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Transfer-Encoding: chunked
-Content-Type: application/json
-Via: 1.1 pps2cwebproxy01.syntelorg.com:8080 (Cisco-WSA/9.1.2-022)
-Connection: keep-alive
+Strict-Transport-Security: max-age=15768000
 
-{"LOCATION_ID":44706,"CITY":"New York","ACCOUNT_ID":101750,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Location_Wed_Apr_18_15_09_06_IST_20189096742","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York","RATE_PLAN_NAME":"Tariff"}</con:value>
+{"LOCATION_ID":36079,"CITY":"New York","ACCOUNT_ID":36082,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Location_Wed_Apr_18_18_26_44_IST_20187661370","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York","RATE_PLAN_NAME":"Tariff"}</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>101750</con:value>
+      <con:value>36082</con:value>
     </con:property>
     <con:property>
       <con:name>State_Name</con:name>
@@ -864,11 +864,11 @@ Connection: keep-alive
     </con:property>
     <con:property>
       <con:name>Location</con:name>
-      <con:value>Regression_Location_Wed_Apr_18_15_09_06_IST_2018</con:value>
+      <con:value>Regression_Location_Wed_Apr_18_18_26_44_IST_2018</con:value>
     </con:property>
     <con:property>
       <con:name>Location_Name</con:name>
-      <con:value>"Location_Wed_Apr_18_15_09_11_IST_20187106599"</con:value>
+      <con:value>"Location_Wed_Apr_18_18_26_48_IST_20182105634"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
