@@ -186,7 +186,7 @@ testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</scrip
           <file>${Test_Data_Path}</file>
           <worksheet>Data</worksheet>
           <cell>A2</cell>
-          <ignoreEmpty>false</ignoreEmpty>
+          <ignoreEmpty>true</ignoreEmpty>
           <evaluateFormulas>false</evaluateFormulas>
         </con:configuration>
       </con:dataSource>
