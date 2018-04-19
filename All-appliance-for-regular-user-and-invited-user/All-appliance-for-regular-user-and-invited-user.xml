@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="All appliance for regular user and invited user" path="/appliance/allAppliances/account/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" id="9a1d3799-1e8b-49bd-ac95-f4d7005d5fa0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9a1d3799-1e8b-49bd-ac95-f4d7005d5fa0fileName">All-appliance-for-regular-user-and-invited-user</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="All appliance for regular user and invited user" id="94b57be8-eb85-4862-ba4b-662a7b782dea" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}</con:default>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://api-test.whrcloud.com/api/v1/api/v1/appliance/allAppliances/account/13325">ns:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://api-test.whrcloud.com/api/v1/api/v1/appliance/allAppliances/account/13325">ns:Response</con:element>
+    </con:representation>
+    <con:request name="All appliance for regular user and invited user" id="f1c6f6e9-b873-4e29-8d3a-b8f556e168e8" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

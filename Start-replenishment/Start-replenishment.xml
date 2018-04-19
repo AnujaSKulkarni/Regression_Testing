@@ -46,7 +46,7 @@
     </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json</con:mediaType>
-      <con:status>404 400</con:status>
+      <con:status>404 400 401</con:status>
       <con:params/>
       <con:element xmlns:star="http://amazonreplenishmentserviceqa-v2.mybluemix.net/api/v1/appliances/58/replenishment/start">star:Fault</con:element>
     </con:representation>

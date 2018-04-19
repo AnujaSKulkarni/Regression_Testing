@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Device Registered Notification" path="" id="06172921-b183-4ab6-9690-bfbec9286a7a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Device Registered Notification" path="/replenish/notifications" id="06172921-b183-4ab6-9690-bfbec9286a7a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="06172921-b183-4ab6-9690-bfbec9286a7afileName">Device-Registered-Notification</con:setting>
   </con:settings>
@@ -53,6 +53,12 @@
       <con:status>404</con:status>
       <con:params/>
       <con:element>data</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+      <con:status>405</con:status>
+      <con:params/>
+      <con:element xmlns:not="https://amazonreplenishmentserviceqa-v2.mybluemix.net/replenish/notifications">not:Fault</con:element>
     </con:representation>
     <con:request name="Device Registered Notification" id="772c4e9a-fe52-46e9-9483-86dc725a5508" mediaType="application/json" postQueryString="false">
       <con:settings>

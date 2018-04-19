@@ -163,7 +163,7 @@
     <con:databaseConnection>
       <con:name>DataBase</con:name>
       <con:driver>com.ibm.db2.jcc.DB2Driver</con:driver>
-      <con:connectionString>jdbc:db2://dashdb-txnha-small-yp-dal09-13.services.dal.bluemix.net:50000/BLUDB:user=dashdbread;password=PASS_VALUE;</con:connectionString>
+      <con:connectionString>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</con:connectionString>
       <con:password>Syntel@mb5027676</con:password>
       <con:connectionProperties/>
     </con:databaseConnection>
@@ -702,10 +702,19 @@
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="History-Cycle">
-      <con:endpoint authProfile="No Authorization">https://{{API-Connect}}</con:endpoint>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="UnRegisterDeviceIdForPush">
-      <con:endpoint authProfile="No Authorization"/>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="DDM notification">
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Appliance Category">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="All appliance for regular user and invited user">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:property>
       <con:name>Location</con:name>
@@ -781,7 +790,7 @@
     </con:property>
     <con:property>
       <con:name>Slot_1</con:name>
-      <con:value>\"153fd300-679f-4570-8edc-57895d2db5f1\"</con:value>
+      <con:value>\"8b6b0d10-0292-40e6-a6db-77d6accb7a90\"</con:value>
     </con:property>
     <con:property>
       <con:name>Slot_2</con:name>
@@ -805,7 +814,7 @@
     </con:property>
     <con:property>
       <con:name>Appliance_SAID</con:name>
-      <con:value/>
+      <con:value>WPR333334UCD3</con:value>
     </con:property>
     <con:databaseConnectionContainer>
       <con:databaseConnection>
@@ -1351,6 +1360,15 @@
       <con:endpoint authProfile="No Authorization"/>
     </con:service>
     <con:service type="REST" name="UnRegisterDeviceIdForPush">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="DDM notification">
+      <con:endpoint authProfile="Inherit From Parent"/>
+    </con:service>
+    <con:service type="REST" name="Appliance Category">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="All appliance for regular user and invited user">
       <con:endpoint authProfile="No Authorization"/>
     </con:service>
     <con:property>
@@ -1999,6 +2017,15 @@
     <con:service type="REST" name="UnRegisterDeviceIdForPush">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
+    <con:service type="REST" name="DDM notification">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Appliance Category">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
+    <con:service type="REST" name="All appliance for regular user and invited user">
+      <con:endpoint authProfile="No Authorization"/>
+    </con:service>
     <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationservicestg-v2.mybluemix.net/api/v1</con:value>
@@ -2073,7 +2100,7 @@
     </con:property>
     <con:property>
       <con:name>Slot_1</con:name>
-      <con:value>\"153fd300-679f-4570-8edc-57895d2db5f1\"</con:value>
+      <con:value>\"1\"</con:value>
     </con:property>
     <con:property>
       <con:name>Slot_2</con:name>
@@ -2645,6 +2672,15 @@
     <con:service type="REST" name="UnRegisterDeviceIdForPush">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
+    <con:service type="REST" name="DDM notification">
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Appliance Category">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="All appliance for regular user and invited user">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
     <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationserviceqa-v2.mybluemix.net/api/v1</con:value>
@@ -2711,7 +2747,7 @@
     </con:property>
     <con:property>
       <con:name>Appliance_Number</con:name>
-      <con:value>\"488\"</con:value>
+      <con:value>\"8719\"</con:value>
     </con:property>
     <con:property>
       <con:name>Device_Model_ID</con:name>
@@ -2719,7 +2755,7 @@
     </con:property>
     <con:property>
       <con:name>Slot_1</con:name>
-      <con:value>\"153fd300-679f-4570-8edc-57895d2db5f1\"</con:value>
+      <con:value>\"1\"</con:value>
     </con:property>
     <con:property>
       <con:name>Slot_2</con:name>
@@ -3073,25 +3109,25 @@
       <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
     <con:service type="REST" name="Device Registered Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentserviceqa-v2.kube-cluster-residen.us-south.containers.mybluemix.net</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservice.wcloud.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Device Deregistered Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentserviceqa-v2.kube-cluster-residen.us-south.containers.mybluemix.net</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservice.wcloud.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Subscription Changed Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentserviceqa-v2.kube-cluster-residen.us-south.containers.mybluemix.net</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservice.wcloud.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Order Placed Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentserviceqa-v2.kube-cluster-residen.us-south.containers.mybluemix.net</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservice.wcloud.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Local Amazon - user Refresh Token">
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://api.amazon.com</con:endpoint>
     </con:service>
     <con:service type="REST" name="Item Shipped Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentserviceqa-v2.kube-cluster-residen.us-south.containers.mybluemix.net</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservice.wcloud.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Order Cancelled Notification">
-      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentserviceqa-v2.kube-cluster-residen.us-south.containers.mybluemix.net</con:endpoint>
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://amazonreplenishmentservice.wcloud.us-south.containers.mybluemix.net</con:endpoint>
     </con:service>
     <con:service type="REST" name="Get replenishment">
       <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
@@ -3291,6 +3327,15 @@
     <con:service type="REST" name="UnRegisterDeviceIdForPush">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
     </con:service>
+    <con:service type="REST" name="DDM notification">
+      <con:endpoint authProfile="Inherit From Parent">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Appliance Category">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="All appliance for regular user and invited user">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${API-Connect}</con:endpoint>
+    </con:service>
     <con:property>
       <con:name>Location</con:name>
       <con:value>http://locationserviceqa-v2.mybluemix.net/api/v1</con:value>
@@ -3357,15 +3402,15 @@
     </con:property>
     <con:property>
       <con:name>Appliance_Number</con:name>
-      <con:value>\"488\"</con:value>
+      <con:value>\"12693\"</con:value>
     </con:property>
     <con:property>
       <con:name>Device_Model_ID</con:name>
-      <con:value>\"TopLoadWasher8700-EBLDEV\"</con:value>
+      <con:value>\"TopLoadDryerE8700\"</con:value>
     </con:property>
     <con:property>
       <con:name>Slot_1</con:name>
-      <con:value>\"153fd300-679f-4570-8edc-57895d2db5f1\"</con:value>
+      <con:value>\"1\"</con:value>
     </con:property>
     <con:property>
       <con:name>Slot_2</con:name>

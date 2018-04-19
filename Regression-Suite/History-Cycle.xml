@@ -264,7 +264,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="History-Cycle" id="8c9b26db-ab6f-4d88-b6f2-fbcd51bf8b54">
+  <con:testStep type="restrequest" name="History-Cycle" id="8c9b26db-ab6f-4d88-b6f2-fbcd51bf8b54" disabled="true">
     <con:settings/>
     <con:config service="History-Cycle" resourcePath="/history/cycle" methodName="History-Cycle" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="History-Cycle" id="18b044aa-9d7c-4bc5-b6ac-1c73f33d2240" mediaType="application/json" postQueryString="false">
@@ -279,6 +279,7 @@ if (API_Name != TestCaseName){
 "start":"1010862442000",
 "end":"1522157400000"
 }</con:request>
+        <con:originalUri>https://api.whrcloud.com/api/v1/history/cycle</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="e5c06e94-f424-4270-a0b3-f6f21dc32271" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
@@ -302,7 +303,7 @@ if (API_Name != TestCaseName){
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="62e537c8-71e0-4c29-a540-901ce1f21ba3">
+  <con:testStep type="groovy" name="Report" id="62e537c8-71e0-4c29-a540-901ce1f21ba3" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

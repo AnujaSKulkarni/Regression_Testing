@@ -46,7 +46,7 @@
     </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json</con:mediaType>
-      <con:status>400</con:status>
+      <con:status>400 401</con:status>
       <con:params/>
       <con:element xmlns:rep="http://amazonreplenishmentservicedev-v2.mybluemix.net/api/v1/appliance/67/replenishment">rep:Fault</con:element>
     </con:representation>

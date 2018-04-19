@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Update User Consent" path="/userConsent/${#[Regression Suite#Update User Consent]#Appliance_ID}" id="5032fdf1-dd49-4256-9705-b5fc805bd4e9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Update User Consent" path="/userConsent/${#TestCase#Appliance_ID}" id="5032fdf1-dd49-4256-9705-b5fc805bd4e9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="5032fdf1-dd49-4256-9705-b5fc805bd4e9fileName">Update-User-Consent</con:setting>
   </con:settings>

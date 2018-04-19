@@ -565,7 +565,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Device_Shadow_Name</con:name>
-      <con:value/>
+      <con:value>WPR333334UCD3</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

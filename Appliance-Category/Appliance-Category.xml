@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Appliance Category" path="/applianceCategories" id="adc9eae6-7e4b-4721-8b75-13a161b146a1" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="adc9eae6-7e4b-4721-8b75-13a161b146a1fileName">Appliance-Category</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Appliance Category" id="2808b07f-f8b1-45cf-84b7-5f4576b8a690" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default>Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}</con:default>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:request name="Appliance Category" id="867e78c1-e9c9-4bfd-9b36-9ca01581245b" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

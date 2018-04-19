@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="090ad400-737a-436c-918a-67fab61c8507" wadlVersion="http://wadl.dev.java.net/2009/02" name="All appliance for regular user and invited user" type="rest" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings>
+    <con:setting id="090ad400-737a-436c-918a-67fab61c8507fileName">All-appliance-for-regular-user-and-invited-user</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://applianceservicedev-v2.mybluemix.net</con:endpoint>
+  </con:endpoints>
+</con:interface>

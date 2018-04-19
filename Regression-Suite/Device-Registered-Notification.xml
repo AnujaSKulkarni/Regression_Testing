@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="4552a350-2e0f-4d56-b696-abf914048adb" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Device Registered Notification" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="4552a350-2e0f-4d56-b696-abf914048adb" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Device Registered Notification" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="4552a350-2e0f-4d56-b696-abf914048adbfileName">Device-Registered-Notification</con:setting>
   </con:settings>
@@ -273,7 +273,7 @@ if (API_Name != TestCaseName){
   </con:testStep>
   <con:testStep type="restrequest" name="Device Registered Notification" id="421254c5-05a4-4b95-98fc-19e727ead0be" disabled="true">
     <con:settings/>
-    <con:config service="Device Registered Notification" resourcePath="" methodName="Device Registered Notification" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="Device Registered Notification" resourcePath="/replenish/notifications" methodName="Device Registered Notification" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Device Registered Notification" id="2ccf7073-0d6a-473b-aea4-ab033d683751" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -289,7 +289,7 @@ if (API_Name != TestCaseName){
    },
    "Type":"Notification",
    "TopicArn":"arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV",
-   "Message":"{\"notificationInfo\":{\"notificationType\":\"DeviceRegisteredNotification\",\"lwaClientId\":\"amzn1.application-oa2-client.5d3e65cb51e34155aff669682e248130\",\"notificationTime\":\"2017-09-20T20:02:30.655Z\",\"notificationId\":\"amzn1.dash.notification.v1.01284574-0919-48b7-8a95-49ec24673cba\",\"version\":\"2015-06-05\"},\"deviceInfo\":{\"deviceIdentifier\":{\"serialNumber\":\"12423\"},\"productIdentifier\":{\"modelId\":\"V10KWasher\"}},\"customerInfo\":{\"directedCustomerId\":\"amzn1.account.AHV2UB34C6YHUGKVBKCR2MUHW2BQ\"}}",
+   "Message":"{\"notificationInfo\":{\"notificationType\":\"DeviceRegisteredNotification\",\"lwaClientId\":\"${#[Regression Suite#Set access token#Set access token]#RawRequest#$['clientId']}\",\"notificationTime\":\"2017-09-20T20:02:30.655Z\",\"notificationId\":\"amzn1.dash.notification.v1.01284574-0919-48b7-8a95-49ec24673cba\",\"version\":\"2015-06-05\"},\"deviceInfo\":{\"deviceIdentifier\":{\"serialNumber\":\"${#[Regression Suite#Update User Consent]#Appliance_ID}\"},\"productIdentifier\":{\"modelId\":${#Project#Device_Model_ID}}},\"customerInfo\":{\"directedCustomerId\":\"amzn1.account.AHV2UB34C6YHUGKVBKCR2MUHW2BQ\"}}",
    "UnsubscribeURL":"https://sns.us-west-2.amazonaws.com/?Action=Unsubscribe&amp;SubscriptionArn=arn:aws:sns:us-west-2:447226664845:WCloud_NAR_DEV:4f6a1f49-8bd9-4051-bfba-ec473d165cad",
    "Signature":"Kp0z6h9hw6tA65a5eb+hnZUqn4ARcz5vfWlaa4fIAqce81ONTrrzEcLqIn59KLG7v8rA7yR6FFMwggjf2TwXvMOVM8uLB4LbI3O+/DKca526ledNRlz3JWNfzw3HYxoIjGl+fFbWgoALvEZ8ytuz5is5KnCpuFL2TETO9xPr3exfJW9K2UQ9aAnoSY9t8QlMQqeX4Yzov0kJSA5DI+Va/cAcWIjBxwJ1sN2VmSXAsOOkkwOy4SZLjnBNQWK3s6HjinsEb2ni0Fe/f6RT3lMYlm0q4LzZwThyGMaYDlhw6/KHCY0duc/x2BYZ5fnNNVc8/vm9+qRbT4jVjIHEHxi5TQ==",
    "Timestamp":"2017-09-20T20:02:30.954Z",
