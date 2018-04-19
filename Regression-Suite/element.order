@@ -23,7 +23,6 @@ Update-Location.xml
 get-location.xml
 Get-Location-by-AccountId.xml
 Get-Appliance-attributes-from-Device-Shadow.xml
-Get-device-shadow-for-id.xml
 get-all-appliances-dashDB.xml
 Invite-Company.xml
 Add-company.xml
