@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="All appliance for regular user and invited user" path="/appliance/allAppliances/account/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" id="9a1d3799-1e8b-49bd-ac95-f4d7005d5fa0" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="All appliance for regular user and invited user" path="/appliance/allAppliances/account/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" id="9a1d3799-1e8b-49bd-ac95-f4d7005d5fa0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="9a1d3799-1e8b-49bd-ac95-f4d7005d5fa0fileName">All-appliance-for-regular-user-and-invited-user</con:setting>
   </con:settings>
@@ -12,7 +12,7 @@
         <con:value>Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}</con:value>
         <con:style>HEADER</con:style>
         <con:default>Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}</con:default>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
     <con:representation type="FAULT">
@@ -31,8 +31,10 @@
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
+      <con:endpoint>https://applianceservicedev-v2.mybluemix.net</con:endpoint>
       <con:request/>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
