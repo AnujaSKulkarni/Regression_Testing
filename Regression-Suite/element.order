@@ -23,6 +23,7 @@ Update-Location.xml
 get-location.xml
 Get-Location-by-AccountId.xml
 Get-Appliance-attributes-from-Device-Shadow.xml
+Get-device-shadow-for-id.xml
 get-all-appliances-dashDB.xml
 Invite-Company.xml
 Add-company.xml
@@ -110,6 +111,9 @@ Update-appliance.xml
 Retrieve-DDM-Literals.xml
 Retrieve-NotificationMessages.xml
 Retrieve-All-Content.xml
+DDM-notification.xml
+Appliance-Category.xml
+All-appliance-for-regular-user-and-invited-user.xml
 Get-Appliance-by-Location-ID.xml
 Device-Registration1.xml
 multi-subscribe-for-opt--in-and-out.xml

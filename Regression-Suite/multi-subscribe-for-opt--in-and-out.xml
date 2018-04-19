@@ -280,7 +280,7 @@ if (API_Name != TestCaseName){
           <query>Select A.appliance_id as A_appliance_id, B.alert_id as B_alert_id
 From (Select app.appliance_id
     From BLUADMIN.appliance app
-    Where upper(app.said) = upper('WPR333334TUG2')) A, (Select ad.alert_id
+    Where upper(app.said) = upper('${#Project#Appliance_SAID}')) A, (Select ad.alert_id
     From BLUADMIN.alert_definition ad
     Where upper(alert_name) = upper('ClothesDry')) B</query>
           <fetchSize/>

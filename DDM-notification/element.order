@@ -176,7 +176,3 @@ History-Fault-Code
 History-Cycle
 UnRegisterDeviceIdForPush
 DDM-notification
-Appliance-Category
-All-appliance-for-regular-user-and-invited-user
-Regression-Suite
-REST-Virt-1

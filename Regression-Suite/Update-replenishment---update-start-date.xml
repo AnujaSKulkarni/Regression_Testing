@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="53b9c565-68fc-43b8-a21f-d77997478fe9" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update replenishment - update start date" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="53b9c565-68fc-43b8-a21f-d77997478fe9" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update replenishment - update start date" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="53b9c565-68fc-43b8-a21f-d77997478fe9fileName">Update-replenishment---update-start-date</con:setting>
   </con:settings>
@@ -302,7 +302,7 @@ if (API_Name != TestCaseName){
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="Bearer ${access_token}"/>
+          <con:entry key="Authorization" value="Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}"/>
           <con:entry key="Content-Type" value="application/json"/>
         </con:parameters>
         <con:environmentSpec>

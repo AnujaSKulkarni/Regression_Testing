@@ -454,6 +454,11 @@ out.close()</script>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>ce75fad3-753c-4744-bacf-22b65b218804</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
   <con:environmentSpec>
     <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
       <con:authProfile>Inherit From Parent</con:authProfile>

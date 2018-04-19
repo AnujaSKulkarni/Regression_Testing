@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="76e12921-76d5-4535-8139-4736c5b6b0ea" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Start replenishment" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="76e12921-76d5-4535-8139-4736c5b6b0ea" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Start replenishment" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="76e12921-76d5-4535-8139-4736c5b6b0eafileName">Start-replenishment</con:setting>
   </con:settings>
@@ -307,7 +307,9 @@ if (API_Name != TestCaseName){
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
+        <con:parameters>
+          <entry key="Authorization" value="Bearer ${#[Regression Suite#Get All Accounts#GET Member Token]#Response#$['access_token']}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
         <con:parameterOrder>
           <con:entry>Content-Type</con:entry>
           <con:entry>Authorization</con:entry>
@@ -477,7 +479,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Slot_1</con:name>
-      <con:value>"153fd300-679f-4570-8edc-57895d2db5f1"</con:value>
+      <con:value>"1"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
