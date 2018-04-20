@@ -325,9 +325,13 @@ if (API_Name != TestCaseName){
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
+        <con:parameters>
+          <con:entry key="Content_Type" value="application/json"/>
+          <con:entry key="x-amz-sns-message-type" value="SubscriptionChangedNotification"/>
+        </con:parameters>
         <con:parameterOrder>
           <con:entry>x-amz-sns-message-type</con:entry>
+          <con:entry>Content_Type</con:entry>
         </con:parameterOrder>
         <con:environmentSpec>
           <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">

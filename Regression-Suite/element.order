@@ -56,11 +56,11 @@ Device-Deregistered-Notification.xml
 Order-Placed-Notification.xml
 Item-Shipped-Notification.xml
 Order-Cancelled-Notification.xml
-Set-Dct.xml
 Authenticate-Appliance.xml
 SyncShoppingLists_create.xml
 SyncShoppingLists_update.xml
 getAllShoppingListItems.xml
+Set-Dct.xml
 SyncShoppingLists_delete.xml
 syncInventoryAppliance.xml
 SyncInventoryMobile.xml

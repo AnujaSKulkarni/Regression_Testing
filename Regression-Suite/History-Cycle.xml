@@ -283,7 +283,7 @@ if (API_Name != TestCaseName){
         <con:assertion type="Valid HTTP Status Codes" id="e5c06e94-f424-4270-a0b3-f6f21dc32271" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
-            <codes>200</codes>
+            <codes>200,400</codes>
           </con:configuration>
         </con:assertion>
         <con:credentials>

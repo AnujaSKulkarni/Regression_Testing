@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="c6c77827-4246-4a64-89a5-eccb80e3aa99" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="cookRecipe" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="c6c77827-4246-4a64-89a5-eccb80e3aa99" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="cookRecipe" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="c6c77827-4246-4a64-89a5-eccb80e3aa99fileName">cookRecipe</con:setting>
   </con:settings>
