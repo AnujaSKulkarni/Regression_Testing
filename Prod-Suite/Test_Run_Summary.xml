@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="7abcc53e-40d2-4c91-84ee-43f9317d0be5" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test_Run_Summary" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="4e33ef7d-7efd-4286-92b3-1be3d319e143fileName">Test_Run_Summary</con:setting>
+    <con:setting id="7abcc53e-40d2-4c91-84ee-43f9317d0be5fileName">Test_Run_Summary</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="groovy" name="Test_Run_Summary" id="03c1f8f2-2dc1-4260-a6b5-a360ddc80027">
+    <con:settings/>
+    <con:config>
+      <script>import groovy.io.FileType
+
+def list = []
+def Test_Result_Path = context.expand( '${Test_Result_Path}' )
+def Result_Summary_Path = Test_Result_Path + "Result_Summary.txt"
+def Result_Summary_File = new File(Result_Summary_Path)
+log.info Result_Summary_Path
+Result_Summary_File.append "Run Results"
+Result_Summary_File.append "\n"
+def dir = new File(Test_Result_Path)
+dir.eachFileRecurse (FileType.FILES) { file ->
+  list &lt;&lt; file
+}
+
+list.each {
+	result = it.path.contains("Fail")
+	if(result == true){
+		File_Path = it.path
+		log.info File_Path
+  		log.info "file found"
+  		File fileContents = new File(File_Path)
+  		def lines = fileContents.readLines()
+  		fileContents.eachLine { String line ->
+  			if(line.contains("Test Step:") == true){
+  				log.info line
+  				Result_Summary_File.append line
+  				Result_Summary_File.append "\n"
+  			}
+  		}
+  		fileContents.eachLine { String line ->
+  			if(line.contains("Status:") == true){
+  				log.info line
+  				Result_Summary_File.append "\t"
+  				Result_Summary_File.append line
+  				Result_Summary_File.append "\n"
+  			}
+  		}
+  		fileContents.eachLine { String line ->
+  			if(line.contains("Http Status Code:") == true){
+  				log.info line
+  				Result_Summary_File.append "\t"
+  				Result_Summary_File.append line
+  				Result_Summary_File.append "\n"
+  			}
+  		}
+  		fileContents.eachLine { String line ->
+  			if(line.contains("https://") == true){
+  				log.info line
+  				Result_Summary_File.append "\t"
+  				Result_Summary_File.append "URL: "
+  				Result_Summary_File.append line
+  				Result_Summary_File.append "\n"
+  			}	
+		}
+		def lastline = lines.get(lines.size()-1)
+		log.info lastline
+		Result_Summary_File.append "\t"
+		Result_Summary_File.append "Response: "
+		Result_Summary_File.append lastline
+		Result_Summary_File.append "\n\n"
+	}
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

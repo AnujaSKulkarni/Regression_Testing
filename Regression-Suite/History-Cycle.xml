@@ -148,7 +148,13 @@ if(RunTimeDataSource_Flag == true){
     </con:settings>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
-        <con:configuration><file>${Test_Data_Path}</file><worksheet>Data</worksheet><cell>A2</cell><ignoreEmpty>true</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration>
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
       </con:dataSource>
       <con:shared>false</con:shared>
       <con:restartShared>false</con:restartShared>
@@ -277,7 +283,7 @@ if (API_Name != TestCaseName){
         <con:assertion type="Valid HTTP Status Codes" id="e5c06e94-f424-4270-a0b3-f6f21dc32271" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
-            <codes>200,400</codes>
+            <codes>200</codes>
           </con:configuration>
         </con:assertion>
         <con:credentials>

@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="95f65987-679a-44bb-89dc-2b33c171661c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Create Location" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" maxResults="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5702229f-a04f-4c5a-b3b0-7f4af4c761dcfileName">Create-Location</con:setting>
+    <con:setting id="95f65987-679a-44bb-89dc-2b33c171661cfileName">Create-Location</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="groovy" name="DataSource_Setup" id="20d8ecf7-c34d-4bbf-9462-2dbf0cfd0340">
+    <con:settings/>
+    <con:config>
+      <script>import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Iterator;
+import java.lang.String
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
+def TestStep_Count = testRunner.testCase.getTestStepCount()
+def DataSource_Flag
+def RunTimeDataSource_Flag
+log.info TestStep_Count
+def TestStep_Name
+//******************Finding DataSource***************
+for(i = 0;i &lt; TestStep_Count;i++){
+	TestStep_Name = testRunner.testCase.getTestStepAt(i).name
+	log.info TestStep_Name
+	if(TestStep_Name == "DataSource"){
+		log.info("Data Source present")
+		DataSource_Flag = true
+		break
+	}else{
+		DataSource_Flag = false
+	}
+}
+
+for(i = 0; i &lt; TestStep_Count; i++){
+	TestStep_Name = testRunner.testCase.getTestStepAt(i).name
+	if(TestStep_Name == "DataSource_RunTime"){
+		log.info("RunTime Data Source present")
+		RunTimeDataSource_Flag = true
+		break
+	}
+	else{
+		RunTimeDataSource_Flag = false
+		log.info("RunTime Data Source not present")
+	}
+}
+log.info "Data Source: " + DataSource_Flag
+log.info "Run Time Data Source: " + RunTimeDataSource_Flag
+
+
+//******************Deleting Properties from DataSource****************
+if(DataSource_Flag == true){
+	log.info "Deleting DataSource Properties"
+	def TestStep = testRunner.testCase.getTestStepByName("DataSource")
+	def Property_Count = TestStep.propertyCount
+	log.info Property_Count
+	def Property_Name
+	for(i = Property_Count - 1; i >= 0; i--)
+	{
+		Property_Name = TestStep.getPropertyAt(i).name
+		log.info "Deleting: " + Property_Name
+		TestStep.removeProperty(Property_Name)
+	}
+}else{
+	log.info("Data Source not present")
+}
+
+//******************Deleting Properties from Run Time DataSource****************
+if(RunTimeDataSource_Flag == true){
+	log.info "Deleting RunTime DataSource Properties"
+	def TestStep = testRunner.testCase.getTestStepByName("DataSource_RunTime")
+	def Property_Count = TestStep.propertyCount
+	log.info Property_Count
+	def Property_Name
+	for(i = Property_Count - 1; i >= 0; i--)
+	{
+		Property_Name = TestStep.getPropertyAt(i).name
+		log.info "Deleting: " + Property_Name
+		TestStep.removeProperty(Property_Name)
+	}
+}else{
+	log.info("RunTime Data Source not present")
+}
+
+//*********Reading Excel and adding Property to DataSource*****************
+
+if(DataSource_Flag == true){
+	def Test_Data_Path = context.expand( '${Test_Data_Path}' )
+	InputStream ExcelFileToRead = new FileInputStream(Test_Data_Path);
+	XSSFWorkbook wb = new XSSFWorkbook(ExcelFileToRead);
+	XSSFSheet sheet = wb.getSheet("Data")
+	XSSFRow row; 
+	XSSFCell cell;
+	
+	row = sheet.getRow(0)
+	def Col_count = row.getLastCellNum()
+	log.info Col_count
+
+	log.info "Adding DataSource Properties"
+	def TestStep = testRunner.testCase.getTestStepByName("DataSource")
+	def Property_Name
+	for(i = 0; i &lt; Col_count; i++){
+		cell = row.getCell(i)
+		def Cell_Value = String.valueOf(cell)
+		log.info "Adding: " + Cell_Value
+		TestStep.addProperty(Cell_Value)
+	}
+}
+
+
+//**************Reading Excel and adding Property to RunTime DataSource***********
+if(RunTimeDataSource_Flag == true){
+	def Run_Time_Data = context.expand( '${Run_Time_Data}' )
+	InputStream ExcelFileToRead = new FileInputStream(Run_Time_Data);
+	HSSFWorkbook wb = new HSSFWorkbook(ExcelFileToRead);
+	HSSFSheet sheet = wb.getSheet("Account_Run_Time_Data")
+	HSSFRow row; 
+	HSSFCell cell;
+	
+	row = sheet.getRow(0)
+	def Col_count = row.getLastCellNum()
+	log.info Col_count
+
+	log.info "Adding DataSource Properties"
+	def TestStep = testRunner.testCase.getTestStepByName("DataSource_RunTime")
+	def Property_Name
+	for(i = 0; i &lt; Col_count; i++){
+		cell = row.getCell(i)
+		def Cell_Value = String.valueOf(cell)
+		log.info "Adding: " + Cell_Value
+		TestStep.addProperty(Cell_Value)
+	}
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="DataSource_RunTime" id="9f184228-fce3-4b60-8508-0f3010d51c97">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>${Run_Time_Data}</file>
+          <worksheet>Account_Run_Time_Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Account_ID_Number</con:property>
+      <con:property>Verification_Code</con:property>
+      <con:property>Email_ID</con:property>
+      <con:property>Group_ID</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Run_Time_Data_Transfer_1" id="a9310cbb-7706-44b6-af73-fadd20c34f90">
+    <con:settings/>
+    <con:config>
+      <script>def account_ID_Number = context.expand( '${DataSource_RunTime#Account_ID_Number}' )
+def verification_Code = context.expand( '${DataSource_RunTime#Verification_Code}' )
+def Email_ID = context.expand( '${DataSource_RunTime#Email_ID}' )
+
+log.info account_ID_Number
+log.info verification_Code
+testRunner.testCase.testSuite.setPropertyValue("Account_ID", account_ID_Number)
+testRunner.testCase.testSuite.setPropertyValue("Verification_Code", verification_Code)
+testRunner.testCase.testSuite.setPropertyValue("Account_Email", Email_ID)</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="DataSource" id="eff134d7-8aa0-44f6-965a-0990abd9e6bc">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>${Test_Data_Path}</file>
+          <worksheet>Data</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>TC_Number</con:property>
+      <con:property>Service_Name</con:property>
+      <con:property>Defect_ID</con:property>
+      <con:property>API_Name</con:property>
+      <con:property>Data_Combination</con:property>
+      <con:property>Remark</con:property>
+      <con:property>Comments</con:property>
+      <con:property>Account_Number</con:property>
+      <con:property>Address_1</con:property>
+      <con:property>Address_2</con:property>
+      <con:property>Alert_ID</con:property>
+      <con:property>Alert_Platform_Type</con:property>
+      <con:property>Alternate_Email_ID</con:property>
+      <con:property>Appliance_ID</con:property>
+      <con:property>Appliance_Master_ID</con:property>
+      <con:property>Appliance_Master_Version_ID</con:property>
+      <con:property>Appliance_Name</con:property>
+      <con:property>Attribute_Name</con:property>
+      <con:property>Attribute_Value</con:property>
+      <con:property>Brand</con:property>
+      <con:property>City</con:property>
+      <con:property>Company_ID</con:property>
+      <con:property>Company_Name</con:property>
+      <con:property>Confirm_Password</con:property>
+      <con:property>Country_Name</con:property>
+      <con:property>Country_Code</con:property>
+      <con:property>Country_ID</con:property>
+      <con:property>Customer_Care</con:property>
+      <con:property>DCT</con:property>
+      <con:property>DDM_Name</con:property>
+      <con:property>desired_temperature</con:property>
+      <con:property>Device_ID</con:property>
+      <con:property>Device_Notification_ID</con:property>
+      <con:property>Device_Shadow_Name</con:property>
+      <con:property>Edge_Device_ID</con:property>
+      <con:property>Elevation</con:property>
+      <con:property>Email_BodyMessage</con:property>
+      <con:property>Email_From</con:property>
+      <con:property>Email_ID_Data</con:property>
+      <con:property>Email_Subject</con:property>
+      <con:property>Email_To</con:property>
+      <con:property>enable_cloth_spin</con:property>
+      <con:property>First_Name</con:property>
+      <con:property>Group_Number</con:property>
+      <con:property>Group By</con:property>
+      <con:property>inv__description</con:property>
+      <con:property>JSON_Body</con:property>
+      <con:property>Key</con:property>
+      <con:property>Language_ID</con:property>
+      <con:property>languageCode</con:property>
+      <con:property>Last_Name</con:property>
+      <con:property>Lastupdate</con:property>
+      <con:property>Latitude</con:property>
+      <con:property>Locale_ID</con:property>
+      <con:property>Location_Name</con:property>
+      <con:property>Location_Number</con:property>
+      <con:property>Longitude</con:property>
+      <con:property>Loyalty_ID</con:property>
+      <con:property>name</con:property>
+      <con:property>Nest_Away</con:property>
+      <con:property>Nest_Thermostat_ID</con:property>
+      <con:property>New_Password</con:property>
+      <con:property>Notification_Type</con:property>
+      <con:property>Password</con:property>
+      <con:property>Phone_No.</con:property>
+      <con:property>Platform</con:property>
+      <con:property>Postal_Code</con:property>
+      <con:property>Rate_Plan_Code</con:property>
+      <con:property>Rate_Plan_ID</con:property>
+      <con:property>Region</con:property>
+      <con:property>Role_ID</con:property>
+      <con:property>SAID</con:property>
+      <con:property>Shoppinglist_ID</con:property>
+      <con:property>Shoppinglist_Name</con:property>
+      <con:property>State_Name</con:property>
+      <con:property>Status</con:property>
+      <con:property>Status_ID</con:property>
+      <con:property>Street</con:property>
+      <con:property>trigger_temperature</con:property>
+      <con:property>Utility_Name</con:property>
+      <con:property>User_ID</con:property>
+      <con:property>User_Role</con:property>
+      <con:property>Verification_Code</con:property>
+      <con:property>Version</con:property>
+      <con:startRow/>
+      <con:endRow/>
+      <con:recordsPerIteration>1</con:recordsPerIteration>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:trimValues>false</con:trimValues>
+      <con:entitizeValues>false</con:entitizeValues>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:expandProperties>false</con:expandProperties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Flow Control" id="71c36c90-a6ce-4400-ab30-6cd06d446a29">
+    <con:settings/>
+    <con:config>
+      <script>def dataCombination = context.expand( '${DataSource#Data_Combination}' )
+def API_Name = context.expand( '${DataSource#API_Name}' )
+def TestCaseName = testRunner.testCase.getName()
+
+def State_Name = context.expand( '${DataSource#State_Name}' )
+State_Name = State_Name.replace("\"", "'")
+testRunner.testCase.setPropertyValue("State_Name", State_Name)
+
+if (API_Name != TestCaseName){
+	testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(true)
+	testRunner.testCase.testSteps['JDBC'].setDisabled(true)
+	testRunner.testCase.testSteps['Create Location_Positive'].setDisabled(true)
+	testRunner.testCase.testSteps['Create Location_Negative'].setDisabled(true)
+	testRunner.testCase.testSteps['Report'].setDisabled(true)
+	testRunner.testCase.testSteps['Data_Sink_Flow_Control'].setDisabled(true)
+	testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(true)
+}else{
+	String date = new Date()
+	date = date.replaceAll(":","_")
+	date = date.replaceAll(" ","_")
+	date = "Regression_Location_" + date
+	testRunner.testCase.setPropertyValue("Location", date)
+	if(dataCombination == "Positive"){
+		testRunner.testCase.testSteps['JDBC'].setDisabled(false)
+		testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(false)
+		testRunner.testCase.testSteps['Create Location_Positive'].setDisabled(false)
+		testRunner.testCase.testSteps['Create Location_Negative'].setDisabled(true)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+		testRunner.testCase.testSteps['Data_Sink_Flow_Control'].setDisabled(false)
+		testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(false)
+	}
+	if(dataCombination == "Negative"){
+		testRunner.testCase.testSteps['JDBC'].setDisabled(false)
+		testRunner.testCase.testSteps['Test_Data_Setup'].setDisabled(false)
+		testRunner.testCase.testSteps['Create Location_Positive'].setDisabled(true)
+		testRunner.testCase.testSteps['Create Location_Negative'].setDisabled(false)
+		testRunner.testCase.testSteps['Report'].setDisabled(false)
+		testRunner.testCase.testSteps['Data_Sink_Flow_Control'].setDisabled(false)
+		testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(false)
+	}
+}
+
+
+
+String date = new Date()
+date = date.replaceAll(":","_")
+date = date.replaceAll(" ","_")
+def RandomNumber = (int)(Math.random()*10000000)
+def LocationName = "\"" + "Location_" + date + RandomNumber +  "\""
+testRunner.testCase.setPropertyValue("Location_Name", LocationName)</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="JDBC" id="3e8c1b88-344c-4e71-b10b-e9c4bf066705" disabled="true">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="JDBC">
+        <con:configuration>
+          <driver>com.ibm.db2.jcc.DB2Driver</driver>
+          <connstr>jdbc:db2://dashdb-txn-small-yp-dal09-117.services.dal.bluemix.net:50000/BLUDB:user=mohitbh;password=PASS_VALUE;</connstr>
+          <pass>Syntel@mb5027676</pass>
+          <Connection>DataBase( QA_Env )</Connection>
+          <query>Select st.STATE_ID As st_STATE_ID, st.COUNTRY_ID As st_COUNTRY_ID,
+  con.COUNTRY_ID As con_COUNTRY_ID, con.COUNTRY_CODE As con_COUNTRY_CODE
+From BLUADMIN.STATE st Inner Join
+  BLUADMIN.COUNTRY con On st.COUNTRY_ID = con.COUNTRY_ID
+Where upper(st.STATE_NAME) = upper(${#TestCase#State_Name})</query>
+          <fetchSize/>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>st_STATE_ID</con:property>
+      <con:property>st_COUNTRY_ID</con:property>
+      <con:property>con_COUNTRY_ID</con:property>
+      <con:property>con_COUNTRY_CODE</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Test_Data_Setup" id="6524caff-f6a2-432b-beb0-999cbf8a465a" disabled="true">
+    <con:settings/>
+    <con:config>
+      <script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
+def Account_ID_Sheet = context.expand( '${DataSource#Account_Number}' )
+def con_COUNTRY_CODE = context.expand( '${JDBC#con_COUNTRY_CODE}' )
+def COUNTRY_CODE = "\"" + con_COUNTRY_CODE + "\""
+testRunner.testCase.setPropertyValue("COUNTRY_CODE", COUNTRY_CODE)
+
+log.info "From Sheet" + Account_ID_Sheet
+
+def Account_ID_Property = context.expand( '${#TestSuite#Account_ID}' )
+
+log.info "From Properties" + Account_ID_Property
+
+if (data_Combination == "Positive"){
+	testRunner.testCase.setPropertyValue("Account_ID",Account_ID_Property)
+}
+if (data_Combination == "Negative"){
+	if(Account_ID_Sheet == null){
+		testRunner.testCase.setPropertyValue("Account_ID",Account_ID_Property)
+	}else{
+		testRunner.testCase.setPropertyValue("Account_ID",Account_ID_Sheet)
+	}
+}
+def tC_Number = context.expand( '${DataSource#TC_Number}' )
+log.info tC_Number</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Create Location_Positive" id="6b3c7e6d-d03a-4df9-a5c0-7460c7be06f0" disabled="true">
+    <con:settings/>
+    <con:config service="Create Location" resourcePath="/client_auth/location" methodName="Create Location" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Create Location_Positive" id="6160fb0a-7b6c-4952-b026-d37159474bbd" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${Location}</con:endpoint>
+        <con:request>{
+ "locationName":${#TestCase#Location_Name},
+  "street": ${DataSource#Street},
+  "stateId":${JDBC#st_STATE_ID},
+  "city": ${DataSource#City},
+  "postalCode": ${DataSource#Postal_Code},
+  "secondLineAddress": "Home",
+  "utilityProviderId": 0,
+  "utilityProviderName": "",
+  "ratePlanId": ${DataSource#Rate_Plan_ID},
+  "ratePlanCode": ${DataSource#Rate_Plan_Code},
+  "smartEnergy":0,
+  "localeId": ${DataSource#Locale_ID},
+  "loyaltyId": ${DataSource#Loyalty_ID},
+  "status": "1",
+  "createdAt": "2017-04-19T 17:05:53Z",
+  "updatedAt": "2017-05-19T 17:06:53Z",
+  "ratePlanName": "Tariff",
+  "utilityName": "",
+  "utilityId": 0,
+  "latitude": ${DataSource#Latitude},
+  "longitude": ${DataSource#Longitude},
+  "elevation": ${DataSource#Elevation},
+  "enableClothspin":${DataSource#enable_cloth_spin},
+  "countryId": ${JDBC#st_COUNTRY_ID},
+  "countryCode": ${#TestCase#COUNTRY_CODE},
+  "accountId":${#TestCase#Account_ID}
+}</con:request>
+        <con:originalUri>http://locationserviceqa.mybluemix.net/api/location</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3a1d1876-da64-48ee-8405-b33acc5cf513" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Create Location_Negative" id="a622c2fe-bc33-4069-be10-f3ad9219ca72" disabled="true">
+    <con:settings/>
+    <con:config service="Create Location" resourcePath="/client_auth/location" methodName="Create Location" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Create Location_Negative" id="6160fb0a-7b6c-4952-b026-d37159474bbd" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>${Location}</con:endpoint>
+        <con:request>{
+ "locationName":${DataSource#Location_Name},
+  "street": ${DataSource#Street},
+  "stateId":${JDBC#BLUADMIN_STATE_STATE_ID},
+  "city": ${DataSource#City},
+  "postalCode": ${DataSource#Postal_Code},
+  "secondLineAddress": "Home",
+  "utilityProviderId": 0,
+  "utilityProviderName": "",
+  "ratePlanId": ${DataSource#Rate_Plan_ID},
+  "ratePlanCode": ${DataSource#Rate_Plan_Code},
+  "smartEnergy":0,
+  "localeId": ${DataSource#Locale_ID},
+  "loyaltyId": ${DataSource#Loyalty_ID},
+  "status": "1",
+  "createdAt": "2017-04-19T 17:05:53Z",
+  "updatedAt": "2017-05-19T 17:06:53Z",
+  "ratePlanName": "Tariff",
+  "utilityName": "",
+  "utilityId": 0,
+  "latitude": ${DataSource#Latitude},
+  "longitude": ${DataSource#Longitude},
+  "elevation": ${DataSource#Elevation},
+  "enableClothspin":${DataSource#enable_cloth_spin},
+  "countryId": ${JDBC#BLUADMIN_STATE_COUNTRY_ID},
+  "countryCode": ${DataSource#Country_Code},
+  "accountId":${#TestCase#Account_ID}
+}</con:request>
+        <con:originalUri>http://locationserviceqa.mybluemix.net/api/location</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="0e268d71-8939-4650-a798-b530192799a2" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>500</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="6f0100a6-91e6-476c-8a30-1216e3f39821">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="20272cd6-b686-4dc5-bbb9-a223e2cd1d8c">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Report" id="1f780b0c-a42a-4131-893b-e295276c1907" disabled="true">
+    <con:settings/>
+    <con:config>
+      <script>import java.io.FileInputStream
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
+import java.util.Iterator
+import java.io.InputStream
+import java.lang.String
+import java.text.SimpleDateFormat
+import org.apache.poi.EncryptedDocumentException
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException
+import org.apache.poi.ss.util.CellReference
+import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.DateUtil
+import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.ss.usermodel.Sheet
+import org.apache.poi.ss.usermodel.Workbook
+import org.apache.poi.ss.usermodel.WorkbookFactory
+import org.apache.poi.hssf.usermodel.HSSFWorkbook
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import org.apache.poi.xssf.streaming.SXSSFWorkbook
+import org.apache.poi.xssf.usermodel.XSSFCell
+import org.apache.poi.xssf.usermodel.XSSFRow
+import org.apache.poi.xssf.usermodel.XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
+
+
+def Final_Path = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
+log.info Final_Path
+def final_path = new File(Final_Path)
+final_path.mkdir()
+
+
+/*Get Test Case Name and Status*/
+def data_combination = context.expand( '${DataSource#Data_Combination}' )
+/*Get TC Name*/
+def TCN = context.expand( '${DataSource#TC_Number}' )
+def TestCaseName = testRunner.testCase.getName()
+if(data_combination == "Positive"){
+	TestCaseName = TestCaseName + "_Positive"
+}
+if(data_combination == "Negative"){
+	TestCaseName = TestCaseName + "_Negative"
+}
+
+obj = context.testCase.getTestStepByName(TestCaseName)
+assertions = obj.getAssertionList()
+def Status
+assertions.each{
+	def stat = (it.status).toString()
+	if(stat == "VALID" || stat == "PASS"){
+		Status = "Pass"
+	}
+	if(stat == "FAILED" || stat == "FAIL"){
+		Status = "Fail"
+	}
+}
+log.info(Status)
+testRunner.testCase.testSuite.setPropertyValue("Status", Status)
+
+/*Creating Txt File*/
+
+String date = new Date()
+String date_now = new Date()
+date = date.replaceAll(":","_")
+date = date.replaceAll(" ","_")
+def TCName = TestCaseName.replaceAll(" ","_")
+report_file = Final_Path + TCN + "_" + TCName + "_" + date + "_" + Status + ".txt"
+/* Writing to file */
+def file1 = new File(report_file)
+
+
+/*Get Time Taken for request*/
+
+obj = context.testCase.getTestStepByName(TestCaseName)
+assertions = obj.getAssertionList()
+def Time_Taken
+assertions.each{
+	Time_Taken = testRunner.testCase.testSteps[TestCaseName].testRequest.response.timeTaken
+	log.info(Time_Taken)
+}
+
+
+
+/*Get Status Code*/
+Header = testRunner.testCase.testSteps[TestCaseName].testRequest.response.getResponseHeaders()
+Status_Code = Header["#status#"]
+log.info Status_Code
+file1.write("Status:  " + Status + "\n")
+file1.append("Time Taken:  " + Time_Taken + " ms\n")
+file1.append("TimeStamp:  " + date_now + "\n")
+file1.append("Test Step:  " + TestCaseName + "\n\n\n\n")
+file1.append("----------------- Http Status ------------------------------\n")
+file1.append("Http Status Code:  " + Status_Code + "\n\n\n\n")
+file1.append("---------------- Request ---------------------------\n")
+
+
+/*Get request and response*/
+myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
+def request = new String(myRequestStep.testRequest.messageExchange.rawRequestData)
+def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+file1.append(request + "\n\n\n\n")
+file1.append("---------------- Response --------------------------\n")
+file1.append(response)
+
+/* Creating Excel for test result */
+
+def Testresultpath = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
+Testresultpath = Testresultpath + "Test_Run_Results.xls"
+log.info Testresultpath
+
+FileInputStream fis = new FileInputStream(new File(Testresultpath))
+Workbook wb = WorkbookFactory.create(fis)
+Sheet sh = wb.getSheet("Test_Run_Results")
+def Row_count = sh.getLastRowNum()
+Row_count = Row_count.toInteger()
+Row_count++
+log.info Row_count
+Row row = sh.createRow(Row_count)
+Cell cell = row.createCell(0).setCellValue(TCN)
+Cell cell_1 = row.createCell(1).setCellValue(Status)
+Cell cell_2 = row.createCell(2).setCellValue(TestCaseName)
+Cell cell_3 = row.createCell(3).setCellValue(date_now)
+Cell cell_4 = row.createCell(4).setCellValue(Time_Taken)
+FileOutputStream out = new FileOutputStream(Testresultpath,false)
+wb.write(out)
+out.close()</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Data_Sink_Flow_Control" id="65c68cdc-642a-4c1e-944d-d18ec8ef1d89" disabled="true">
+    <con:settings/>
+    <con:config>
+      <script>/*Get Test Case Name and Status*/
+def data_combination = context.expand( '${DataSource#Data_Combination}' )
+/*Get TC Name*/
+def TCN = context.expand( '${DataSource#TC_Number}' )
+def TestCaseName = testRunner.testCase.getName()
+
+if(data_combination == "Positive"){
+	TestCaseName = TestCaseName + "_Positive"
+}
+if(data_combination == "Negative"){
+	TestCaseName = TestCaseName + "_Negative"
+}
+
+Header = testRunner.testCase.testSteps[TestCaseName].testRequest.response.getResponseHeaders()
+def Status_Code = Header["#status#"]
+log.info Status_Code[0]
+Status_Code = Status_Code[0]
+if(Status_Code.contains("200")){
+	testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(false)
+	myRequestStep = testRunner.testCase.getTestStepByName(TestCaseName)
+	def response = new String(myRequestStep.testRequest.messageExchange.rawResponseData)
+	testRunner.testCase.setPropertyValue("Location_ID_Transfer", response)
+}else{
+	testRunner.testCase.testSteps['Run_Time_Data_Transfer'].setDisabled(true)
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Run_Time_Data_Transfer" id="450920e9-f467-4fc2-9a92-c1e26ee5a555" disabled="true">
+    <con:settings/>
+    <con:config>
+      <script>import java.io.FileInputStream
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
+import java.util.Iterator
+import java.io.InputStream
+import java.lang.String
+import java.text.SimpleDateFormat
+import org.apache.poi.EncryptedDocumentException
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException
+import org.apache.poi.ss.util.CellReference
+import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.DateUtil
+import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.ss.usermodel.Sheet
+import org.apache.poi.ss.usermodel.Workbook
+import org.apache.poi.ss.usermodel.WorkbookFactory
+import org.apache.poi.hssf.usermodel.HSSFWorkbook
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import org.apache.poi.xssf.streaming.SXSSFWorkbook
+import org.apache.poi.xssf.usermodel.XSSFCell
+import org.apache.poi.xssf.usermodel.XSSFRow
+import org.apache.poi.xssf.usermodel.XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
+
+def location_id = context.expand( '${Create Location_Positive#Response#$[\'LOCATION_ID\']}' )
+def account_id = context.expand( '${Create Location_Positive#Response#$[\'ACCOUNT_ID\']}' )
+
+/* Creating Excel for test result */
+
+def Testresultpath = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue("Test_Result_Path")
+Testresultpath = Testresultpath + "Run_Time_Data.xls"
+log.info Testresultpath
+
+FileInputStream fis = new FileInputStream(new File(Testresultpath))
+Workbook wb = WorkbookFactory.create(fis)
+Sheet sh = wb.getSheet("Location_Run_Time_Data")
+def Row_count = sh.getLastRowNum()
+Row_count = Row_count.toInteger()
+Row_count++
+log.info Row_count
+Row row = sh.createRow(Row_count)
+Cell cell = row.createCell(0).setCellValue(location_id)
+Cell cell_1 = row.createCell(1).setCellValue(account_id)
+testRunner.testCase.testSuite.setPropertyValue("Location_Number", location_id)
+FileOutputStream out = new FileOutputStream(Testresultpath,false)
+wb.write(out)
+out.close()</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="e465821d-9010-4015-b3b6-9f74bbe168b0">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Flow Control</targetStep>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>Location_ID_Transfer</con:name>
+      <con:value>HTTP/1.1 200 undefined
+Server: nginx/1.4.6 (Ubuntu)
+Date: Fri, 20 Apr 2018 12:51:55 GMT
+Content-Type: application/json
+Connection: keep-alive
+X-Backside-Transport: OK OK
+X-Global-Transaction-ID: 66975359
+User-Agent: IBM-APIConnect/201
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: X-PINGOTHER,Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization
+Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID,xsrf-token
+X-Application-Context: wcloud-location-service (Dev):prod
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=15768000
+
+{"LOCATION_ID":36203,"CITY":"New York","ACCOUNT_ID":36234,"STATE_ID":4197,"POSTAL_CODE":"10533","CREATED_AT":1492621553000,"UPDATED_AT":1495213613000,"ELEVATION":45,"LATITUDE":1.2,"LOCALE_ID":1,"SMART_ENERGY_PROFILE":0,"NAME":"Location_Fri_Apr_20_18_21_50_IST_2018722927","LONGITUDE":2.4,"LOYALTY_ID":1,"RATE_PLAN_CODE":"1","RATE_PLAN_ID":1,"STATUS":"1","ADDRESS1":"Regression Street","ADDRESS2":"Home","UTILITY_NAME":"","UTILITY_ID":0,"ENABLE_CLOTHSPIN":0,"PHONE_NO":null,"DAYLIGHT_SAVING_ADJUST":0,"HOURS_OF_OPRTN":null,"TIME_ZONE":"America/New_York","RATE_PLAN_NAME":"Tariff"}</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Account_ID</con:name>
+      <con:value>36234</con:value>
+    </con:property>
+    <con:property>
+      <con:name>State_Name</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>COUNTRY_CODE</con:name>
+      <con:value>"US"</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Location</con:name>
+      <con:value>Regression_Location_Fri_Apr_20_18_21_50_IST_2018</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Location_Name</con:name>
+      <con:value>"Location_Sat_Apr_28_16_13_14_IST_20188219002"</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>2ae81ba5-3442-4c6e-900e-e4deecac385a</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>047beb60-28b1-40ae-aee4-bab8c3ac999d</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>673c4fb7-bf3b-4b90-bd4b-61f46dd566c9</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>f5bad6a2-116f-4d38-b6c5-9d08c855489e</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="4398ae1d-0351-4fb3-a5a2-3711b104c124">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="dc59d3b0-2cc1-4c91-a36d-62642d50ba5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="5c297842-d8ad-466b-8b05-f06abf54bfe2">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="276146a1-7fd3-46fe-b2f6-638c85bb127c">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="1653fcad-25f1-42dc-b777-d850bb70a926">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="355af1cd-ed93-49d8-b6be-b3da6c1def92">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="f6279578-3a49-4834-9a7b-8e92ae71f8e9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b74c2924-5d4b-41b7-a14b-5522870d29dc">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="e557dfa4-ea64-4e83-988f-317cbc736505">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="caf27257-7156-4318-b2df-f8a12834f2ff">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>
