@@ -74,6 +74,11 @@
   <con:entry key="Tool Args" value=""/>
   <con:entry key="Save Project" value="false"/>
 </xml-fragment>]]></con:setting>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormBase Path"/>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormTarget Path"/>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormFormat">json</con:setting>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormAPI Version">1.0</con:setting>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormVersion">Swagger 2.0</con:setting>
   </con:settings>
   <con:vcsConfiguration>
     <con:vcsName>Git</con:vcsName>

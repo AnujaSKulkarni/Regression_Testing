@@ -81,7 +81,7 @@
       <con:params/>
       <con:element>data</con:element>
     </con:representation>
-    <con:request name="GET Client Token" id="3d9e8eef-6b94-46de-8b7d-21a4174f9b47" mediaType="multipart/form-data" postQueryString="false">
+    <con:request name="GET Client Token" id="3d9e8eef-6b94-46de-8b7d-21a4174f9b47" mediaType="application/x-www-form-urlencoded" postQueryString="true">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         <con:setting id="com.eviware.soapui.support.editor.views.xml.form2.FormEditorView@ViewType">All</con:setting>
