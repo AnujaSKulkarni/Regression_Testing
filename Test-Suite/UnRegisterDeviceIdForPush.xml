@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="98890e5a-ccc8-430d-add9-be8ad7f0e0f9" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="UnRegisterDeviceIdForPush" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="72942d1b-088a-4d80-82b9-25ffb2a0dac7fileName">UnRegisterDeviceIdForPush</con:setting>
+    <con:setting id="98890e5a-ccc8-430d-add9-be8ad7f0e0f9fileName">UnRegisterDeviceIdForPush</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="UnRegisterDeviceIdForPush" id="df8ba1a0-4932-4810-9e36-fe58bba8c3da">
+    <con:settings/>
+    <con:config service="UnRegisterDeviceIdForPush" resourcePath="/unRegisterDeviceIdForPush" methodName="UnRegisterDeviceIdForPush" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="UnRegisterDeviceIdForPush" id="4c99dfc3-1c86-4528-a9dd-a6583823e40c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{
+  "deviceId": "D5A17B98-2136-4D2A-B3CC-9FF67E34EC96",
+  "platform": "A",
+  "token": "ffbb6ec32f0fdf728064ac62c3df1dc6195c9e9366c5fc364b12e94b3cfbf2c6"
+}</con:request>
+        <con:originalUri>https://api.whrcloud.com/api/v1/unRegisterDeviceIdForPush</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="Authorization" value="Bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>wp-client-region</con:entry>
+          <con:entry>wp-client-country</con:entry>
+          <con:entry>wp-client-brand</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="b2dbeeea-da6d-41d9-a379-bf8209890d8f">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
