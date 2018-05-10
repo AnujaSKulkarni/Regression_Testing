@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="ec445c4d-ef8c-457f-9db2-3990f3163ec2" activeEnvironment="QA_Env" name="Regression Testing" resourceRoot="${projectDir}" defaultScriptLanguage="Groovy" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" updated="2.2.0 20171026-0943" compositeProjectFormat="1.3" encryptionMode="Not encrypted" savePropertyValues="true" disableCarriageReturnEscaping="false" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="ec445c4d-ef8c-457f-9db2-3990f3163ec2" activeEnvironment="Default environment" name="Regression Testing" resourceRoot="${projectDir}" defaultScriptLanguage="Groovy" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" updated="2.2.0 20171026-0943" compositeProjectFormat="1.3" encryptionMode="Not encrypted" savePropertyValues="true" disableCarriageReturnEscaping="false" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
   <con:entry key="Environment" value="Default"/>
@@ -125,6 +125,33 @@
     </con:property>
     <con:property>
       <con:name>Appliance_SAID</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Test_Result_Path</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Run_Time_Data</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Environment_Name</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Test_Data_Path</con:name>
+    </con:property>
+    <con:property>
+      <con:name>API-Connect</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Secure_auth</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Client_Token</con:name>
+    </con:property>
+    <con:property>
+      <con:name>access_token</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Refresh_Token</con:name>
     </con:property>
   </con:properties>
   <con:wssContainer/>
@@ -695,7 +722,7 @@
     </con:property>
     <con:property>
       <con:name>ADRS</con:name>
-      <con:value>https://amazonreplenishmentserviceqa-v2.mybluemix.net/</con:value>
+      <con:value>https://amazonreplenishmentserviceqa-v2.kube-cluster-residen.us-south.containers.mybluemix.net</con:value>
     </con:property>
     <con:property>
       <con:name>LWA_Client_ID</con:name>
@@ -736,6 +763,42 @@
     <con:property>
       <con:name>Appliance_SAID</con:name>
       <con:value>WPR333334UCD3</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Test_Result_Path</con:name>
+      <con:value>C:/Users/MB5027676/Documents/TestResults/NAR/QA/2018-05-10/Run_Number_2/</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Run_Time_Data</con:name>
+      <con:value>C:/Users/MB5027676/Documents/TestResults/NAR/QA/2018-05-10/Run_Number_2/Run_Time_Data.xls</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Environment_Name</con:name>
+      <con:value>QA</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Test_Data_Path</con:name>
+      <con:value>C:/Automation/SoapUI/EMEA_Test_Data.xlsx</con:value>
+    </con:property>
+    <con:property>
+      <con:name>API-Connect</con:name>
+      <con:value>https://api-test.whrcloud.com/api/v1</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Secure_auth</con:name>
+      <con:value>https://api-test.whrcloud.com/</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Client_Token</con:name>
+      <con:value>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJ0cnVzdCIsInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE1MjU5NTcxNjQsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1dDTE9VRF9BRE1JTiJdLCJqdGkiOiI0NmIyODFiYS04MzBkLTQ3ZjQtYjU3YS01MmY2M2RlMTZlODEiLCJjbGllbnRfaWQiOiJzeW50ZWwifQ.oUItSb2e8fKoR_liTIgTZv11cu9cyKcBfEL7ffQoYsI</con:value>
+    </con:property>
+    <con:property>
+      <con:name>access_token</con:name>
+      <con:value>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjEzNTcxLCJ1c2VyX25hbWUiOiJUSFVfTUFZXzEwXzEyXzI5XzI0X0lTVF8yMDE4QE1BSUxJTkFUT1IuQ09NIiwic2NvcGUiOlsidHJ1c3QiLCJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTI1OTU3MTcwLCJhdXRob3JpdGllcyI6WyJXQ0xPVURfVVNFUiJdLCJqdGkiOiI3N2U5YjYxYS0zZTllLTRmODgtYjA2Ni0zMmMxYjk5YWJhNGEiLCJjbGllbnRfaWQiOiJzeW50ZWwiLCJTQUlEIjpbXX0.5b9KzGPdMDw_seqguWyKEbcpdVhwsFclidwWjsPM4pY</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Refresh_Token</con:name>
+      <con:value>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjEzNTcxLCJ1c2VyX25hbWUiOiJUSFVfTUFZXzEwXzEyXzI5XzI0X0lTVF8yMDE4QE1BSUxJTkFUT1IuQ09NIiwic2NvcGUiOlsidHJ1c3QiLCJyZWFkIiwid3JpdGUiXSwiYXRpIjoiNzdlOWI2MWEtM2U5ZS00Zjg4LWIwNjYtMzJjMWI5OWFiYTRhIiwiZXhwIjoxNTI3MjMxNTcwLCJhdXRob3JpdGllcyI6WyJXQ0xPVURfVVNFUiJdLCJqdGkiOiJkZGNiMDU5NS02ZWE0LTQ1YTYtYmU4ZC1jMjMyZGY0Y2U3MGEiLCJjbGllbnRfaWQiOiJzeW50ZWwiLCJTQUlEIjpbXX0.BP1Kl2rUJf3Qk6QIdtekX7SJ7yT8tD0e5DsTDr536dc</con:value>
     </con:property>
     <con:databaseConnectionContainer>
       <con:databaseConnection>
@@ -1342,6 +1405,42 @@
     </con:property>
     <con:property>
       <con:name>Appliance_SAID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Test_Result_Path</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Run_Time_Data</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Environment_Name</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Test_Data_Path</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>API-Connect</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Secure_auth</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Client_Token</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>access_token</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Refresh_Token</con:name>
       <con:value/>
     </con:property>
     <con:databaseConnectionContainer>
@@ -1951,6 +2050,42 @@
       <con:name>Appliance_SAID</con:name>
       <con:value>WPR333334UCD3</con:value>
     </con:property>
+    <con:property>
+      <con:name>Test_Result_Path</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Run_Time_Data</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Environment_Name</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Test_Data_Path</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>API-Connect</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Secure_auth</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Client_Token</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>access_token</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Refresh_Token</con:name>
+      <con:value/>
+    </con:property>
     <con:databaseConnectionContainer>
       <con:databaseConnection>
         <con:name>DataBase</con:name>
@@ -2557,6 +2692,42 @@
     <con:property>
       <con:name>Appliance_SAID</con:name>
       <con:value>WPR333334TUG2</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Test_Result_Path</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Run_Time_Data</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Environment_Name</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Test_Data_Path</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>API-Connect</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Secure_auth</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Client_Token</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>access_token</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Refresh_Token</con:name>
+      <con:value/>
     </con:property>
     <con:databaseConnectionContainer>
       <con:databaseConnection>
@@ -3165,6 +3336,42 @@
       <con:name>Appliance_SAID</con:name>
       <con:value>WPR333334TUG2</con:value>
     </con:property>
+    <con:property>
+      <con:name>Test_Result_Path</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Run_Time_Data</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Environment_Name</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Test_Data_Path</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>API-Connect</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Secure_auth</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Client_Token</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>access_token</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Refresh_Token</con:name>
+      <con:value/>
+    </con:property>
     <con:databaseConnectionContainer>
       <con:databaseConnection>
         <con:name>DataBase</con:name>
@@ -3771,6 +3978,42 @@
     <con:property>
       <con:name>Appliance_SAID</con:name>
       <con:value>WPR333334UCD3</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Test_Result_Path</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Run_Time_Data</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Environment_Name</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Test_Data_Path</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>API-Connect</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Secure_auth</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Client_Token</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>access_token</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>Refresh_Token</con:name>
+      <con:value/>
     </con:property>
     <con:databaseConnectionContainer>
       <con:databaseConnection>
