@@ -21,7 +21,7 @@
   </con:parameters>
   <con:method name="Subscription Changed Notification" id="e1bada9a-06a9-42a0-95ab-cbd7acddf17d" method="POST">
     <con:settings/>
-    <con:parameters></con:parameters>
+    <con:parameters/>
     <con:representation type="REQUEST">
       <con:mediaType>application/json</con:mediaType>
       <con:params/>
@@ -119,6 +119,9 @@
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
         <con:entry environmentId="df44efd9-a23b-4823-b5f2-427a6ee63b9f">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="cfd7f8e8-bdc7-4ee9-bf77-f22acc661003">
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
       </con:environmentSpec>

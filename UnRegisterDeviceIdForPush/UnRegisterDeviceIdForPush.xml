@@ -70,6 +70,11 @@
         <con:entry>wp-client-country</con:entry>
         <con:entry>wp-client-brand</con:entry>
       </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="cfd7f8e8-bdc7-4ee9-bf77-f22acc661003">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
   </con:method>
 </con:resource>
