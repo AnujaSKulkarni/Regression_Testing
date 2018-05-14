@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite id="08d716b0-d72a-4b2e-8d65-6c52af8434f5" name="Regression Suite_Copy" xmlns:con="http://eviware.com/soapui/config">
+<con:testSuite id="08d716b0-d72a-4b2e-8d65-6c52af8434f5" name="Regression Suite" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="IncludeOverview">true</con:setting>
     <con:setting id="IncludeResults">true</con:setting>
@@ -15,23 +15,23 @@
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"SAT_APR_28_16_38_27_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"MON_MAY_14_11_59_59_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>SAT_APR_28_16_38_27_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>MON_MAY_14_11_59_59_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">36969</con:value>
+      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
-      <con:value>3210</con:value>
+      <con:value/>
     </con:property>
     <con:property>
       <con:name>Account_Email</con:name>
-      <con:value>SAT_APR_28_16_38_27_IST_2018@MAILINATOR.COM</con:value>
+      <con:value/>
     </con:property>
     <con:property>
       <con:name>Location_ID</con:name>
@@ -63,11 +63,11 @@
     </con:property>
     <con:property>
       <con:name>Status</con:name>
-      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Pass</con:value>
+      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Fail</con:value>
     </con:property>
     <con:property>
       <con:name>Run_count</con:name>
-      <con:value>2</con:value>
+      <con:value>1</con:value>
     </con:property>
     <con:property>
       <con:name>Email_cnf</con:name>

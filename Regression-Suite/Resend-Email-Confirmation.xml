@@ -309,7 +309,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Test_Data_Setup" id="7ef68255-7e4d-4815-a23c-8b92a63a37c6" disabled="true">
+  <con:testStep type="groovy" name="Test_Data_Setup" id="7ef68255-7e4d-4815-a23c-8b92a63a37c6">
     <con:settings/>
     <con:config>
       <script>def data_Combination = context.expand( '${DataSource#Data_Combination}' )
@@ -328,7 +328,7 @@ def tC_Number = context.expand( '${DataSource#TC_Number}' )
 log.info tC_Number</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Resend Email Confirmation_Positive" id="9ff83380-3b6b-4237-9e4b-353b00813eca" disabled="true">
+  <con:testStep type="restrequest" name="Resend Email Confirmation_Positive" id="9ff83380-3b6b-4237-9e4b-353b00813eca">
     <con:settings/>
     <con:config service="Resend Email Confirmation" resourcePath="/client_auth/accounts/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['email']}/confirmations/resend" methodName="Resend Email Confirmation" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Resend Email Confirmation_Positive" id="49ced10b-024a-4800-811c-3312adada08e" mediaType="application/json">
@@ -498,7 +498,7 @@ log.info tC_Number</script>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="6a0ae9f4-5c3d-4f9a-a615-dd661f626238" disabled="true">
+  <con:testStep type="groovy" name="Report" id="6a0ae9f4-5c3d-4f9a-a615-dd661f626238">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream
@@ -639,7 +639,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value>36969</con:value>
+      <con:value/>
     </con:property>
   </con:properties>
   <con:reportParameters/>
