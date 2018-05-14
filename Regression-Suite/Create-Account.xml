@@ -920,11 +920,11 @@ Connection: keep-alive
     </con:property>
     <con:property>
       <con:name>Country_Name</con:name>
-      <con:value>IT</con:value>
+      <con:value>US</con:value>
     </con:property>
     <con:property>
       <con:name>Region</con:name>
-      <con:value>EMEA</con:value>
+      <con:value>NAR</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
