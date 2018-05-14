@@ -341,6 +341,9 @@ if (API_Name != TestCaseName){
           <con:entry environmentId="cfd7f8e8-bdc7-4ee9-bf77-f22acc661003">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="bd7aeaa6-952f-4fe0-b414-2ed70d659793">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
@@ -525,6 +528,9 @@ out.close()</script>
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="cfd7f8e8-bdc7-4ee9-bf77-f22acc661003">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="bd7aeaa6-952f-4fe0-b414-2ed70d659793">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>

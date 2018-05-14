@@ -173,6 +173,9 @@
         <con:entry environmentId="cfd7f8e8-bdc7-4ee9-bf77-f22acc661003">
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
+        <con:entry environmentId="bd7aeaa6-952f-4fe0-b414-2ed70d659793">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
       </con:environmentSpec>
     </con:request>
     <con:request name="EMEA-Create Account" id="ca9f4001-c1e6-4520-a84d-0a8f310353ef" mediaType="application/json" postQueryString="false">
@@ -265,6 +268,9 @@
         <con:entry environmentId="cfd7f8e8-bdc7-4ee9-bf77-f22acc661003">
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
+        <con:entry environmentId="bd7aeaa6-952f-4fe0-b414-2ed70d659793">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
       </con:environmentSpec>
     </con:request>
     <con:environmentSpec>
@@ -304,6 +310,9 @@
       <con:entry environmentId="cfd7f8e8-bdc7-4ee9-bf77-f22acc661003">
         <con:authProfile>Inherit From Parent</con:authProfile>
       </con:entry>
+      <con:entry environmentId="bd7aeaa6-952f-4fe0-b414-2ed70d659793">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
     </con:environmentSpec>
   </con:method>
   <con:environmentSpec>
@@ -341,6 +350,9 @@
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="cfd7f8e8-bdc7-4ee9-bf77-f22acc661003">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="bd7aeaa6-952f-4fe0-b414-2ed70d659793">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>

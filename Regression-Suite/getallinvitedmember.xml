@@ -262,7 +262,7 @@ if (API_Name != TestCaseName){
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="getallinvitedmember" id="3baf989e-8b38-4c2a-9112-95ddf253d4a5">
+  <con:testStep type="restrequest" name="getallinvitedmember" id="3baf989e-8b38-4c2a-9112-95ddf253d4a5" disabled="true">
     <con:settings/>
     <con:config service="getallinvitedmember" resourcePath="/members/${#[Regression Suite#Create Account#Create Account_Positive]#Response#$['accountId']}" methodName="getallinvitedmember" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="getallinvitedmember" id="aa987182-fe19-47f6-8be5-e8a0e93ce082" mediaType="application/json">
@@ -306,11 +306,14 @@ if (API_Name != TestCaseName){
           <con:entry environmentId="cfd7f8e8-bdc7-4ee9-bf77-f22acc661003">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="bd7aeaa6-952f-4fe0-b414-2ed70d659793">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Report" id="789de1bb-394c-4ef9-8e4d-571c9708d18c">
+  <con:testStep type="groovy" name="Report" id="789de1bb-394c-4ef9-8e4d-571c9708d18c" disabled="true">
     <con:settings/>
     <con:config>
       <script>import java.io.FileInputStream

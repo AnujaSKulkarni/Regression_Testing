@@ -333,6 +333,9 @@ if (API_Name != TestCaseName){
           <con:entry environmentId="cfd7f8e8-bdc7-4ee9-bf77-f22acc661003">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
+          <con:entry environmentId="bd7aeaa6-952f-4fe0-b414-2ed70d659793">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
         </con:environmentSpec>
       </con:restRequest>
     </con:config>
@@ -479,7 +482,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Thermostate_ID</con:name>
-      <con:value>"zJT-P-Tn82OpRNL1CDHMHvmV2S356y9D"</con:value>
+      <con:value>"zJT-P-Tn82PaTUfcoCzv5vmV2S356y9D"</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
