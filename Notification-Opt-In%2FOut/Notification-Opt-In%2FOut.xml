@@ -79,6 +79,12 @@
         <con:entry environmentId="bd7aeaa6-952f-4fe0-b414-2ed70d659793">
           <con:authProfile>Inherit From Parent</con:authProfile>
         </con:entry>
+        <con:entry environmentId="8d51aff3-d589-4134-8def-0df465f662be">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="29fa2bd0-3ed0-4d5b-b724-a7c179c820f2">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
       </con:environmentSpec>
     </con:request>
     <con:environmentSpec>
@@ -121,6 +127,12 @@
       <con:entry environmentId="bd7aeaa6-952f-4fe0-b414-2ed70d659793">
         <con:authProfile>Inherit From Parent</con:authProfile>
       </con:entry>
+      <con:entry environmentId="8d51aff3-d589-4134-8def-0df465f662be">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="29fa2bd0-3ed0-4d5b-b724-a7c179c820f2">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
     </con:environmentSpec>
   </con:method>
   <con:environmentSpec>
@@ -161,6 +173,12 @@
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
     <con:entry environmentId="bd7aeaa6-952f-4fe0-b414-2ed70d659793">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="8d51aff3-d589-4134-8def-0df465f662be">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="29fa2bd0-3ed0-4d5b-b724-a7c179c820f2">
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>
