@@ -518,7 +518,7 @@ out.close()</script>
   <con:properties>
     <con:property>
       <con:name>Group_ID</con:name>
-      <con:value>5771</con:value>
+      <con:value/>
     </con:property>
   </con:properties>
   <con:reportParameters/>

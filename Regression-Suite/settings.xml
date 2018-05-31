@@ -15,23 +15,23 @@
   <con:properties>
     <con:property>
       <con:name>Email_ID</con:name>
-      <con:value>"MON_MAY_14_16_09_43_IST_2018@MAILINATOR.COM"</con:value>
+      <con:value>"THU_MAY_31_18_19_53_IST_2018@MAILINATOR.COM"</con:value>
     </con:property>
     <con:property>
       <con:name>Email_ID_string</con:name>
-      <con:value>MON_MAY_14_16_09_43_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>THU_MAY_31_18_19_53_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
     <con:property>
       <con:name>Account_ID</con:name>
-      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">13586</con:value>
+      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">39557</con:value>
     </con:property>
     <con:property>
       <con:name>Verification_Code</con:name>
-      <con:value>4635</con:value>
+      <con:value>5980</con:value>
     </con:property>
     <con:property>
       <con:name>Account_Email</con:name>
-      <con:value>MON_MAY_14_16_09_43_IST_2018@MAILINATOR.COM</con:value>
+      <con:value>THU_MAY_31_18_19_53_IST_2018@MAILINATOR.COM</con:value>
     </con:property>
     <con:property>
       <con:name>Location_ID</con:name>
@@ -39,11 +39,11 @@
     </con:property>
     <con:property>
       <con:name>Group_Name</con:name>
-      <con:value>"SANITY_GROUP_MON_MAY_14_16_10_17_IST_2018"</con:value>
+      <con:value>"SANITY_GROUP_THU_MAY_31_18_22_13_IST_2018"</con:value>
     </con:property>
     <con:property>
       <con:name>Group_Name_string</con:name>
-      <con:value>SANITY_GROUP_MON_MAY_14_16_10_17_IST_2018</con:value>
+      <con:value>SANITY_GROUP_THU_MAY_31_18_22_13_IST_2018</con:value>
     </con:property>
     <con:property>
       <con:name>Template_ID</con:name>
@@ -67,7 +67,7 @@
     </con:property>
     <con:property>
       <con:name>Run_count</con:name>
-      <con:value>7</con:value>
+      <con:value>1</con:value>
     </con:property>
     <con:property>
       <con:name>Email_cnf</con:name>
@@ -83,7 +83,7 @@
     </con:property>
     <con:property>
       <con:name>Group_ID</con:name>
-      <con:value>5771</con:value>
+      <con:value/>
     </con:property>
     <con:property>
       <con:name>Location_Number</con:name>
