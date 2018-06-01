@@ -293,9 +293,7 @@ if (API_Name != TestCaseName){
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
-        <con:parameters>
-          <entry key="Authorization" value="bearer ${access_token}" xmlns="http://eviware.com/soapui/config"/>
-        </con:parameters>
+        <con:parameters/>
         <con:parameterOrder>
           <con:entry>Authorization</con:entry>
         </con:parameterOrder>

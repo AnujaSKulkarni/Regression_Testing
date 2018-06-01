@@ -21,6 +21,12 @@
       <con:params/>
       <con:element>Response</con:element>
     </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:get="https://api.us.apiconnect.ibmcloud.com/whirlpool-developer-network-wcloud-dev/whirlpool-iot-qa/api/accounts/getHandheldPrivileges">get:Fault</con:element>
+    </con:representation>
     <con:request name="HandheldPrivileges" id="6696d0a5-92cc-491c-9664-b3981b0f87a7" mediaType="application/json">
       <con:settings/>
       <con:endpoint>${QA_Env}</con:endpoint>

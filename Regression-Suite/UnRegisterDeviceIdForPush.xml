@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="72942d1b-088a-4d80-82b9-25ffb2a0dac7" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="UnRegisterDeviceIdForPush" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="72942d1b-088a-4d80-82b9-25ffb2a0dac7" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="UnRegisterDeviceIdForPush" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="72942d1b-088a-4d80-82b9-25ffb2a0dac7fileName">UnRegisterDeviceIdForPush</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="restrequest" name="UnRegisterDeviceIdForPush" id="03271155-1817-425f-ab1b-ce730ca128d6">
+  <con:testStep type="restrequest" name="UnRegisterDeviceIdForPush" id="03271155-1817-425f-ab1b-ce730ca128d6" disabled="true">
     <con:settings/>
     <con:config service="UnRegisterDeviceIdForPush" resourcePath="/unRegisterDeviceIdForPush" methodName="UnRegisterDeviceIdForPush" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="UnRegisterDeviceIdForPush" id="4c99dfc3-1c86-4528-a9dd-a6583823e40c" mediaType="application/json" postQueryString="false">
