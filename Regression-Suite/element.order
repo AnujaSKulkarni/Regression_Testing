@@ -115,7 +115,7 @@ DDM-notification.xml
 Appliance-Category.xml
 All-appliance-for-regular-user-and-invited-user.xml
 Get-Appliance-by-Location-ID.xml
-Device-Registration1.xml
+Device-Registration.xml
 multi-subscribe-for-opt--in-and-out.xml
 Fetch-device-specific-notifications.xml
 PUSH-Notification.xml
@@ -131,10 +131,10 @@ SameDayCheck.xml
 outofThreshold.xml
 createcommandScheduler.xml
 Delete-timer.xml
+Command-and-Control---Set-Attribute%28s%29.xml
 UnClaim-Appliance1.xml
 Unlink-Inviation.xml
 getCountriesAndStates.xml
-Command-and-Control---Set-Attribute%28s%29.xml
 UnRegisterDeviceIdForPush.xml
 Update_Password.xml
 Delete-Account.xml

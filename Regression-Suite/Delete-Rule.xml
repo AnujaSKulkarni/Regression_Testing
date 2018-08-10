@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="7906bdad-30cd-4740-a016-577290952096" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Delete Rule" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="7906bdad-30cd-4740-a016-577290952096" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Delete Rule" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="7906bdad-30cd-4740-a016-577290952096fileName">Delete-Rule</con:setting>
   </con:settings>
